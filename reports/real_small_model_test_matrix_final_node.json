@@ -1,0 +1,172 @@
+{
+  "model_name": "HuggingFaceTB/SmolLM2-360M",
+  "model_class": "LlamaForCausalLM",
+  "dtype": "torch.bfloat16",
+  "device": "cpu",
+  "cuda": false,
+  "hidden_size": 960,
+  "n_examples": 1,
+  "max_length": 128,
+  "load_seconds": 2.498863900080323,
+  "variants": [
+    {
+      "variant": "baseline",
+      "seconds": 2.735173000022769,
+      "losses": {
+        "answer": 2.0645809173583984
+      },
+      "thought_tokens": 0,
+      "compression_ratios": [],
+      "output_shape": [
+        1,
+        73,
+        49152
+      ]
+    },
+    {
+      "variant": "fixed",
+      "seconds": 3.3238544003106654,
+      "losses": {
+        "answer": 13.103019714355469,
+        "distillation": 161.0,
+        "compression": 0.0,
+        "total": 29.22801971435547
+      },
+      "thought_tokens": 18,
+      "compression_ratios": [
+        3.8421052631578947
+      ],
+      "output_shape": [
+        1,
+        19,
+        49152
+      ],
+      "interventions": {
+        "target_level": 1,
+        "target_source_positions": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "deltas": {
+          "drop": 2.875,
+          "random_replace": 4.625,
+          "expand": 3.96875
+        }
+      }
+    },
+    {
+      "variant": "soft",
+      "seconds": 4.907084200065583,
+      "losses": {
+        "answer": 13.278671264648438,
+        "distillation": 892.0,
+        "compression": 0.359375,
+        "total": 102.28587341308594
+      },
+      "thought_tokens": 7,
+      "compression_ratios": [
+        1.140625
+      ],
+      "output_shape": [
+        1,
+        64,
+        49152
+      ],
+      "interventions": {
+        "target_level": 1,
+        "target_source_positions": [
+          7,
+          8,
+          9
+        ],
+        "deltas": {
+          "drop": 2.140625,
+          "random_replace": 0.298828125,
+          "expand": 2.5625
+        }
+      }
+    },
+    {
+      "variant": "hard",
+      "seconds": 4.158847699873149,
+      "losses": {
+        "answer": 12.498998641967773,
+        "distillation": 496.0,
+        "compression": 0.0,
+        "total": 61.999000549316406
+      },
+      "thought_tokens": 18,
+      "compression_ratios": [
+        1.7380952380952381
+      ],
+      "output_shape": [
+        1,
+        42,
+        49152
+      ],
+      "interventions": {
+        "target_level": 1,
+        "target_source_positions": [
+          13,
+          14,
+          15,
+          16,
+          17
+        ],
+        "deltas": {
+          "drop": 2.21875,
+          "random_replace": 0.66796875,
+          "expand": 2.03125
+        }
+      }
+    },
+    {
+      "variant": "recursive",
+      "seconds": 2.902201000135392,
+      "losses": {
+        "answer": 9.370976448059082,
+        "distillation": 19.0,
+        "compression": 2.15625,
+        "total": 11.312626838684082
+      },
+      "thought_tokens": 23,
+      "compression_ratios": [
+        3.8421052631578947,
+        14.6
+      ],
+      "output_shape": [
+        1,
+        5,
+        49152
+      ],
+      "interventions": {
+        "target_level": 2,
+        "target_source_positions": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "deltas": {
+          "drop": 1.8125,
+          "random_replace": 2.9375,
+          "expand": 2.1875
+        }
+      }
+    }
+  ]
+}

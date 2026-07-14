@@ -1,0 +1,2608 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "temperature": 0.0,
+  "elapsed_s": 73.7829404999502,
+  "scenario_count": 5,
+  "question_count": 10,
+  "variants": [
+    "direct",
+    "reasoning",
+    "summary",
+    "flat",
+    "hierarchical",
+    "random_hierarchy",
+    "hierarchical_loop"
+  ],
+  "summary_by_variant": {
+    "direct": {
+      "correct": 10,
+      "total": 10,
+      "accuracy": 1.0
+    },
+    "reasoning": {
+      "correct": 10,
+      "total": 10,
+      "accuracy": 1.0
+    },
+    "summary": {
+      "correct": 9,
+      "total": 10,
+      "accuracy": 0.9
+    },
+    "flat": {
+      "correct": 9,
+      "total": 10,
+      "accuracy": 0.9
+    },
+    "hierarchical": {
+      "correct": 10,
+      "total": 10,
+      "accuracy": 1.0
+    },
+    "random_hierarchy": {
+      "correct": 9,
+      "total": 10,
+      "accuracy": 0.9
+    },
+    "hierarchical_loop": {
+      "correct": 10,
+      "total": 10,
+      "accuracy": 1.0
+    }
+  },
+  "rows": [
+    {
+      "scenario_id": "transport_delay",
+      "question_id": "ordinary_train_on_time",
+      "question": "Může Petr dorazit včas dalším pravidelným vlakem?",
+      "variant": "direct",
+      "answer": "Ne.",
+      "expected_aliases": [
+        "ne",
+        "nemůže"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Ne.",
+        "rationale": "Další vlak jede za dvě hodiny, ale Petr potřebuje být v Praze za hodinu.",
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "transport_delay",
+      "question_id": "ordinary_train_on_time",
+      "question": "Může Petr dorazit včas dalším pravidelným vlakem?",
+      "variant": "reasoning",
+      "answer": "Ne, Petr nemůže dorazit včas dalším pravidelným vlakem.",
+      "expected_aliases": [
+        "ne",
+        "nemůže"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Ne, Petr nemůže dorazit včas dalším pravidelným vlakem.",
+        "rationale": "Další vlak jede až za dvě hodiny, zatímco Petr potřebuje být v Praze za jednu hodinu.",
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "transport_delay",
+      "question_id": "ordinary_train_on_time",
+      "question": "Může Petr dorazit včas dalším pravidelným vlakem?",
+      "variant": "summary",
+      "answer": "Ze shrnutí nelze jednoznačně určit, zda může Petr dorazit včas dalším pravidelným vlakem.",
+      "expected_aliases": [
+        "ne",
+        "nemůže"
+      ],
+      "correct": false,
+      "raw_result": {
+        "answer": "Ze shrnutí nelze jednoznačně určit, zda může Petr dorazit včas dalším pravidelným vlakem.",
+        "rationale": "Shrnutí uvádí pouze to, že Petr zmeškal svůj původní vlak a zvažuje taxi nebo odvoz kolegou, ale neobsahuje informace o jízdním řádu dalších vlaků ani o tom, zda by stihly jeho časový limit.",
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "transport_delay",
+      "question_id": "ordinary_train_on_time",
+      "question": "Může Petr dorazit včas dalším pravidelným vlakem?",
+      "variant": "flat",
+      "answer": "Ne, Petr včas dalším pravidelným vlakem nedorazí.",
+      "expected_aliases": [
+        "ne",
+        "nemůže"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Ne, Petr včas dalším pravidelným vlakem nedorazí.",
+        "rationale": "Petr potřebuje být v Praze za hodinu, ale další pravidelný vlak jede až za dvě hodiny, což znamená, že nestihne dorazit včas.",
+        "used_nodes": [
+          "T3"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "transport_delay",
+      "question_id": "ordinary_train_on_time",
+      "question": "Může Petr dorazit včas dalším pravidelným vlakem?",
+      "variant": "hierarchical",
+      "answer": "Ne, Petr nemůže dorazit včas dalším pravidelným vlakem.",
+      "expected_aliases": [
+        "ne",
+        "nemůže"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Ne, Petr nemůže dorazit včas dalším pravidelným vlakem.",
+        "rationale": "Petr potřebuje být v Praze za hodinu, ale další pravidelný vlak jede až za dvě hodiny, což znamená, že tímto spojem svůj časový limit nestihne.",
+        "used_nodes": [
+          "T3",
+          "T5"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "transport_delay",
+      "question_id": "ordinary_train_on_time",
+      "question": "Může Petr dorazit včas dalším pravidelným vlakem?",
+      "variant": "random_hierarchy",
+      "answer": "Ne, Petr nemůže dorazit včas dalším pravidelným vlakem.",
+      "expected_aliases": [
+        "ne",
+        "nemůže"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Ne, Petr nemůže dorazit včas dalším pravidelným vlakem.",
+        "rationale": "Petr potřebuje být v Praze za hodinu, ale další pravidelný vlak jede až za dvě hodiny, což znamená, že nestihne dorazit v požadovaném čase.",
+        "used_nodes": [
+          "T3"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "transport_delay",
+      "question_id": "ordinary_train_on_time",
+      "question": "Může Petr dorazit včas dalším pravidelným vlakem?",
+      "variant": "hierarchical_loop",
+      "answer": "Ne, Petr nemůže dorazit včas dalším pravidelným vlakem.",
+      "expected_aliases": [
+        "ne",
+        "nemůže"
+      ],
+      "correct": true,
+      "raw_result": {
+        "status": "answered",
+        "answer": "Ne, Petr nemůže dorazit včas dalším pravidelným vlakem.",
+        "rationale": "Z myšlenkového uzlu T3 vyplývá, že další pravidelný vlak jede až za dvě hodiny, zatímco Petr potřebuje být v Praze již za jednu hodinu. Proto je fyzicky nemožné, aby tímto vlakem dorazil včas.",
+        "used_nodes": [
+          "T3"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "transport_delay",
+      "question_id": "best_next_step",
+      "question": "Jaký typ řešení by měl Petr hledat?",
+      "variant": "direct",
+      "answer": "Rychlou alternativní dopravu.",
+      "expected_aliases": [
+        "alternativní dopravu",
+        "taxi",
+        "kolegovi",
+        "autem"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Rychlou alternativní dopravu.",
+        "rationale": "Petr potřebuje být v Praze dříve, než pojede další vlak, proto musí zvolit taxi nebo odvoz kolegou.",
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "transport_delay",
+      "question_id": "best_next_step",
+      "question": "Jaký typ řešení by měl Petr hledat?",
+      "variant": "reasoning",
+      "answer": "Petr by měl hledat individuální dopravu, jako je taxi nebo odvoz kolegou.",
+      "expected_aliases": [
+        "alternativní dopravu",
+        "taxi",
+        "kolegovi",
+        "autem"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Petr by měl hledat individuální dopravu, jako je taxi nebo odvoz kolegou.",
+        "rationale": "Veřejná doprava nesplňuje jeho časový limit, proto musí zvolit flexibilnější alternativu.",
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "transport_delay",
+      "question_id": "best_next_step",
+      "question": "Jaký typ řešení by měl Petr hledat?",
+      "variant": "summary",
+      "answer": "Petr by měl hledat alternativní způsob dopravy, jako je taxi nebo odvoz kolegou.",
+      "expected_aliases": [
+        "alternativní dopravu",
+        "taxi",
+        "kolegovi",
+        "autem"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Petr by měl hledat alternativní způsob dopravy, jako je taxi nebo odvoz kolegou.",
+        "rationale": "Shrnutí přímo uvádí, že Petr zvažuje taxi nebo odvoz kolegou jako způsoby, jak se dostat do cíle včas poté, co zmeškal vlak.",
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "transport_delay",
+      "question_id": "best_next_step",
+      "question": "Jaký typ řešení by měl Petr hledat?",
+      "variant": "flat",
+      "answer": "Petr by měl hledat alternativní způsob dopravy, jako je taxi nebo spolujízda s kolegou.",
+      "expected_aliases": [
+        "alternativní dopravu",
+        "taxi",
+        "kolegovi",
+        "autem"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Petr by měl hledat alternativní způsob dopravy, jako je taxi nebo spolujízda s kolegou.",
+        "rationale": "Vzhledem k tomu, že Petr nestihl vlak a další spoj jede až za dvě hodiny, zatímco on potřebuje být v Praze do hodiny, musí využít jinou možnost dopravy. Uzly potvrzují, že má k dispozici stanoviště taxi nebo možnost zavolat kolegovi, který jede stejným směrem.",
+        "used_nodes": [
+          "T2",
+          "T3",
+          "T4"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "transport_delay",
+      "question_id": "best_next_step",
+      "question": "Jaký typ řešení by měl Petr hledat?",
+      "variant": "hierarchical",
+      "answer": "Petr by měl hledat alternativní způsob dopravy, konkrétně taxi nebo spolujízdu s kolegou, aby stihl dorazit do Prahy v požadovaném časovém limitu jedné hodiny.",
+      "expected_aliases": [
+        "alternativní dopravu",
+        "taxi",
+        "kolegovi",
+        "autem"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Petr by měl hledat alternativní způsob dopravy, konkrétně taxi nebo spolujízdu s kolegou, aby stihl dorazit do Prahy v požadovaném časovém limitu jedné hodiny.",
+        "rationale": "Na základě analýzy situace (T5) je Petr v časové tísni, protože nestihl vlak a další jede až za dvě hodiny. Dostupná řešení (T4) zahrnují taxi nebo spolujízdu, což jsou jediné možnosti, jak splnit časový limit (T6).",
+        "used_nodes": [
+          "T1",
+          "T2",
+          "T3",
+          "T4",
+          "T5",
+          "T6"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "transport_delay",
+      "question_id": "best_next_step",
+      "question": "Jaký typ řešení by měl Petr hledat?",
+      "variant": "random_hierarchy",
+      "answer": "Petr by měl hledat alternativní způsob dopravy, jako je taxi nebo spolujízda s kolegou.",
+      "expected_aliases": [
+        "alternativní dopravu",
+        "taxi",
+        "kolegovi",
+        "autem"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Petr by měl hledat alternativní způsob dopravy, jako je taxi nebo spolujízda s kolegou.",
+        "rationale": "Vzhledem k tomu, že Petr nestihl vlak a další spoj jede až za dvě hodiny, zatímco on potřebuje být v Praze do hodiny, musí využít dostupné alternativy, které má na nádraží k dispozici.",
+        "used_nodes": [
+          "T2",
+          "T3",
+          "T4"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "transport_delay",
+      "question_id": "best_next_step",
+      "question": "Jaký typ řešení by měl Petr hledat?",
+      "variant": "hierarchical_loop",
+      "answer": "Petr by měl hledat alternativní způsob dopravy, konkrétně taxi nebo spolujízdu s kolegou, aby stihl dorazit do Prahy v požadovaném časovém limitu jedné hodiny.",
+      "expected_aliases": [
+        "alternativní dopravu",
+        "taxi",
+        "kolegovi",
+        "autem"
+      ],
+      "correct": true,
+      "raw_result": {
+        "status": "answered",
+        "answer": "Petr by měl hledat alternativní způsob dopravy, konkrétně taxi nebo spolujízdu s kolegou, aby stihl dorazit do Prahy v požadovaném časovém limitu jedné hodiny.",
+        "rationale": "Na základě analýzy časové tísně (T5) a dostupných možností (T4) vyplývá, že standardní vlaková doprava je pro Petra nepoužitelná. Proto je nutné zvolit alternativu, která mu umožní dosáhnout cíle včas (T6).",
+        "used_nodes": [
+          "T4",
+          "T5",
+          "T6"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "nested_location",
+      "question_id": "key_final_place",
+      "question": "Kde je nakonec klíč?",
+      "variant": "direct",
+      "answer": "V pracovně ve skříni v batohu v modré krabičce.",
+      "expected_aliases": [
+        "pracovně",
+        "ve skříni",
+        "skříň v pracovně"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "V pracovně ve skříni v batohu v modré krabičce.",
+        "rationale": "Klíč je v modré krabičce, která je v batohu, ten je ve skříni a skříň je v pracovně.",
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "nested_location",
+      "question_id": "key_final_place",
+      "question": "Kde je nakonec klíč?",
+      "variant": "reasoning",
+      "answer": "Klíč je v modré krabičce, která se nachází v batohu ve skříni v pracovně.",
+      "expected_aliases": [
+        "pracovně",
+        "ve skříni",
+        "skříň v pracovně"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Klíč je v modré krabičce, která se nachází v batohu ve skříni v pracovně.",
+        "rationale": "Klíč je uložen v modré krabičce, jejíž umístění je postupně specifikováno v rámci hierarchie prostorů.",
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "nested_location",
+      "question_id": "key_final_place",
+      "question": "Kde je nakonec klíč?",
+      "variant": "summary",
+      "answer": "Klíč se nachází v modré krabičce v batohu ve skříni v pracovně.",
+      "expected_aliases": [
+        "pracovně",
+        "ve skříni",
+        "skříň v pracovně"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Klíč se nachází v modré krabičce v batohu ve skříni v pracovně.",
+        "rationale": "Shrnutí explicitně uvádí, že klíč je v modré krabičce, která je uložena v batohu ve skříni v pracovně.",
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "nested_location",
+      "question_id": "key_final_place",
+      "question": "Kde je nakonec klíč?",
+      "variant": "flat",
+      "answer": "Klíč se nachází v modré krabičce, která je uložena v batohu, jenž je ve skříni v pracovně.",
+      "expected_aliases": [
+        "pracovně",
+        "ve skříni",
+        "skříň v pracovně"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Klíč se nachází v modré krabičce, která je uložena v batohu, jenž je ve skříni v pracovně.",
+        "rationale": "Na základě dostupných uzlů je klíč v modré krabičce (T1), která je v batohu (T2), batoh je ve skříni (T3) a skříň je v pracovně (T4).",
+        "used_nodes": [
+          "T1",
+          "T2",
+          "T3",
+          "T4"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "nested_location",
+      "question_id": "key_final_place",
+      "question": "Kde je nakonec klíč?",
+      "variant": "hierarchical",
+      "answer": "Klíč se nachází v modré krabičce, která je uložena v batohu, jenž se nachází ve skříni v pracovně.",
+      "expected_aliases": [
+        "pracovně",
+        "ve skříni",
+        "skříň v pracovně"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Klíč se nachází v modré krabičce, která je uložena v batohu, jenž se nachází ve skříni v pracovně.",
+        "rationale": "Na základě hierarchického propojení uzlů T1, T2, T3 a T4 bylo možné sestavit kompletní cestu umístění klíče až do finální lokace v pracovně.",
+        "used_nodes": [
+          "T1",
+          "T2",
+          "T3",
+          "T4",
+          "T6",
+          "T7"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "nested_location",
+      "question_id": "key_final_place",
+      "question": "Kde je nakonec klíč?",
+      "variant": "random_hierarchy",
+      "answer": "Klíč se nachází v modré krabičce, která je uložena v batohu, jenž je ve skříni umístěné v pracovně.",
+      "expected_aliases": [
+        "pracovně",
+        "ve skříni",
+        "skříň v pracovně"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Klíč se nachází v modré krabičce, která je uložena v batohu, jenž je ve skříni umístěné v pracovně.",
+        "rationale": "Na základě dostupných uzlů lze postupně rekonstruovat umístění klíče: klíč je v modré krabičce (T1), ta je v batohu (T2), batoh je ve skříni (T3) a skříň je v pracovně (T4).",
+        "used_nodes": [
+          "T1",
+          "T2",
+          "T3",
+          "T4"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "nested_location",
+      "question_id": "key_final_place",
+      "question": "Kde je nakonec klíč?",
+      "variant": "hierarchical_loop",
+      "answer": "Klíč se nachází v modré krabičce, která je uložena v batohu, jenž se nachází ve skříni v pracovně.",
+      "expected_aliases": [
+        "pracovně",
+        "ve skříni",
+        "skříň v pracovně"
+      ],
+      "correct": true,
+      "raw_result": {
+        "status": "answered",
+        "answer": "Klíč se nachází v modré krabičce, která je uložena v batohu, jenž se nachází ve skříni v pracovně.",
+        "rationale": "Na základě logického propojení uzlů T1, T2, T3 a T4 (syntetizovaných v T6 a T7) lze určit přesnou hierarchickou polohu klíče.",
+        "used_nodes": [
+          "T1",
+          "T2",
+          "T3",
+          "T4",
+          "T6",
+          "T7"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "nested_location",
+      "question_id": "irrelevant_box",
+      "question": "Je klíč v krabičce na chodbě?",
+      "variant": "direct",
+      "answer": "Ne",
+      "expected_aliases": [
+        "ne",
+        "není"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Ne",
+        "rationale": "Klíč je v modré krabičce, která je v batohu ve skříni, nikoliv v prázdné krabičce na chodbě.",
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "nested_location",
+      "question_id": "irrelevant_box",
+      "question": "Je klíč v krabičce na chodbě?",
+      "variant": "reasoning",
+      "answer": "Ne, klíč není v krabičce na chodbě.",
+      "expected_aliases": [
+        "ne",
+        "není"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Ne, klíč není v krabičce na chodbě.",
+        "rationale": "Klíč se nachází v modré krabičce, která je uložena v batohu ve skříni.",
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "nested_location",
+      "question_id": "irrelevant_box",
+      "question": "Je klíč v krabičce na chodbě?",
+      "variant": "summary",
+      "answer": "Ne, klíč v krabičce na chodbě není.",
+      "expected_aliases": [
+        "ne",
+        "není"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Ne, klíč v krabičce na chodbě není.",
+        "rationale": "Podle shrnutí se klíč nachází v modré krabičce v batohu ve skříni v pracovně, zatímco krabička na chodbě je prázdná.",
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "nested_location",
+      "question_id": "irrelevant_box",
+      "question": "Je klíč v krabičce na chodbě?",
+      "variant": "flat",
+      "answer": "Ne, klíč v krabičce na chodbě není.",
+      "expected_aliases": [
+        "ne",
+        "není"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Ne, klíč v krabičce na chodbě není.",
+        "rationale": "Klíč se nachází v modré krabičce, která je uložena v batohu ve skříni v pracovně. Krabička na chodbě je jiná a prázdná.",
+        "used_nodes": [
+          "T1",
+          "T2",
+          "T3",
+          "T4",
+          "T5"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "nested_location",
+      "question_id": "irrelevant_box",
+      "question": "Je klíč v krabičce na chodbě?",
+      "variant": "hierarchical",
+      "answer": "Ne, klíč v krabičce na chodbě není.",
+      "expected_aliases": [
+        "ne",
+        "není"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Ne, klíč v krabičce na chodbě není.",
+        "rationale": "Klíč se nachází v modré krabičce, která je uložena v batohu ve skříni v pracovně. Krabička na chodbě je jiná a je prázdná.",
+        "used_nodes": [
+          "T1",
+          "T2",
+          "T3",
+          "T4",
+          "T5",
+          "T6",
+          "T7"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "nested_location",
+      "question_id": "irrelevant_box",
+      "question": "Je klíč v krabičce na chodbě?",
+      "variant": "random_hierarchy",
+      "answer": "Ne, klíč v krabičce na chodbě není.",
+      "expected_aliases": [
+        "ne",
+        "není"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Ne, klíč v krabičce na chodbě není.",
+        "rationale": "Klíč se nachází v modré krabičce, která je uložena v batohu ve skříni v pracovně. Krabička na chodbě je jiná a je prázdná.",
+        "used_nodes": [
+          "T1",
+          "T2",
+          "T3",
+          "T4",
+          "T5"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "nested_location",
+      "question_id": "irrelevant_box",
+      "question": "Je klíč v krabičce na chodbě?",
+      "variant": "hierarchical_loop",
+      "answer": "Ne, klíč v krabičce na chodbě není.",
+      "expected_aliases": [
+        "ne",
+        "není"
+      ],
+      "correct": true,
+      "raw_result": {
+        "status": "answered",
+        "answer": "Ne, klíč v krabičce na chodbě není.",
+        "rationale": "Klíč se nachází v modré krabičce, která je uložena v batohu ve skříni v pracovně (T7). Krabička na chodbě je podle zdroje (T5) prázdná a odlišná od té, ve které je klíč.",
+        "used_nodes": [
+          "T1",
+          "T2",
+          "T3",
+          "T4",
+          "T5",
+          "T6",
+          "T7"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "temporal_order",
+      "question_id": "last_action",
+      "question": "Co Anna udělala jako poslední?",
+      "variant": "direct",
+      "answer": "Odešla na poradu.",
+      "expected_aliases": [
+        "odešla na poradu",
+        "poradu"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Odešla na poradu.",
+        "rationale": "Text uvádí, že po odchodu na poradu už Anna žádnou další činnost neudělala.",
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "temporal_order",
+      "question_id": "last_action",
+      "question": "Co Anna udělala jako poslední?",
+      "variant": "reasoning",
+      "answer": "Odešla na poradu.",
+      "expected_aliases": [
+        "odešla na poradu",
+        "poradu"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Odešla na poradu.",
+        "rationale": "Text výslovně uvádí, že po odchodu na poradu již žádnou další činnost neudělala.",
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "temporal_order",
+      "question_id": "last_action",
+      "question": "Co Anna udělala jako poslední?",
+      "variant": "summary",
+      "answer": "Odešla na poradu.",
+      "expected_aliases": [
+        "odešla na poradu",
+        "poradu"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Odešla na poradu.",
+        "rationale": "Podle shrnutí byla poslední činností Anny odchod na poradu, který následoval po zapnutí konvice, napsání e-mailu a kontrole kalendáře.",
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "temporal_order",
+      "question_id": "last_action",
+      "question": "Co Anna udělala jako poslední?",
+      "variant": "flat",
+      "answer": "Anna odešla na poradu.",
+      "expected_aliases": [
+        "odešla na poradu",
+        "poradu"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Anna odešla na poradu.",
+        "rationale": "Na základě poskytnutých uzlů je posloupnost činností: zapnutí konvice (T1), napsání e-mailu (T2), kontrola kalendáře (T3) a jako poslední odchod na poradu (T4).",
+        "used_nodes": [
+          "T1",
+          "T2",
+          "T3",
+          "T4"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "temporal_order",
+      "question_id": "last_action",
+      "question": "Co Anna udělala jako poslední?",
+      "variant": "hierarchical",
+      "answer": "Anna jako poslední odešla na poradu.",
+      "expected_aliases": [
+        "odešla na poradu",
+        "poradu"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Anna jako poslední odešla na poradu.",
+        "rationale": "Na základě chronologického přehledu aktivit (T7) a analýzy posloupnosti (T5, T6) vyplývá, že po zapnutí konvice, napsání e-mailu a kontrole kalendáře byla poslední činností odchod na poradu.",
+        "used_nodes": [
+          "T1",
+          "T2",
+          "T3",
+          "T4",
+          "T5",
+          "T6",
+          "T7"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "temporal_order",
+      "question_id": "last_action",
+      "question": "Co Anna udělala jako poslední?",
+      "variant": "random_hierarchy",
+      "answer": "Anna odešla na poradu.",
+      "expected_aliases": [
+        "odešla na poradu",
+        "poradu"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Anna odešla na poradu.",
+        "rationale": "Na základě chronologického pořadí událostí popsaných v uzlech (zapnutí konvice, napsání e-mailu, kontrola kalendáře a následný odchod na poradu) byla poslední akcí Anny odchod na poradu.",
+        "used_nodes": [
+          "T1",
+          "T2",
+          "T3",
+          "T4"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "temporal_order",
+      "question_id": "last_action",
+      "question": "Co Anna udělala jako poslední?",
+      "variant": "hierarchical_loop",
+      "answer": "Anna jako poslední odešla na poradu.",
+      "expected_aliases": [
+        "odešla na poradu",
+        "poradu"
+      ],
+      "correct": true,
+      "raw_result": {
+        "status": "answered",
+        "answer": "Anna jako poslední odešla na poradu.",
+        "rationale": "Na základě chronologického přehledu aktivit (T7) a analýzy posloupnosti (T5, T6) vyplývá, že po zapnutí konvice, napsání e-mailu a kontrole kalendáře byla poslední činností Anny odchod na poradu.",
+        "used_nodes": [
+          "T1",
+          "T2",
+          "T3",
+          "T4",
+          "T5",
+          "T6",
+          "T7"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "temporal_order",
+      "question_id": "calendar_before_meeting",
+      "question": "Zkontrolovala Anna kalendář před odchodem na poradu?",
+      "variant": "direct",
+      "answer": "Ano",
+      "expected_aliases": [
+        "ano"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Ano",
+        "rationale": "Text explicitně uvádí, že před odchodem na poradu zkontrolovala kalendář.",
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "temporal_order",
+      "question_id": "calendar_before_meeting",
+      "question": "Zkontrolovala Anna kalendář před odchodem na poradu?",
+      "variant": "reasoning",
+      "answer": "Ano",
+      "expected_aliases": [
+        "ano"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Ano",
+        "rationale": "V textu je přímo uvedeno, že před odchodem na poradu zkontrolovala kalendář.",
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "temporal_order",
+      "question_id": "calendar_before_meeting",
+      "question": "Zkontrolovala Anna kalendář před odchodem na poradu?",
+      "variant": "summary",
+      "answer": "Ano",
+      "expected_aliases": [
+        "ano"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Ano",
+        "rationale": "Shrnutí výslovně uvádí, že Anna zkontrolovala kalendář předtím, než odešla na poradu.",
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "temporal_order",
+      "question_id": "calendar_before_meeting",
+      "question": "Zkontrolovala Anna kalendář před odchodem na poradu?",
+      "variant": "flat",
+      "answer": "Ano, Anna zkontrolovala kalendář předtím, než odešla na poradu.",
+      "expected_aliases": [
+        "ano"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Ano, Anna zkontrolovala kalendář předtím, než odešla na poradu.",
+        "rationale": "Z myšlenkových uzlů vyplývá, že Anna po napsání e-mailu zkontrolovala kalendář (T3) a následně odešla na poradu (T4).",
+        "used_nodes": [
+          "T3",
+          "T4"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "temporal_order",
+      "question_id": "calendar_before_meeting",
+      "question": "Zkontrolovala Anna kalendář před odchodem na poradu?",
+      "variant": "hierarchical",
+      "answer": "Ano, Anna zkontrolovala kalendář předtím, než odešla na poradu.",
+      "expected_aliases": [
+        "ano"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Ano, Anna zkontrolovala kalendář předtím, než odešla na poradu.",
+        "rationale": "Na základě chronologické posloupnosti aktivit (uzel T5) je potvrzeno, že Anna po napsání e-mailu a před odchodem na poradu zkontrolovala kalendář.",
+        "used_nodes": [
+          "T3",
+          "T4",
+          "T5"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "temporal_order",
+      "question_id": "calendar_before_meeting",
+      "question": "Zkontrolovala Anna kalendář před odchodem na poradu?",
+      "variant": "random_hierarchy",
+      "answer": "Ano, Anna zkontrolovala kalendář předtím, než odešla na poradu.",
+      "expected_aliases": [
+        "ano"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Ano, Anna zkontrolovala kalendář předtím, než odešla na poradu.",
+        "rationale": "Z myšlenkových uzlů vyplývá, že Anna po napsání e-mailu zkontrolovala kalendář (T3) a následně odešla na poradu (T4).",
+        "used_nodes": [
+          "T3",
+          "T4"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "temporal_order",
+      "question_id": "calendar_before_meeting",
+      "question": "Zkontrolovala Anna kalendář před odchodem na poradu?",
+      "variant": "hierarchical_loop",
+      "answer": "Ano, Anna zkontrolovala kalendář před odchodem na poradu.",
+      "expected_aliases": [
+        "ano"
+      ],
+      "correct": true,
+      "raw_result": {
+        "status": "answered",
+        "answer": "Ano, Anna zkontrolovala kalendář před odchodem na poradu.",
+        "rationale": "Z myšlenkového uzlu T3 vyplývá, že Anna zkontrolovala kalendář po napsání e-mailu, a uzel T5 potvrzuje časovou posloupnost, kde tato kontrola proběhla před odchodem na poradu.",
+        "used_nodes": [
+          "T3",
+          "T5"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "false_belief",
+      "question_id": "filip_search",
+      "question": "Kde bude Filip pravděpodobně hledat knihu?",
+      "variant": "direct",
+      "answer": "Na stole.",
+      "expected_aliases": [
+        "na stole",
+        "stole"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Na stole.",
+        "rationale": "Filip neviděl Martu knihu přesunout, proto se domnívá, že zůstala na původním místě.",
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "false_belief",
+      "question_id": "filip_search",
+      "question": "Kde bude Filip pravděpodobně hledat knihu?",
+      "variant": "reasoning",
+      "answer": "Filip bude knihu hledat na stole.",
+      "expected_aliases": [
+        "na stole",
+        "stole"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Filip bude knihu hledat na stole.",
+        "rationale": "Filip neviděl, jak Marta knihu přesunula, proto se řídí svým posledním známým údajem o její poloze.",
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "false_belief",
+      "question_id": "filip_search",
+      "question": "Kde bude Filip pravděpodobně hledat knihu?",
+      "variant": "summary",
+      "answer": "Filip bude knihu hledat na stole.",
+      "expected_aliases": [
+        "na stole",
+        "stole"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Filip bude knihu hledat na stole.",
+        "rationale": "Filip nebyl přítomen, když Marta knihu přemístila, a proto má stále informaci, že kniha leží na původním místě.",
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "false_belief",
+      "question_id": "filip_search",
+      "question": "Kde bude Filip pravděpodobně hledat knihu?",
+      "variant": "flat",
+      "answer": "Filip bude knihu pravděpodobně hledat na stole.",
+      "expected_aliases": [
+        "na stole",
+        "stole"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Filip bude knihu pravděpodobně hledat na stole.",
+        "rationale": "Filip neviděl, jak Marta knihu přesunula do tašky, a proto se domnívá, že kniha stále leží na místě, kde ji viděl ráno, tedy na stole.",
+        "used_nodes": [
+          "T1",
+          "T2",
+          "T3"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "false_belief",
+      "question_id": "filip_search",
+      "question": "Kde bude Filip pravděpodobně hledat knihu?",
+      "variant": "hierarchical",
+      "answer": "Filip bude knihu pravděpodobně hledat na stole.",
+      "expected_aliases": [
+        "na stole",
+        "stole"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Filip bude knihu pravděpodobně hledat na stole.",
+        "rationale": "Filip se domnívá, že kniha zůstala na stole, protože neviděl, jak ji Marta přesunula do tašky. Vzhledem k tomu, že o tomto přesunu neví, bude hledat na místě, kde ji viděl naposledy.",
+        "used_nodes": [
+          "T1",
+          "T2",
+          "T3"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "false_belief",
+      "question_id": "filip_search",
+      "question": "Kde bude Filip pravděpodobně hledat knihu?",
+      "variant": "random_hierarchy",
+      "answer": "Filip bude pravděpodobně hledat knihu na stole.",
+      "expected_aliases": [
+        "na stole",
+        "stole"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Filip bude pravděpodobně hledat knihu na stole.",
+        "rationale": "Filip se domnívá, že kniha zůstala na stole, protože nebyl přítomen, když ji Marta přesunula do tašky.",
+        "used_nodes": [
+          "T2",
+          "T3"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "false_belief",
+      "question_id": "filip_search",
+      "question": "Kde bude Filip pravděpodobně hledat knihu?",
+      "variant": "hierarchical_loop",
+      "answer": "Filip bude pravděpodobně hledat knihu na stole.",
+      "expected_aliases": [
+        "na stole",
+        "stole"
+      ],
+      "correct": true,
+      "raw_result": {
+        "status": "answered",
+        "answer": "Filip bude pravděpodobně hledat knihu na stole.",
+        "rationale": "Na základě myšlenkového uzlu T3 Filip věří, že kniha zůstala na stole, protože nebyl přítomen, když ji Marta přesunula (T2). Lidé obvykle hledají předměty tam, kde se domnívají, že se nacházejí.",
+        "used_nodes": [
+          "T2",
+          "T3"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "false_belief",
+      "question_id": "real_location",
+      "question": "Kde je kniha ve skutečnosti?",
+      "variant": "direct",
+      "answer": "V tašce.",
+      "expected_aliases": [
+        "v tašce",
+        "tašce"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "V tašce.",
+        "rationale": "Marta knihu fyzicky přemístila ze stolu do tašky, což je její aktuální poloha.",
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "false_belief",
+      "question_id": "real_location",
+      "question": "Kde je kniha ve skutečnosti?",
+      "variant": "reasoning",
+      "answer": "Kniha je v tašce.",
+      "expected_aliases": [
+        "v tašce",
+        "tašce"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Kniha je v tašce.",
+        "rationale": "Marta ji tam fyzicky přemístila, zatímco Filip o tom nevěděl.",
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "false_belief",
+      "question_id": "real_location",
+      "question": "Kde je kniha ve skutečnosti?",
+      "variant": "summary",
+      "answer": "Kniha je v tašce.",
+      "expected_aliases": [
+        "v tašce",
+        "tašce"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Kniha je v tašce.",
+        "rationale": "Shrnutí uvádí, že Marta přemístila knihu ze stolu do tašky, což znamená, že se tam nyní fyzicky nachází.",
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "false_belief",
+      "question_id": "real_location",
+      "question": "Kde je kniha ve skutečnosti?",
+      "variant": "flat",
+      "answer": "Kniha se ve skutečnosti nachází v tašce.",
+      "expected_aliases": [
+        "v tašce",
+        "tašce"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Kniha se ve skutečnosti nachází v tašce.",
+        "rationale": "Z dostupných myšlenkových uzlů vyplývá, že ačkoliv byla kniha ráno na stole a Filip se domnívá, že tam stále je, Marta ji mezitím přesunula do tašky, kde se nyní nachází.",
+        "used_nodes": [
+          "T1",
+          "T2",
+          "T3",
+          "T4"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "false_belief",
+      "question_id": "real_location",
+      "question": "Kde je kniha ve skutečnosti?",
+      "variant": "hierarchical",
+      "answer": "Kniha se ve skutečnosti nachází v tašce.",
+      "expected_aliases": [
+        "v tašce",
+        "tašce"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Kniha se ve skutečnosti nachází v tašce.",
+        "rationale": "Na základě dostupných informací Marta knihu přesunula ze stolu do tašky v době, kdy u toho Filip nebyl, což potvrzuje, že kniha je nyní v tašce, přestože se Filip mylně domnívá, že je stále na stole.",
+        "used_nodes": [
+          "T2",
+          "T4"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "false_belief",
+      "question_id": "real_location",
+      "question": "Kde je kniha ve skutečnosti?",
+      "variant": "random_hierarchy",
+      "answer": "Kniha se nachází v tašce.",
+      "expected_aliases": [
+        "v tašce",
+        "tašce"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Kniha se nachází v tašce.",
+        "rationale": "Podle dostupných informací Marta přesunula knihu ze stolu do tašky, když Filip nebyl v místnosti, což potvrzuje její aktuální polohu.",
+        "used_nodes": [
+          "T1",
+          "T2",
+          "T4"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "false_belief",
+      "question_id": "real_location",
+      "question": "Kde je kniha ve skutečnosti?",
+      "variant": "hierarchical_loop",
+      "answer": "Kniha se ve skutečnosti nachází v tašce.",
+      "expected_aliases": [
+        "v tašce",
+        "tašce"
+      ],
+      "correct": true,
+      "raw_result": {
+        "status": "answered",
+        "answer": "Kniha se ve skutečnosti nachází v tašce.",
+        "rationale": "Na základě myšlenkového uzlu T2 a T4 je potvrzeno, že Marta knihu přesunula do tašky a ví o její aktuální poloze, zatímco Filipovo přesvědčení o tom, že je na stole, je mylné.",
+        "used_nodes": [
+          "T2",
+          "T4"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "plan_constraints",
+      "question_id": "approval_deadline",
+      "question": "Do kdy nejpozději musí Lucie získat Martinovo schválení, když je Martin dostupný jen do určitého času?",
+      "variant": "direct",
+      "answer": "14:00",
+      "expected_aliases": [
+        "14:00",
+        "do 14:00",
+        "před 14:00"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "14:00",
+        "rationale": "Martin je dostupný pouze do 14:00, což je nejzazší možný termín pro získání schválení, aby Lucie stihla export a odeslání do 15:00.",
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "plan_constraints",
+      "question_id": "approval_deadline",
+      "question": "Do kdy nejpozději musí Lucie získat Martinovo schválení, když je Martin dostupný jen do určitého času?",
+      "variant": "reasoning",
+      "answer": "14:00",
+      "expected_aliases": [
+        "14:00",
+        "do 14:00",
+        "před 14:00"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "14:00",
+        "rationale": "Martin je dostupný pouze do 14:00, což je nejzazší možný termín pro získání jeho schválení.",
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "plan_constraints",
+      "question_id": "approval_deadline",
+      "question": "Do kdy nejpozději musí Lucie získat Martinovo schválení, když je Martin dostupný jen do určitého času?",
+      "variant": "summary",
+      "answer": "Lucie musí získat Martinovo schválení nejpozději do 14:00.",
+      "expected_aliases": [
+        "14:00",
+        "do 14:00",
+        "před 14:00"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Lucie musí získat Martinovo schválení nejpozději do 14:00.",
+        "rationale": "Podle shrnutí musí být prezentace odeslána do 15:00, export trvá 30 minut (tedy musí začít nejpozději ve 14:30) a Martin musí schválení provést do 14:00.",
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "plan_constraints",
+      "question_id": "approval_deadline",
+      "question": "Do kdy nejpozději musí Lucie získat Martinovo schválení, když je Martin dostupný jen do určitého času?",
+      "variant": "flat",
+      "answer": "Lucie musí získat Martinovo schválení nejpozději do 14:30.",
+      "expected_aliases": [
+        "14:00",
+        "do 14:00",
+        "před 14:00"
+      ],
+      "correct": false,
+      "raw_result": {
+        "answer": "Lucie musí získat Martinovo schválení nejpozději do 14:30.",
+        "rationale": "Lucie musí odeslat prezentaci do 15:00 (T1). Export prezentace po schválení trvá 30 minut (T4), což znamená, že schválení musí mít nejpozději v 14:30. Jelikož je Martin dostupný do 14:00 (T3), je tento termín v rámci jeho dostupnosti splnitelný.",
+        "used_nodes": [
+          "T1",
+          "T3",
+          "T4"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "plan_constraints",
+      "question_id": "approval_deadline",
+      "question": "Do kdy nejpozději musí Lucie získat Martinovo schválení, když je Martin dostupný jen do určitého času?",
+      "variant": "hierarchical",
+      "answer": "Lucie musí získat Martinovo schválení nejpozději do 14:00.",
+      "expected_aliases": [
+        "14:00",
+        "do 14:00",
+        "před 14:00"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Lucie musí získat Martinovo schválení nejpozději do 14:00.",
+        "rationale": "Martin je dostupný pouze do 14:00. I když je termín odeslání prezentace v 15:00 a export po schválení trvá 30 minut, Martinova omezená dostupnost je limitujícím faktorem, který vyžaduje získání schválení nejpozději v čase jeho odchodu.",
+        "used_nodes": [
+          "T3",
+          "T6",
+          "T8"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "plan_constraints",
+      "question_id": "approval_deadline",
+      "question": "Do kdy nejpozději musí Lucie získat Martinovo schválení, když je Martin dostupný jen do určitého času?",
+      "variant": "random_hierarchy",
+      "answer": "Lucie musí získat Martinovo schválení nejpozději do 14:30.",
+      "expected_aliases": [
+        "14:00",
+        "do 14:00",
+        "před 14:00"
+      ],
+      "correct": false,
+      "raw_result": {
+        "answer": "Lucie musí získat Martinovo schválení nejpozději do 14:30.",
+        "rationale": "Lucie musí odeslat prezentaci do 15:00 (T1). Export prezentace po schválení trvá 30 minut (T4), což znamená, že schválení musí mít hotové nejpozději v 14:30. Jelikož je Martin dostupný do 14:00 (T3), je tento termín v rámci jeho dostupnosti splnitelný.",
+        "used_nodes": [
+          "T1",
+          "T3",
+          "T4"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "plan_constraints",
+      "question_id": "approval_deadline",
+      "question": "Do kdy nejpozději musí Lucie získat Martinovo schválení, když je Martin dostupný jen do určitého času?",
+      "variant": "hierarchical_loop",
+      "answer": "Lucie musí získat Martinovo schválení nejpozději do 14:00.",
+      "expected_aliases": [
+        "14:00",
+        "do 14:00",
+        "před 14:00"
+      ],
+      "correct": true,
+      "raw_result": {
+        "status": "answered",
+        "answer": "Lucie musí získat Martinovo schválení nejpozději do 14:00.",
+        "rationale": "Podle myšlenkového uzlu T3 je Martin dostupný pouze do 14:00. I když export trvá 30 minut (T4) a termín odeslání je 15:00 (T1), Martinovo schválení je limitováno jeho dostupností, která končí právě ve 14:00.",
+        "used_nodes": [
+          "T3",
+          "T6",
+          "T8"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "plan_constraints",
+      "question_id": "send_without_approval",
+      "question": "Je rozumné poslat prezentaci bez schválení?",
+      "variant": "direct",
+      "answer": "Ne.",
+      "expected_aliases": [
+        "ne",
+        "není"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Ne.",
+        "rationale": "Odeslání bez schválení vede k odmítnutí klientem, což nesplní účel úkolu.",
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "plan_constraints",
+      "question_id": "send_without_approval",
+      "question": "Je rozumné poslat prezentaci bez schválení?",
+      "variant": "reasoning",
+      "answer": "Ne, není to rozumné.",
+      "expected_aliases": [
+        "ne",
+        "není"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Ne, není to rozumné.",
+        "rationale": "Odeslání bez schválení vede k jistému odmítnutí klientem, zatímco při včasné spolupráci s Martinem je stále možné stihnout termín.",
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "plan_constraints",
+      "question_id": "send_without_approval",
+      "question": "Je rozumné poslat prezentaci bez schválení?",
+      "variant": "summary",
+      "answer": "Ne, není to rozumné.",
+      "expected_aliases": [
+        "ne",
+        "není"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Ne, není to rozumné.",
+        "rationale": "Zadaný proces vyžaduje schválení prezentace Martinem do 14:00 a následný export trvající 30 minut, aby byla dodržena lhůta odeslání do 15:00. Odeslání bez schválení by porušilo stanovený pracovní postup.",
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "plan_constraints",
+      "question_id": "send_without_approval",
+      "question": "Je rozumné poslat prezentaci bez schválení?",
+      "variant": "flat",
+      "answer": "Ne, odeslat prezentaci bez schválení není rozumné.",
+      "expected_aliases": [
+        "ne",
+        "není"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Ne, odeslat prezentaci bez schválení není rozumné.",
+        "rationale": "Odeslání neschválené prezentace přímo vede k tomu, že ji klient odmítne. I když je termín odeslání do 15:00 a Martin je dostupný pouze do 14:00, je nutné proces schválení dodržet, aby byla zajištěna akceptace klientem.",
+        "used_nodes": [
+          "T1",
+          "T2",
+          "T3",
+          "T5"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "plan_constraints",
+      "question_id": "send_without_approval",
+      "question": "Je rozumné poslat prezentaci bez schválení?",
+      "variant": "hierarchical",
+      "answer": "Ne, odeslání prezentace bez schválení není rozumné.",
+      "expected_aliases": [
+        "ne",
+        "není"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Ne, odeslání prezentace bez schválení není rozumné.",
+        "rationale": "Odeslání neschválené prezentace přímo vede k jejímu odmítnutí klientem. I když je termín odeslání v 15:00, proces schválení a následného exportu vyžaduje, aby byla prezentace schválena nejpozději do 14:00, kdy končí dostupnost Martina.",
+        "used_nodes": [
+          "T2",
+          "T3",
+          "T4",
+          "T5",
+          "T6",
+          "T8"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "plan_constraints",
+      "question_id": "send_without_approval",
+      "question": "Je rozumné poslat prezentaci bez schválení?",
+      "variant": "random_hierarchy",
+      "answer": "Ne, odeslat prezentaci bez schválení není rozumné.",
+      "expected_aliases": [
+        "ne",
+        "není"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Ne, odeslat prezentaci bez schválení není rozumné.",
+        "rationale": "Prezentace vyžaduje schválení od Martina a odeslání neschváleného dokumentu přímo vede k tomu, že ji klient odmítne.",
+        "used_nodes": [
+          "T2",
+          "T5"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "plan_constraints",
+      "question_id": "send_without_approval",
+      "question": "Je rozumné poslat prezentaci bez schválení?",
+      "variant": "hierarchical_loop",
+      "answer": "Ne, odeslání prezentace bez schválení není rozumné.",
+      "expected_aliases": [
+        "ne",
+        "není"
+      ],
+      "correct": true,
+      "raw_result": {
+        "status": "answered",
+        "answer": "Ne, odeslání prezentace bez schválení není rozumné.",
+        "rationale": "Z myšlenkového grafu vyplývá, že odeslání neschválené prezentace vede k jejímu odmítnutí klientem (T5). I když je časový limit pro odeslání 15:00, proces schválení a následného exportu vyžaduje, aby byl proces dokončen nejpozději do 14:00 (T8). Odeslání bez schválení tedy sice řeší časový tlak, ale přímo porušuje požadavek na kvalitu/schválení, což vede k neúspěchu u klienta.",
+        "used_nodes": [
+          "T1",
+          "T2",
+          "T3",
+          "T4",
+          "T5",
+          "T6",
+          "T7",
+          "T8"
+        ],
+        "confidence": 1.0
+      }
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "transport_delay",
+      "context_chars": 264,
+      "node_count": 6,
+      "nodes_by_level": {
+        "1": 4,
+        "2": 2
+      },
+      "summary": "Petr zmeškal vlak do Prahy kvůli zpožděnému autobusu a hledá způsob, jak se do cíle dostat včas, přičemž zvažuje taxi nebo odvoz kolegou.",
+      "nodes": [
+        {
+          "id": "T1",
+          "level": 1,
+          "thought": "Petrův autobus měl čtyřicetiminutové zpoždění.",
+          "parents": [],
+          "source": [
+            "Petrův autobus přijel o čtyřicet minut později."
+          ],
+          "operation": "atom",
+          "support": "entailed",
+          "utility": 0.8
+        },
+        {
+          "id": "T2",
+          "level": 1,
+          "thought": "Petr nestihl vlak do Prahy.",
+          "parents": [],
+          "source": [
+            "Kvůli tomu Petr nestihl vlak do Prahy."
+          ],
+          "operation": "atom",
+          "support": "entailed",
+          "utility": 0.9
+        },
+        {
+          "id": "T3",
+          "level": 1,
+          "thought": "Petr potřebuje být v Praze za hodinu, ale další vlak jede až za dvě hodiny.",
+          "parents": [],
+          "source": [
+            "Další pravidelný vlak jede za dvě hodiny, ale Petr má být v Praze už za hodinu."
+          ],
+          "operation": "atom",
+          "support": "entailed",
+          "utility": 0.9
+        },
+        {
+          "id": "T4",
+          "level": 1,
+          "thought": "Petr má k dispozici taxi nebo možnost spolujízdy s kolegou.",
+          "parents": [],
+          "source": [
+            "Na nádraží je stanoviště taxi a Petr může také zavolat kolegovi, který jede autem stejným směrem."
+          ],
+          "operation": "atom",
+          "support": "entailed",
+          "utility": 0.8
+        },
+        {
+          "id": "T5",
+          "level": 2,
+          "thought": "Petr se nachází v časové tísni kvůli zpoždění autobusu a nedostupnosti dalšího vlaku.",
+          "parents": [
+            "T1",
+            "T2",
+            "T3"
+          ],
+          "source": [
+            "Petrův autobus přijel o čtyřicet minut později.",
+            "Kvůli tomu Petr nestihl vlak do Prahy.",
+            "Další pravidelný vlak jede za dvě hodiny, ale Petr má být v Praze už za hodinu."
+          ],
+          "operation": "compose",
+          "support": "entailed",
+          "utility": 0.9
+        },
+        {
+          "id": "T6",
+          "level": 2,
+          "thought": "Petr musí využít alternativní dopravu, aby stihl svůj časový limit.",
+          "parents": [
+            "T4",
+            "T5"
+          ],
+          "source": [
+            "Na nádraží je stanoviště taxi a Petr může také zavolat kolegovi, který jede autem stejným směrem.",
+            "Petr se nachází v časové tísni kvůli zpoždění autobusu a nedostupnosti dalšího vlaku."
+          ],
+          "operation": "compose",
+          "support": "probable",
+          "utility": 1.0
+        }
+      ]
+    },
+    {
+      "id": "nested_location",
+      "context_chars": 135,
+      "node_count": 7,
+      "nodes_by_level": {
+        "1": 5,
+        "2": 1,
+        "3": 1
+      },
+      "summary": "Klíč se nachází v modré krabičce umístěné v batohu, který je uložen ve skříni v pracovně; na chodbě se nachází další prázdná krabička.",
+      "nodes": [
+        {
+          "id": "T1",
+          "level": 1,
+          "thought": "Klíč je umístěn v modré krabičce.",
+          "parents": [],
+          "source": [
+            "Klíč je v modré krabičce."
+          ],
+          "operation": "atom",
+          "support": "entailed",
+          "utility": 0.9
+        },
+        {
+          "id": "T2",
+          "level": 1,
+          "thought": "Modrá krabička se nachází uvnitř batohu.",
+          "parents": [],
+          "source": [
+            "Modrá krabička je v batohu."
+          ],
+          "operation": "atom",
+          "support": "entailed",
+          "utility": 0.8
+        },
+        {
+          "id": "T3",
+          "level": 1,
+          "thought": "Batoh je uložen ve skříni.",
+          "parents": [],
+          "source": [
+            "Batoh je ve skříni."
+          ],
+          "operation": "atom",
+          "support": "entailed",
+          "utility": 0.8
+        },
+        {
+          "id": "T4",
+          "level": 1,
+          "thought": "Skříň je umístěna v pracovně.",
+          "parents": [],
+          "source": [
+            "Skříň stojí v pracovně."
+          ],
+          "operation": "atom",
+          "support": "entailed",
+          "utility": 0.7
+        },
+        {
+          "id": "T5",
+          "level": 1,
+          "thought": "Na chodbě se nachází prázdná krabička.",
+          "parents": [],
+          "source": [
+            "Na chodbě leží jiná prázdná krabička."
+          ],
+          "operation": "atom",
+          "support": "entailed",
+          "utility": 0.6
+        },
+        {
+          "id": "T6",
+          "level": 2,
+          "thought": "Klíč je uložen v batohu, který je ve skříni v pracovně.",
+          "parents": [
+            "T1",
+            "T2",
+            "T3"
+          ],
+          "source": [
+            "Klíč je v modré krabičce.",
+            "Modrá krabička je v batohu.",
+            "Batoh je ve skříni."
+          ],
+          "operation": "compose",
+          "support": "entailed",
+          "utility": 1.0
+        },
+        {
+          "id": "T7",
+          "level": 3,
+          "thought": "Klíč se nachází v pracovně uvnitř skříně.",
+          "parents": [
+            "T4",
+            "T6"
+          ],
+          "source": [
+            "Skříň stojí v pracovně.",
+            "Klíč je uložen v batohu, který je ve skříni v pracovně."
+          ],
+          "operation": "compose",
+          "support": "entailed",
+          "utility": 1.0
+        }
+      ]
+    },
+    {
+      "id": "temporal_order",
+      "context_chars": 196,
+      "node_count": 7,
+      "nodes_by_level": {
+        "1": 4,
+        "2": 2,
+        "3": 1
+      },
+      "summary": "Anna zapnula konvici, napsala e-mail, zkontrolovala kalendář a odešla na poradu.",
+      "nodes": [
+        {
+          "id": "T1",
+          "level": 1,
+          "thought": "Anna zapnula konvici.",
+          "parents": [],
+          "source": [
+            "Anna nejdřív zapla konvici"
+          ],
+          "operation": "atom",
+          "support": "entailed",
+          "utility": 0.5
+        },
+        {
+          "id": "T2",
+          "level": 1,
+          "thought": "Anna napsala e-mail.",
+          "parents": [],
+          "source": [
+            "potom napsala e-mail"
+          ],
+          "operation": "atom",
+          "support": "entailed",
+          "utility": 0.5
+        },
+        {
+          "id": "T3",
+          "level": 1,
+          "thought": "Anna zkontrolovala kalendář.",
+          "parents": [],
+          "source": [
+            "Po e-mailu zkontrolovala kalendář"
+          ],
+          "operation": "atom",
+          "support": "entailed",
+          "utility": 0.5
+        },
+        {
+          "id": "T4",
+          "level": 1,
+          "thought": "Anna odešla na poradu.",
+          "parents": [],
+          "source": [
+            "Než odešla na poradu"
+          ],
+          "operation": "atom",
+          "support": "entailed",
+          "utility": 0.5
+        },
+        {
+          "id": "T5",
+          "level": 2,
+          "thought": "Časová posloupnost činností před odchodem na poradu.",
+          "parents": [
+            "T1",
+            "T2",
+            "T3",
+            "T4"
+          ],
+          "source": [
+            "Anna nejdřív zapla konvici a potom napsala e-mail. Po e-mailu zkontrolovala kalendář. Než odešla na poradu, zkontrolovala kalendář."
+          ],
+          "operation": "compose",
+          "support": "entailed",
+          "utility": 0.9
+        },
+        {
+          "id": "T6",
+          "level": 2,
+          "thought": "Ukončení aktivit po odchodu na poradu.",
+          "parents": [
+            "T4"
+          ],
+          "source": [
+            "Po odchodu na poradu už žádnou další uvedenou činnost neudělala."
+          ],
+          "operation": "compose",
+          "support": "entailed",
+          "utility": 0.8
+        },
+        {
+          "id": "T7",
+          "level": 3,
+          "thought": "Kompletní chronologický přehled Anniných aktivit.",
+          "parents": [
+            "T5",
+            "T6"
+          ],
+          "source": [
+            "Celý kontext"
+          ],
+          "operation": "compose",
+          "support": "entailed",
+          "utility": 1.0
+        }
+      ]
+    },
+    {
+      "id": "false_belief",
+      "context_chars": 175,
+      "node_count": 7,
+      "nodes_by_level": {
+        "1": 4,
+        "2": 2,
+        "3": 1
+      },
+      "summary": "Marta přemístila knihu ze stolu do tašky, zatímco Filip nebyl přítomen, a Filip se mylně domnívá, že kniha stále leží na stole.",
+      "nodes": [
+        {
+          "id": "T1",
+          "level": 1,
+          "thought": "Kniha byla ráno na stole.",
+          "parents": [],
+          "source": [
+            "Kniha byla ráno na stole."
+          ],
+          "operation": "atom",
+          "support": "entailed",
+          "utility": 0.8
+        },
+        {
+          "id": "T2",
+          "level": 1,
+          "thought": "Marta přesunula knihu do tašky bez Filipovy přítomnosti.",
+          "parents": [],
+          "source": [
+            "Marta přesunula knihu do tašky, když Filip nebyl v místnosti."
+          ],
+          "operation": "atom",
+          "support": "entailed",
+          "utility": 0.9
+        },
+        {
+          "id": "T3",
+          "level": 1,
+          "thought": "Filip se domnívá, že kniha je stále na stole.",
+          "parents": [],
+          "source": [
+            "Filip později řekl, že podle něj kniha zůstala na stole."
+          ],
+          "operation": "atom",
+          "support": "entailed",
+          "utility": 0.9
+        },
+        {
+          "id": "T4",
+          "level": 1,
+          "thought": "Marta zná skutečnou polohu knihy.",
+          "parents": [],
+          "source": [
+            "Marta ví, že kniha je v tašce."
+          ],
+          "operation": "atom",
+          "support": "entailed",
+          "utility": 0.8
+        },
+        {
+          "id": "T5",
+          "level": 2,
+          "thought": "Mezi Filipovým přesvědčením a realitou existuje rozpor způsobený Martou.",
+          "parents": [
+            "T2",
+            "T3"
+          ],
+          "source": [
+            "Marta přesunula knihu do tašky, když Filip nebyl v místnosti.",
+            "Filip později řekl, že podle něj kniha zůstala na stole."
+          ],
+          "operation": "compose",
+          "support": "entailed",
+          "utility": 0.9
+        },
+        {
+          "id": "T6",
+          "level": 2,
+          "thought": "Marta má informační převahu nad Filipem ohledně umístění knihy.",
+          "parents": [
+            "T2",
+            "T4"
+          ],
+          "source": [
+            "Marta přesunula knihu do tašky, když Filip nebyl v místnosti.",
+            "Marta ví, že kniha je v tašce."
+          ],
+          "operation": "compose",
+          "support": "entailed",
+          "utility": 0.85
+        },
+        {
+          "id": "T7",
+          "level": 3,
+          "thought": "Filipovo mylné přesvědčení je přímým důsledkem Martiny manipulace s objektem mimo jeho dohled.",
+          "parents": [
+            "T5",
+            "T6"
+          ],
+          "source": [
+            "Marta přesunula knihu do tašky, když Filip nebyl v místnosti.",
+            "Filip později řekl, že podle něj kniha zůstala na stole.",
+            "Marta ví, že kniha je v tašce."
+          ],
+          "operation": "compose",
+          "support": "entailed",
+          "utility": 0.95
+        }
+      ]
+    },
+    {
+      "id": "plan_constraints",
+      "context_chars": 251,
+      "node_count": 8,
+      "nodes_by_level": {
+        "1": 5,
+        "2": 2,
+        "3": 1
+      },
+      "summary": "Lucie musí do 15:00 odeslat klientovi schválenou prezentaci, přičemž Martin ji musí schválit do 14:00 a následný export trvá 30 minut.",
+      "nodes": [
+        {
+          "id": "T1",
+          "level": 1,
+          "thought": "Lucie musí odeslat prezentaci klientovi do 15:00.",
+          "parents": [],
+          "source": [
+            "Lucie má připravit prezentaci a odeslat ji klientovi do 15:00."
+          ],
+          "operation": "atom",
+          "support": "entailed",
+          "utility": 0.9
+        },
+        {
+          "id": "T2",
+          "level": 1,
+          "thought": "Prezentace vyžaduje schválení od Martina.",
+          "parents": [],
+          "source": [
+            "Prezentace potřebuje schválení od Martina."
+          ],
+          "operation": "atom",
+          "support": "entailed",
+          "utility": 0.8
+        },
+        {
+          "id": "T3",
+          "level": 1,
+          "thought": "Martin je dostupný pouze do 14:00.",
+          "parents": [],
+          "source": [
+            "Martin je dostupný jen do 14:00."
+          ],
+          "operation": "atom",
+          "support": "entailed",
+          "utility": 0.9
+        },
+        {
+          "id": "T4",
+          "level": 1,
+          "thought": "Export prezentace po schválení trvá 30 minut.",
+          "parents": [],
+          "source": [
+            "Export prezentace po schválení trvá třicet minut."
+          ],
+          "operation": "atom",
+          "support": "entailed",
+          "utility": 0.7
+        },
+        {
+          "id": "T5",
+          "level": 1,
+          "thought": "Odeslání neschválené prezentace vede k odmítnutí klientem.",
+          "parents": [],
+          "source": [
+            "Pokud Lucie pošle prezentaci bez schválení, klient ji odmítne."
+          ],
+          "operation": "atom",
+          "support": "entailed",
+          "utility": 0.9
+        },
+        {
+          "id": "T6",
+          "level": 2,
+          "thought": "Martin musí schválit prezentaci nejpozději do 14:00, aby stihl export.",
+          "parents": [
+            "T2",
+            "T3",
+            "T4"
+          ],
+          "source": [
+            "Martin je dostupný jen do 14:00.",
+            "Export prezentace po schválení trvá třicet minut."
+          ],
+          "operation": "synthesis",
+          "support": "entailed",
+          "utility": 1.0
+        },
+        {
+          "id": "T7",
+          "level": 2,
+          "thought": "Lucie musí mít prezentaci připravenou ke schválení před 14:00.",
+          "parents": [
+            "T6"
+          ],
+          "source": [
+            "Martin je dostupný jen do 14:00."
+          ],
+          "operation": "synthesis",
+          "support": "entailed",
+          "utility": 1.0
+        },
+        {
+          "id": "T8",
+          "level": 3,
+          "thought": "Kritický časový limit pro schválení prezentace je 14:00, jinak nelze dodržet termín odeslání.",
+          "parents": [
+            "T1",
+            "T6",
+            "T7"
+          ],
+          "source": [
+            "Lucie má připravit prezentaci a odeslat ji klientovi do 15:00.",
+            "Martin je dostupný jen do 14:00.",
+            "Export prezentace po schválení trvá třicet minut."
+          ],
+          "operation": "synthesis",
+          "support": "entailed",
+          "utility": 1.0
+        }
+      ]
+    }
+  ],
+  "api_calls": [
+    {
+      "role": "graph",
+      "attempt": 1,
+      "latency_s": 2.498744099866599,
+      "prompt_chars": 1004,
+      "response_chars": 2169
+    },
+    {
+      "role": "summary",
+      "attempt": 1,
+      "latency_s": 0.6273549003526568,
+      "prompt_chars": 377,
+      "response_chars": 156
+    },
+    {
+      "role": "answer_direct",
+      "attempt": 1,
+      "latency_s": 0.6310565997846425,
+      "prompt_chars": 445,
+      "response_chars": 133
+    },
+    {
+      "role": "answer_reasoning",
+      "attempt": 1,
+      "latency_s": 0.8386448998935521,
+      "prompt_chars": 455,
+      "response_chars": 198
+    },
+    {
+      "role": "answer_summary",
+      "attempt": 1,
+      "latency_s": 1.0575751001015306,
+      "prompt_chars": 335,
+      "response_chars": 337
+    },
+    {
+      "role": "answer_flat",
+      "attempt": 1,
+      "latency_s": 0.8352671996690333,
+      "prompt_chars": 1572,
+      "response_chars": 256
+    },
+    {
+      "role": "answer_hierarchical",
+      "attempt": 1,
+      "latency_s": 0.8430166998878121,
+      "prompt_chars": 2546,
+      "response_chars": 298
+    },
+    {
+      "role": "answer_random_hierarchy",
+      "attempt": 1,
+      "latency_s": 0.8325379001908004,
+      "prompt_chars": 2257,
+      "response_chars": 284
+    },
+    {
+      "role": "answer_loop_first",
+      "attempt": 1,
+      "latency_s": 1.0418933001346886,
+      "prompt_chars": 2567,
+      "response_chars": 353
+    },
+    {
+      "role": "answer_direct",
+      "attempt": 1,
+      "latency_s": 0.8410829999484122,
+      "prompt_chars": 431,
+      "response_chars": 186
+    },
+    {
+      "role": "answer_reasoning",
+      "attempt": 1,
+      "latency_s": 0.6305929999798536,
+      "prompt_chars": 441,
+      "response_chars": 220
+    },
+    {
+      "role": "answer_summary",
+      "attempt": 1,
+      "latency_s": 0.6377425999380648,
+      "prompt_chars": 321,
+      "response_chars": 262
+    },
+    {
+      "role": "answer_flat",
+      "attempt": 1,
+      "latency_s": 0.985552900005132,
+      "prompt_chars": 1558,
+      "response_chars": 441
+    },
+    {
+      "role": "answer_hierarchical",
+      "attempt": 1,
+      "latency_s": 1.1010321001522243,
+      "prompt_chars": 2532,
+      "response_chars": 514
+    },
+    {
+      "role": "answer_random_hierarchy",
+      "attempt": 1,
+      "latency_s": 1.0464134998619556,
+      "prompt_chars": 2243,
+      "response_chars": 365
+    },
+    {
+      "role": "answer_loop_first",
+      "attempt": 1,
+      "latency_s": 1.0466068000532687,
+      "prompt_chars": 2553,
+      "response_chars": 483
+    },
+    {
+      "role": "graph",
+      "attempt": 1,
+      "latency_s": 2.094293999951333,
+      "prompt_chars": 875,
+      "response_chars": 1935
+    },
+    {
+      "role": "summary",
+      "attempt": 1,
+      "latency_s": 0.6257436000742018,
+      "prompt_chars": 248,
+      "response_chars": 149
+    },
+    {
+      "role": "answer_direct",
+      "attempt": 1,
+      "latency_s": 0.6337226000614464,
+      "prompt_chars": 287,
+      "response_chars": 189
+    },
+    {
+      "role": "answer_reasoning",
+      "attempt": 1,
+      "latency_s": 0.8332656002603471,
+      "prompt_chars": 297,
+      "response_chars": 233
+    },
+    {
+      "role": "answer_summary",
+      "attempt": 1,
+      "latency_s": 0.628987199626863,
+      "prompt_chars": 303,
+      "response_chars": 223
+    },
+    {
+      "role": "answer_flat",
+      "attempt": 1,
+      "latency_s": 0.8446339000947773,
+      "prompt_chars": 1554,
+      "response_chars": 323
+    },
+    {
+      "role": "answer_hierarchical",
+      "attempt": 1,
+      "latency_s": 0.8374979998916388,
+      "prompt_chars": 2275,
+      "response_chars": 350
+    },
+    {
+      "role": "answer_random_hierarchy",
+      "attempt": 1,
+      "latency_s": 0.8386339000426233,
+      "prompt_chars": 2158,
+      "response_chars": 372
+    },
+    {
+      "role": "answer_loop_first",
+      "attempt": 1,
+      "latency_s": 0.8328241999261081,
+      "prompt_chars": 2296,
+      "response_chars": 359
+    },
+    {
+      "role": "answer_direct",
+      "attempt": 1,
+      "latency_s": 0.8402601000852883,
+      "prompt_chars": 296,
+      "response_chars": 152
+    },
+    {
+      "role": "answer_reasoning",
+      "attempt": 1,
+      "latency_s": 0.6277872999198735,
+      "prompt_chars": 306,
+      "response_chars": 163
+    },
+    {
+      "role": "answer_summary",
+      "attempt": 1,
+      "latency_s": 0.835190299898386,
+      "prompt_chars": 312,
+      "response_chars": 209
+    },
+    {
+      "role": "answer_flat",
+      "attempt": 1,
+      "latency_s": 0.8469660999253392,
+      "prompt_chars": 1563,
+      "response_chars": 260
+    },
+    {
+      "role": "answer_hierarchical",
+      "attempt": 1,
+      "latency_s": 0.843658400233835,
+      "prompt_chars": 2284,
+      "response_chars": 275
+    },
+    {
+      "role": "answer_random_hierarchy",
+      "attempt": 1,
+      "latency_s": 0.8337342003360391,
+      "prompt_chars": 2167,
+      "response_chars": 263
+    },
+    {
+      "role": "answer_loop_first",
+      "attempt": 1,
+      "latency_s": 1.0475315996445715,
+      "prompt_chars": 2305,
+      "response_chars": 346
+    },
+    {
+      "role": "graph",
+      "attempt": 1,
+      "latency_s": 2.3148165000602603,
+      "prompt_chars": 936,
+      "response_chars": 1930
+    },
+    {
+      "role": "summary",
+      "attempt": 1,
+      "latency_s": 0.6245482000522316,
+      "prompt_chars": 309,
+      "response_chars": 99
+    },
+    {
+      "role": "answer_direct",
+      "attempt": 1,
+      "latency_s": 0.6271701003424823,
+      "prompt_chars": 358,
+      "response_chars": 150
+    },
+    {
+      "role": "answer_reasoning",
+      "attempt": 1,
+      "latency_s": 0.6308605000376701,
+      "prompt_chars": 368,
+      "response_chars": 155
+    },
+    {
+      "role": "answer_summary",
+      "attempt": 1,
+      "latency_s": 0.841040899977088,
+      "prompt_chars": 259,
+      "response_chars": 209
+    },
+    {
+      "role": "answer_flat",
+      "attempt": 1,
+      "latency_s": 0.8364498997107148,
+      "prompt_chars": 1275,
+      "response_chars": 302
+    },
+    {
+      "role": "answer_hierarchical",
+      "attempt": 1,
+      "latency_s": 0.8437254000455141,
+      "prompt_chars": 2280,
+      "response_chars": 376
+    },
+    {
+      "role": "answer_random_hierarchy",
+      "attempt": 1,
+      "latency_s": 0.8384513999335468,
+      "prompt_chars": 1844,
+      "response_chars": 328
+    },
+    {
+      "role": "answer_loop_first",
+      "attempt": 1,
+      "latency_s": 1.0430174004286528,
+      "prompt_chars": 2301,
+      "response_chars": 373
+    },
+    {
+      "role": "answer_direct",
+      "attempt": 1,
+      "latency_s": 0.6279090000316501,
+      "prompt_chars": 380,
+      "response_chars": 134
+    },
+    {
+      "role": "answer_reasoning",
+      "attempt": 1,
+      "latency_s": 0.6275821998715401,
+      "prompt_chars": 390,
+      "response_chars": 137
+    },
+    {
+      "role": "answer_summary",
+      "attempt": 1,
+      "latency_s": 0.6277487999759614,
+      "prompt_chars": 281,
+      "response_chars": 146
+    },
+    {
+      "role": "answer_flat",
+      "attempt": 1,
+      "latency_s": 0.8404328003525734,
+      "prompt_chars": 1297,
+      "response_chars": 280
+    },
+    {
+      "role": "answer_hierarchical",
+      "attempt": 1,
+      "latency_s": 0.8413744000717998,
+      "prompt_chars": 2302,
+      "response_chars": 319
+    },
+    {
+      "role": "answer_random_hierarchy",
+      "attempt": 1,
+      "latency_s": 0.8372045997530222,
+      "prompt_chars": 1866,
+      "response_chars": 280
+    },
+    {
+      "role": "answer_loop_first",
+      "attempt": 1,
+      "latency_s": 0.833404999691993,
+      "prompt_chars": 2323,
+      "response_chars": 356
+    },
+    {
+      "role": "graph",
+      "attempt": 1,
+      "latency_s": 2.513369799591601,
+      "prompt_chars": 915,
+      "response_chars": 2321
+    },
+    {
+      "role": "summary",
+      "attempt": 1,
+      "latency_s": 0.8397377002984285,
+      "prompt_chars": 288,
+      "response_chars": 146
+    },
+    {
+      "role": "answer_direct",
+      "attempt": 1,
+      "latency_s": 0.6334699001163244,
+      "prompt_chars": 349,
+      "response_chars": 151
+    },
+    {
+      "role": "answer_reasoning",
+      "attempt": 1,
+      "latency_s": 0.8351782001554966,
+      "prompt_chars": 359,
+      "response_chars": 190
+    },
+    {
+      "role": "answer_summary",
+      "attempt": 1,
+      "latency_s": 0.632190499920398,
+      "prompt_chars": 318,
+      "response_chars": 202
+    },
+    {
+      "role": "answer_flat",
+      "attempt": 1,
+      "latency_s": 0.8396761999465525,
+      "prompt_chars": 1428,
+      "response_chars": 291
+    },
+    {
+      "role": "answer_hierarchical",
+      "attempt": 1,
+      "latency_s": 0.8352235998027027,
+      "prompt_chars": 2701,
+      "response_chars": 323
+    },
+    {
+      "role": "answer_random_hierarchy",
+      "attempt": 1,
+      "latency_s": 0.8358256001956761,
+      "prompt_chars": 2065,
+      "response_chars": 249
+    },
+    {
+      "role": "answer_loop_first",
+      "attempt": 1,
+      "latency_s": 0.8370139999315143,
+      "prompt_chars": 2722,
+      "response_chars": 353
+    },
+    {
+      "role": "answer_direct",
+      "attempt": 1,
+      "latency_s": 0.6271595996804535,
+      "prompt_chars": 335,
+      "response_chars": 144
+    },
+    {
+      "role": "answer_reasoning",
+      "attempt": 1,
+      "latency_s": 0.6297061000950634,
+      "prompt_chars": 345,
+      "response_chars": 136
+    },
+    {
+      "role": "answer_summary",
+      "attempt": 1,
+      "latency_s": 0.8359706997871399,
+      "prompt_chars": 304,
+      "response_chars": 179
+    },
+    {
+      "role": "answer_flat",
+      "attempt": 1,
+      "latency_s": 1.044503299985081,
+      "prompt_chars": 1414,
+      "response_chars": 330
+    },
+    {
+      "role": "answer_hierarchical",
+      "attempt": 1,
+      "latency_s": 0.8482834999449551,
+      "prompt_chars": 2687,
+      "response_chars": 327
+    },
+    {
+      "role": "answer_random_hierarchy",
+      "attempt": 1,
+      "latency_s": 0.8289792998693883,
+      "prompt_chars": 2051,
+      "response_chars": 268
+    },
+    {
+      "role": "answer_loop_first",
+      "attempt": 1,
+      "latency_s": 0.8366709998808801,
+      "prompt_chars": 2708,
+      "response_chars": 327
+    },
+    {
+      "role": "graph",
+      "attempt": 1,
+      "latency_s": 2.7090174998156726,
+      "prompt_chars": 991,
+      "response_chars": 2557
+    },
+    {
+      "role": "summary",
+      "attempt": 1,
+      "latency_s": 0.6328818998299539,
+      "prompt_chars": 364,
+      "response_chars": 153
+    },
+    {
+      "role": "answer_direct",
+      "attempt": 1,
+      "latency_s": 0.8371982998214662,
+      "prompt_chars": 485,
+      "response_chars": 194
+    },
+    {
+      "role": "answer_reasoning",
+      "attempt": 1,
+      "latency_s": 0.8312007999047637,
+      "prompt_chars": 495,
+      "response_chars": 154
+    },
+    {
+      "role": "answer_summary",
+      "attempt": 1,
+      "latency_s": 0.8347277003340423,
+      "prompt_chars": 385,
+      "response_chars": 269
+    },
+    {
+      "role": "answer_flat",
+      "attempt": 1,
+      "latency_s": 0.8422854002565145,
+      "prompt_chars": 1813,
+      "response_chars": 397
+    },
+    {
+      "role": "answer_hierarchical",
+      "attempt": 1,
+      "latency_s": 0.8403301001526415,
+      "prompt_chars": 2989,
+      "response_chars": 387
+    },
+    {
+      "role": "answer_random_hierarchy",
+      "attempt": 1,
+      "latency_s": 1.0440159002318978,
+      "prompt_chars": 2473,
+      "response_chars": 404
+    },
+    {
+      "role": "answer_loop_first",
+      "attempt": 1,
+      "latency_s": 1.0536230001598597,
+      "prompt_chars": 3010,
+      "response_chars": 383
+    },
+    {
+      "role": "answer_direct",
+      "attempt": 1,
+      "latency_s": 0.6336329001933336,
+      "prompt_chars": 426,
+      "response_chars": 134
+    },
+    {
+      "role": "answer_reasoning",
+      "attempt": 1,
+      "latency_s": 0.8329392001032829,
+      "prompt_chars": 436,
+      "response_chars": 208
+    },
+    {
+      "role": "answer_summary",
+      "attempt": 1,
+      "latency_s": 0.8495662999339402,
+      "prompt_chars": 326,
+      "response_chars": 281
+    },
+    {
+      "role": "answer_flat",
+      "attempt": 1,
+      "latency_s": 0.8421324002556503,
+      "prompt_chars": 1754,
+      "response_chars": 368
+    },
+    {
+      "role": "answer_hierarchical",
+      "attempt": 1,
+      "latency_s": 1.0513076996430755,
+      "prompt_chars": 2930,
+      "response_chars": 398
+    },
+    {
+      "role": "answer_random_hierarchy",
+      "attempt": 1,
+      "latency_s": 0.8417082000523806,
+      "prompt_chars": 2414,
+      "response_chars": 266
+    },
+    {
+      "role": "answer_loop_first",
+      "attempt": 1,
+      "latency_s": 1.261984399985522,
+      "prompt_chars": 2951,
+      "response_chars": 577
+    }
+  ]
+}

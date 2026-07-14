@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "recursive-thought-tokens"
+version = "0.1.0"
+description = "Research prototype for recursive latent thought tokens on top of Gemma hidden states."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Recursive Thought Tokens Research Prototype" }]
+dependencies = [
+  "torch>=2.2",
+  "transformers>=4.45",
+  "accelerate>=0.30",
+  "datasets>=2.19",
+  "pyyaml>=6.0",
+  "numpy>=1.24",
+  "pandas>=2.0",
+  "matplotlib>=3.8",
+  "tqdm>=4.66",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff>=0.5"]
+qlora = ["bitsandbytes>=0.43", "peft>=0.12"]
+wandb = ["wandb>=0.17"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"

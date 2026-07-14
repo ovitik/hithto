@@ -1,0 +1,33 @@
+{
+  "model_name": "google/gemma-4-E2B",
+  "dtype": "bf16",
+  "torch": "2.9.1+cpu",
+  "cuda": false,
+  "max_length": 48,
+  "load_seconds": 6.6709680003114045,
+  "device": "cpu",
+  "model_class": "Gemma4ForConditionalGeneration",
+  "baseline_forward_seconds": 6.8532201000489295,
+  "baseline_loss": 4.469313621520996,
+  "thought_forward_seconds": 8.611999600194395,
+  "thought_total_loss": 44.44301986694336,
+  "thought_tokens": 7,
+  "compression_ratios": [
+    3.9
+  ],
+  "thought_embedding_shape": [
+    1,
+    10,
+    1536
+  ],
+  "drop_shape": [
+    1,
+    9,
+    1536
+  ],
+  "random_replace_shape": [
+    1,
+    10,
+    1536
+  ]
+}

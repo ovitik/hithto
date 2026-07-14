@@ -1,0 +1,36 @@
+model:
+  model_name: google/gemma-4-E2B
+  instruction_model_name: google/gemma-4-E2B-it
+  dtype: bf16
+  qlora_4bit: false
+  trust_remote_code: true
+  freeze_backbone: true
+  unfreeze_top_layers: 0
+
+thought_builder:
+  enabled: true
+  hidden_size: 1536
+  mode: replacement
+  grouping: hard
+  fixed_window: 4
+  max_levels: 3
+  min_group_size: 2
+  max_group_size: 8
+  hard: true
+  gumbel_temperature: 0.7
+  adaptive_stopping: false
+
+loss:
+  alpha_distillation: 0.2
+  beta_reconstruction: 0.1
+  gamma_paraphrase: 0.05
+  delta_compression: 0.04
+  epsilon_stability: 0.02
+
+train:
+  seed: 1
+  batch_size: 1
+  lr: 0.0002
+  steps: 300
+  max_length: 512
+  log_jsonl: runs/recursive/log.jsonl

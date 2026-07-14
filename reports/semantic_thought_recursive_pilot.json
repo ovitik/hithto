@@ -1,0 +1,143 @@
+{
+  "model_name": "HuggingFaceTB/SmolLM2-360M",
+  "variant": "recursive",
+  "dtype": "torch.float32",
+  "device": "cpu",
+  "hidden_size": 960,
+  "load_seconds": 94.24240599991754,
+  "cases": [
+    {
+      "world_id": "semantic-0",
+      "text_a": "náramek je v taška. taška je v garáž. garáž je v batoh.",
+      "text_b": "Uvnitř batoh se nachází garáž. Uvnitř garáž se nachází taška. Uvnitř taška se nachází náramek.",
+      "counterfactual_text": "Do taška byl přesunut náramek. Do garáž byl přesunut taška. Do kancelář byl přesunut garáž.",
+      "question": "Kde je nakonec náramek?",
+      "answer": "batoh",
+      "counterfactual_answer": "kancelář",
+      "depth": 2
+    },
+    {
+      "world_id": "semantic-1",
+      "text_a": "dopis je v garáž. garáž je v batoh. batoh je v skříňka. skříňka je v kancelář.",
+      "text_b": "Uvnitř kancelář se nachází skříňka. Uvnitř skříňka se nachází batoh. Uvnitř batoh se nachází garáž. Uvnitř garáž se nachází dopis.",
+      "counterfactual_text": "Do garáž byl přesunut dopis. Do batoh byl přesunut garáž. Do skříňka byl přesunut batoh. Do batoh byl přesunut skříňka.",
+      "question": "Kde je nakonec dopis?",
+      "answer": "kancelář",
+      "counterfactual_answer": "batoh",
+      "depth": 3
+    },
+    {
+      "world_id": "semantic-2",
+      "text_a": "klíč je v chodba. chodba je v skříňka. skříňka je v taška. taška je v krabička. krabička je v kuchyně.",
+      "text_b": "Uvnitř kuchyně se nachází krabička. Uvnitř krabička se nachází taška. Uvnitř taška se nachází skříňka. Uvnitř skříňka se nachází chodba. Uvnitř chodba se nachází klíč.",
+      "counterfactual_text": "Do chodba byl přesunut klíč. Do skříňka byl přesunut chodba. Do taška byl přesunut skříňka. Do krabička byl přesunut taška. Do batoh byl přesunut krabička.",
+      "question": "Kde je nakonec klíč?",
+      "answer": "kuchyně",
+      "counterfactual_answer": "batoh",
+      "depth": 4
+    },
+    {
+      "world_id": "semantic-3",
+      "text_a": "mobil je v ložnice. ložnice je v krabička. krabička je v taška.",
+      "text_b": "Uvnitř taška se nachází krabička. Uvnitř krabička se nachází ložnice. Uvnitř ložnice se nachází mobil.",
+      "counterfactual_text": "Do ložnice byl přesunut mobil. Do krabička byl přesunut ložnice. Do batoh byl přesunut krabička.",
+      "question": "Kde je nakonec mobil?",
+      "answer": "taška",
+      "counterfactual_answer": "batoh",
+      "depth": 2
+    },
+    {
+      "world_id": "semantic-4",
+      "text_a": "klíč je v taška. taška je v pracovna. pracovna je v kuchyně. kuchyně je v batoh.",
+      "text_b": "Uvnitř batoh se nachází kuchyně. Uvnitř kuchyně se nachází pracovna. Uvnitř pracovna se nachází taška. Uvnitř taška se nachází klíč.",
+      "counterfactual_text": "Do taška byl přesunut klíč. Do pracovna byl přesunut taška. Do kuchyně byl přesunut pracovna. Do kufr byl přesunut kuchyně.",
+      "question": "Kde je nakonec klíč?",
+      "answer": "batoh",
+      "counterfactual_answer": "kufr",
+      "depth": 3
+    }
+  ],
+  "train_case_count": 3,
+  "eval_case_count": 2,
+  "history": [
+    {
+      "step": 0,
+      "seconds": 12.342435900121927,
+      "loss": 1.7310928106307983,
+      "contrastive": 1.0837193727493286,
+      "reconstruction": 2.5428764820098877,
+      "counterfactual": 0.7861716747283936,
+      "grad_norm": 0.46684494614601135
+    },
+    {
+      "step": 1,
+      "seconds": 12.086844800040126,
+      "loss": 1.3590259552001953,
+      "contrastive": 0.7873960137367249,
+      "reconstruction": 2.4001998901367188,
+      "counterfactual": 0.6632198691368103,
+      "grad_norm": 4.659151554107666
+    },
+    {
+      "step": 2,
+      "seconds": 12.456102999858558,
+      "loss": 1.036424160003662,
+      "contrastive": 0.5316178798675537,
+      "reconstruction": 2.3268070220947266,
+      "counterfactual": 0.5442512631416321,
+      "grad_norm": 9.733444213867188
+    },
+    {
+      "step": 3,
+      "seconds": 12.187293100170791,
+      "loss": 1.0782315731048584,
+      "contrastive": 0.5328758358955383,
+      "reconstruction": 2.2946441173553467,
+      "counterfactual": 0.6317827701568604,
+      "grad_norm": 11.520956993103027
+    },
+    {
+      "step": 4,
+      "seconds": 12.27372970012948,
+      "loss": 0.7563999891281128,
+      "contrastive": 0.2348647117614746,
+      "reconstruction": 2.264742612838745,
+      "counterfactual": 0.5901219248771667,
+      "grad_norm": 4.578502655029297
+    }
+  ],
+  "before": {
+    "same_paraphrase_cosine": 0.9819836139678955,
+    "negative_world_cosine": 0.9783835530281066,
+    "counterfactual_cosine": 0.9842723727226257,
+    "paraphrase_margin_vs_negative": 0.0036000609397888184,
+    "paraphrase_margin_vs_counterfactual": -0.0022887587547302246,
+    "mean_thought_count": 50.0,
+    "compressed_gold_loss": 10.67755651473999,
+    "original_gold_loss": 3.931644248962402,
+    "compression_loss_gap": 6.745912265777588
+  },
+  "after": {
+    "same_paraphrase_cosine": 0.9106284976005554,
+    "negative_world_cosine": 0.3290037393569946,
+    "counterfactual_cosine": 0.42213782072067263,
+    "paraphrase_margin_vs_negative": 0.5816247582435607,
+    "paraphrase_margin_vs_counterfactual": 0.4884906768798828,
+    "mean_thought_count": 50.0,
+    "compressed_gold_loss": 10.132799625396729,
+    "original_gold_loss": 3.931644248962402,
+    "compression_loss_gap": 6.201155376434326
+  },
+  "delta": {
+    "same_paraphrase_cosine": -0.07135511636734004,
+    "negative_world_cosine": -0.649379813671112,
+    "counterfactual_cosine": -0.5621345520019531,
+    "paraphrase_margin_vs_negative": 0.5780246973037719,
+    "paraphrase_margin_vs_counterfactual": 0.490779435634613,
+    "mean_thought_count": 0.0,
+    "compressed_gold_loss": -0.5447568893432617,
+    "original_gold_loss": 0.0,
+    "compression_loss_gap": -0.5447568893432617
+  },
+  "load_seconds_note": "Original load_seconds field included full run duration before script fix; semantic metrics are unaffected."
+}

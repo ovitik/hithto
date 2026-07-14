@@ -1,0 +1,2568 @@
+{
+  "version": "focused_branch_halting_v1",
+  "created_at": "2026-07-12 15:17:33",
+  "device": "cuda",
+  "gpu": "Tesla T4",
+  "fast_run": false,
+  "config": {
+    "train_steps": 1800,
+    "batch_size": 256,
+    "eval_batches": 16,
+    "seeds": [
+      1,
+      2,
+      3
+    ],
+    "d_model": 128,
+    "n_entities": 96,
+    "max_steps": 10,
+    "distractors": 16,
+    "lr": 0.0003,
+    "train_depth": [
+      1,
+      3
+    ],
+    "ood_depth": [
+      4,
+      10
+    ],
+    "hard_depth": [
+      11,
+      14
+    ]
+  },
+  "summary": {
+    "baseline_depth_chain": {
+      "params": {
+        "mean": 764640.0,
+        "std": 0.0,
+        "n": 3
+      },
+      "iid_acc": {
+        "mean": 0.867919921875,
+        "std": 0.02921436134059443,
+        "n": 3
+      },
+      "ood_acc": {
+        "mean": 0.7840983072916666,
+        "std": 0.023328314877295392,
+        "n": 3
+      },
+      "hard_ood_acc": {
+        "mean": 0.7412109375,
+        "std": 0.006712757365657969,
+        "n": 3
+      },
+      "ood_oracle_depth_acc": {
+        "mean": null,
+        "std": null,
+        "n": 0
+      },
+      "ood_halt_acc": {
+        "mean": null,
+        "std": null,
+        "n": 0
+      },
+      "ood_oracle_any_step_acc": {
+        "mean": null,
+        "std": null,
+        "n": 0
+      },
+      "ood_per_million_params": {
+        "mean": 1.0254476711807734,
+        "std": 0.03050888637436619,
+        "n": 3
+      },
+      "hard_ood_per_million_params": {
+        "mean": 0.9693593553829253,
+        "std": 0.008778977513153832,
+        "n": 3
+      },
+      "task": "chain",
+      "answer_mode": "final"
+    },
+    "thought_depth_chain": {
+      "params": {
+        "mean": 305633.0,
+        "std": 0.0,
+        "n": 3
+      },
+      "iid_acc": {
+        "mean": 0.96240234375,
+        "std": 0.006314705642762482,
+        "n": 3
+      },
+      "ood_acc": {
+        "mean": 0.891357421875,
+        "std": 0.0031925529371635794,
+        "n": 3
+      },
+      "hard_ood_acc": {
+        "mean": 0.7669270833333334,
+        "std": 0.0221419979110403,
+        "n": 3
+      },
+      "ood_oracle_depth_acc": {
+        "mean": 0.891357421875,
+        "std": 0.0031925529371635794,
+        "n": 3
+      },
+      "ood_halt_acc": {
+        "mean": 0.11083984375,
+        "std": 0.005253279978356937,
+        "n": 3
+      },
+      "ood_oracle_any_step_acc": {
+        "mean": 0.9186197916666666,
+        "std": 0.0035407405465180813,
+        "n": 3
+      },
+      "ood_per_million_params": {
+        "mean": 2.9164305617358073,
+        "std": 0.010445707555020313,
+        "n": 3
+      },
+      "hard_ood_per_million_params": {
+        "mean": 2.5093071865058203,
+        "std": 0.0724463585772488,
+        "n": 3
+      },
+      "task": "chain",
+      "answer_mode": "depth"
+    },
+    "thought_halt_chain": {
+      "params": {
+        "mean": 305633.0,
+        "std": 0.0,
+        "n": 3
+      },
+      "iid_acc": {
+        "mean": 0.886962890625,
+        "std": 0.0052872089423114535,
+        "n": 3
+      },
+      "ood_acc": {
+        "mean": 0.832763671875,
+        "std": 0.011495368522454643,
+        "n": 3
+      },
+      "hard_ood_acc": {
+        "mean": 0.5553385416666666,
+        "std": 0.08775533931243255,
+        "n": 3
+      },
+      "ood_oracle_depth_acc": {
+        "mean": 0.9205729166666666,
+        "std": 0.005643469546740172,
+        "n": 3
+      },
+      "ood_halt_acc": {
+        "mean": 0.832763671875,
+        "std": 0.011495368522454643,
+        "n": 3
+      },
+      "ood_oracle_any_step_acc": {
+        "mean": 0.9390462239583334,
+        "std": 0.0057481163367221035,
+        "n": 3
+      },
+      "ood_per_million_params": {
+        "mean": 2.7247177885732237,
+        "std": 0.03761167322394726,
+        "n": 3
+      },
+      "hard_ood_per_million_params": {
+        "mean": 1.8170110611964896,
+        "std": 0.2871265187739301,
+        "n": 3
+      },
+      "task": "chain",
+      "answer_mode": "halt"
+    },
+    "thought_twostage_halt_chain": {
+      "params": {
+        "mean": 305633.0,
+        "std": 0.0,
+        "n": 3
+      },
+      "iid_acc": {
+        "mean": 0.843505859375,
+        "std": 0.01382577649879665,
+        "n": 3
+      },
+      "ood_acc": {
+        "mean": 0.7867024739583334,
+        "std": 0.01218340813178512,
+        "n": 3
+      },
+      "hard_ood_acc": {
+        "mean": 0.3513997395833333,
+        "std": 0.08220593457235546,
+        "n": 3
+      },
+      "ood_oracle_depth_acc": {
+        "mean": 0.878173828125,
+        "std": 0.0060149829075951755,
+        "n": 3
+      },
+      "ood_halt_acc": {
+        "mean": 0.7867024739583334,
+        "std": 0.01218340813178512,
+        "n": 3
+      },
+      "ood_oracle_any_step_acc": {
+        "mean": 0.9020182291666666,
+        "std": 0.004286968486675105,
+        "n": 3
+      },
+      "ood_per_million_params": {
+        "mean": 2.5740102474481925,
+        "std": 0.039862868642408,
+        "n": 3
+      },
+      "hard_ood_per_million_params": {
+        "mean": 1.1497441034944962,
+        "std": 0.26896943252971856,
+        "n": 3
+      },
+      "task": "chain",
+      "answer_mode": "depth_then_halt"
+    },
+    "baseline_depth_branch_trap": {
+      "params": {
+        "mean": 764640.0,
+        "std": 0.0,
+        "n": 1
+      },
+      "iid_acc": {
+        "mean": 0.19189453125,
+        "std": 0.0,
+        "n": 1
+      },
+      "ood_acc": {
+        "mean": 0.097900390625,
+        "std": 0.0,
+        "n": 1
+      },
+      "hard_ood_acc": {
+        "mean": 0.056640625,
+        "std": 0.0,
+        "n": 1
+      },
+      "ood_oracle_depth_acc": {
+        "mean": null,
+        "std": null,
+        "n": 0
+      },
+      "ood_halt_acc": {
+        "mean": null,
+        "std": null,
+        "n": 0
+      },
+      "ood_oracle_any_step_acc": {
+        "mean": null,
+        "std": null,
+        "n": 0
+      },
+      "ood_per_million_params": {
+        "mean": 0.12803461841520192,
+        "std": 0.0,
+        "n": 1
+      },
+      "hard_ood_per_million_params": {
+        "mean": 0.07407489145218665,
+        "std": 0.0,
+        "n": 1
+      },
+      "task": "branch_trap",
+      "answer_mode": "final"
+    },
+    "thought_depth_branch_trap": {
+      "params": {
+        "mean": 305633.0,
+        "std": 0.0,
+        "n": 1
+      },
+      "iid_acc": {
+        "mean": 0.398681640625,
+        "std": 0.0,
+        "n": 1
+      },
+      "ood_acc": {
+        "mean": 0.124267578125,
+        "std": 0.0,
+        "n": 1
+      },
+      "hard_ood_acc": {
+        "mean": 0.0390625,
+        "std": 0.0,
+        "n": 1
+      },
+      "ood_oracle_depth_acc": {
+        "mean": 0.124267578125,
+        "std": 0.0,
+        "n": 1
+      },
+      "ood_halt_acc": {
+        "mean": 0.052490234375,
+        "std": 0.0,
+        "n": 1
+      },
+      "ood_oracle_any_step_acc": {
+        "mean": 0.2197265625,
+        "std": 0.0,
+        "n": 1
+      },
+      "ood_per_million_params": {
+        "mean": 0.40659083974898,
+        "std": 0.0,
+        "n": 1
+      },
+      "hard_ood_per_million_params": {
+        "mean": 0.1278085154417226,
+        "std": 0.0,
+        "n": 1
+      },
+      "task": "branch_trap",
+      "answer_mode": "depth"
+    },
+    "thought_halt_branch_trap": {
+      "params": {
+        "mean": 305633.0,
+        "std": 0.0,
+        "n": 1
+      },
+      "iid_acc": {
+        "mean": 0.280029296875,
+        "std": 0.0,
+        "n": 1
+      },
+      "ood_acc": {
+        "mean": 0.107666015625,
+        "std": 0.0,
+        "n": 1
+      },
+      "hard_ood_acc": {
+        "mean": 0.06884765625,
+        "std": 0.0,
+        "n": 1
+      },
+      "ood_oracle_depth_acc": {
+        "mean": 0.111083984375,
+        "std": 0.0,
+        "n": 1
+      },
+      "ood_halt_acc": {
+        "mean": 0.107666015625,
+        "std": 0.0,
+        "n": 1
+      },
+      "ood_oracle_any_step_acc": {
+        "mean": 0.280517578125,
+        "std": 0.0,
+        "n": 1
+      },
+      "ood_per_million_params": {
+        "mean": 0.3522722206862479,
+        "std": 0.0,
+        "n": 1
+      },
+      "hard_ood_per_million_params": {
+        "mean": 0.22526250846603607,
+        "std": 0.0,
+        "n": 1
+      },
+      "task": "branch_trap",
+      "answer_mode": "halt"
+    }
+  },
+  "hypotheses": [
+    {
+      "hypothesis": "halting_gap_on_chain",
+      "supported": true,
+      "interpretation": "Learned halting is close to oracle-depth on clean chains."
+    },
+    {
+      "hypothesis": "twostage_halting_helps",
+      "supported": false,
+      "interpretation": "Two-stage depth-then-halt training does not improve learned halting."
+    },
+    {
+      "hypothesis": "branch_trap_fixed",
+      "supported": false,
+      "interpretation": "Branch-trap remains an unresolved weakness."
+    }
+  ],
+  "results": {
+    "baseline_depth_chain_seed1": {
+      "spec": {
+        "name": "baseline_depth_chain",
+        "model": "baseline",
+        "task": "chain",
+        "schedule": "curriculum",
+        "answer_mode": "final",
+        "eval_answer_mode": "final",
+        "aux_mode": "none"
+      },
+      "seed": 1,
+      "params": 764640,
+      "history": [
+        {
+          "step": 1,
+          "loss": 5.1569061279296875,
+          "answer_loss": 5.1569061279296875,
+          "train_acc": 0.00390625,
+          "step_mode": "final",
+          "train_depth": [
+            1,
+            3
+          ],
+          "elapsed_s": 0.031248092651367188,
+          "ood_acc": 0.01171875
+        },
+        {
+          "step": 450,
+          "loss": 2.2796056270599365,
+          "answer_loss": 2.2796056270599365,
+          "train_acc": 0.32421875,
+          "step_mode": "final",
+          "train_depth": [
+            1,
+            3
+          ],
+          "elapsed_s": 11.632435321807861,
+          "ood_acc": 0.109375
+        },
+        {
+          "step": 900,
+          "loss": 1.8037668466567993,
+          "answer_loss": 1.8037668466567993,
+          "train_acc": 0.53515625,
+          "step_mode": "final",
+          "train_depth": [
+            1,
+            6
+          ],
+          "elapsed_s": 23.83708643913269,
+          "ood_acc": 0.4501953125
+        },
+        {
+          "step": 1350,
+          "loss": 1.1653602123260498,
+          "answer_loss": 1.1653602123260498,
+          "train_acc": 0.73046875,
+          "step_mode": "final",
+          "train_depth": [
+            1,
+            10
+          ],
+          "elapsed_s": 36.89918637275696,
+          "ood_acc": 0.7587890625
+        },
+        {
+          "step": 1800,
+          "loss": 0.8779671788215637,
+          "answer_loss": 0.8779671788215637,
+          "train_acc": 0.80078125,
+          "step_mode": "final",
+          "train_depth": [
+            1,
+            10
+          ],
+          "elapsed_s": 50.81787419319153,
+          "ood_acc": 0.79296875
+        }
+      ],
+      "iid": {
+        "acc": 0.88623046875,
+        "loss": 0.4254423752427101,
+        "by_depth": {
+          "1": 0.9085631349782293,
+          "2": 0.8796711509715994,
+          "3": 0.8702898550724638
+        }
+      },
+      "ood": {
+        "acc": 0.7880859375,
+        "loss": 0.7339372858405113,
+        "by_depth": {
+          "4": 0.8044596912521441,
+          "5": 0.8183453237410072,
+          "6": 0.7757166947723441,
+          "7": 0.764026402640264,
+          "8": 0.7781569965870307,
+          "9": 0.7772277227722773,
+          "10": 0.8021201413427562
+        }
+      },
+      "hard_ood": {
+        "acc": 0.73974609375,
+        "loss": 0.9225032553076744,
+        "by_depth": {
+          "11": 0.7603960396039604,
+          "12": 0.749034749034749,
+          "13": 0.7134831460674157,
+          "14": 0.7372708757637475
+        }
+      },
+      "elapsed_s_total": 51.78576040267944
+    },
+    "baseline_depth_chain_seed2": {
+      "spec": {
+        "name": "baseline_depth_chain",
+        "model": "baseline",
+        "task": "chain",
+        "schedule": "curriculum",
+        "answer_mode": "final",
+        "eval_answer_mode": "final",
+        "aux_mode": "none"
+      },
+      "seed": 2,
+      "params": 764640,
+      "history": [
+        {
+          "step": 1,
+          "loss": 5.368610382080078,
+          "answer_loss": 5.368610382080078,
+          "train_acc": 0.00390625,
+          "step_mode": "final",
+          "train_depth": [
+            1,
+            3
+          ],
+          "elapsed_s": 0.024653911590576172,
+          "ood_acc": 0.009765625
+        },
+        {
+          "step": 450,
+          "loss": 2.615983009338379,
+          "answer_loss": 2.615983009338379,
+          "train_acc": 0.23828125,
+          "step_mode": "final",
+          "train_depth": [
+            1,
+            3
+          ],
+          "elapsed_s": 12.155355453491211,
+          "ood_acc": 0.1240234375
+        },
+        {
+          "step": 900,
+          "loss": 1.9657191038131714,
+          "answer_loss": 1.9657191038131714,
+          "train_acc": 0.47265625,
+          "step_mode": "final",
+          "train_depth": [
+            1,
+            6
+          ],
+          "elapsed_s": 24.263316869735718,
+          "ood_acc": 0.3779296875
+        },
+        {
+          "step": 1350,
+          "loss": 1.1155650615692139,
+          "answer_loss": 1.1155650615692139,
+          "train_acc": 0.7265625,
+          "step_mode": "final",
+          "train_depth": [
+            1,
+            10
+          ],
+          "elapsed_s": 37.335596799850464,
+          "ood_acc": 0.771484375
+        },
+        {
+          "step": 1800,
+          "loss": 0.7674635648727417,
+          "answer_loss": 0.7674635648727417,
+          "train_acc": 0.80078125,
+          "step_mode": "final",
+          "train_depth": [
+            1,
+            10
+          ],
+          "elapsed_s": 51.53888940811157,
+          "ood_acc": 0.806640625
+        }
+      ],
+      "iid": {
+        "acc": 0.88330078125,
+        "loss": 0.4825348611921072,
+        "by_depth": {
+          "1": 0.870398773006135,
+          "2": 0.8935389133627019,
+          "3": 0.8853146853146853
+        }
+      },
+      "ood": {
+        "acc": 0.80517578125,
+        "loss": 0.7202230468392372,
+        "by_depth": {
+          "4": 0.7962648556876061,
+          "5": 0.8190954773869347,
+          "6": 0.8190954773869347,
+          "7": 0.795774647887324,
+          "8": 0.8035426731078905,
+          "9": 0.8174061433447098,
+          "10": 0.7825278810408922
+        }
+      },
+      "hard_ood": {
+        "acc": 0.74853515625,
+        "loss": 0.9771026968955994,
+        "by_depth": {
+          "11": 0.738,
+          "12": 0.7879924953095685,
+          "13": 0.7206477732793523,
+          "14": 0.744721689059501
+        }
+      },
+      "elapsed_s_total": 104.29036736488342
+    },
+    "baseline_depth_chain_seed3": {
+      "spec": {
+        "name": "baseline_depth_chain",
+        "model": "baseline",
+        "task": "chain",
+        "schedule": "curriculum",
+        "answer_mode": "final",
+        "eval_answer_mode": "final",
+        "aux_mode": "none"
+      },
+      "seed": 3,
+      "params": 764640,
+      "history": [
+        {
+          "step": 1,
+          "loss": 5.337348937988281,
+          "answer_loss": 5.337348937988281,
+          "train_acc": 0.00390625,
+          "step_mode": "final",
+          "train_depth": [
+            1,
+            3
+          ],
+          "elapsed_s": 0.025081872940063477,
+          "ood_acc": 0.017578125
+        },
+        {
+          "step": 450,
+          "loss": 2.5299205780029297,
+          "answer_loss": 2.5299205780029297,
+          "train_acc": 0.25,
+          "step_mode": "final",
+          "train_depth": [
+            1,
+            3
+          ],
+          "elapsed_s": 11.98320746421814,
+          "ood_acc": 0.11328125
+        },
+        {
+          "step": 900,
+          "loss": 1.694300651550293,
+          "answer_loss": 1.694300651550293,
+          "train_acc": 0.5859375,
+          "step_mode": "final",
+          "train_depth": [
+            1,
+            6
+          ],
+          "elapsed_s": 24.445642948150635,
+          "ood_acc": 0.40625
+        },
+        {
+          "step": 1350,
+          "loss": 1.261756420135498,
+          "answer_loss": 1.261756420135498,
+          "train_acc": 0.68359375,
+          "step_mode": "final",
+          "train_depth": [
+            1,
+            10
+          ],
+          "elapsed_s": 37.347280979156494,
+          "ood_acc": 0.7490234375
+        },
+        {
+          "step": 1800,
+          "loss": 0.879644513130188,
+          "answer_loss": 0.879644513130188,
+          "train_acc": 0.765625,
+          "step_mode": "final",
+          "train_depth": [
+            1,
+            10
+          ],
+          "elapsed_s": 51.25553488731384,
+          "ood_acc": 0.7529296875
+        }
+      ],
+      "iid": {
+        "acc": 0.834228515625,
+        "loss": 0.650357149541378,
+        "by_depth": {
+          "1": 0.7626373626373626,
+          "2": 0.8785871964679912,
+          "3": 0.8615160349854227
+        }
+      },
+      "ood": {
+        "acc": 0.759033203125,
+        "loss": 0.8316953852772713,
+        "by_depth": {
+          "4": 0.7816901408450704,
+          "5": 0.7549909255898367,
+          "6": 0.7312925170068028,
+          "7": 0.7613636363636364,
+          "8": 0.7268211920529801,
+          "9": 0.773286467486819,
+          "10": 0.785
+        }
+      },
+      "hard_ood": {
+        "acc": 0.7353515625,
+        "loss": 0.9901086390018463,
+        "by_depth": {
+          "11": 0.7409420289855072,
+          "12": 0.724007561436673,
+          "13": 0.7399193548387096,
+          "14": 0.7367303609341825
+        }
+      },
+      "elapsed_s_total": 156.50569868087769
+    },
+    "thought_depth_chain_seed1": {
+      "spec": {
+        "name": "thought_depth_chain",
+        "model": "thought",
+        "task": "chain",
+        "schedule": "curriculum",
+        "answer_mode": "depth",
+        "eval_answer_mode": "depth",
+        "aux_mode": "attention",
+        "aux_weight": 0.5
+      },
+      "seed": 1,
+      "params": 305633,
+      "history": [
+        {
+          "step": 1,
+          "loss": 104.30355072021484,
+          "answer_loss": 102.8280029296875,
+          "train_acc": 0.0,
+          "step_mode": "depth",
+          "train_depth": [
+            1,
+            3
+          ],
+          "elapsed_s": 0.03149890899658203,
+          "attn_loss": 2.951098918914795,
+          "aux_loss": 1.4755494594573975,
+          "ood_acc": 0.0009765625
+        },
+        {
+          "step": 450,
+          "loss": 0.8096237778663635,
+          "answer_loss": 0.7403210401535034,
+          "train_acc": 0.9296875,
+          "step_mode": "depth",
+          "train_depth": [
+            1,
+            3
+          ],
+          "elapsed_s": 14.761831998825073,
+          "attn_loss": 0.13860544562339783,
+          "aux_loss": 0.06930272281169891,
+          "ood_acc": 0.5791015625
+        },
+        {
+          "step": 900,
+          "loss": 0.7676825523376465,
+          "answer_loss": 0.6113134026527405,
+          "train_acc": 0.91796875,
+          "step_mode": "depth",
+          "train_depth": [
+            1,
+            6
+          ],
+          "elapsed_s": 30.925524473190308,
+          "attn_loss": 0.312738299369812,
+          "aux_loss": 0.156369149684906,
+          "ood_acc": 0.830078125
+        },
+        {
+          "step": 1350,
+          "loss": 0.7720020413398743,
+          "answer_loss": 0.6069815158843994,
+          "train_acc": 0.921875,
+          "step_mode": "depth",
+          "train_depth": [
+            1,
+            10
+          ],
+          "elapsed_s": 47.28902626037598,
+          "attn_loss": 0.3300410211086273,
+          "aux_loss": 0.16502051055431366,
+          "ood_acc": 0.8671875
+        },
+        {
+          "step": 1800,
+          "loss": 0.7506837844848633,
+          "answer_loss": 0.6303709745407104,
+          "train_acc": 0.89453125,
+          "step_mode": "depth",
+          "train_depth": [
+            1,
+            10
+          ],
+          "elapsed_s": 64.40081238746643,
+          "attn_loss": 0.24062563478946686,
+          "aux_loss": 0.12031281739473343,
+          "ood_acc": 0.8955078125
+        }
+      ],
+      "iid": {
+        "acc": 0.95556640625,
+        "loss": 0.27535769436508417,
+        "by_depth": {
+          "1": 0.9557329462989841,
+          "2": 0.9544095665171899,
+          "3": 0.9565217391304348
+        },
+        "oracle_depth_acc": 0.95556640625,
+        "halt_acc": 0.304931640625,
+        "oracle_any_step_acc": 0.964111328125,
+        "by_depth_halt": {
+          "1": 0.2772133526850508,
+          "2": 0.3505231689088191,
+          "3": 0.28840579710144926
+        }
+      },
+      "ood": {
+        "acc": 0.8935546875,
+        "loss": 0.6830197162926197,
+        "by_depth": {
+          "4": 0.9245283018867925,
+          "5": 0.9316546762589928,
+          "6": 0.8988195615514334,
+          "7": 0.8894389438943895,
+          "8": 0.8771331058020477,
+          "9": 0.8646864686468647,
+          "10": 0.8710247349823321
+        },
+        "oracle_depth_acc": 0.8935546875,
+        "halt_acc": 0.110595703125,
+        "oracle_any_step_acc": 0.922119140625,
+        "by_depth_halt": {
+          "4": 0.20240137221269297,
+          "5": 0.16366906474820145,
+          "6": 0.1399662731871838,
+          "7": 0.10066006600660066,
+          "8": 0.07337883959044368,
+          "9": 0.039603960396039604,
+          "10": 0.05830388692579505
+        }
+      },
+      "hard_ood": {
+        "acc": 0.79248046875,
+        "loss": 1.367738202214241,
+        "by_depth": {
+          "11": 0.803960396039604,
+          "12": 0.803088803088803,
+          "13": 0.7846441947565543,
+          "14": 0.7780040733197556
+        },
+        "oracle_depth_acc": 0.79248046875,
+        "halt_acc": 0.041015625,
+        "oracle_any_step_acc": 0.84619140625,
+        "by_depth_halt": {
+          "11": 0.047524752475247525,
+          "12": 0.03474903474903475,
+          "13": 0.03745318352059925,
+          "14": 0.04480651731160896
+        }
+      },
+      "elapsed_s_total": 221.9745032787323
+    },
+    "thought_depth_chain_seed2": {
+      "spec": {
+        "name": "thought_depth_chain",
+        "model": "thought",
+        "task": "chain",
+        "schedule": "curriculum",
+        "answer_mode": "depth",
+        "eval_answer_mode": "depth",
+        "aux_mode": "attention",
+        "aux_weight": 0.5
+      },
+      "seed": 2,
+      "params": 305633,
+      "history": [
+        {
+          "step": 1,
+          "loss": 104.94412231445312,
+          "answer_loss": 103.4739990234375,
+          "train_acc": 0.0,
+          "step_mode": "depth",
+          "train_depth": [
+            1,
+            3
+          ],
+          "elapsed_s": 0.03116893768310547,
+          "attn_loss": 2.9402430057525635,
+          "aux_loss": 1.4701215028762817,
+          "ood_acc": 0.0009765625
+        },
+        {
+          "step": 450,
+          "loss": 0.5855987668037415,
+          "answer_loss": 0.5141253471374512,
+          "train_acc": 0.9375,
+          "step_mode": "depth",
+          "train_depth": [
+            1,
+            3
+          ],
+          "elapsed_s": 15.238338232040405,
+          "attn_loss": 0.14294685423374176,
+          "aux_loss": 0.07147342711687088,
+          "ood_acc": 0.7080078125
+        },
+        {
+          "step": 900,
+          "loss": 0.5472103953361511,
+          "answer_loss": 0.4513969421386719,
+          "train_acc": 0.93359375,
+          "step_mode": "depth",
+          "train_depth": [
+            1,
+            6
+          ],
+          "elapsed_s": 30.74839949607849,
+          "attn_loss": 0.19162695109844208,
+          "aux_loss": 0.09581347554922104,
+          "ood_acc": 0.8525390625
+        },
+        {
+          "step": 1350,
+          "loss": 0.8754495978355408,
+          "answer_loss": 0.7287764549255371,
+          "train_acc": 0.8828125,
+          "step_mode": "depth",
+          "train_depth": [
+            1,
+            10
+          ],
+          "elapsed_s": 47.21765971183777,
+          "attn_loss": 0.2933463156223297,
+          "aux_loss": 0.14667315781116486,
+          "ood_acc": 0.892578125
+        },
+        {
+          "step": 1800,
+          "loss": 0.9422518014907837,
+          "answer_loss": 0.7519186735153198,
+          "train_acc": 0.8828125,
+          "step_mode": "depth",
+          "train_depth": [
+            1,
+            10
+          ],
+          "elapsed_s": 64.38681030273438,
+          "attn_loss": 0.3806662857532501,
+          "aux_loss": 0.19033314287662506,
+          "ood_acc": 0.884765625
+        }
+      ],
+      "iid": {
+        "acc": 0.968017578125,
+        "loss": 0.20411687856540084,
+        "by_depth": {
+          "1": 0.9723926380368099,
+          "2": 0.9713656387665198,
+          "3": 0.9608391608391609
+        },
+        "oracle_depth_acc": 0.968017578125,
+        "halt_acc": 0.309326171875,
+        "oracle_any_step_acc": 0.97509765625,
+        "by_depth_halt": {
+          "1": 0.2753067484662577,
+          "2": 0.35609397944199705,
+          "3": 0.2958041958041958
+        }
+      },
+      "ood": {
+        "acc": 0.8876953125,
+        "loss": 0.6955056693404913,
+        "by_depth": {
+          "4": 0.9252971137521222,
+          "5": 0.9246231155778895,
+          "6": 0.9011725293132329,
+          "7": 0.903169014084507,
+          "8": 0.8808373590982287,
+          "9": 0.8361774744027304,
+          "10": 0.8382899628252788
+        },
+        "oracle_depth_acc": 0.8876953125,
+        "halt_acc": 0.105712890625,
+        "oracle_any_step_acc": 0.9150390625,
+        "by_depth_halt": {
+          "4": 0.21052631578947367,
+          "5": 0.1708542713567839,
+          "6": 0.12562814070351758,
+          "7": 0.07746478873239436,
+          "8": 0.0644122383252818,
+          "9": 0.04436860068259386,
+          "10": 0.040892193308550186
+        }
+      },
+      "hard_ood": {
+        "acc": 0.75341796875,
+        "loss": 1.5097533613443375,
+        "by_depth": {
+          "11": 0.792,
+          "12": 0.7504690431519699,
+          "13": 0.7449392712550608,
+          "14": 0.727447216890595
+        },
+        "oracle_depth_acc": 0.75341796875,
+        "halt_acc": 0.0361328125,
+        "oracle_any_step_acc": 0.8076171875,
+        "by_depth_halt": {
+          "11": 0.036,
+          "12": 0.0375234521575985,
+          "13": 0.03441295546558704,
+          "14": 0.036468330134357005
+        }
+      },
+      "elapsed_s_total": 287.46290135383606
+    },
+    "thought_depth_chain_seed3": {
+      "spec": {
+        "name": "thought_depth_chain",
+        "model": "thought",
+        "task": "chain",
+        "schedule": "curriculum",
+        "answer_mode": "depth",
+        "eval_answer_mode": "depth",
+        "aux_mode": "attention",
+        "aux_weight": 0.5
+      },
+      "seed": 3,
+      "params": 305633,
+      "history": [
+        {
+          "step": 1,
+          "loss": 103.01678466796875,
+          "answer_loss": 101.539794921875,
+          "train_acc": 0.0,
+          "step_mode": "depth",
+          "train_depth": [
+            1,
+            3
+          ],
+          "elapsed_s": 0.031874656677246094,
+          "attn_loss": 2.9539732933044434,
+          "aux_loss": 1.4769866466522217,
+          "ood_acc": 0.0
+        },
+        {
+          "step": 450,
+          "loss": 0.6268479228019714,
+          "answer_loss": 0.5630553364753723,
+          "train_acc": 0.91796875,
+          "step_mode": "depth",
+          "train_depth": [
+            1,
+            3
+          ],
+          "elapsed_s": 15.424647092819214,
+          "attn_loss": 0.12758518755435944,
+          "aux_loss": 0.06379259377717972,
+          "ood_acc": 0.677734375
+        },
+        {
+          "step": 900,
+          "loss": 0.5784637928009033,
+          "answer_loss": 0.4853075444698334,
+          "train_acc": 0.92578125,
+          "step_mode": "depth",
+          "train_depth": [
+            1,
+            6
+          ],
+          "elapsed_s": 30.92551350593567,
+          "attn_loss": 0.1863124817609787,
+          "aux_loss": 0.09315624088048935,
+          "ood_acc": 0.875
+        },
+        {
+          "step": 1350,
+          "loss": 1.0578664541244507,
+          "answer_loss": 0.8512959480285645,
+          "train_acc": 0.86328125,
+          "step_mode": "depth",
+          "train_depth": [
+            1,
+            10
+          ],
+          "elapsed_s": 47.21165895462036,
+          "attn_loss": 0.41314107179641724,
+          "aux_loss": 0.20657053589820862,
+          "ood_acc": 0.87109375
+        },
+        {
+          "step": 1800,
+          "loss": 0.5462938547134399,
+          "answer_loss": 0.3966696262359619,
+          "train_acc": 0.9296875,
+          "step_mode": "depth",
+          "train_depth": [
+            1,
+            10
+          ],
+          "elapsed_s": 64.46128416061401,
+          "attn_loss": 0.29924848675727844,
+          "aux_loss": 0.14962424337863922,
+          "ood_acc": 0.884765625
+        }
+      ],
+      "iid": {
+        "acc": 0.963623046875,
+        "loss": 0.20081393420696259,
+        "by_depth": {
+          "1": 0.9692307692307692,
+          "2": 0.9661515820456218,
+          "3": 0.9555393586005831
+        },
+        "oracle_depth_acc": 0.963623046875,
+        "halt_acc": 0.32666015625,
+        "oracle_any_step_acc": 0.97265625,
+        "by_depth_halt": {
+          "1": 0.26886446886446885,
+          "2": 0.38852097130242824,
+          "3": 0.3228862973760933
+        }
+      },
+      "ood": {
+        "acc": 0.892822265625,
+        "loss": 0.6119801811873913,
+        "by_depth": {
+          "4": 0.9330985915492958,
+          "5": 0.9147005444646098,
+          "6": 0.9030612244897959,
+          "7": 0.8928571428571429,
+          "8": 0.8692052980132451,
+          "9": 0.8611599297012302,
+          "10": 0.8783333333333333
+        },
+        "oracle_depth_acc": 0.892822265625,
+        "halt_acc": 0.1162109375,
+        "oracle_any_step_acc": 0.918701171875,
+        "by_depth_halt": {
+          "4": 0.22359154929577466,
+          "5": 0.16696914700544466,
+          "6": 0.1326530612244898,
+          "7": 0.10551948051948051,
+          "8": 0.07947019867549669,
+          "9": 0.054481546572934976,
+          "10": 0.058333333333333334
+        }
+      },
+      "hard_ood": {
+        "acc": 0.7548828125,
+        "loss": 1.5337353497743607,
+        "by_depth": {
+          "11": 0.8242753623188406,
+          "12": 0.7542533081285444,
+          "13": 0.7076612903225806,
+          "14": 0.7239915074309978
+        },
+        "oracle_depth_acc": 0.7548828125,
+        "halt_acc": 0.05078125,
+        "oracle_any_step_acc": 0.81103515625,
+        "by_depth_halt": {
+          "11": 0.050724637681159424,
+          "12": 0.06994328922495274,
+          "13": 0.036290322580645164,
+          "14": 0.044585987261146494
+        }
+      },
+      "elapsed_s_total": 353.09022665023804
+    },
+    "thought_halt_chain_seed1": {
+      "spec": {
+        "name": "thought_halt_chain",
+        "model": "thought",
+        "task": "chain",
+        "schedule": "curriculum",
+        "answer_mode": "halt",
+        "eval_answer_mode": "halt",
+        "aux_mode": "attention_halt",
+        "aux_weight": 0.35
+      },
+      "seed": 1,
+      "params": 305633,
+      "history": [
+        {
+          "step": 1,
+          "loss": 70.60900115966797,
+          "answer_loss": 68.7760009765625,
+          "train_acc": 0.0,
+          "step_mode": "halt",
+          "train_depth": [
+            1,
+            3
+          ],
+          "elapsed_s": 0.03205084800720215,
+          "attn_loss": 2.951098918914795,
+          "halt_loss": 2.2860450744628906,
+          "aux_loss": 1.8330004215240479,
+          "ood_acc": 0.0
+        },
+        {
+          "step": 450,
+          "loss": 2.4696011543273926,
+          "answer_loss": 1.7858110666275024,
+          "train_acc": 0.5234375,
+          "step_mode": "halt",
+          "train_depth": [
+            1,
+            3
+          ],
+          "elapsed_s": 16.130454301834106,
+          "attn_loss": 0.26353469491004944,
+          "halt_loss": 1.6901512145996094,
+          "aux_loss": 0.6837900280952454,
+          "ood_acc": 0.03515625
+        },
+        {
+          "step": 900,
+          "loss": 1.4381728172302246,
+          "answer_loss": 0.9409977197647095,
+          "train_acc": 0.8515625,
+          "step_mode": "halt",
+          "train_depth": [
+            1,
+            6
+          ],
+          "elapsed_s": 32.42465543746948,
+          "attn_loss": 0.21882471442222595,
+          "halt_loss": 1.2016754150390625,
+          "aux_loss": 0.49717503786087036,
+          "ood_acc": 0.59765625
+        },
+        {
+          "step": 1350,
+          "loss": 1.6010736227035522,
+          "answer_loss": 1.0464307069778442,
+          "train_acc": 0.7890625,
+          "step_mode": "halt",
+          "train_depth": [
+            1,
+            10
+          ],
+          "elapsed_s": 49.56735134124756,
+          "attn_loss": 0.3340989351272583,
+          "halt_loss": 1.2505950927734375,
+          "aux_loss": 0.554642915725708,
+          "ood_acc": 0.787109375
+        },
+        {
+          "step": 1800,
+          "loss": 1.4808175563812256,
+          "answer_loss": 1.0065494775772095,
+          "train_acc": 0.82421875,
+          "step_mode": "halt",
+          "train_depth": [
+            1,
+            10
+          ],
+          "elapsed_s": 68.34649682044983,
+          "attn_loss": 0.21289227902889252,
+          "halt_loss": 1.1421594619750977,
+          "aux_loss": 0.4742681086063385,
+          "ood_acc": 0.8427734375
+        }
+      ],
+      "iid": {
+        "acc": 0.880859375,
+        "loss": 0.7407668679952621,
+        "by_depth": {
+          "1": 0.8715529753265603,
+          "2": 0.8811659192825112,
+          "3": 0.8898550724637682
+        },
+        "oracle_depth_acc": 0.966796875,
+        "halt_acc": 0.880859375,
+        "oracle_any_step_acc": 0.972900390625,
+        "by_depth_halt": {
+          "1": 0.8715529753265603,
+          "2": 0.8811659192825112,
+          "3": 0.8898550724637682
+        }
+      },
+      "ood": {
+        "acc": 0.81982421875,
+        "loss": 0.9683736935257912,
+        "by_depth": {
+          "4": 0.8576329331046312,
+          "5": 0.8651079136690647,
+          "6": 0.8482293423271501,
+          "7": 0.8003300330033003,
+          "8": 0.7901023890784983,
+          "9": 0.7706270627062707,
+          "10": 0.8109540636042403
+        },
+        "oracle_depth_acc": 0.915283203125,
+        "halt_acc": 0.81982421875,
+        "oracle_any_step_acc": 0.93310546875,
+        "by_depth_halt": {
+          "4": 0.8576329331046312,
+          "5": 0.8651079136690647,
+          "6": 0.8482293423271501,
+          "7": 0.8003300330033003,
+          "8": 0.7901023890784983,
+          "9": 0.7706270627062707,
+          "10": 0.8109540636042403
+        }
+      },
+      "hard_ood": {
+        "acc": 0.57958984375,
+        "loss": 2.0948524326086044,
+        "by_depth": {
+          "11": 0.7069306930693069,
+          "12": 0.6447876447876448,
+          "13": 0.5299625468164794,
+          "14": 0.43380855397148677
+        },
+        "oracle_depth_acc": 0.806640625,
+        "halt_acc": 0.57958984375,
+        "oracle_any_step_acc": 0.83251953125,
+        "by_depth_halt": {
+          "11": 0.7069306930693069,
+          "12": 0.6447876447876448,
+          "13": 0.5299625468164794,
+          "14": 0.43380855397148677
+        }
+      },
+      "elapsed_s_total": 422.62676429748535
+    },
+    "thought_halt_chain_seed2": {
+      "spec": {
+        "name": "thought_halt_chain",
+        "model": "thought",
+        "task": "chain",
+        "schedule": "curriculum",
+        "answer_mode": "halt",
+        "eval_answer_mode": "halt",
+        "aux_mode": "attention_halt",
+        "aux_weight": 0.35
+      },
+      "seed": 2,
+      "params": 305633,
+      "history": [
+        {
+          "step": 1,
+          "loss": 67.99358367919922,
+          "answer_loss": 66.1243896484375,
+          "train_acc": 0.0,
+          "step_mode": "halt",
+          "train_depth": [
+            1,
+            3
+          ],
+          "elapsed_s": 0.03284502029418945,
+          "attn_loss": 2.9402430057525635,
+          "halt_loss": 2.4003067016601562,
+          "aux_loss": 1.8691922426223755,
+          "ood_acc": 0.0
+        },
+        {
+          "step": 450,
+          "loss": 2.090144634246826,
+          "answer_loss": 1.4563701152801514,
+          "train_acc": 0.62109375,
+          "step_mode": "halt",
+          "train_depth": [
+            1,
+            3
+          ],
+          "elapsed_s": 15.5565767288208,
+          "attn_loss": 0.2410934567451477,
+          "halt_loss": 1.5696907043457031,
+          "aux_loss": 0.6337743997573853,
+          "ood_acc": 0.025390625
+        },
+        {
+          "step": 900,
+          "loss": 1.3183411359786987,
+          "answer_loss": 0.8826552629470825,
+          "train_acc": 0.84765625,
+          "step_mode": "halt",
+          "train_depth": [
+            1,
+            6
+          ],
+          "elapsed_s": 31.93180274963379,
+          "attn_loss": 0.19139906764030457,
+          "halt_loss": 1.053417682647705,
+          "aux_loss": 0.4356858730316162,
+          "ood_acc": 0.501953125
+        },
+        {
+          "step": 1350,
+          "loss": 1.2545974254608154,
+          "answer_loss": 0.8127546906471252,
+          "train_acc": 0.83984375,
+          "step_mode": "halt",
+          "train_depth": [
+            1,
+            10
+          ],
+          "elapsed_s": 49.20336318016052,
+          "attn_loss": 0.16909761726856232,
+          "halt_loss": 1.0933103561401367,
+          "aux_loss": 0.44184279441833496,
+          "ood_acc": 0.8125
+        },
+        {
+          "step": 1800,
+          "loss": 1.5709370374679565,
+          "answer_loss": 1.085376262664795,
+          "train_acc": 0.80859375,
+          "step_mode": "halt",
+          "train_depth": [
+            1,
+            10
+          ],
+          "elapsed_s": 67.79453802108765,
+          "attn_loss": 0.199574276804924,
+          "halt_loss": 1.1877422332763672,
+          "aux_loss": 0.48556074500083923,
+          "ood_acc": 0.8525390625
+        }
+      ],
+      "iid": {
+        "acc": 0.89013671875,
+        "loss": 0.6889919638633728,
+        "by_depth": {
+          "1": 0.8819018404907976,
+          "2": 0.8906020558002937,
+          "3": 0.8972027972027972
+        },
+        "oracle_depth_acc": 0.970458984375,
+        "halt_acc": 0.89013671875,
+        "oracle_any_step_acc": 0.9765625,
+        "by_depth_halt": {
+          "1": 0.8819018404907976,
+          "2": 0.8906020558002937,
+          "3": 0.8972027972027972
+        }
+      },
+      "ood": {
+        "acc": 0.841796875,
+        "loss": 0.8702833652496338,
+        "by_depth": {
+          "4": 0.8590831918505942,
+          "5": 0.8576214405360134,
+          "6": 0.8576214405360134,
+          "7": 0.8169014084507042,
+          "8": 0.8405797101449275,
+          "9": 0.8242320819112628,
+          "10": 0.8345724907063197
+        },
+        "oracle_depth_acc": 0.926513671875,
+        "halt_acc": 0.841796875,
+        "oracle_any_step_acc": 0.944580078125,
+        "by_depth_halt": {
+          "4": 0.8590831918505942,
+          "5": 0.8576214405360134,
+          "6": 0.8576214405360134,
+          "7": 0.8169014084507042,
+          "8": 0.8405797101449275,
+          "9": 0.8242320819112628,
+          "10": 0.8345724907063197
+        }
+      },
+      "hard_ood": {
+        "acc": 0.62841796875,
+        "loss": 1.8532900661230087,
+        "by_depth": {
+          "11": 0.716,
+          "12": 0.6810506566604128,
+          "13": 0.5991902834008097,
+          "14": 0.5182341650671785
+        },
+        "oracle_depth_acc": 0.79931640625,
+        "halt_acc": 0.62841796875,
+        "oracle_any_step_acc": 0.83984375,
+        "by_depth_halt": {
+          "11": 0.716,
+          "12": 0.6810506566604128,
+          "13": 0.5991902834008097,
+          "14": 0.5182341650671785
+        }
+      },
+      "elapsed_s_total": 491.4805884361267
+    },
+    "thought_halt_chain_seed3": {
+      "spec": {
+        "name": "thought_halt_chain",
+        "model": "thought",
+        "task": "chain",
+        "schedule": "curriculum",
+        "answer_mode": "halt",
+        "eval_answer_mode": "halt",
+        "aux_mode": "attention_halt",
+        "aux_weight": 0.35
+      },
+      "seed": 3,
+      "params": 305633,
+      "history": [
+        {
+          "step": 1,
+          "loss": 70.64379119873047,
+          "answer_loss": 68.7906494140625,
+          "train_acc": 0.0,
+          "step_mode": "halt",
+          "train_depth": [
+            1,
+            3
+          ],
+          "elapsed_s": 0.03168749809265137,
+          "attn_loss": 2.9539732933044434,
+          "halt_loss": 2.3407135009765625,
+          "aux_loss": 1.8531403541564941,
+          "ood_acc": 0.0
+        },
+        {
+          "step": 450,
+          "loss": 2.345670461654663,
+          "answer_loss": 1.6787580251693726,
+          "train_acc": 0.5390625,
+          "step_mode": "halt",
+          "train_depth": [
+            1,
+            3
+          ],
+          "elapsed_s": 15.565240383148193,
+          "attn_loss": 0.2765806317329407,
+          "halt_loss": 1.6288833618164062,
+          "aux_loss": 0.6669123768806458,
+          "ood_acc": 0.044921875
+        },
+        {
+          "step": 900,
+          "loss": 1.5276533365249634,
+          "answer_loss": 1.0987913608551025,
+          "train_acc": 0.80859375,
+          "step_mode": "halt",
+          "train_depth": [
+            1,
+            6
+          ],
+          "elapsed_s": 31.995208024978638,
+          "attn_loss": 0.16536107659339905,
+          "halt_loss": 1.0599589347839355,
+          "aux_loss": 0.42886197566986084,
+          "ood_acc": 0.529296875
+        },
+        {
+          "step": 1350,
+          "loss": 1.5443378686904907,
+          "answer_loss": 1.0180943012237549,
+          "train_acc": 0.80078125,
+          "step_mode": "halt",
+          "train_depth": [
+            1,
+            10
+          ],
+          "elapsed_s": 50.087225914001465,
+          "attn_loss": 0.2549707591533661,
+          "halt_loss": 1.248582363128662,
+          "aux_loss": 0.5262435674667358,
+          "ood_acc": 0.8046875
+        },
+        {
+          "step": 1800,
+          "loss": 1.1610920429229736,
+          "answer_loss": 0.749020516872406,
+          "train_acc": 0.85546875,
+          "step_mode": "halt",
+          "train_depth": [
+            1,
+            10
+          ],
+          "elapsed_s": 68.05552220344543,
+          "attn_loss": 0.1559317409992218,
+          "halt_loss": 1.0214157104492188,
+          "aux_loss": 0.4120715856552124,
+          "ood_acc": 0.833984375
+        }
+      ],
+      "iid": {
+        "acc": 0.889892578125,
+        "loss": 0.68975680321455,
+        "by_depth": {
+          "1": 0.8827838827838828,
+          "2": 0.8925680647534953,
+          "3": 0.8943148688046647
+        },
+        "oracle_depth_acc": 0.970458984375,
+        "halt_acc": 0.889892578125,
+        "oracle_any_step_acc": 0.98095703125,
+        "by_depth_halt": {
+          "1": 0.8827838827838828,
+          "2": 0.8925680647534953,
+          "3": 0.8943148688046647
+        }
+      },
+      "ood": {
+        "acc": 0.836669921875,
+        "loss": 0.9360538013279438,
+        "by_depth": {
+          "4": 0.8943661971830986,
+          "5": 0.852994555353902,
+          "6": 0.8027210884353742,
+          "7": 0.8327922077922078,
+          "8": 0.8145695364238411,
+          "9": 0.8224956063268892,
+          "10": 0.84
+        },
+        "oracle_depth_acc": 0.919921875,
+        "halt_acc": 0.836669921875,
+        "oracle_any_step_acc": 0.939453125,
+        "by_depth_halt": {
+          "4": 0.8943661971830986,
+          "5": 0.852994555353902,
+          "6": 0.8027210884353742,
+          "7": 0.8327922077922078,
+          "8": 0.8145695364238411,
+          "9": 0.8224956063268892,
+          "10": 0.84
+        }
+      },
+      "hard_ood": {
+        "acc": 0.4580078125,
+        "loss": 2.6868151128292084,
+        "by_depth": {
+          "11": 0.6467391304347826,
+          "12": 0.5444234404536862,
+          "13": 0.34475806451612906,
+          "14": 0.25902335456475584
+        },
+        "oracle_depth_acc": 0.7724609375,
+        "halt_acc": 0.4580078125,
+        "oracle_any_step_acc": 0.80908203125,
+        "by_depth_halt": {
+          "11": 0.6467391304347826,
+          "12": 0.5444234404536862,
+          "13": 0.34475806451612906,
+          "14": 0.25902335456475584
+        }
+      },
+      "elapsed_s_total": 560.5799784660339
+    },
+    "thought_twostage_halt_chain_seed1": {
+      "spec": {
+        "name": "thought_twostage_halt_chain",
+        "model": "thought",
+        "task": "chain",
+        "schedule": "curriculum",
+        "answer_mode": "depth_then_halt",
+        "eval_answer_mode": "halt",
+        "aux_mode": "attention_halt",
+        "aux_weight": 0.35
+      },
+      "seed": 1,
+      "params": 305633,
+      "history": [
+        {
+          "step": 1,
+          "loss": 104.66100311279297,
+          "answer_loss": 102.8280029296875,
+          "train_acc": 0.0,
+          "step_mode": "depth",
+          "train_depth": [
+            1,
+            3
+          ],
+          "elapsed_s": 0.033608198165893555,
+          "attn_loss": 2.951098918914795,
+          "halt_loss": 2.2860450744628906,
+          "aux_loss": 1.8330004215240479,
+          "ood_acc": 0.0
+        },
+        {
+          "step": 450,
+          "loss": 1.3775421380996704,
+          "answer_loss": 0.5469546318054199,
+          "train_acc": 0.93359375,
+          "step_mode": "depth",
+          "train_depth": [
+            1,
+            3
+          ],
+          "elapsed_s": 15.371964693069458,
+          "attn_loss": 0.10958419740200043,
+          "halt_loss": 2.2635231018066406,
+          "aux_loss": 0.8305875062942505,
+          "ood_acc": 0.0732421875
+        },
+        {
+          "step": 900,
+          "loss": 1.0936906337738037,
+          "answer_loss": 0.4029545783996582,
+          "train_acc": 0.94140625,
+          "step_mode": "depth",
+          "train_depth": [
+            1,
+            6
+          ],
+          "elapsed_s": 31.71984052658081,
+          "attn_loss": 0.2491888701915741,
+          "halt_loss": 1.7243428230285645,
+          "aux_loss": 0.6907361149787903,
+          "ood_acc": 0.08203125
+        },
+        {
+          "step": 1350,
+          "loss": 2.0431299209594727,
+          "answer_loss": 1.524096131324768,
+          "train_acc": 0.73828125,
+          "step_mode": "halt",
+          "train_depth": [
+            1,
+            10
+          ],
+          "elapsed_s": 49.52665853500366,
+          "attn_loss": 0.4119933843612671,
+          "halt_loss": 1.070960521697998,
+          "aux_loss": 0.5190338492393494,
+          "ood_acc": 0.697265625
+        },
+        {
+          "step": 1800,
+          "loss": 1.6790566444396973,
+          "answer_loss": 1.2481540441513062,
+          "train_acc": 0.8046875,
+          "step_mode": "halt",
+          "train_depth": [
+            1,
+            10
+          ],
+          "elapsed_s": 67.6147768497467,
+          "attn_loss": 0.2827244997024536,
+          "halt_loss": 0.9484260082244873,
+          "aux_loss": 0.4309026598930359,
+          "ood_acc": 0.8154296875
+        }
+      ],
+      "iid": {
+        "acc": 0.83154296875,
+        "loss": 1.0265610925853252,
+        "by_depth": {
+          "1": 0.8040638606676342,
+          "2": 0.8430493273542601,
+          "3": 0.8478260869565217
+        },
+        "oracle_depth_acc": 0.959716796875,
+        "halt_acc": 0.83154296875,
+        "oracle_any_step_acc": 0.96630859375,
+        "by_depth_halt": {
+          "1": 0.8040638606676342,
+          "2": 0.8430493273542601,
+          "3": 0.8478260869565217
+        }
+      },
+      "ood": {
+        "acc": 0.791015625,
+        "loss": 1.3441387340426445,
+        "by_depth": {
+          "4": 0.8250428816466552,
+          "5": 0.8255395683453237,
+          "6": 0.8111298482293423,
+          "7": 0.7887788778877888,
+          "8": 0.7337883959044369,
+          "9": 0.7755775577557755,
+          "10": 0.7791519434628975
+        },
+        "oracle_depth_acc": 0.87744140625,
+        "halt_acc": 0.791015625,
+        "oracle_any_step_acc": 0.901611328125,
+        "by_depth_halt": {
+          "4": 0.8250428816466552,
+          "5": 0.8255395683453237,
+          "6": 0.8111298482293423,
+          "7": 0.7887788778877888,
+          "8": 0.7337883959044369,
+          "9": 0.7755775577557755,
+          "10": 0.7791519434628975
+        }
+      },
+      "hard_ood": {
+        "acc": 0.4453125,
+        "loss": 2.8479195535182953,
+        "by_depth": {
+          "11": 0.596039603960396,
+          "12": 0.5115830115830116,
+          "13": 0.38202247191011235,
+          "14": 0.2892057026476578
+        },
+        "oracle_depth_acc": 0.73583984375,
+        "halt_acc": 0.4453125,
+        "oracle_any_step_acc": 0.78466796875,
+        "by_depth_halt": {
+          "11": 0.596039603960396,
+          "12": 0.5115830115830116,
+          "13": 0.38202247191011235,
+          "14": 0.2892057026476578
+        }
+      },
+      "elapsed_s_total": 629.2375645637512
+    },
+    "thought_twostage_halt_chain_seed2": {
+      "spec": {
+        "name": "thought_twostage_halt_chain",
+        "model": "thought",
+        "task": "chain",
+        "schedule": "curriculum",
+        "answer_mode": "depth_then_halt",
+        "eval_answer_mode": "halt",
+        "aux_mode": "attention_halt",
+        "aux_weight": 0.35
+      },
+      "seed": 2,
+      "params": 305633,
+      "history": [
+        {
+          "step": 1,
+          "loss": 105.34319305419922,
+          "answer_loss": 103.4739990234375,
+          "train_acc": 0.0,
+          "step_mode": "depth",
+          "train_depth": [
+            1,
+            3
+          ],
+          "elapsed_s": 0.033284902572631836,
+          "attn_loss": 2.9402430057525635,
+          "halt_loss": 2.4003067016601562,
+          "aux_loss": 1.8691922426223755,
+          "ood_acc": 0.0
+        },
+        {
+          "step": 450,
+          "loss": 1.6174342632293701,
+          "answer_loss": 0.7687075734138489,
+          "train_acc": 0.91796875,
+          "step_mode": "depth",
+          "train_depth": [
+            1,
+            3
+          ],
+          "elapsed_s": 15.545137882232666,
+          "attn_loss": 0.1547228991985321,
+          "halt_loss": 2.2702102661132812,
+          "aux_loss": 0.8487266302108765,
+          "ood_acc": 0.06640625
+        },
+        {
+          "step": 900,
+          "loss": 1.2348928451538086,
+          "answer_loss": 0.5048909783363342,
+          "train_acc": 0.92578125,
+          "step_mode": "depth",
+          "train_depth": [
+            1,
+            6
+          ],
+          "elapsed_s": 32.36648082733154,
+          "attn_loss": 0.2594408690929413,
+          "halt_loss": 1.8262786865234375,
+          "aux_loss": 0.7300018668174744,
+          "ood_acc": 0.0654296875
+        },
+        {
+          "step": 1350,
+          "loss": 2.198867082595825,
+          "answer_loss": 1.6897773742675781,
+          "train_acc": 0.66796875,
+          "step_mode": "halt",
+          "train_depth": [
+            1,
+            10
+          ],
+          "elapsed_s": 49.646522998809814,
+          "attn_loss": 0.2837870717048645,
+          "halt_loss": 1.17075514793396,
+          "aux_loss": 0.5090897679328918,
+          "ood_acc": 0.6357421875
+        },
+        {
+          "step": 1800,
+          "loss": 1.726062297821045,
+          "answer_loss": 1.2603479623794556,
+          "train_acc": 0.78515625,
+          "step_mode": "halt",
+          "train_depth": [
+            1,
+            10
+          ],
+          "elapsed_s": 67.52017855644226,
+          "attn_loss": 0.339397668838501,
+          "halt_loss": 0.9912147521972656,
+          "aux_loss": 0.46571433544158936,
+          "ood_acc": 0.765625
+        }
+      ],
+      "iid": {
+        "acc": 0.84033203125,
+        "loss": 1.0806200169026852,
+        "by_depth": {
+          "1": 0.7983128834355828,
+          "2": 0.8480176211453745,
+          "3": 0.8713286713286713
+        },
+        "oracle_depth_acc": 0.962890625,
+        "halt_acc": 0.84033203125,
+        "oracle_any_step_acc": 0.968505859375,
+        "by_depth_halt": {
+          "1": 0.7983128834355828,
+          "2": 0.8480176211453745,
+          "3": 0.8713286713286713
+        }
+      },
+      "ood": {
+        "acc": 0.77294921875,
+        "loss": 1.4967772886157036,
+        "by_depth": {
+          "4": 0.8115449915110357,
+          "5": 0.8090452261306532,
+          "6": 0.8006700167504187,
+          "7": 0.7693661971830986,
+          "8": 0.7922705314009661,
+          "9": 0.7593856655290102,
+          "10": 0.6561338289962825
+        },
+        "oracle_depth_acc": 0.87255859375,
+        "halt_acc": 0.77294921875,
+        "oracle_any_step_acc": 0.89794921875,
+        "by_depth_halt": {
+          "4": 0.8115449915110357,
+          "5": 0.8090452261306532,
+          "6": 0.8006700167504187,
+          "7": 0.7693661971830986,
+          "8": 0.7922705314009661,
+          "9": 0.7593856655290102,
+          "10": 0.6561338289962825
+        }
+      },
+      "hard_ood": {
+        "acc": 0.29248046875,
+        "loss": 3.884231150150299,
+        "by_depth": {
+          "11": 0.432,
+          "12": 0.32833020637898686,
+          "13": 0.22064777327935223,
+          "14": 0.19001919385796545
+        },
+        "oracle_depth_acc": 0.73095703125,
+        "halt_acc": 0.29248046875,
+        "oracle_any_step_acc": 0.78173828125,
+        "by_depth_halt": {
+          "11": 0.432,
+          "12": 0.32833020637898686,
+          "13": 0.22064777327935223,
+          "14": 0.19001919385796545
+        }
+      },
+      "elapsed_s_total": 697.9785423278809
+    },
+    "thought_twostage_halt_chain_seed3": {
+      "spec": {
+        "name": "thought_twostage_halt_chain",
+        "model": "thought",
+        "task": "chain",
+        "schedule": "curriculum",
+        "answer_mode": "depth_then_halt",
+        "eval_answer_mode": "halt",
+        "aux_mode": "attention_halt",
+        "aux_weight": 0.35
+      },
+      "seed": 3,
+      "params": 305633,
+      "history": [
+        {
+          "step": 1,
+          "loss": 103.39293670654297,
+          "answer_loss": 101.539794921875,
+          "train_acc": 0.0,
+          "step_mode": "depth",
+          "train_depth": [
+            1,
+            3
+          ],
+          "elapsed_s": 0.03263688087463379,
+          "attn_loss": 2.9539732933044434,
+          "halt_loss": 2.3407135009765625,
+          "aux_loss": 1.8531403541564941,
+          "ood_acc": 0.0
+        },
+        {
+          "step": 450,
+          "loss": 1.379226565361023,
+          "answer_loss": 0.5581762194633484,
+          "train_acc": 0.921875,
+          "step_mode": "depth",
+          "train_depth": [
+            1,
+            3
+          ],
+          "elapsed_s": 15.44475769996643,
+          "attn_loss": 0.11797962337732315,
+          "halt_loss": 2.2278785705566406,
+          "aux_loss": 0.8210503458976746,
+          "ood_acc": 0.083984375
+        },
+        {
+          "step": 900,
+          "loss": 1.1793885231018066,
+          "answer_loss": 0.5929620265960693,
+          "train_acc": 0.91796875,
+          "step_mode": "depth",
+          "train_depth": [
+            1,
+            6
+          ],
+          "elapsed_s": 32.48186755180359,
+          "attn_loss": 0.21792921423912048,
+          "halt_loss": 1.4575748443603516,
+          "aux_loss": 0.5864264369010925,
+          "ood_acc": 0.0693359375
+        },
+        {
+          "step": 1350,
+          "loss": 2.0251657962799072,
+          "answer_loss": 1.603609323501587,
+          "train_acc": 0.71484375,
+          "step_mode": "halt",
+          "train_depth": [
+            1,
+            10
+          ],
+          "elapsed_s": 49.70727348327637,
+          "attn_loss": 0.2682947814464569,
+          "halt_loss": 0.9361522197723389,
+          "aux_loss": 0.4215564429759979,
+          "ood_acc": 0.7177734375
+        },
+        {
+          "step": 1800,
+          "loss": 1.7019574642181396,
+          "answer_loss": 1.2857906818389893,
+          "train_acc": 0.828125,
+          "step_mode": "halt",
+          "train_depth": [
+            1,
+            10
+          ],
+          "elapsed_s": 67.6397054195404,
+          "attn_loss": 0.298371285200119,
+          "halt_loss": 0.8906764984130859,
+          "aux_loss": 0.4161667227745056,
+          "ood_acc": 0.7734375
+        }
+      ],
+      "iid": {
+        "acc": 0.858642578125,
+        "loss": 0.8878791145980358,
+        "by_depth": {
+          "1": 0.8571428571428571,
+          "2": 0.8594554819720382,
+          "3": 0.85932944606414
+        },
+        "oracle_depth_acc": 0.965576171875,
+        "halt_acc": 0.858642578125,
+        "oracle_any_step_acc": 0.969482421875,
+        "by_depth_halt": {
+          "1": 0.8571428571428571,
+          "2": 0.8594554819720382,
+          "3": 0.85932944606414
+        }
+      },
+      "ood": {
+        "acc": 0.796142578125,
+        "loss": 1.3115744888782501,
+        "by_depth": {
+          "4": 0.8485915492957746,
+          "5": 0.8166969147005445,
+          "6": 0.7738095238095238,
+          "7": 0.8035714285714286,
+          "8": 0.7864238410596026,
+          "9": 0.7768014059753954,
+          "10": 0.77
+        },
+        "oracle_depth_acc": 0.884521484375,
+        "halt_acc": 0.796142578125,
+        "oracle_any_step_acc": 0.906494140625,
+        "by_depth_halt": {
+          "4": 0.8485915492957746,
+          "5": 0.8166969147005445,
+          "6": 0.7738095238095238,
+          "7": 0.8035714285714286,
+          "8": 0.7864238410596026,
+          "9": 0.7768014059753954,
+          "10": 0.77
+        }
+      },
+      "hard_ood": {
+        "acc": 0.31640625,
+        "loss": 3.7755587697029114,
+        "by_depth": {
+          "11": 0.5144927536231884,
+          "12": 0.32325141776937616,
+          "13": 0.2540322580645161,
+          "14": 0.14225053078556263
+        },
+        "oracle_depth_acc": 0.72607421875,
+        "halt_acc": 0.31640625,
+        "oracle_any_step_acc": 0.7578125,
+        "by_depth_halt": {
+          "11": 0.5144927536231884,
+          "12": 0.32325141776937616,
+          "13": 0.2540322580645161,
+          "14": 0.14225053078556263
+        }
+      },
+      "elapsed_s_total": 766.8367829322815
+    },
+    "baseline_depth_branch_trap_seed1": {
+      "spec": {
+        "name": "baseline_depth_branch_trap",
+        "model": "baseline",
+        "task": "branch_trap",
+        "schedule": "curriculum",
+        "answer_mode": "final",
+        "eval_answer_mode": "final",
+        "aux_mode": "none"
+      },
+      "seed": 1,
+      "params": 764640,
+      "history": [
+        {
+          "step": 1,
+          "loss": 5.173713684082031,
+          "answer_loss": 5.173713684082031,
+          "train_acc": 0.0078125,
+          "step_mode": "final",
+          "train_depth": [
+            1,
+            3
+          ],
+          "elapsed_s": 0.0309293270111084,
+          "ood_acc": 0.0166015625
+        },
+        {
+          "step": 450,
+          "loss": 3.1976404190063477,
+          "answer_loss": 3.1976404190063477,
+          "train_acc": 0.1171875,
+          "step_mode": "final",
+          "train_depth": [
+            1,
+            3
+          ],
+          "elapsed_s": 13.199694156646729,
+          "ood_acc": 0.0478515625
+        },
+        {
+          "step": 900,
+          "loss": 3.1891555786132812,
+          "answer_loss": 3.1891555786132812,
+          "train_acc": 0.1484375,
+          "step_mode": "final",
+          "train_depth": [
+            1,
+            6
+          ],
+          "elapsed_s": 27.346601724624634,
+          "ood_acc": 0.06640625
+        },
+        {
+          "step": 1350,
+          "loss": 3.4060592651367188,
+          "answer_loss": 3.4060592651367188,
+          "train_acc": 0.0859375,
+          "step_mode": "final",
+          "train_depth": [
+            1,
+            10
+          ],
+          "elapsed_s": 43.63035821914673,
+          "ood_acc": 0.0791015625
+        },
+        {
+          "step": 1800,
+          "loss": 3.4165172576904297,
+          "answer_loss": 3.4165172576904297,
+          "train_acc": 0.1015625,
+          "step_mode": "final",
+          "train_depth": [
+            1,
+            10
+          ],
+          "elapsed_s": 62.76248264312744,
+          "ood_acc": 0.080078125
+        }
+      ],
+      "iid": {
+        "acc": 0.19189453125,
+        "loss": 2.450984925031662,
+        "by_depth": {
+          "1": 0.17210682492581603,
+          "2": 0.20389805097451275,
+          "3": 0.19943422913719944
+        }
+      },
+      "ood": {
+        "acc": 0.097900390625,
+        "loss": 3.364694908261299,
+        "by_depth": {
+          "4": 0.12748344370860928,
+          "5": 0.11993243243243243,
+          "6": 0.09391304347826086,
+          "7": 0.09027777777777778,
+          "8": 0.07912457912457913,
+          "9": 0.08445945945945946,
+          "10": 0.08880994671403197
+        }
+      },
+      "hard_ood": {
+        "acc": 0.056640625,
+        "loss": 3.789616346359253,
+        "by_depth": {
+          "11": 0.055984555984555984,
+          "12": 0.07797270955165692,
+          "13": 0.04933586337760911,
+          "14": 0.04285714285714286
+        }
+      },
+      "elapsed_s_total": 830.8857181072235
+    },
+    "thought_depth_branch_trap_seed1": {
+      "spec": {
+        "name": "thought_depth_branch_trap",
+        "model": "thought",
+        "task": "branch_trap",
+        "schedule": "curriculum",
+        "answer_mode": "depth",
+        "eval_answer_mode": "depth",
+        "aux_mode": "attention",
+        "aux_weight": 0.5
+      },
+      "seed": 1,
+      "params": 305633,
+      "history": [
+        {
+          "step": 1,
+          "loss": 106.46641540527344,
+          "answer_loss": 104.92138671875,
+          "train_acc": 0.0,
+          "step_mode": "depth",
+          "train_depth": [
+            1,
+            3
+          ],
+          "elapsed_s": 0.03519749641418457,
+          "attn_loss": 3.090057373046875,
+          "aux_loss": 1.5450286865234375,
+          "ood_acc": 0.0009765625
+        },
+        {
+          "step": 450,
+          "loss": 4.574394702911377,
+          "answer_loss": 3.8652191162109375,
+          "train_acc": 0.14453125,
+          "step_mode": "depth",
+          "train_depth": [
+            1,
+            3
+          ],
+          "elapsed_s": 16.48922872543335,
+          "attn_loss": 1.4183512926101685,
+          "aux_loss": 0.7091756463050842,
+          "ood_acc": 0.025390625
+        },
+        {
+          "step": 900,
+          "loss": 4.360994815826416,
+          "answer_loss": 3.528764247894287,
+          "train_acc": 0.14453125,
+          "step_mode": "depth",
+          "train_depth": [
+            1,
+            6
+          ],
+          "elapsed_s": 33.76132273674011,
+          "attn_loss": 1.6644610166549683,
+          "aux_loss": 0.8322305083274841,
+          "ood_acc": 0.056640625
+        },
+        {
+          "step": 1350,
+          "loss": 4.78892707824707,
+          "answer_loss": 3.7377099990844727,
+          "train_acc": 0.1796875,
+          "step_mode": "depth",
+          "train_depth": [
+            1,
+            10
+          ],
+          "elapsed_s": 52.6318724155426,
+          "attn_loss": 2.1024343967437744,
+          "aux_loss": 1.0512171983718872,
+          "ood_acc": 0.0859375
+        },
+        {
+          "step": 1800,
+          "loss": 4.724459648132324,
+          "answer_loss": 3.682124614715576,
+          "train_acc": 0.1796875,
+          "step_mode": "depth",
+          "train_depth": [
+            1,
+            10
+          ],
+          "elapsed_s": 74.47828459739685,
+          "attn_loss": 2.084669828414917,
+          "aux_loss": 1.0423349142074585,
+          "ood_acc": 0.1142578125
+        }
+      ],
+      "iid": {
+        "acc": 0.398681640625,
+        "loss": 2.201520174741745,
+        "by_depth": {
+          "1": 0.45919881305637983,
+          "2": 0.3950524737631184,
+          "3": 0.3444130127298444
+        },
+        "oracle_depth_acc": 0.398681640625,
+        "halt_acc": 0.1494140625,
+        "oracle_any_step_acc": 0.5029296875,
+        "by_depth_halt": {
+          "1": 0.1261127596439169,
+          "2": 0.18065967016491755,
+          "3": 0.14214992927864215
+        }
+      },
+      "ood": {
+        "acc": 0.124267578125,
+        "loss": 4.009128153324127,
+        "by_depth": {
+          "4": 0.24172185430463577,
+          "5": 0.20945945945945946,
+          "6": 0.13217391304347825,
+          "7": 0.08333333333333333,
+          "8": 0.07575757575757576,
+          "9": 0.052364864864864864,
+          "10": 0.06927175843694494
+        },
+        "oracle_depth_acc": 0.124267578125,
+        "halt_acc": 0.052490234375,
+        "oracle_any_step_acc": 0.2197265625,
+        "by_depth_halt": {
+          "4": 0.08112582781456953,
+          "5": 0.06925675675675676,
+          "6": 0.06608695652173913,
+          "7": 0.03993055555555555,
+          "8": 0.03535353535353535,
+          "9": 0.030405405405405407,
+          "10": 0.04440497335701599
+        }
+      },
+      "hard_ood": {
+        "acc": 0.0390625,
+        "loss": 4.487007915973663,
+        "by_depth": {
+          "11": 0.0444015444015444,
+          "12": 0.03898635477582846,
+          "13": 0.03984819734345351,
+          "14": 0.0326530612244898
+        },
+        "oracle_depth_acc": 0.0390625,
+        "halt_acc": 0.03857421875,
+        "oracle_any_step_acc": 0.12060546875,
+        "by_depth_halt": {
+          "11": 0.032818532818532815,
+          "12": 0.04093567251461988,
+          "13": 0.04554079696394687,
+          "14": 0.03469387755102041
+        }
+      },
+      "elapsed_s_total": 906.697586774826
+    },
+    "thought_halt_branch_trap_seed1": {
+      "spec": {
+        "name": "thought_halt_branch_trap",
+        "model": "thought",
+        "task": "branch_trap",
+        "schedule": "curriculum",
+        "answer_mode": "halt",
+        "eval_answer_mode": "halt",
+        "aux_mode": "attention_halt",
+        "aux_weight": 0.35
+      },
+      "seed": 1,
+      "params": 305633,
+      "history": [
+        {
+          "step": 1,
+          "loss": 69.49411010742188,
+          "answer_loss": 67.5770263671875,
+          "train_acc": 0.0,
+          "step_mode": "halt",
+          "train_depth": [
+            1,
+            3
+          ],
+          "elapsed_s": 0.032765865325927734,
+          "attn_loss": 3.090057373046875,
+          "halt_loss": 2.3873214721679688,
+          "aux_loss": 1.9170825481414795,
+          "ood_acc": 0.0
+        },
+        {
+          "step": 450,
+          "loss": 4.884280204772949,
+          "answer_loss": 3.598811149597168,
+          "train_acc": 0.12890625,
+          "step_mode": "halt",
+          "train_depth": [
+            1,
+            3
+          ],
+          "elapsed_s": 16.56230616569519,
+          "attn_loss": 1.542272686958313,
+          "halt_loss": 2.1304969787597656,
+          "aux_loss": 1.2854692935943604,
+          "ood_acc": 0.046875
+        },
+        {
+          "step": 900,
+          "loss": 4.876713275909424,
+          "answer_loss": 3.582491874694824,
+          "train_acc": 0.11328125,
+          "step_mode": "halt",
+          "train_depth": [
+            1,
+            6
+          ],
+          "elapsed_s": 34.73531365394592,
+          "attn_loss": 1.9310595989227295,
+          "halt_loss": 1.7667160034179688,
+          "aux_loss": 1.2942214012145996,
+          "ood_acc": 0.064453125
+        },
+        {
+          "step": 1350,
+          "loss": 5.242585182189941,
+          "answer_loss": 3.7150580883026123,
+          "train_acc": 0.08984375,
+          "step_mode": "halt",
+          "train_depth": [
+            1,
+            10
+          ],
+          "elapsed_s": 55.12913703918457,
+          "attn_loss": 2.3699653148651123,
+          "halt_loss": 1.9943981170654297,
+          "aux_loss": 1.5275272130966187,
+          "ood_acc": 0.109375
+        },
+        {
+          "step": 1800,
+          "loss": 4.991240501403809,
+          "answer_loss": 3.5034494400024414,
+          "train_acc": 0.13671875,
+          "step_mode": "halt",
+          "train_depth": [
+            1,
+            10
+          ],
+          "elapsed_s": 77.00383520126343,
+          "attn_loss": 2.421376943588257,
+          "halt_loss": 1.8294544219970703,
+          "aux_loss": 1.4877910614013672,
+          "ood_acc": 0.10546875
+        }
+      ],
+      "iid": {
+        "acc": 0.280029296875,
+        "loss": 2.4846058934926987,
+        "by_depth": {
+          "1": 0.29154302670623145,
+          "2": 0.2826086956521739,
+          "3": 0.2666195190947666
+        },
+        "oracle_depth_acc": 0.36328125,
+        "halt_acc": 0.280029296875,
+        "oracle_any_step_acc": 0.60302734375,
+        "by_depth_halt": {
+          "1": 0.29154302670623145,
+          "2": 0.2826086956521739,
+          "3": 0.2666195190947666
+        }
+      },
+      "ood": {
+        "acc": 0.107666015625,
+        "loss": 3.6061032563447952,
+        "by_depth": {
+          "4": 0.1291390728476821,
+          "5": 0.12837837837837837,
+          "6": 0.09565217391304348,
+          "7": 0.0954861111111111,
+          "8": 0.10774410774410774,
+          "9": 0.10472972972972973,
+          "10": 0.0905861456483126
+        },
+        "oracle_depth_acc": 0.111083984375,
+        "halt_acc": 0.107666015625,
+        "oracle_any_step_acc": 0.280517578125,
+        "by_depth_halt": {
+          "4": 0.1291390728476821,
+          "5": 0.12837837837837837,
+          "6": 0.09565217391304348,
+          "7": 0.0954861111111111,
+          "8": 0.10774410774410774,
+          "9": 0.10472972972972973,
+          "10": 0.0905861456483126
+        }
+      },
+      "hard_ood": {
+        "acc": 0.06884765625,
+        "loss": 3.962489515542984,
+        "by_depth": {
+          "11": 0.07915057915057915,
+          "12": 0.056530214424951264,
+          "13": 0.07210626185958255,
+          "14": 0.0673469387755102
+        },
+        "oracle_depth_acc": 0.060546875,
+        "halt_acc": 0.06884765625,
+        "oracle_any_step_acc": 0.1865234375,
+        "by_depth_halt": {
+          "11": 0.07915057915057915,
+          "12": 0.056530214424951264,
+          "13": 0.07210626185958255,
+          "14": 0.0673469387755102
+        }
+      },
+      "elapsed_s_total": 985.1464500427246
+    }
+  }
+}

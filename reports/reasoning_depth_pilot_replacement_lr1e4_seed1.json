@@ -1,0 +1,296 @@
+{
+  "model_name": "HuggingFaceTB/SmolLM2-360M",
+  "dtype": "torch.float32",
+  "device": "cpu",
+  "hidden_size": 960,
+  "load_seconds": 3.064381300006062,
+  "train_n": 4,
+  "eval_n": 4,
+  "steps": 3,
+  "mode": "replacement",
+  "variants": [
+    "fixed",
+    "recursive"
+  ],
+  "seeds": [
+    1
+  ],
+  "runs": [
+    {
+      "seed": 1,
+      "variant": "fixed",
+      "train_history": [
+        {
+          "step": 0,
+          "seconds": 5.320837000384927,
+          "loss": 8.185714721679688,
+          "grad_norm": 2514.31689453125,
+          "thought_tokens": 19.25,
+          "compression_ratio": 3.965,
+          "context_tokens": 19.25
+        },
+        {
+          "step": 1,
+          "seconds": 5.017469400074333,
+          "loss": 8.8440580368042,
+          "grad_norm": 129.8741912841797,
+          "thought_tokens": 19.25,
+          "compression_ratio": 3.965,
+          "context_tokens": 19.25
+        },
+        {
+          "step": 2,
+          "seconds": 4.987334800418466,
+          "loss": 9.553141593933105,
+          "grad_norm": 167.84751892089844,
+          "thought_tokens": 19.25,
+          "compression_ratio": 3.965,
+          "context_tokens": 19.25
+        }
+      ],
+      "iid": {
+        "accuracy": 0.0,
+        "gold_loss": 7.535401940345764,
+        "by_depth": {
+          "3": 0.0,
+          "2": 0.0,
+          "1": 0.0
+        },
+        "predictions": [
+          {
+            "id": "validation-nesting-0",
+            "task_type": "nesting",
+            "depth": 3,
+            "answer": "krabička",
+            "prediction": "ložnice",
+            "correct": false,
+            "gold_loss": 9.522828102111816
+          },
+          {
+            "id": "validation-temporal-1",
+            "task_type": "temporal",
+            "depth": 3,
+            "answer": "zavolal na nádraží",
+            "prediction": "zapnul počítač",
+            "correct": false,
+            "gold_loss": 7.036154747009277
+          },
+          {
+            "id": "validation-nesting-2",
+            "task_type": "nesting",
+            "depth": 2,
+            "answer": "skříňka",
+            "prediction": "zásuvka",
+            "correct": false,
+            "gold_loss": 7.420131206512451
+          },
+          {
+            "id": "validation-temporal-3",
+            "task_type": "temporal",
+            "depth": 1,
+            "answer": "zavolal na nádraží",
+            "prediction": "zapnul počítač",
+            "correct": false,
+            "gold_loss": 6.162493705749512
+          }
+        ]
+      },
+      "ood_depth": {
+        "accuracy": 0.0,
+        "gold_loss": 8.187739253044128,
+        "by_depth": {
+          "4": 0.0,
+          "5": 0.0,
+          "7": 0.0
+        },
+        "predictions": [
+          {
+            "id": "ood_depth-nesting-0",
+            "task_type": "nesting",
+            "depth": 4,
+            "answer": "kancelář",
+            "prediction": "krabička",
+            "correct": false,
+            "gold_loss": 9.25388240814209
+          },
+          {
+            "id": "ood_depth-temporal-1",
+            "task_type": "temporal",
+            "depth": 5,
+            "answer": "zavolal na nádraží",
+            "prediction": "zkontroloval kalendář",
+            "correct": false,
+            "gold_loss": 7.538205623626709
+          },
+          {
+            "id": "ood_depth-nesting-2",
+            "task_type": "nesting",
+            "depth": 7,
+            "answer": "kufr",
+            "prediction": "zásuvka",
+            "correct": false,
+            "gold_loss": 8.802197456359863
+          },
+          {
+            "id": "ood_depth-temporal-3",
+            "task_type": "temporal",
+            "depth": 7,
+            "answer": "odešel do práce",
+            "prediction": "zkontroloval kalendář",
+            "correct": false,
+            "gold_loss": 7.156671524047852
+          }
+        ]
+      }
+    },
+    {
+      "seed": 1,
+      "variant": "recursive",
+      "train_history": [
+        {
+          "step": 0,
+          "seconds": 6.528993499930948,
+          "loss": 8.042781829833984,
+          "grad_norm": 406.91119384765625,
+          "thought_tokens": 57.0,
+          "compression_ratio": 3.965,
+          "context_tokens": 19.25
+        },
+        {
+          "step": 1,
+          "seconds": 6.767939699813724,
+          "loss": 9.362059593200684,
+          "grad_norm": 102.49662780761719,
+          "thought_tokens": 57.0,
+          "compression_ratio": 3.965,
+          "context_tokens": 19.25
+        },
+        {
+          "step": 2,
+          "seconds": 6.829628199804574,
+          "loss": 9.195223808288574,
+          "grad_norm": 213.86334228515625,
+          "thought_tokens": 57.0,
+          "compression_ratio": 3.965,
+          "context_tokens": 19.25
+        }
+      ],
+      "iid": {
+        "accuracy": 0.0,
+        "gold_loss": 10.535013914108276,
+        "by_depth": {
+          "3": 0.0,
+          "2": 0.0,
+          "1": 0.0
+        },
+        "predictions": [
+          {
+            "id": "validation-nesting-0",
+            "task_type": "nesting",
+            "depth": 3,
+            "answer": "krabička",
+            "prediction": "ložnice",
+            "correct": false,
+            "gold_loss": 10.020400047302246
+          },
+          {
+            "id": "validation-temporal-1",
+            "task_type": "temporal",
+            "depth": 3,
+            "answer": "zavolal na nádraží",
+            "prediction": "odeslal zprávu",
+            "correct": false,
+            "gold_loss": 9.522794723510742
+          },
+          {
+            "id": "validation-nesting-2",
+            "task_type": "nesting",
+            "depth": 2,
+            "answer": "skříňka",
+            "prediction": "chodba",
+            "correct": false,
+            "gold_loss": 13.161469459533691
+          },
+          {
+            "id": "validation-temporal-3",
+            "task_type": "temporal",
+            "depth": 1,
+            "answer": "zavolal na nádraží",
+            "prediction": "odeslal zprávu",
+            "correct": false,
+            "gold_loss": 9.435391426086426
+          }
+        ]
+      },
+      "ood_depth": {
+        "accuracy": 0.25,
+        "gold_loss": 9.756510496139526,
+        "by_depth": {
+          "4": 0.0,
+          "5": 0.0,
+          "7": 0.5
+        },
+        "predictions": [
+          {
+            "id": "ood_depth-nesting-0",
+            "task_type": "nesting",
+            "depth": 4,
+            "answer": "kancelář",
+            "prediction": "chodba",
+            "correct": false,
+            "gold_loss": 12.598312377929688
+          },
+          {
+            "id": "ood_depth-temporal-1",
+            "task_type": "temporal",
+            "depth": 5,
+            "answer": "zavolal na nádraží",
+            "prediction": "odeslal zprávu",
+            "correct": false,
+            "gold_loss": 9.727445602416992
+          },
+          {
+            "id": "ood_depth-nesting-2",
+            "task_type": "nesting",
+            "depth": 7,
+            "answer": "kufr",
+            "prediction": "kufr",
+            "correct": true,
+            "gold_loss": 7.362098693847656
+          },
+          {
+            "id": "ood_depth-temporal-3",
+            "task_type": "temporal",
+            "depth": 7,
+            "answer": "odešel do práce",
+            "prediction": "odeslal zprávu",
+            "correct": false,
+            "gold_loss": 9.33818531036377
+          }
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "fixed": {
+      "iid_accuracy_mean": 0.0,
+      "iid_accuracy_std": 0.0,
+      "iid_gold_loss_mean": 7.535401821136475,
+      "iid_gold_loss_std": 0.0,
+      "ood_depth_accuracy_mean": 0.0,
+      "ood_depth_accuracy_std": 0.0,
+      "ood_depth_gold_loss_mean": 8.187739372253418,
+      "ood_depth_gold_loss_std": 0.0
+    },
+    "recursive": {
+      "iid_accuracy_mean": 0.0,
+      "iid_accuracy_std": 0.0,
+      "iid_gold_loss_mean": 10.535014152526855,
+      "iid_gold_loss_std": 0.0,
+      "ood_depth_accuracy_mean": 0.25,
+      "ood_depth_accuracy_std": 0.0,
+      "ood_depth_gold_loss_mean": 9.756510734558105,
+      "ood_depth_gold_loss_std": 0.0
+    }
+  }
+}

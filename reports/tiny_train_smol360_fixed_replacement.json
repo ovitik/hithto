@@ -1,0 +1,51 @@
+{
+  "model_name": "HuggingFaceTB/SmolLM2-360M",
+  "variant": "fixed",
+  "mode": "replacement",
+  "dtype": "torch.float32",
+  "device": "cpu",
+  "hidden_size": 960,
+  "load_seconds": 7.425283099990338,
+  "steps": 3,
+  "n_examples": 1,
+  "history": [
+    {
+      "step": 0,
+      "seconds": 1.3404974001459777,
+      "total": 14.610006332397461,
+      "answer": 11.347759246826172,
+      "distillation": 163.1123809814453,
+      "compression": 0.0,
+      "grad_norm": 1009.2640380859375,
+      "thought_tokens": 19,
+      "final_tokens": 19,
+      "compression_ratio": 3.8947368421052633
+    },
+    {
+      "step": 1,
+      "seconds": 1.3313744999468327,
+      "total": 16.323301315307617,
+      "answer": 11.249740600585938,
+      "distillation": 253.67803955078125,
+      "compression": 0.0,
+      "grad_norm": 50.721797943115234,
+      "thought_tokens": 19,
+      "final_tokens": 19,
+      "compression_ratio": 3.8947368421052633
+    },
+    {
+      "step": 2,
+      "seconds": 1.2135711000300944,
+      "total": 9.753520011901855,
+      "answer": 6.287474155426025,
+      "distillation": 173.30230712890625,
+      "compression": 0.0,
+      "grad_norm": 14.880495071411133,
+      "thought_tokens": 19,
+      "final_tokens": 19,
+      "compression_ratio": 3.8947368421052633
+    }
+  ],
+  "loss_delta_total": -4.8564863204956055,
+  "loss_delta_answer": -5.0602850914001465
+}

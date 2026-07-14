@@ -1,0 +1,124 @@
+{
+  "model_name": "google/gemma-4-E2B",
+  "model_class": "Gemma4ForConditionalGeneration",
+  "dtype": "torch.bfloat16",
+  "device": "cpu",
+  "cuda": false,
+  "hidden_size": 1536,
+  "n_examples": 1,
+  "max_length": 128,
+  "load_seconds": 6.623882200103253,
+  "variants": [
+    {
+      "variant": "baseline",
+      "seconds": 9.138550899922848,
+      "losses": {
+        "answer": 2.4730470180511475
+      },
+      "thought_tokens": 0,
+      "compression_ratios": [],
+      "output_shape": [
+        1,
+        51,
+        262144
+      ]
+    },
+    {
+      "variant": "fixed",
+      "seconds": 10.956347099971026,
+      "losses": {
+        "answer": 19.50730323791504,
+        "distillation": 159.0,
+        "compression": 0.0,
+        "total": 35.382301330566406
+      },
+      "thought_tokens": 13,
+      "compression_ratios": [
+        3.923076923076923
+      ],
+      "output_shape": [
+        1,
+        13,
+        262144
+      ],
+      "interventions": {
+        "drop": 6.1875,
+        "random_replace": 5.90625,
+        "expand": 10.5625
+      }
+    },
+    {
+      "variant": "soft",
+      "seconds": 15.040069300215691,
+      "losses": {
+        "answer": 36.209983825683594,
+        "distillation": 1168.0,
+        "compression": 0.2265625,
+        "total": 153.21450805664062
+      },
+      "thought_tokens": 9,
+      "compression_ratios": [
+        1.275
+      ],
+      "output_shape": [
+        1,
+        40,
+        262144
+      ],
+      "interventions": {
+        "drop": 9.3125,
+        "random_replace": 7.53125,
+        "expand": 11.3125
+      }
+    },
+    {
+      "variant": "hard",
+      "seconds": 17.766964999958873,
+      "losses": {
+        "answer": 14.590558052062988,
+        "distillation": 1072.0,
+        "compression": 0.390625,
+        "total": 121.59837341308594
+      },
+      "thought_tokens": 4,
+      "compression_ratios": [
+        1.108695652173913
+      ],
+      "output_shape": [
+        1,
+        46,
+        262144
+      ],
+      "interventions": {
+        "drop": 3.21875,
+        "random_replace": 1.5625,
+        "expand": 4.625
+      }
+    },
+    {
+      "variant": "recursive",
+      "seconds": 10.369045099709183,
+      "losses": {
+        "answer": 21.231143951416016,
+        "distillation": 66.5,
+        "compression": 1.6875,
+        "total": 27.921085357666016
+      },
+      "thought_tokens": 16,
+      "compression_ratios": [
+        3.923076923076923,
+        12.75
+      ],
+      "output_shape": [
+        1,
+        4,
+        262144
+      ],
+      "interventions": {
+        "drop": 0.0,
+        "random_replace": 0.0,
+        "expand": 0.0
+      }
+    }
+  ]
+}

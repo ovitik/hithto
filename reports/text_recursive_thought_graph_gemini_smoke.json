@@ -1,0 +1,555 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "temperature": 0.0,
+  "elapsed_s": 14.640810099896044,
+  "scenario_count": 1,
+  "question_count": 2,
+  "variants": [
+    "direct",
+    "reasoning",
+    "summary",
+    "flat",
+    "hierarchical",
+    "random_hierarchy",
+    "hierarchical_loop"
+  ],
+  "summary_by_variant": {
+    "direct": {
+      "correct": 2,
+      "total": 2,
+      "accuracy": 1.0
+    },
+    "reasoning": {
+      "correct": 2,
+      "total": 2,
+      "accuracy": 1.0
+    },
+    "summary": {
+      "correct": 2,
+      "total": 2,
+      "accuracy": 1.0
+    },
+    "flat": {
+      "correct": 2,
+      "total": 2,
+      "accuracy": 1.0
+    },
+    "hierarchical": {
+      "correct": 2,
+      "total": 2,
+      "accuracy": 1.0
+    },
+    "random_hierarchy": {
+      "correct": 2,
+      "total": 2,
+      "accuracy": 1.0
+    },
+    "hierarchical_loop": {
+      "correct": 2,
+      "total": 2,
+      "accuracy": 1.0
+    }
+  },
+  "rows": [
+    {
+      "scenario_id": "transport_delay",
+      "question_id": "ordinary_train_on_time",
+      "question": "Může Petr dorazit včas dalším pravidelným vlakem?",
+      "variant": "direct",
+      "answer": "Ne.",
+      "expected_aliases": [
+        "ne",
+        "nemůže"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Ne.",
+        "rationale": "Další vlak jede za dvě hodiny, ale Petr potřebuje být v Praze za hodinu.",
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "transport_delay",
+      "question_id": "ordinary_train_on_time",
+      "question": "Může Petr dorazit včas dalším pravidelným vlakem?",
+      "variant": "reasoning",
+      "answer": "Ne, Petr nemůže dorazit včas dalším pravidelným vlakem.",
+      "expected_aliases": [
+        "ne",
+        "nemůže"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Ne, Petr nemůže dorazit včas dalším pravidelným vlakem.",
+        "rationale": "Další vlak jede až za dvě hodiny, zatímco Petr potřebuje být v Praze za jednu hodinu.",
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "transport_delay",
+      "question_id": "ordinary_train_on_time",
+      "question": "Může Petr dorazit včas dalším pravidelným vlakem?",
+      "variant": "summary",
+      "answer": "Ze shrnutí nelze jednoznačně určit, zda může Petr dorazit včas dalším pravidelným vlakem.",
+      "expected_aliases": [
+        "ne",
+        "nemůže"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Ze shrnutí nelze jednoznačně určit, zda může Petr dorazit včas dalším pravidelným vlakem.",
+        "rationale": "Shrnutí uvádí pouze to, že Petr zmeškal svůj původní vlak a zvažuje taxi nebo odvoz kolegou, ale neobsahuje informace o jízdním řádu dalších vlaků ani o tom, zda by stihly jeho časový limit.",
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "transport_delay",
+      "question_id": "ordinary_train_on_time",
+      "question": "Může Petr dorazit včas dalším pravidelným vlakem?",
+      "variant": "flat",
+      "answer": "Ne, Petr včas dalším pravidelným vlakem nedorazí.",
+      "expected_aliases": [
+        "ne",
+        "nemůže"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Ne, Petr včas dalším pravidelným vlakem nedorazí.",
+        "rationale": "Petr potřebuje být v Praze za hodinu, ale další pravidelný vlak jede až za dvě hodiny, což znamená, že nestihne dorazit včas.",
+        "used_nodes": [
+          "T3"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "transport_delay",
+      "question_id": "ordinary_train_on_time",
+      "question": "Může Petr dorazit včas dalším pravidelným vlakem?",
+      "variant": "hierarchical",
+      "answer": "Ne, Petr nemůže dorazit včas dalším pravidelným vlakem.",
+      "expected_aliases": [
+        "ne",
+        "nemůže"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Ne, Petr nemůže dorazit včas dalším pravidelným vlakem.",
+        "rationale": "Petr potřebuje být v Praze za hodinu, ale další pravidelný vlak jede až za dvě hodiny, což znamená, že tímto spojem svůj časový limit nestihne.",
+        "used_nodes": [
+          "T3",
+          "T5"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "transport_delay",
+      "question_id": "ordinary_train_on_time",
+      "question": "Může Petr dorazit včas dalším pravidelným vlakem?",
+      "variant": "random_hierarchy",
+      "answer": "Ne, Petr nemůže dorazit včas dalším pravidelným vlakem.",
+      "expected_aliases": [
+        "ne",
+        "nemůže"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Ne, Petr nemůže dorazit včas dalším pravidelným vlakem.",
+        "rationale": "Petr potřebuje být v Praze za hodinu, ale další pravidelný vlak jede až za dvě hodiny, což znamená, že nestihne dorazit v požadovaném čase.",
+        "used_nodes": [
+          "T3"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "transport_delay",
+      "question_id": "ordinary_train_on_time",
+      "question": "Může Petr dorazit včas dalším pravidelným vlakem?",
+      "variant": "hierarchical_loop",
+      "answer": "Ne, Petr nemůže dorazit včas dalším pravidelným vlakem.",
+      "expected_aliases": [
+        "ne",
+        "nemůže"
+      ],
+      "correct": true,
+      "raw_result": {
+        "status": "answered",
+        "answer": "Ne, Petr nemůže dorazit včas dalším pravidelným vlakem.",
+        "rationale": "Z myšlenkového uzlu T3 vyplývá, že další pravidelný vlak jede až za dvě hodiny, zatímco Petr potřebuje být v Praze již za jednu hodinu. Proto je fyzicky nemožné, aby tímto vlakem dorazil včas.",
+        "used_nodes": [
+          "T3"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "transport_delay",
+      "question_id": "best_next_step",
+      "question": "Jaký typ řešení by měl Petr hledat?",
+      "variant": "direct",
+      "answer": "Rychlou alternativní dopravu.",
+      "expected_aliases": [
+        "alternativní dopravu",
+        "taxi",
+        "kolegovi",
+        "autem"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Rychlou alternativní dopravu.",
+        "rationale": "Petr potřebuje být v Praze dříve, než pojede další vlak, proto musí zvolit taxi nebo odvoz kolegou.",
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "transport_delay",
+      "question_id": "best_next_step",
+      "question": "Jaký typ řešení by měl Petr hledat?",
+      "variant": "reasoning",
+      "answer": "Petr by měl hledat individuální dopravu, jako je taxi nebo odvoz kolegou.",
+      "expected_aliases": [
+        "alternativní dopravu",
+        "taxi",
+        "kolegovi",
+        "autem"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Petr by měl hledat individuální dopravu, jako je taxi nebo odvoz kolegou.",
+        "rationale": "Veřejná doprava nesplňuje jeho časový limit, proto musí zvolit flexibilnější alternativu.",
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "transport_delay",
+      "question_id": "best_next_step",
+      "question": "Jaký typ řešení by měl Petr hledat?",
+      "variant": "summary",
+      "answer": "Petr by měl hledat alternativní způsob dopravy, jako je taxi nebo odvoz kolegou.",
+      "expected_aliases": [
+        "alternativní dopravu",
+        "taxi",
+        "kolegovi",
+        "autem"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Petr by měl hledat alternativní způsob dopravy, jako je taxi nebo odvoz kolegou.",
+        "rationale": "Shrnutí přímo uvádí, že Petr zvažuje taxi nebo odvoz kolegou jako způsoby, jak se dostat do cíle včas poté, co zmeškal vlak.",
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "transport_delay",
+      "question_id": "best_next_step",
+      "question": "Jaký typ řešení by měl Petr hledat?",
+      "variant": "flat",
+      "answer": "Petr by měl hledat alternativní způsob dopravy, jako je taxi nebo spolujízda s kolegou.",
+      "expected_aliases": [
+        "alternativní dopravu",
+        "taxi",
+        "kolegovi",
+        "autem"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Petr by měl hledat alternativní způsob dopravy, jako je taxi nebo spolujízda s kolegou.",
+        "rationale": "Vzhledem k tomu, že Petr nestihl vlak a další spoj jede až za dvě hodiny, zatímco on potřebuje být v Praze do hodiny, musí využít jinou možnost dopravy. Uzly potvrzují, že má k dispozici stanoviště taxi nebo možnost zavolat kolegovi, který jede stejným směrem.",
+        "used_nodes": [
+          "T2",
+          "T3",
+          "T4"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "transport_delay",
+      "question_id": "best_next_step",
+      "question": "Jaký typ řešení by měl Petr hledat?",
+      "variant": "hierarchical",
+      "answer": "Petr by měl hledat alternativní způsob dopravy, konkrétně taxi nebo spolujízdu s kolegou, aby stihl dorazit do Prahy v požadovaném časovém limitu jedné hodiny.",
+      "expected_aliases": [
+        "alternativní dopravu",
+        "taxi",
+        "kolegovi",
+        "autem"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Petr by měl hledat alternativní způsob dopravy, konkrétně taxi nebo spolujízdu s kolegou, aby stihl dorazit do Prahy v požadovaném časovém limitu jedné hodiny.",
+        "rationale": "Na základě analýzy situace (T5) je Petr v časové tísni, protože nestihl vlak a další jede až za dvě hodiny. Dostupná řešení (T4) zahrnují taxi nebo spolujízdu, což jsou jediné možnosti, jak splnit časový limit (T6).",
+        "used_nodes": [
+          "T1",
+          "T2",
+          "T3",
+          "T4",
+          "T5",
+          "T6"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "transport_delay",
+      "question_id": "best_next_step",
+      "question": "Jaký typ řešení by měl Petr hledat?",
+      "variant": "random_hierarchy",
+      "answer": "Petr by měl hledat alternativní způsob dopravy, jako je taxi nebo spolujízda s kolegou.",
+      "expected_aliases": [
+        "alternativní dopravu",
+        "taxi",
+        "kolegovi",
+        "autem"
+      ],
+      "correct": true,
+      "raw_result": {
+        "answer": "Petr by měl hledat alternativní způsob dopravy, jako je taxi nebo spolujízda s kolegou.",
+        "rationale": "Vzhledem k tomu, že Petr nestihl vlak a další spoj jede až za dvě hodiny, zatímco on potřebuje být v Praze do hodiny, musí využít dostupné alternativy, které má na nádraží k dispozici.",
+        "used_nodes": [
+          "T2",
+          "T3",
+          "T4"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "transport_delay",
+      "question_id": "best_next_step",
+      "question": "Jaký typ řešení by měl Petr hledat?",
+      "variant": "hierarchical_loop",
+      "answer": "Petr by měl hledat alternativní způsob dopravy, konkrétně taxi nebo spolujízdu s kolegou, aby stihl dorazit do Prahy v požadovaném časovém limitu jedné hodiny.",
+      "expected_aliases": [
+        "alternativní dopravu",
+        "taxi",
+        "kolegovi",
+        "autem"
+      ],
+      "correct": true,
+      "raw_result": {
+        "status": "answered",
+        "answer": "Petr by měl hledat alternativní způsob dopravy, konkrétně taxi nebo spolujízdu s kolegou, aby stihl dorazit do Prahy v požadovaném časovém limitu jedné hodiny.",
+        "rationale": "Na základě analýzy časové tísně (T5) a dostupných možností (T4) vyplývá, že standardní vlaková doprava je pro Petra nepoužitelná. Proto je nutné zvolit alternativu, která mu umožní dosáhnout cíle včas (T6).",
+        "used_nodes": [
+          "T4",
+          "T5",
+          "T6"
+        ],
+        "confidence": 1.0
+      }
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "transport_delay",
+      "context_chars": 264,
+      "node_count": 6,
+      "nodes_by_level": {
+        "1": 4,
+        "2": 2
+      },
+      "summary": "Petr zmeškal vlak do Prahy kvůli zpožděnému autobusu a hledá způsob, jak se do cíle dostat včas, přičemž zvažuje taxi nebo odvoz kolegou.",
+      "nodes": [
+        {
+          "id": "T1",
+          "level": 1,
+          "thought": "Petrův autobus měl čtyřicetiminutové zpoždění.",
+          "parents": [],
+          "source": [
+            "Petrův autobus přijel o čtyřicet minut později."
+          ],
+          "operation": "atom",
+          "support": "entailed",
+          "utility": 0.8
+        },
+        {
+          "id": "T2",
+          "level": 1,
+          "thought": "Petr nestihl vlak do Prahy.",
+          "parents": [],
+          "source": [
+            "Kvůli tomu Petr nestihl vlak do Prahy."
+          ],
+          "operation": "atom",
+          "support": "entailed",
+          "utility": 0.9
+        },
+        {
+          "id": "T3",
+          "level": 1,
+          "thought": "Petr potřebuje být v Praze za hodinu, ale další vlak jede až za dvě hodiny.",
+          "parents": [],
+          "source": [
+            "Další pravidelný vlak jede za dvě hodiny, ale Petr má být v Praze už za hodinu."
+          ],
+          "operation": "atom",
+          "support": "entailed",
+          "utility": 0.9
+        },
+        {
+          "id": "T4",
+          "level": 1,
+          "thought": "Petr má k dispozici taxi nebo možnost spolujízdy s kolegou.",
+          "parents": [],
+          "source": [
+            "Na nádraží je stanoviště taxi a Petr může také zavolat kolegovi, který jede autem stejným směrem."
+          ],
+          "operation": "atom",
+          "support": "entailed",
+          "utility": 0.8
+        },
+        {
+          "id": "T5",
+          "level": 2,
+          "thought": "Petr se nachází v časové tísni kvůli zpoždění autobusu a nedostupnosti dalšího vlaku.",
+          "parents": [
+            "T1",
+            "T2",
+            "T3"
+          ],
+          "source": [
+            "Petrův autobus přijel o čtyřicet minut později.",
+            "Kvůli tomu Petr nestihl vlak do Prahy.",
+            "Další pravidelný vlak jede za dvě hodiny, ale Petr má být v Praze už za hodinu."
+          ],
+          "operation": "compose",
+          "support": "entailed",
+          "utility": 0.9
+        },
+        {
+          "id": "T6",
+          "level": 2,
+          "thought": "Petr musí využít alternativní dopravu, aby stihl svůj časový limit.",
+          "parents": [
+            "T4",
+            "T5"
+          ],
+          "source": [
+            "Na nádraží je stanoviště taxi a Petr může také zavolat kolegovi, který jede autem stejným směrem.",
+            "Petr se nachází v časové tísni kvůli zpoždění autobusu a nedostupnosti dalšího vlaku."
+          ],
+          "operation": "compose",
+          "support": "probable",
+          "utility": 1.0
+        }
+      ]
+    }
+  ],
+  "api_calls": [
+    {
+      "role": "graph",
+      "attempt": 1,
+      "latency_s": 2.5217027999460697,
+      "prompt_chars": 1004,
+      "response_chars": 2169
+    },
+    {
+      "role": "summary",
+      "attempt": 1,
+      "latency_s": 0.7308943001553416,
+      "prompt_chars": 377,
+      "response_chars": 156
+    },
+    {
+      "role": "answer_direct",
+      "attempt": 1,
+      "latency_s": 0.6035076999105513,
+      "prompt_chars": 445,
+      "response_chars": 133
+    },
+    {
+      "role": "answer_reasoning",
+      "attempt": 1,
+      "latency_s": 0.6658087000250816,
+      "prompt_chars": 455,
+      "response_chars": 198
+    },
+    {
+      "role": "answer_summary",
+      "attempt": 1,
+      "latency_s": 0.9197328998707235,
+      "prompt_chars": 335,
+      "response_chars": 337
+    },
+    {
+      "role": "answer_flat",
+      "attempt": 1,
+      "latency_s": 0.7350331000052392,
+      "prompt_chars": 1572,
+      "response_chars": 256
+    },
+    {
+      "role": "answer_hierarchical",
+      "attempt": 1,
+      "latency_s": 0.7446725997142494,
+      "prompt_chars": 2546,
+      "response_chars": 298
+    },
+    {
+      "role": "answer_random_hierarchy",
+      "attempt": 1,
+      "latency_s": 0.7992646000348032,
+      "prompt_chars": 2257,
+      "response_chars": 284
+    },
+    {
+      "role": "answer_loop_first",
+      "attempt": 1,
+      "latency_s": 0.7938759000971913,
+      "prompt_chars": 2567,
+      "response_chars": 353
+    },
+    {
+      "role": "answer_direct",
+      "attempt": 1,
+      "latency_s": 0.8055738001130521,
+      "prompt_chars": 431,
+      "response_chars": 186
+    },
+    {
+      "role": "answer_reasoning",
+      "attempt": 1,
+      "latency_s": 0.7346198000013828,
+      "prompt_chars": 441,
+      "response_chars": 220
+    },
+    {
+      "role": "answer_summary",
+      "attempt": 1,
+      "latency_s": 0.7377905999310315,
+      "prompt_chars": 321,
+      "response_chars": 262
+    },
+    {
+      "role": "answer_flat",
+      "attempt": 1,
+      "latency_s": 0.8830128996632993,
+      "prompt_chars": 1558,
+      "response_chars": 441
+    },
+    {
+      "role": "answer_hierarchical",
+      "attempt": 1,
+      "latency_s": 1.0008801999501884,
+      "prompt_chars": 2532,
+      "response_chars": 514
+    },
+    {
+      "role": "answer_random_hierarchy",
+      "attempt": 1,
+      "latency_s": 0.9385571996681392,
+      "prompt_chars": 2243,
+      "response_chars": 365
+    },
+    {
+      "role": "answer_loop_first",
+      "attempt": 1,
+      "latency_s": 1.017732399981469,
+      "prompt_chars": 2553,
+      "response_chars": 483
+    }
+  ]
+}

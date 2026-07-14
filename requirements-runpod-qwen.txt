@@ -1,0 +1,10 @@
+accelerate>=0.34
+bitsandbytes>=0.43.3
+datasets>=2.19
+peft>=0.12
+protobuf>=4.25
+python-dotenv>=1.0
+sentencepiece>=0.2
+transformers>=4.56
+pandas>=2.0
+tqdm>=4.66

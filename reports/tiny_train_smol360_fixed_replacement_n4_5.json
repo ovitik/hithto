@@ -1,0 +1,75 @@
+{
+  "model_name": "HuggingFaceTB/SmolLM2-360M",
+  "variant": "fixed",
+  "mode": "replacement",
+  "dtype": "torch.float32",
+  "device": "cpu",
+  "hidden_size": 960,
+  "load_seconds": 36.08780670026317,
+  "steps": 5,
+  "n_examples": 4,
+  "history": [
+    {
+      "step": 0,
+      "seconds": 6.442753499839455,
+      "total": 16.914997100830078,
+      "answer": 10.773055076599121,
+      "distillation": 307.0971374511719,
+      "compression": 0.0,
+      "grad_norm": 5834.619140625,
+      "thought_tokens": 86,
+      "final_tokens": 87,
+      "compression_ratio": 3.9195402298850577
+    },
+    {
+      "step": 1,
+      "seconds": 7.193707099650055,
+      "total": 19.583250045776367,
+      "answer": 11.787315368652344,
+      "distillation": 389.7967529296875,
+      "compression": 0.0,
+      "grad_norm": 61.15367889404297,
+      "thought_tokens": 86,
+      "final_tokens": 87,
+      "compression_ratio": 3.9195402298850577
+    },
+    {
+      "step": 2,
+      "seconds": 7.055564000271261,
+      "total": 17.882492065429688,
+      "answer": 10.775815963745117,
+      "distillation": 355.3338623046875,
+      "compression": 0.0,
+      "grad_norm": 19.969215393066406,
+      "thought_tokens": 86,
+      "final_tokens": 87,
+      "compression_ratio": 3.9195402298850577
+    },
+    {
+      "step": 3,
+      "seconds": 6.3396990997716784,
+      "total": 16.513893127441406,
+      "answer": 9.57592487335205,
+      "distillation": 346.8984680175781,
+      "compression": 0.0,
+      "grad_norm": 50.072792053222656,
+      "thought_tokens": 86,
+      "final_tokens": 87,
+      "compression_ratio": 3.9195402298850577
+    },
+    {
+      "step": 4,
+      "seconds": 5.502975600305945,
+      "total": 14.788264274597168,
+      "answer": 8.533419609069824,
+      "distillation": 312.74224853515625,
+      "compression": 0.0,
+      "grad_norm": 15.769365310668945,
+      "thought_tokens": 86,
+      "final_tokens": 87,
+      "compression_ratio": 3.9195402298850577
+    }
+  ],
+  "loss_delta_total": -2.12673282623291,
+  "loss_delta_answer": -2.239635467529297
+}

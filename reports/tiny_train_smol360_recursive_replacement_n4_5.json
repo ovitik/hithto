@@ -1,0 +1,75 @@
+{
+  "model_name": "HuggingFaceTB/SmolLM2-360M",
+  "variant": "recursive",
+  "mode": "replacement",
+  "dtype": "torch.float32",
+  "device": "cpu",
+  "hidden_size": 960,
+  "load_seconds": 33.40781780006364,
+  "steps": 5,
+  "n_examples": 4,
+  "history": [
+    {
+      "step": 0,
+      "seconds": 6.074132800102234,
+      "total": 12.260082244873047,
+      "answer": 11.017252922058105,
+      "distillation": 61.58980941772461,
+      "compression": 2.20652174949646,
+      "grad_norm": 141.1988983154297,
+      "thought_tokens": 109,
+      "final_tokens": 23,
+      "compression_ratio": 14.826086956521738
+    },
+    {
+      "step": 1,
+      "seconds": 5.815950900316238,
+      "total": 11.868009567260742,
+      "answer": 10.409945487976074,
+      "distillation": 72.3515625,
+      "compression": 2.20652174949646,
+      "grad_norm": 35.73752212524414,
+      "thought_tokens": 109,
+      "final_tokens": 23,
+      "compression_ratio": 14.826086956521738
+    },
+    {
+      "step": 2,
+      "seconds": 6.717089700046927,
+      "total": 8.970200538635254,
+      "answer": 7.416452884674072,
+      "distillation": 77.1357421875,
+      "compression": 2.20652174949646,
+      "grad_norm": 50.37300491333008,
+      "thought_tokens": 109,
+      "final_tokens": 23,
+      "compression_ratio": 14.826086956521738
+    },
+    {
+      "step": 3,
+      "seconds": 5.585473999846727,
+      "total": 6.143927097320557,
+      "answer": 4.7854156494140625,
+      "distillation": 67.37393188476562,
+      "compression": 2.20652174949646,
+      "grad_norm": 19.223995208740234,
+      "thought_tokens": 109,
+      "final_tokens": 23,
+      "compression_ratio": 14.826086956521738
+    },
+    {
+      "step": 4,
+      "seconds": 5.835410099942237,
+      "total": 4.6122565269470215,
+      "answer": 3.1509828567504883,
+      "distillation": 72.51205444335938,
+      "compression": 2.20652174949646,
+      "grad_norm": 23.356727600097656,
+      "thought_tokens": 109,
+      "final_tokens": 23,
+      "compression_ratio": 14.826086956521738
+    }
+  ],
+  "loss_delta_total": -7.647825717926025,
+  "loss_delta_answer": -7.866270065307617
+}

@@ -1,0 +1,3393 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "temperature": 0.0,
+  "elapsed_s": 52.58726159995422,
+  "scenario_count": 2,
+  "question_count": 6,
+  "answer_node_budget": 12,
+  "max_nodes": 36,
+  "max_depth": 4,
+  "verify_compositions": true,
+  "variants": [
+    "direct",
+    "reasoning",
+    "summary",
+    "flat_budget",
+    "hierarchical_budget",
+    "random_hierarchy_budget",
+    "hierarchical_loop"
+  ],
+  "summary_by_variant": {
+    "direct": {
+      "correct": 6,
+      "total": 6,
+      "accuracy": 1.0
+    },
+    "reasoning": {
+      "correct": 6,
+      "total": 6,
+      "accuracy": 1.0
+    },
+    "summary": {
+      "correct": 6,
+      "total": 6,
+      "accuracy": 1.0
+    },
+    "flat_budget": {
+      "correct": 5,
+      "total": 6,
+      "accuracy": 0.8333333333333334
+    },
+    "hierarchical_budget": {
+      "correct": 6,
+      "total": 6,
+      "accuracy": 1.0
+    },
+    "random_hierarchy_budget": {
+      "correct": 5,
+      "total": 6,
+      "accuracy": 0.8333333333333334
+    },
+    "hierarchical_loop": {
+      "correct": 6,
+      "total": 6,
+      "accuracy": 1.0
+    }
+  },
+  "summary_by_task_variant": {
+    "nested_objects": {
+      "direct": {
+        "correct": 3,
+        "total": 3,
+        "accuracy": 1.0
+      },
+      "reasoning": {
+        "correct": 3,
+        "total": 3,
+        "accuracy": 1.0
+      },
+      "summary": {
+        "correct": 3,
+        "total": 3,
+        "accuracy": 1.0
+      },
+      "flat_budget": {
+        "correct": 3,
+        "total": 3,
+        "accuracy": 1.0
+      },
+      "hierarchical_budget": {
+        "correct": 3,
+        "total": 3,
+        "accuracy": 1.0
+      },
+      "random_hierarchy_budget": {
+        "correct": 3,
+        "total": 3,
+        "accuracy": 1.0
+      },
+      "hierarchical_loop": {
+        "correct": 3,
+        "total": 3,
+        "accuracy": 1.0
+      }
+    },
+    "plan_constraints": {
+      "direct": {
+        "correct": 3,
+        "total": 3,
+        "accuracy": 1.0
+      },
+      "reasoning": {
+        "correct": 3,
+        "total": 3,
+        "accuracy": 1.0
+      },
+      "summary": {
+        "correct": 3,
+        "total": 3,
+        "accuracy": 1.0
+      },
+      "flat_budget": {
+        "correct": 2,
+        "total": 3,
+        "accuracy": 0.6666666666666666
+      },
+      "hierarchical_budget": {
+        "correct": 3,
+        "total": 3,
+        "accuracy": 1.0
+      },
+      "random_hierarchy_budget": {
+        "correct": 2,
+        "total": 3,
+        "accuracy": 0.6666666666666666
+      },
+      "hierarchical_loop": {
+        "correct": 3,
+        "total": 3,
+        "accuracy": 1.0
+      }
+    }
+  },
+  "rows": [
+    {
+      "scenario_id": "transport_policy",
+      "task_type": "plan_constraints",
+      "question_id": "regular_train_on_time",
+      "question": "Stihne Petr schůzku dalším pravidelným vlakem?",
+      "variant": "direct",
+      "answer": "Ne",
+      "expected_aliases": [
+        "ne",
+        "nestihne"
+      ],
+      "required_terms": [],
+      "forbidden_terms": [
+        "ano"
+      ],
+      "correct": true,
+      "selected_node_ids": [],
+      "raw_result": {
+        "answer": "Ne",
+        "rationale": "Vlak přijíždí ve 12:10, což je po začátku schůzky v 11:30.",
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "transport_policy",
+      "task_type": "plan_constraints",
+      "question_id": "regular_train_on_time",
+      "question": "Stihne Petr schůzku dalším pravidelným vlakem?",
+      "variant": "reasoning",
+      "answer": "Ne",
+      "expected_aliases": [
+        "ne",
+        "nestihne"
+      ],
+      "required_terms": [],
+      "forbidden_terms": [
+        "ano"
+      ],
+      "correct": true,
+      "selected_node_ids": [],
+      "raw_result": {
+        "answer": "Ne",
+        "rationale": "Vlak přijíždí do Prahy až ve 12:10, což je po začátku schůzky v 11:30.",
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "transport_policy",
+      "task_type": "plan_constraints",
+      "question_id": "regular_train_on_time",
+      "question": "Stihne Petr schůzku dalším pravidelným vlakem?",
+      "variant": "summary",
+      "answer": "Ne",
+      "expected_aliases": [
+        "ne",
+        "nestihne"
+      ],
+      "required_terms": [],
+      "forbidden_terms": [
+        "ano"
+      ],
+      "correct": true,
+      "selected_node_ids": [],
+      "raw_result": {
+        "answer": "Ne",
+        "rationale": "Další pravidelný vlak přijíždí do Prahy ve 12:10, což je po začátku schůzky v 11:30.",
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "transport_policy",
+      "task_type": "plan_constraints",
+      "question_id": "regular_train_on_time",
+      "question": "Stihne Petr schůzku dalším pravidelným vlakem?",
+      "variant": "flat_budget",
+      "answer": "Ne.",
+      "expected_aliases": [
+        "ne",
+        "nestihne"
+      ],
+      "required_terms": [],
+      "forbidden_terms": [
+        "ano"
+      ],
+      "correct": true,
+      "selected_node_ids": [
+        "T4",
+        "T5",
+        "T11",
+        "T3",
+        "T6",
+        "T1",
+        "T2",
+        "T7",
+        "T8",
+        "T9",
+        "T10"
+      ],
+      "raw_result": {
+        "answer": "Ne.",
+        "rationale": "Petr má být na schůzce v 11:30. Další pravidelný vlak přijíždí do Prahy až ve 12:10, což je po začátku schůzky.",
+        "used_nodes": [
+          "T5",
+          "T6"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "transport_policy",
+      "task_type": "plan_constraints",
+      "question_id": "regular_train_on_time",
+      "question": "Stihne Petr schůzku dalším pravidelným vlakem?",
+      "variant": "hierarchical_budget",
+      "answer": "Ne, Petr dalším pravidelným vlakem schůzku nestihne.",
+      "expected_aliases": [
+        "ne",
+        "nestihne"
+      ],
+      "required_terms": [],
+      "forbidden_terms": [
+        "ano"
+      ],
+      "correct": true,
+      "selected_node_ids": [
+        "T4",
+        "T5",
+        "T11",
+        "T3",
+        "T6",
+        "H2_2",
+        "H3_2",
+        "T8",
+        "T9",
+        "H2_3",
+        "T10",
+        "H2_4"
+      ],
+      "raw_result": {
+        "answer": "Ne, Petr dalším pravidelným vlakem schůzku nestihne.",
+        "rationale": "Další pravidelný vlak přijíždí do Prahy ve 12:10, zatímco schůzka začíná v 11:30. Vlak tedy dorazí až po začátku schůzky.",
+        "used_nodes": [
+          "T5",
+          "T6",
+          "H2_2"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "transport_policy",
+      "task_type": "plan_constraints",
+      "question_id": "regular_train_on_time",
+      "question": "Stihne Petr schůzku dalším pravidelným vlakem?",
+      "variant": "random_hierarchy_budget",
+      "answer": "Ne.",
+      "expected_aliases": [
+        "ne",
+        "nestihne"
+      ],
+      "required_terms": [],
+      "forbidden_terms": [
+        "ano"
+      ],
+      "correct": true,
+      "selected_node_ids": [
+        "T4",
+        "T8",
+        "T1",
+        "R4",
+        "T10",
+        "T9",
+        "T5",
+        "R3",
+        "T2",
+        "T11",
+        "R1",
+        "T6"
+      ],
+      "raw_result": {
+        "answer": "Ne.",
+        "rationale": "Petr má být na schůzce v 11:30 (T6). Další pravidelný vlak přijíždí do Prahy až ve 12:10 (T5), což je po začátku schůzky.",
+        "used_nodes": [
+          "T6",
+          "T5"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "transport_policy",
+      "task_type": "plan_constraints",
+      "question_id": "regular_train_on_time",
+      "question": "Stihne Petr schůzku dalším pravidelným vlakem?",
+      "variant": "hierarchical_loop",
+      "answer": "Ne, Petr pravidelným vlakem schůzku nestihne.",
+      "expected_aliases": [
+        "ne",
+        "nestihne"
+      ],
+      "required_terms": [],
+      "forbidden_terms": [
+        "ano"
+      ],
+      "correct": true,
+      "selected_node_ids": [
+        "T4",
+        "T5",
+        "T11",
+        "T3",
+        "T6",
+        "H2_2",
+        "H3_2",
+        "T8",
+        "T9",
+        "H2_3",
+        "T10",
+        "H2_4"
+      ],
+      "raw_result": {
+        "status": "answered",
+        "answer": "Ne, Petr pravidelným vlakem schůzku nestihne.",
+        "rationale": "Podle uzlu T5 pravidelný vlak přijíždí ve 12:10, zatímco schůzka začíná v 11:30 (T6). Protože 12:10 > 11:30, Petr na schůzku pravidelným vlakem nedorazí včas.",
+        "used_nodes": [
+          "T5",
+          "T6"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "transport_policy",
+      "task_type": "plan_constraints",
+      "question_id": "taxi_allowed_on_time",
+      "question": "Je taxi podle firemního pravidla dovoleno a dorazí včas?",
+      "variant": "direct",
+      "answer": "Ano",
+      "expected_aliases": [
+        "ano"
+      ],
+      "required_terms": [],
+      "forbidden_terms": [
+        "ne"
+      ],
+      "correct": true,
+      "selected_node_ids": [],
+      "raw_result": {
+        "answer": "Ano",
+        "rationale": "Vlak dorazí ve 12:10, což je po začátku schůzky (11:30), takže taxi je dovoleno a dorazí v 11:05, tedy včas.",
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "transport_policy",
+      "task_type": "plan_constraints",
+      "question_id": "taxi_allowed_on_time",
+      "question": "Je taxi podle firemního pravidla dovoleno a dorazí včas?",
+      "variant": "reasoning",
+      "answer": "Ano",
+      "expected_aliases": [
+        "ano"
+      ],
+      "required_terms": [],
+      "forbidden_terms": [
+        "ne"
+      ],
+      "correct": true,
+      "selected_node_ids": [],
+      "raw_result": {
+        "answer": "Ano",
+        "rationale": "Pravidelný vlak dorazí až po začátku schůzky a taxi stihne příjezd v 11:05, což je před 11:30.",
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "transport_policy",
+      "task_type": "plan_constraints",
+      "question_id": "taxi_allowed_on_time",
+      "question": "Je taxi podle firemního pravidla dovoleno a dorazí včas?",
+      "variant": "summary",
+      "answer": "Ano",
+      "expected_aliases": [
+        "ano"
+      ],
+      "required_terms": [],
+      "forbidden_terms": [
+        "ne"
+      ],
+      "correct": true,
+      "selected_node_ids": [],
+      "raw_result": {
+        "answer": "Ano",
+        "rationale": "Vlak přijíždí až ve 12:10, což je po začátku schůzky v 11:30, čímž je splněna podmínka pro využití taxi. Taxi dorazí v 11:05, což je před začátkem schůzky.",
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "transport_policy",
+      "task_type": "plan_constraints",
+      "question_id": "taxi_allowed_on_time",
+      "question": "Je taxi podle firemního pravidla dovoleno a dorazí včas?",
+      "variant": "flat_budget",
+      "answer": "Ne, taxi není podle firemního pravidla dovoleno.",
+      "expected_aliases": [
+        "ano"
+      ],
+      "required_terms": [],
+      "forbidden_terms": [
+        "ne"
+      ],
+      "correct": false,
+      "selected_node_ids": [
+        "T11",
+        "T10",
+        "T4",
+        "T5",
+        "T1",
+        "T2",
+        "T3",
+        "T6",
+        "T7",
+        "T8",
+        "T9"
+      ],
+      "raw_result": {
+        "answer": "Ne, taxi není podle firemního pravidla dovoleno.",
+        "rationale": "Firemní pravidlo (T11) povoluje taxi pouze tehdy, pokud pravidelný vlak dorazí až po začátku schůzky. Pravidelný vlak přijíždí ve 12:10 (T5), zatímco schůzka začíná v 11:30 (T6). I když by taxi dorazilo v 11:05 (T10), což je před začátkem schůzky, podmínka pro využití taxi není splněna, protože pravidelný vlak by v případě využití jiného spoje (např. expresního autobusu, který přijíždí v 11:25) nebo při zohlednění času příjezdu vlaku, nebyl jediným faktorem pro včasný příchod.",
+        "used_nodes": [
+          "T5",
+          "T6",
+          "T10",
+          "T11"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "transport_policy",
+      "task_type": "plan_constraints",
+      "question_id": "taxi_allowed_on_time",
+      "question": "Je taxi podle firemního pravidla dovoleno a dorazí včas?",
+      "variant": "hierarchical_budget",
+      "answer": "Ano, taxi je podle firemního pravidla dovoleno a dorazí včas.",
+      "expected_aliases": [
+        "ano"
+      ],
+      "required_terms": [],
+      "forbidden_terms": [
+        "ne"
+      ],
+      "correct": true,
+      "selected_node_ids": [
+        "T11",
+        "T10",
+        "T4",
+        "T5",
+        "T3",
+        "T7",
+        "H2_5",
+        "T9",
+        "H3_1",
+        "T6",
+        "H2_2",
+        "H3_2"
+      ],
+      "raw_result": {
+        "answer": "Ano, taxi je podle firemního pravidla dovoleno a dorazí včas.",
+        "rationale": "Podle uzlu H3_2 je taxi přípustné, protože pravidelný vlak přijíždí až po začátku schůzky (12:10 vs 11:30), což splňuje podmínku firemního pravidla definovanou v T11. Zároveň uzel T10 potvrzuje, že taxi dorazí v 11:05, což je před začátkem schůzky v 11:30 (T6).",
+        "used_nodes": [
+          "T11",
+          "T10",
+          "T5",
+          "T6",
+          "H2_2",
+          "H3_2"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "transport_policy",
+      "task_type": "plan_constraints",
+      "question_id": "taxi_allowed_on_time",
+      "question": "Je taxi podle firemního pravidla dovoleno a dorazí včas?",
+      "variant": "random_hierarchy_budget",
+      "answer": "Nelze určit.",
+      "expected_aliases": [
+        "ano"
+      ],
+      "required_terms": [],
+      "forbidden_terms": [
+        "ne"
+      ],
+      "correct": false,
+      "selected_node_ids": [
+        "T4",
+        "T8",
+        "T1",
+        "R4",
+        "T10",
+        "T9",
+        "T5",
+        "R3",
+        "T2",
+        "T11",
+        "R1",
+        "T6"
+      ],
+      "raw_result": {
+        "answer": "Nelze určit.",
+        "rationale": "Z uzlů vyplývá, že taxi by dorazilo v 11:05 (T10) a schůzka začíná v 11:30 (T6), tedy by dorazilo včas. Nicméně v uzlech chybí informace o tom, kdy přesně dorazí pravidelný vlak, což je klíčová podmínka pro určení, zda je taxi podle firemního pravidla dovoleno (T11).",
+        "used_nodes": [
+          "T6",
+          "T10",
+          "T11"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "transport_policy",
+      "task_type": "plan_constraints",
+      "question_id": "taxi_allowed_on_time",
+      "question": "Je taxi podle firemního pravidla dovoleno a dorazí včas?",
+      "variant": "hierarchical_loop",
+      "answer": "Ano, taxi je podle firemního pravidla dovoleno a dorazí včas.",
+      "expected_aliases": [
+        "ano"
+      ],
+      "required_terms": [],
+      "forbidden_terms": [
+        "ne"
+      ],
+      "correct": true,
+      "selected_node_ids": [
+        "T11",
+        "T10",
+        "T4",
+        "T5",
+        "T3",
+        "T7",
+        "H2_5",
+        "T9",
+        "H3_1",
+        "T6",
+        "H2_2",
+        "H3_2"
+      ],
+      "raw_result": {
+        "status": "answered",
+        "answer": "Ano, taxi je podle firemního pravidla dovoleno a dorazí včas.",
+        "rationale": "Podle uzlu H3_2 je taxi přípustné, protože pravidelný vlak přijíždí až po začátku schůzky (12:10 > 11:30), což splňuje podmínku firemního pravidla (T11). Zároveň uzel T10 potvrzuje, že taxi dorazí v 11:05, což je před začátkem schůzky v 11:30 (T6), tedy dorazí včas.",
+        "used_nodes": [
+          "T6",
+          "T10",
+          "T11",
+          "H3_2"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "transport_policy",
+      "task_type": "plan_constraints",
+      "question_id": "express_ticket_deadline",
+      "question": "Do kdy nejpozději by musel koupit lístek na expresní autobus?",
+      "variant": "direct",
+      "answer": "9:50",
+      "expected_aliases": [
+        "9:50"
+      ],
+      "required_terms": [],
+      "forbidden_terms": [],
+      "correct": true,
+      "selected_node_ids": [],
+      "raw_result": {
+        "answer": "9:50",
+        "rationale": "Zadání explicitně uvádí, že lístek na expresní autobus musí být koupen nejpozději v 9:50.",
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "transport_policy",
+      "task_type": "plan_constraints",
+      "question_id": "express_ticket_deadline",
+      "question": "Do kdy nejpozději by musel koupit lístek na expresní autobus?",
+      "variant": "reasoning",
+      "answer": "9:50",
+      "expected_aliases": [
+        "9:50"
+      ],
+      "required_terms": [],
+      "forbidden_terms": [],
+      "correct": true,
+      "selected_node_ids": [],
+      "raw_result": {
+        "answer": "9:50",
+        "rationale": "Podle zadání musí být lístek na expresní autobus koupen nejpozději v 9:50.",
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "transport_policy",
+      "task_type": "plan_constraints",
+      "question_id": "express_ticket_deadline",
+      "question": "Do kdy nejpozději by musel koupit lístek na expresní autobus?",
+      "variant": "summary",
+      "answer": "Lístek na expresní autobus by musel koupit nejpozději do 9:50.",
+      "expected_aliases": [
+        "9:50"
+      ],
+      "required_terms": [],
+      "forbidden_terms": [],
+      "correct": true,
+      "selected_node_ids": [],
+      "raw_result": {
+        "answer": "Lístek na expresní autobus by musel koupit nejpozději do 9:50.",
+        "rationale": "Shrnutí výslovně uvádí, že expresní autobus vyžaduje nákup lístku do 9:50.",
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "transport_policy",
+      "task_type": "plan_constraints",
+      "question_id": "express_ticket_deadline",
+      "question": "Do kdy nejpozději by musel koupit lístek na expresní autobus?",
+      "variant": "flat_budget",
+      "answer": "Lístek na expresní autobus musí být koupen nejpozději v 9:50.",
+      "expected_aliases": [
+        "9:50"
+      ],
+      "required_terms": [],
+      "forbidden_terms": [],
+      "correct": true,
+      "selected_node_ids": [
+        "T9",
+        "T7",
+        "T8",
+        "T1",
+        "T2",
+        "T3",
+        "T4",
+        "T5",
+        "T6",
+        "T10",
+        "T11"
+      ],
+      "raw_result": {
+        "answer": "Lístek na expresní autobus musí být koupen nejpozději v 9:50.",
+        "rationale": "Podle myšlenkového uzlu T9 je stanoven nejzazší čas pro koupi lístku na expresní autobus na 9:50.",
+        "used_nodes": [
+          "T9"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "transport_policy",
+      "task_type": "plan_constraints",
+      "question_id": "express_ticket_deadline",
+      "question": "Do kdy nejpozději by musel koupit lístek na expresní autobus?",
+      "variant": "hierarchical_budget",
+      "answer": "Lístek na expresní autobus musí být koupen nejpozději v 9:50.",
+      "expected_aliases": [
+        "9:50"
+      ],
+      "required_terms": [],
+      "forbidden_terms": [],
+      "correct": true,
+      "selected_node_ids": [
+        "T9",
+        "T7",
+        "T8",
+        "T1",
+        "T3",
+        "H2_5",
+        "H3_1",
+        "T5",
+        "T6",
+        "T11",
+        "H2_2",
+        "H3_2"
+      ],
+      "raw_result": {
+        "answer": "Lístek na expresní autobus musí být koupen nejpozději v 9:50.",
+        "rationale": "Podle myšlenkového uzlu T9 je stanoveno, že lístek na expresní autobus musí být zakoupen nejpozději v 9:50.",
+        "used_nodes": [
+          "T9"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "transport_policy",
+      "task_type": "plan_constraints",
+      "question_id": "express_ticket_deadline",
+      "question": "Do kdy nejpozději by musel koupit lístek na expresní autobus?",
+      "variant": "random_hierarchy_budget",
+      "answer": "Lístek na expresní autobus musí být koupen nejpozději v 9:50.",
+      "expected_aliases": [
+        "9:50"
+      ],
+      "required_terms": [],
+      "forbidden_terms": [],
+      "correct": true,
+      "selected_node_ids": [
+        "T4",
+        "T8",
+        "T1",
+        "R4",
+        "T10",
+        "T9",
+        "T5",
+        "R3",
+        "T2",
+        "T11",
+        "R1",
+        "T6"
+      ],
+      "raw_result": {
+        "answer": "Lístek na expresní autobus musí být koupen nejpozději v 9:50.",
+        "rationale": "Podle myšlenkového uzlu T9 je stanoven časový limit pro zakoupení lístku na expresní autobus na 9:50.",
+        "used_nodes": [
+          "T9"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "transport_policy",
+      "task_type": "plan_constraints",
+      "question_id": "express_ticket_deadline",
+      "question": "Do kdy nejpozději by musel koupit lístek na expresní autobus?",
+      "variant": "hierarchical_loop",
+      "answer": "Lístek na expresní autobus musí být koupen nejpozději v 9:50.",
+      "expected_aliases": [
+        "9:50"
+      ],
+      "required_terms": [],
+      "forbidden_terms": [],
+      "correct": true,
+      "selected_node_ids": [
+        "T9",
+        "T7",
+        "T8",
+        "T1",
+        "T3",
+        "H2_5",
+        "H3_1",
+        "T5",
+        "T6",
+        "T11",
+        "H2_2",
+        "H3_2"
+      ],
+      "raw_result": {
+        "status": "answered",
+        "answer": "Lístek na expresní autobus musí být koupen nejpozději v 9:50.",
+        "rationale": "Uzel T9 přímo specifikuje časový limit pro nákup lístku na expresní autobus.",
+        "used_nodes": [
+          "T9"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "nested_relocation",
+      "task_type": "nested_objects",
+      "question_id": "red_folder_final",
+      "question": "Kde je nakonec červená složka?",
+      "variant": "direct",
+      "answer": "V zásuvce D.",
+      "expected_aliases": [
+        "zásuvce d",
+        "v zásuvce d",
+        "zásuvky d",
+        "do zásuvky d"
+      ],
+      "required_terms": [],
+      "forbidden_terms": [],
+      "correct": true,
+      "selected_node_ids": [],
+      "raw_result": {
+        "answer": "V zásuvce D.",
+        "rationale": "Červená složka byla v obálce A, která byla přemístěna z krabice B do zásuvky D.",
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "nested_relocation",
+      "task_type": "nested_objects",
+      "question_id": "red_folder_final",
+      "question": "Kde je nakonec červená složka?",
+      "variant": "reasoning",
+      "answer": "Červená složka je v zásuvce D.",
+      "expected_aliases": [
+        "zásuvce d",
+        "v zásuvce d",
+        "zásuvky d",
+        "do zásuvky d"
+      ],
+      "required_terms": [],
+      "forbidden_terms": [],
+      "correct": true,
+      "selected_node_ids": [],
+      "raw_result": {
+        "answer": "Červená složka je v zásuvce D.",
+        "rationale": "Karel přemístil obálku A, ve které se červená složka nacházela, ze zásuvky B do zásuvky D.",
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "nested_relocation",
+      "task_type": "nested_objects",
+      "question_id": "red_folder_final",
+      "question": "Kde je nakonec červená složka?",
+      "variant": "summary",
+      "answer": "Červená složka je v zásuvce D.",
+      "expected_aliases": [
+        "zásuvce d",
+        "v zásuvce d",
+        "zásuvky d",
+        "do zásuvky d"
+      ],
+      "required_terms": [],
+      "forbidden_terms": [],
+      "correct": true,
+      "selected_node_ids": [],
+      "raw_result": {
+        "answer": "Červená složka je v zásuvce D.",
+        "rationale": "Podle shrnutí byla obálka A, která obsahuje červenou složku, přemístěna z krabice B na polici C do zásuvky D.",
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "nested_relocation",
+      "task_type": "nested_objects",
+      "question_id": "red_folder_final",
+      "question": "Kde je nakonec červená složka?",
+      "variant": "flat_budget",
+      "answer": "Červená složka je v zásuvce D.",
+      "expected_aliases": [
+        "zásuvce d",
+        "v zásuvce d",
+        "zásuvky d",
+        "do zásuvky d"
+      ],
+      "required_terms": [],
+      "forbidden_terms": [],
+      "correct": true,
+      "selected_node_ids": [
+        "T1",
+        "T8",
+        "T2",
+        "T3",
+        "T4",
+        "T5",
+        "T6",
+        "T7"
+      ],
+      "raw_result": {
+        "answer": "Červená složka je v zásuvce D.",
+        "rationale": "Červená složka byla původně v obálce A (T1). Karel obálku A vyndal z krabice B (T4) a položil ji do zásuvky D (T5). Protože je červená složka v obálce A, nachází se nyní v zásuvce D.",
+        "used_nodes": [
+          "T1",
+          "T4",
+          "T5"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "nested_relocation",
+      "task_type": "nested_objects",
+      "question_id": "red_folder_final",
+      "question": "Kde je nakonec červená složka?",
+      "variant": "hierarchical_budget",
+      "answer": "Červená složka se nachází v zásuvce D.",
+      "expected_aliases": [
+        "zásuvce d",
+        "v zásuvce d",
+        "zásuvky d",
+        "do zásuvky d"
+      ],
+      "required_terms": [],
+      "forbidden_terms": [],
+      "correct": true,
+      "selected_node_ids": [
+        "T1",
+        "T8",
+        "T2",
+        "T3",
+        "T5",
+        "H2_3",
+        "T7",
+        "H2_5",
+        "H4_2",
+        "T4",
+        "H2_2",
+        "H3_1"
+      ],
+      "raw_result": {
+        "answer": "Červená složka se nachází v zásuvce D.",
+        "rationale": "Podle uzlu T1 je červená složka v obálce A. Uzel T5 uvádí, že Karel položil obálku A do zásuvky D. Uzel H2_3 tyto informace kombinuje a potvrzuje, že červená složka je nyní v zásuvce D.",
+        "used_nodes": [
+          "T1",
+          "T5",
+          "H2_3"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "nested_relocation",
+      "task_type": "nested_objects",
+      "question_id": "red_folder_final",
+      "question": "Kde je nakonec červená složka?",
+      "variant": "random_hierarchy_budget",
+      "answer": "Červená složka je v obálce A, která byla vložena do zásuvky D.",
+      "expected_aliases": [
+        "zásuvce d",
+        "v zásuvce d",
+        "zásuvky d",
+        "do zásuvky d"
+      ],
+      "required_terms": [],
+      "forbidden_terms": [],
+      "correct": true,
+      "selected_node_ids": [
+        "T8",
+        "T6",
+        "T1",
+        "R1",
+        "T5",
+        "T2",
+        "T7",
+        "R2",
+        "R3",
+        "T3",
+        "T4",
+        "R4"
+      ],
+      "raw_result": {
+        "answer": "Červená složka je v obálce A, která byla vložena do zásuvky D.",
+        "rationale": "Podle uzlu T1 je červená složka v obálce A. Podle uzlu T5 Karel položil obálku A do zásuvky D.",
+        "used_nodes": [
+          "T1",
+          "T5"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "nested_relocation",
+      "task_type": "nested_objects",
+      "question_id": "red_folder_final",
+      "question": "Kde je nakonec červená složka?",
+      "variant": "hierarchical_loop",
+      "answer": "Červená složka se nachází v zásuvce D.",
+      "expected_aliases": [
+        "zásuvce d",
+        "v zásuvce d",
+        "zásuvky d",
+        "do zásuvky d"
+      ],
+      "required_terms": [],
+      "forbidden_terms": [],
+      "correct": true,
+      "selected_node_ids": [
+        "T1",
+        "T8",
+        "T2",
+        "T3",
+        "T5",
+        "H2_3",
+        "T7",
+        "H2_5",
+        "H4_2",
+        "T4",
+        "H2_2",
+        "H3_1"
+      ],
+      "raw_result": {
+        "status": "answered",
+        "answer": "Červená složka se nachází v zásuvce D.",
+        "rationale": "Na základě uzlu T1 je červená složka v obálce A. Uzel T4 a T5 popisují manipulaci, kdy Karel vyjmul obálku A z krabice B a následně ji vložil do zásuvky D. Uzel H2_3 explicitně vyvozuje, že po tomto přesunu se červená složka nachází v zásuvce D.",
+        "used_nodes": [
+          "T1",
+          "T4",
+          "T5",
+          "H2_3"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "nested_relocation",
+      "task_type": "nested_objects",
+      "question_id": "red_on_shelf",
+      "question": "Je červená složka stále na polici C?",
+      "variant": "direct",
+      "answer": "Ne",
+      "expected_aliases": [
+        "ne",
+        "není"
+      ],
+      "required_terms": [],
+      "forbidden_terms": [
+        "ano"
+      ],
+      "correct": true,
+      "selected_node_ids": [],
+      "raw_result": {
+        "answer": "Ne",
+        "rationale": "Červená složka byla přemístěna v obálce A do zásuvky D.",
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "nested_relocation",
+      "task_type": "nested_objects",
+      "question_id": "red_on_shelf",
+      "question": "Je červená složka stále na polici C?",
+      "variant": "reasoning",
+      "answer": "Ne",
+      "expected_aliases": [
+        "ne",
+        "není"
+      ],
+      "required_terms": [],
+      "forbidden_terms": [
+        "ano"
+      ],
+      "correct": true,
+      "selected_node_ids": [],
+      "raw_result": {
+        "answer": "Ne",
+        "rationale": "Červená složka byla přemístěna spolu s obálkou A do zásuvky D.",
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "nested_relocation",
+      "task_type": "nested_objects",
+      "question_id": "red_on_shelf",
+      "question": "Je červená složka stále na polici C?",
+      "variant": "summary",
+      "answer": "Ne",
+      "expected_aliases": [
+        "ne",
+        "není"
+      ],
+      "required_terms": [],
+      "forbidden_terms": [
+        "ano"
+      ],
+      "correct": true,
+      "selected_node_ids": [],
+      "raw_result": {
+        "answer": "Ne",
+        "rationale": "Červená složka byla přemístěna z krabice B na polici C do zásuvky D, takže se již na polici C nenachází.",
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "nested_relocation",
+      "task_type": "nested_objects",
+      "question_id": "red_on_shelf",
+      "question": "Je červená složka stále na polici C?",
+      "variant": "flat_budget",
+      "answer": "Ne.",
+      "expected_aliases": [
+        "ne",
+        "není"
+      ],
+      "required_terms": [],
+      "forbidden_terms": [
+        "ano"
+      ],
+      "correct": true,
+      "selected_node_ids": [
+        "T1",
+        "T3",
+        "T7",
+        "T8",
+        "T2",
+        "T4",
+        "T5",
+        "T6"
+      ],
+      "raw_result": {
+        "answer": "Ne.",
+        "rationale": "Červená složka se nachází v obálce A, která byla Karlem vyjmuta z krabice B a přemístěna do zásuvky D. Červená složka tedy není na polici C.",
+        "used_nodes": [
+          "T1",
+          "T2",
+          "T4",
+          "T5"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "nested_relocation",
+      "task_type": "nested_objects",
+      "question_id": "red_on_shelf",
+      "question": "Je červená složka stále na polici C?",
+      "variant": "hierarchical_budget",
+      "answer": "Ne.",
+      "expected_aliases": [
+        "ne",
+        "není"
+      ],
+      "required_terms": [],
+      "forbidden_terms": [
+        "ano"
+      ],
+      "correct": true,
+      "selected_node_ids": [
+        "T1",
+        "T3",
+        "T7",
+        "T8",
+        "T5",
+        "H2_3",
+        "H2_5",
+        "H4_2",
+        "T2",
+        "H2_1",
+        "H3_3",
+        "T6"
+      ],
+      "raw_result": {
+        "answer": "Ne.",
+        "rationale": "Červená složka byla původně v obálce A, která byla v krabici B na polici C (H2_1). Nicméně Karel přemístil obálku A do zásuvky D (H2_3), čímž se červená složka přesunula mimo polici C (H3_3).",
+        "used_nodes": [
+          "H2_1",
+          "H2_3",
+          "H3_3"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "nested_relocation",
+      "task_type": "nested_objects",
+      "question_id": "red_on_shelf",
+      "question": "Je červená složka stále na polici C?",
+      "variant": "random_hierarchy_budget",
+      "answer": "Ne.",
+      "expected_aliases": [
+        "ne",
+        "není"
+      ],
+      "required_terms": [],
+      "forbidden_terms": [
+        "ano"
+      ],
+      "correct": true,
+      "selected_node_ids": [
+        "T8",
+        "T6",
+        "T1",
+        "R1",
+        "T5",
+        "T2",
+        "T7",
+        "R2",
+        "R3",
+        "T3",
+        "T4",
+        "R4"
+      ],
+      "raw_result": {
+        "answer": "Ne.",
+        "rationale": "Červená složka se nachází v obálce A, která byla vyndána z krabice B a následně umístěna do zásuvky D. Informace o tom, že by červená složka byla na polici C, není v uzlech obsažena; na polici C se nacházela krabice B.",
+        "used_nodes": [
+          "T1",
+          "T4",
+          "T5",
+          "T3"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "nested_relocation",
+      "task_type": "nested_objects",
+      "question_id": "red_on_shelf",
+      "question": "Je červená složka stále na polici C?",
+      "variant": "hierarchical_loop",
+      "answer": "Ne, červená složka již není na polici C.",
+      "expected_aliases": [
+        "ne",
+        "není"
+      ],
+      "required_terms": [],
+      "forbidden_terms": [
+        "ano"
+      ],
+      "correct": true,
+      "selected_node_ids": [
+        "T1",
+        "T3",
+        "T7",
+        "T8",
+        "T5",
+        "H2_3",
+        "H2_5",
+        "H4_2",
+        "T2",
+        "H2_1",
+        "H3_3",
+        "T6"
+      ],
+      "raw_result": {
+        "status": "answered",
+        "answer": "Ne, červená složka již není na polici C.",
+        "rationale": "Z uzlu H2_1 vyplývá, že červená složka byla původně na polici C (uvnitř obálky A v krabici B). Nicméně uzel H2_3 potvrzuje, že Karel přemístil obálku A do zásuvky D. Uzel H3_3 shrnuje aktuální stav, kdy obálka A s červenou složkou již není na polici C, ale v zásuvce D.",
+        "used_nodes": [
+          "H2_1",
+          "H2_3",
+          "H3_3"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "nested_relocation",
+      "task_type": "nested_objects",
+      "question_id": "blue_folder_final",
+      "question": "Kde zůstala modrá složka?",
+      "variant": "direct",
+      "answer": "V krabici B na polici C.",
+      "expected_aliases": [
+        "krabici b",
+        "na polici c"
+      ],
+      "required_terms": [
+        "krabici b"
+      ],
+      "forbidden_terms": [],
+      "correct": true,
+      "selected_node_ids": [],
+      "raw_result": {
+        "answer": "V krabici B na polici C.",
+        "rationale": "Modrá složka nebyla z krabice B vyjmuta, a krabice B zůstala na polici C.",
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "nested_relocation",
+      "task_type": "nested_objects",
+      "question_id": "blue_folder_final",
+      "question": "Kde zůstala modrá složka?",
+      "variant": "reasoning",
+      "answer": "Modrá složka zůstala v krabici B na polici C.",
+      "expected_aliases": [
+        "krabici b",
+        "na polici c"
+      ],
+      "required_terms": [
+        "krabici b"
+      ],
+      "forbidden_terms": [],
+      "correct": true,
+      "selected_node_ids": [],
+      "raw_result": {
+        "answer": "Modrá složka zůstala v krabici B na polici C.",
+        "rationale": "Modrá složka nebyla z krabice B vyjmuta, když Karel přemístil obálku A.",
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "nested_relocation",
+      "task_type": "nested_objects",
+      "question_id": "blue_folder_final",
+      "question": "Kde zůstala modrá složka?",
+      "variant": "summary",
+      "answer": "Modrá složka zůstala v krabici B na polici C.",
+      "expected_aliases": [
+        "krabici b",
+        "na polici c"
+      ],
+      "required_terms": [
+        "krabici b"
+      ],
+      "forbidden_terms": [],
+      "correct": true,
+      "selected_node_ids": [],
+      "raw_result": {
+        "answer": "Modrá složka zůstala v krabici B na polici C.",
+        "rationale": "Shrnutí výslovně uvádí, že prázdná krabice B zůstala na polici C a modrá složka v ní zůstala po celou dobu.",
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "nested_relocation",
+      "task_type": "nested_objects",
+      "question_id": "blue_folder_final",
+      "question": "Kde zůstala modrá složka?",
+      "variant": "flat_budget",
+      "answer": "Modrá složka zůstala v krabici B.",
+      "expected_aliases": [
+        "krabici b",
+        "na polici c"
+      ],
+      "required_terms": [
+        "krabici b"
+      ],
+      "forbidden_terms": [],
+      "correct": true,
+      "selected_node_ids": [
+        "T8",
+        "T1",
+        "T2",
+        "T3",
+        "T4",
+        "T5",
+        "T6",
+        "T7"
+      ],
+      "raw_result": {
+        "answer": "Modrá složka zůstala v krabici B.",
+        "rationale": "Podle myšlenkového uzlu T8 zůstala modrá složka v krabici B po celou dobu.",
+        "used_nodes": [
+          "T8"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "nested_relocation",
+      "task_type": "nested_objects",
+      "question_id": "blue_folder_final",
+      "question": "Kde zůstala modrá složka?",
+      "variant": "hierarchical_budget",
+      "answer": "Modrá složka zůstala v krabici B, která se nachází na polici C.",
+      "expected_aliases": [
+        "krabici b",
+        "na polici c"
+      ],
+      "required_terms": [
+        "krabici b"
+      ],
+      "forbidden_terms": [],
+      "correct": true,
+      "selected_node_ids": [
+        "T8",
+        "T1",
+        "T2",
+        "T3",
+        "T6",
+        "H2_4",
+        "T7",
+        "H2_5",
+        "T5",
+        "H2_3",
+        "H4_2",
+        "H3_3"
+      ],
+      "raw_result": {
+        "answer": "Modrá složka zůstala v krabici B, která se nachází na polici C.",
+        "rationale": "Podle myšlenkového uzlu T8 zůstala modrá složka v krabici B. Uzel H2_5 potvrzuje, že krabice B je na polici C a obsahuje modrou složku.",
+        "used_nodes": [
+          "T8",
+          "H2_5"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "nested_relocation",
+      "task_type": "nested_objects",
+      "question_id": "blue_folder_final",
+      "question": "Kde zůstala modrá složka?",
+      "variant": "random_hierarchy_budget",
+      "answer": "Modrá složka zůstala v krabici B.",
+      "expected_aliases": [
+        "krabici b",
+        "na polici c"
+      ],
+      "required_terms": [
+        "krabici b"
+      ],
+      "forbidden_terms": [],
+      "correct": true,
+      "selected_node_ids": [
+        "T8",
+        "T6",
+        "T1",
+        "R1",
+        "T5",
+        "T2",
+        "T7",
+        "R2",
+        "R3",
+        "T3",
+        "T4",
+        "R4"
+      ],
+      "raw_result": {
+        "answer": "Modrá složka zůstala v krabici B.",
+        "rationale": "Podle myšlenkového uzlu T8 zůstala modrá složka v krabici B po celou dobu.",
+        "used_nodes": [
+          "T8"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "scenario_id": "nested_relocation",
+      "task_type": "nested_objects",
+      "question_id": "blue_folder_final",
+      "question": "Kde zůstala modrá složka?",
+      "variant": "hierarchical_loop",
+      "answer": "Modrá složka zůstala v krabici B, která se nachází na polici C.",
+      "expected_aliases": [
+        "krabici b",
+        "na polici c"
+      ],
+      "required_terms": [
+        "krabici b"
+      ],
+      "forbidden_terms": [],
+      "correct": true,
+      "selected_node_ids": [
+        "T8",
+        "T1",
+        "T2",
+        "T3",
+        "T6",
+        "H2_4",
+        "T7",
+        "H2_5",
+        "T5",
+        "H2_3",
+        "H4_2",
+        "H3_3"
+      ],
+      "raw_result": {
+        "status": "answered",
+        "answer": "Modrá složka zůstala v krabici B, která se nachází na polici C.",
+        "rationale": "Na základě uzlu T8 víme, že modrá složka zůstala v krabici B. Uzel H2_5 potvrzuje, že krabice B se nachází na polici C, což je v souladu s celkovým shrnutím stavu v uzlu H3_3.",
+        "used_nodes": [
+          "T8",
+          "H2_5",
+          "H3_3"
+        ],
+        "confidence": 1.0
+      }
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "transport_policy",
+      "task_type": "plan_constraints",
+      "context_chars": 392,
+      "node_count": 21,
+      "nodes_by_level": {
+        "1": 11,
+        "2": 5,
+        "3": 3,
+        "4": 2
+      },
+      "summary": "Petrův autobus přijel se zpožděním v 9:35, čímž zmeškal vlak v 9:20. Další vlak přijíždí do Prahy ve 12:10, což je po začátku schůzky v 11:30. Expresní autobus přijíždí v 11:25, ale vyžaduje nákup lístku do 9:50. Taxi by dorazilo v 11:05, ale jeho využití je podmíněno příjezdem vlaku až po začátku schůzky.",
+      "nodes": [
+        {
+          "id": "T1",
+          "level": 1,
+          "thought": "Petrův autobus přijel v 9:35.",
+          "parents": [],
+          "source": [
+            "věta 1"
+          ],
+          "operation": "atom",
+          "support": "entailed",
+          "utility": 0.7
+        },
+        {
+          "id": "T2",
+          "level": 1,
+          "thought": "Plánovaný čas příjezdu autobusu byl 9:00.",
+          "parents": [],
+          "source": [
+            "věta 1"
+          ],
+          "operation": "atom",
+          "support": "entailed",
+          "utility": 0.7
+        },
+        {
+          "id": "T3",
+          "level": 1,
+          "thought": "Petr zmeškal vlak v 9:20.",
+          "parents": [],
+          "source": [
+            "věta 2"
+          ],
+          "operation": "atom",
+          "support": "entailed",
+          "utility": 0.7
+        },
+        {
+          "id": "T4",
+          "level": 1,
+          "thought": "Další pravidelný vlak odjíždí v 10:50.",
+          "parents": [],
+          "source": [
+            "věta 3"
+          ],
+          "operation": "atom",
+          "support": "entailed",
+          "utility": 0.7
+        },
+        {
+          "id": "T5",
+          "level": 1,
+          "thought": "Další pravidelný vlak přijíždí do Prahy ve 12:10.",
+          "parents": [],
+          "source": [
+            "věta 3"
+          ],
+          "operation": "atom",
+          "support": "entailed",
+          "utility": 0.7
+        },
+        {
+          "id": "T6",
+          "level": 1,
+          "thought": "Petr má být na schůzce v Praze v 11:30.",
+          "parents": [],
+          "source": [
+            "věta 4"
+          ],
+          "operation": "atom",
+          "support": "entailed",
+          "utility": 0.7
+        },
+        {
+          "id": "T7",
+          "level": 1,
+          "thought": "Expresní autobus odjíždí v 9:55.",
+          "parents": [],
+          "source": [
+            "věta 5"
+          ],
+          "operation": "atom",
+          "support": "entailed",
+          "utility": 0.7
+        },
+        {
+          "id": "T8",
+          "level": 1,
+          "thought": "Expresní autobus přijíždí v 11:25.",
+          "parents": [],
+          "source": [
+            "věta 5"
+          ],
+          "operation": "atom",
+          "support": "entailed",
+          "utility": 0.7
+        },
+        {
+          "id": "T9",
+          "level": 1,
+          "thought": "Lístek na expresní autobus musí být koupen nejpozději v 9:50.",
+          "parents": [],
+          "source": [
+            "věta 5"
+          ],
+          "operation": "atom",
+          "support": "entailed",
+          "utility": 0.7
+        },
+        {
+          "id": "T10",
+          "level": 1,
+          "thought": "Taxi by dorazilo v 11:05.",
+          "parents": [],
+          "source": [
+            "věta 6"
+          ],
+          "operation": "atom",
+          "support": "entailed",
+          "utility": 0.7
+        },
+        {
+          "id": "T11",
+          "level": 1,
+          "thought": "Firemní pravidlo dovoluje taxi pouze tehdy, když pravidelný vlak dorazí až po začátku schůzky.",
+          "parents": [],
+          "source": [
+            "věta 7"
+          ],
+          "operation": "atom",
+          "support": "entailed",
+          "utility": 0.7
+        },
+        {
+          "id": "H2_1",
+          "level": 2,
+          "thought": "Autobus měl zpoždění 35 minut (9:35 - 9:00).",
+          "parents": [
+            "T1",
+            "T2"
+          ],
+          "source": [],
+          "operation": "calculation",
+          "support": "entailed",
+          "utility": 0.8
+        },
+        {
+          "id": "H2_2",
+          "level": 2,
+          "thought": "Pravidelný vlak (příjezd 12:10) nestihne schůzku v 11:30, což splňuje podmínku pro taxi.",
+          "parents": [
+            "T5",
+            "T6",
+            "T11"
+          ],
+          "source": [],
+          "operation": "constraint_combination",
+          "support": "entailed",
+          "utility": 0.9
+        },
+        {
+          "id": "H2_3",
+          "level": 2,
+          "thought": "Expresní autobus (příjezd 11:25) stihne schůzku v 11:30, ale vyžaduje nákup lístku do 9:50.",
+          "parents": [
+            "T8",
+            "T6",
+            "T9"
+          ],
+          "source": [],
+          "operation": "constraint_combination",
+          "support": "entailed",
+          "utility": 0.85
+        },
+        {
+          "id": "H2_4",
+          "level": 2,
+          "thought": "Taxi (příjezd 11:05) stihne schůzku v 11:30 a je rychlejší než expresní autobus (11:25).",
+          "parents": [
+            "T10",
+            "T8",
+            "T6"
+          ],
+          "source": [],
+          "operation": "comparison",
+          "support": "entailed",
+          "utility": 0.85
+        },
+        {
+          "id": "H2_5",
+          "level": 2,
+          "thought": "Petr má po zmeškání vlaku v 9:20 časový prostor 35 minut do odjezdu expresního autobusu (9:55).",
+          "parents": [
+            "T3",
+            "T7"
+          ],
+          "source": [],
+          "operation": "calculation",
+          "support": "entailed",
+          "utility": 0.75
+        },
+        {
+          "id": "H3_1",
+          "level": 3,
+          "thought": "Petr může stihnout expresní autobus, protože má 35 minut (9:20 až 9:55) na nákup lístku, který musí být koupen do 9:50 (zbývá 30 minut).",
+          "parents": [
+            "H2_5",
+            "T9"
+          ],
+          "source": [],
+          "operation": "constraint_combination",
+          "support": "entailed",
+          "utility": 0.9
+        },
+        {
+          "id": "H3_2",
+          "level": 3,
+          "thought": "Taxi je přípustné, protože pravidelný vlak (12:10) přijíždí po začátku schůzky (11:30), což splňuje podmínku firemního pravidla.",
+          "parents": [
+            "H2_2"
+          ],
+          "source": [],
+          "operation": "constraint_combination",
+          "support": "entailed",
+          "utility": 0.95
+        },
+        {
+          "id": "H3_3",
+          "level": 3,
+          "thought": "Porovnání možností: Taxi (11:05) je nejrychlejší volbou pro stihnutí schůzky v 11:30, následované expresním autobusem (11:25).",
+          "parents": [
+            "H2_4",
+            "H2_3"
+          ],
+          "source": [],
+          "operation": "comparison",
+          "support": "entailed",
+          "utility": 0.9
+        },
+        {
+          "id": "H4_1",
+          "level": 4,
+          "thought": "Petr má dvě reálné možnosti: stihnout expresní autobus (nákup lístku do 9:50) nebo využít taxi (přípustné dle firemního pravidla).",
+          "parents": [
+            "H3_1",
+            "H3_2"
+          ],
+          "source": [],
+          "operation": "constraint_combination",
+          "support": "entailed",
+          "utility": 0.95
+        },
+        {
+          "id": "H4_2",
+          "level": 4,
+          "thought": "Taxi je preferovanou volbou, protože dorazí v 11:05, což poskytuje větší časovou rezervu (25 minut) před schůzkou v 11:30 než expresní autobus (5 minut).",
+          "parents": [
+            "H3_3"
+          ],
+          "source": [],
+          "operation": "comparison",
+          "support": "entailed",
+          "utility": 0.9
+        }
+      ],
+      "graph_trace": {
+        "atomizer": {
+          "nodes": [
+            {
+              "id": "T1",
+              "level": 1,
+              "thought": "Petrův autobus přijel v 9:35.",
+              "parents": [],
+              "source": [
+                "věta 1"
+              ],
+              "operation": "atom",
+              "support": "entailed",
+              "utility": 0.7
+            },
+            {
+              "id": "T2",
+              "level": 1,
+              "thought": "Plánovaný čas příjezdu autobusu byl 9:00.",
+              "parents": [],
+              "source": [
+                "věta 1"
+              ],
+              "operation": "atom",
+              "support": "entailed",
+              "utility": 0.7
+            },
+            {
+              "id": "T3",
+              "level": 1,
+              "thought": "Petr zmeškal vlak v 9:20.",
+              "parents": [],
+              "source": [
+                "věta 2"
+              ],
+              "operation": "atom",
+              "support": "entailed",
+              "utility": 0.7
+            },
+            {
+              "id": "T4",
+              "level": 1,
+              "thought": "Další pravidelný vlak odjíždí v 10:50.",
+              "parents": [],
+              "source": [
+                "věta 3"
+              ],
+              "operation": "atom",
+              "support": "entailed",
+              "utility": 0.7
+            },
+            {
+              "id": "T5",
+              "level": 1,
+              "thought": "Další pravidelný vlak přijíždí do Prahy ve 12:10.",
+              "parents": [],
+              "source": [
+                "věta 3"
+              ],
+              "operation": "atom",
+              "support": "entailed",
+              "utility": 0.7
+            },
+            {
+              "id": "T6",
+              "level": 1,
+              "thought": "Petr má být na schůzce v Praze v 11:30.",
+              "parents": [],
+              "source": [
+                "věta 4"
+              ],
+              "operation": "atom",
+              "support": "entailed",
+              "utility": 0.7
+            },
+            {
+              "id": "T7",
+              "level": 1,
+              "thought": "Expresní autobus odjíždí v 9:55.",
+              "parents": [],
+              "source": [
+                "věta 5"
+              ],
+              "operation": "atom",
+              "support": "entailed",
+              "utility": 0.7
+            },
+            {
+              "id": "T8",
+              "level": 1,
+              "thought": "Expresní autobus přijíždí v 11:25.",
+              "parents": [],
+              "source": [
+                "věta 5"
+              ],
+              "operation": "atom",
+              "support": "entailed",
+              "utility": 0.7
+            },
+            {
+              "id": "T9",
+              "level": 1,
+              "thought": "Lístek na expresní autobus musí být koupen nejpozději v 9:50.",
+              "parents": [],
+              "source": [
+                "věta 5"
+              ],
+              "operation": "atom",
+              "support": "entailed",
+              "utility": 0.7
+            },
+            {
+              "id": "T10",
+              "level": 1,
+              "thought": "Taxi by dorazilo v 11:05.",
+              "parents": [],
+              "source": [
+                "věta 6"
+              ],
+              "operation": "atom",
+              "support": "entailed",
+              "utility": 0.7
+            },
+            {
+              "id": "T11",
+              "level": 1,
+              "thought": "Firemní pravidlo dovoluje taxi pouze tehdy, když pravidelný vlak dorazí až po začátku schůzky.",
+              "parents": [],
+              "source": [
+                "věta 7"
+              ],
+              "operation": "atom",
+              "support": "entailed",
+              "utility": 0.7
+            }
+          ]
+        },
+        "composer": [
+          {
+            "level": 2,
+            "raw": {
+              "nodes": [
+                {
+                  "id": "H2_1",
+                  "level": 2,
+                  "thought": "Autobus měl zpoždění 35 minut (9:35 - 9:00).",
+                  "parents": [
+                    "T1",
+                    "T2"
+                  ],
+                  "source": [],
+                  "operation": "calculation",
+                  "support": "entailed",
+                  "utility": 0.8
+                },
+                {
+                  "id": "H2_2",
+                  "level": 2,
+                  "thought": "Pravidelný vlak (příjezd 12:10) nestihne schůzku v 11:30, což splňuje podmínku pro taxi.",
+                  "parents": [
+                    "T5",
+                    "T6",
+                    "T11"
+                  ],
+                  "source": [],
+                  "operation": "constraint_combination",
+                  "support": "entailed",
+                  "utility": 0.9
+                },
+                {
+                  "id": "H2_3",
+                  "level": 2,
+                  "thought": "Expresní autobus (příjezd 11:25) stihne schůzku v 11:30, ale vyžaduje nákup lístku do 9:50.",
+                  "parents": [
+                    "T8",
+                    "T6",
+                    "T9"
+                  ],
+                  "source": [],
+                  "operation": "constraint_combination",
+                  "support": "entailed",
+                  "utility": 0.85
+                },
+                {
+                  "id": "H2_4",
+                  "level": 2,
+                  "thought": "Taxi (příjezd 11:05) stihne schůzku v 11:30 a je rychlejší než expresní autobus (11:25).",
+                  "parents": [
+                    "T10",
+                    "T8",
+                    "T6"
+                  ],
+                  "source": [],
+                  "operation": "comparison",
+                  "support": "entailed",
+                  "utility": 0.85
+                },
+                {
+                  "id": "H2_5",
+                  "level": 2,
+                  "thought": "Petr má po zmeškání vlaku v 9:20 časový prostor 35 minut do odjezdu expresního autobusu (9:55).",
+                  "parents": [
+                    "T3",
+                    "T7"
+                  ],
+                  "source": [],
+                  "operation": "calculation",
+                  "support": "entailed",
+                  "utility": 0.75
+                }
+              ]
+            },
+            "candidates": [
+              {
+                "id": "H2_1",
+                "level": 2,
+                "thought": "Autobus měl zpoždění 35 minut (9:35 - 9:00).",
+                "parents": [
+                  "T1",
+                  "T2"
+                ],
+                "source": [],
+                "operation": "calculation",
+                "support": "entailed",
+                "utility": 0.8
+              },
+              {
+                "id": "H2_2",
+                "level": 2,
+                "thought": "Pravidelný vlak (příjezd 12:10) nestihne schůzku v 11:30, což splňuje podmínku pro taxi.",
+                "parents": [
+                  "T5",
+                  "T6",
+                  "T11"
+                ],
+                "source": [],
+                "operation": "constraint_combination",
+                "support": "entailed",
+                "utility": 0.9
+              },
+              {
+                "id": "H2_3",
+                "level": 2,
+                "thought": "Expresní autobus (příjezd 11:25) stihne schůzku v 11:30, ale vyžaduje nákup lístku do 9:50.",
+                "parents": [
+                  "T8",
+                  "T6",
+                  "T9"
+                ],
+                "source": [],
+                "operation": "constraint_combination",
+                "support": "entailed",
+                "utility": 0.85
+              },
+              {
+                "id": "H2_4",
+                "level": 2,
+                "thought": "Taxi (příjezd 11:05) stihne schůzku v 11:30 a je rychlejší než expresní autobus (11:25).",
+                "parents": [
+                  "T10",
+                  "T8",
+                  "T6"
+                ],
+                "source": [],
+                "operation": "comparison",
+                "support": "entailed",
+                "utility": 0.85
+              },
+              {
+                "id": "H2_5",
+                "level": 2,
+                "thought": "Petr má po zmeškání vlaku v 9:20 časový prostor 35 minut do odjezdu expresního autobusu (9:55).",
+                "parents": [
+                  "T3",
+                  "T7"
+                ],
+                "source": [],
+                "operation": "calculation",
+                "support": "entailed",
+                "utility": 0.75
+              }
+            ]
+          },
+          {
+            "level": 3,
+            "raw": {
+              "nodes": [
+                {
+                  "id": "H3_1",
+                  "level": 3,
+                  "thought": "Petr může stihnout expresní autobus, protože má 35 minut (9:20 až 9:55) na nákup lístku, který musí být koupen do 9:50 (zbývá 30 minut).",
+                  "parents": [
+                    "H2_5",
+                    "T9"
+                  ],
+                  "source": [],
+                  "operation": "constraint_combination",
+                  "support": "entailed",
+                  "utility": 0.9
+                },
+                {
+                  "id": "H3_2",
+                  "level": 3,
+                  "thought": "Taxi je přípustné, protože pravidelný vlak (12:10) přijíždí po začátku schůzky (11:30), což splňuje podmínku firemního pravidla.",
+                  "parents": [
+                    "H2_2"
+                  ],
+                  "source": [],
+                  "operation": "constraint_combination",
+                  "support": "entailed",
+                  "utility": 0.95
+                },
+                {
+                  "id": "H3_3",
+                  "level": 3,
+                  "thought": "Porovnání možností: Taxi (11:05) je nejrychlejší volbou pro stihnutí schůzky v 11:30, následované expresním autobusem (11:25).",
+                  "parents": [
+                    "H2_4",
+                    "H2_3"
+                  ],
+                  "source": [],
+                  "operation": "comparison",
+                  "support": "entailed",
+                  "utility": 0.9
+                },
+                {
+                  "id": "H3_4",
+                  "level": 3,
+                  "thought": "Petr má dostatek času na nákup lístku na expresní autobus (do 9:50), pokud se po zmeškání vlaku v 9:20 ihned přesune k prodejnímu místu.",
+                  "parents": [
+                    "H3_1"
+                  ],
+                  "source": [],
+                  "operation": "plan",
+                  "support": "entailed",
+                  "utility": 0.85
+                }
+              ]
+            },
+            "candidates": [
+              {
+                "id": "H3_1",
+                "level": 3,
+                "thought": "Petr může stihnout expresní autobus, protože má 35 minut (9:20 až 9:55) na nákup lístku, který musí být koupen do 9:50 (zbývá 30 minut).",
+                "parents": [
+                  "H2_5",
+                  "T9"
+                ],
+                "source": [],
+                "operation": "constraint_combination",
+                "support": "entailed",
+                "utility": 0.9
+              },
+              {
+                "id": "H3_2",
+                "level": 3,
+                "thought": "Taxi je přípustné, protože pravidelný vlak (12:10) přijíždí po začátku schůzky (11:30), což splňuje podmínku firemního pravidla.",
+                "parents": [
+                  "H2_2"
+                ],
+                "source": [],
+                "operation": "constraint_combination",
+                "support": "entailed",
+                "utility": 0.95
+              },
+              {
+                "id": "H3_3",
+                "level": 3,
+                "thought": "Porovnání možností: Taxi (11:05) je nejrychlejší volbou pro stihnutí schůzky v 11:30, následované expresním autobusem (11:25).",
+                "parents": [
+                  "H2_4",
+                  "H2_3"
+                ],
+                "source": [],
+                "operation": "comparison",
+                "support": "entailed",
+                "utility": 0.9
+              }
+            ]
+          },
+          {
+            "level": 4,
+            "raw": {
+              "nodes": [
+                {
+                  "id": "H4_1",
+                  "level": 4,
+                  "thought": "Petr má dvě reálné možnosti: stihnout expresní autobus (nákup lístku do 9:50) nebo využít taxi (přípustné dle firemního pravidla).",
+                  "parents": [
+                    "H3_1",
+                    "H3_2"
+                  ],
+                  "source": [],
+                  "operation": "constraint_combination",
+                  "support": "entailed",
+                  "utility": 0.95
+                },
+                {
+                  "id": "H4_2",
+                  "level": 4,
+                  "thought": "Taxi je preferovanou volbou, protože dorazí v 11:05, což poskytuje větší časovou rezervu (25 minut) před schůzkou v 11:30 než expresní autobus (5 minut).",
+                  "parents": [
+                    "H3_3"
+                  ],
+                  "source": [],
+                  "operation": "comparison",
+                  "support": "entailed",
+                  "utility": 0.9
+                },
+                {
+                  "id": "H4_3",
+                  "level": 4,
+                  "thought": "Pravidelný vlak (příjezd 12:10) je pro schůzku v 11:30 nepoužitelný, což vylučuje tuto možnost a aktivuje oprávnění k použití taxi.",
+                  "parents": [
+                    "T5",
+                    "T6",
+                    "T11"
+                  ],
+                  "source": [],
+                  "operation": "exclusion",
+                  "support": "entailed",
+                  "utility": 0.95
+                }
+              ]
+            },
+            "candidates": [
+              {
+                "id": "H4_1",
+                "level": 4,
+                "thought": "Petr má dvě reálné možnosti: stihnout expresní autobus (nákup lístku do 9:50) nebo využít taxi (přípustné dle firemního pravidla).",
+                "parents": [
+                  "H3_1",
+                  "H3_2"
+                ],
+                "source": [],
+                "operation": "constraint_combination",
+                "support": "entailed",
+                "utility": 0.95
+              },
+              {
+                "id": "H4_2",
+                "level": 4,
+                "thought": "Taxi je preferovanou volbou, protože dorazí v 11:05, což poskytuje větší časovou rezervu (25 minut) před schůzkou v 11:30 než expresní autobus (5 minut).",
+                "parents": [
+                  "H3_3"
+                ],
+                "source": [],
+                "operation": "comparison",
+                "support": "entailed",
+                "utility": 0.9
+              },
+              {
+                "id": "H4_3",
+                "level": 4,
+                "thought": "Pravidelný vlak (příjezd 12:10) je pro schůzku v 11:30 nepoužitelný, což vylučuje tuto možnost a aktivuje oprávnění k použití taxi.",
+                "parents": [
+                  "T5",
+                  "T6",
+                  "T11"
+                ],
+                "source": [],
+                "operation": "exclusion",
+                "support": "entailed",
+                "utility": 0.95
+              }
+            ]
+          }
+        ],
+        "verifier": [
+          {
+            "level": 2,
+            "result": {
+              "accepted_ids": [
+                "H2_1",
+                "H2_2",
+                "H2_3",
+                "H2_4",
+                "H2_5"
+              ],
+              "rejected": []
+            }
+          },
+          {
+            "level": 3,
+            "result": {
+              "accepted_ids": [
+                "H3_1",
+                "H3_2",
+                "H3_3"
+              ],
+              "rejected": []
+            }
+          },
+          {
+            "level": 4,
+            "result": {
+              "accepted_ids": [
+                "H4_1",
+                "H4_2"
+              ],
+              "rejected": [
+                {
+                  "id": "H4_3",
+                  "reason": "duplikát; myšlenka je již obsažena v uzlu H2_2 a H3_2"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "nested_relocation",
+      "task_type": "nested_objects",
+      "context_chars": 234,
+      "node_count": 18,
+      "nodes_by_level": {
+        "1": 8,
+        "2": 5,
+        "3": 2,
+        "4": 3
+      },
+      "summary": "Červená složka je v obálce A, která byla přemístěna z krabice B na polici C do zásuvky D. Prázdná krabice B zůstala na polici C a modrá složka v ní zůstala po celou dobu.",
+      "nodes": [
+        {
+          "id": "T1",
+          "level": 1,
+          "thought": "Červená složka je v obálce A.",
+          "parents": [],
+          "source": [
+            "věta 1"
+          ],
+          "operation": "atom",
+          "support": "entailed",
+          "utility": 0.7
+        },
+        {
+          "id": "T2",
+          "level": 1,
+          "thought": "Obálka A je v krabici B.",
+          "parents": [],
+          "source": [
+            "věta 2"
+          ],
+          "operation": "atom",
+          "support": "entailed",
+          "utility": 0.7
+        },
+        {
+          "id": "T3",
+          "level": 1,
+          "thought": "Krabice B je na polici C.",
+          "parents": [],
+          "source": [
+            "věta 3"
+          ],
+          "operation": "atom",
+          "support": "entailed",
+          "utility": 0.7
+        },
+        {
+          "id": "T4",
+          "level": 1,
+          "thought": "Karel vyndal obálku A z krabice B.",
+          "parents": [],
+          "source": [
+            "věta 4"
+          ],
+          "operation": "atom",
+          "support": "entailed",
+          "utility": 0.7
+        },
+        {
+          "id": "T5",
+          "level": 1,
+          "thought": "Karel položil obálku A do zásuvky D.",
+          "parents": [],
+          "source": [
+            "věta 4"
+          ],
+          "operation": "atom",
+          "support": "entailed",
+          "utility": 0.7
+        },
+        {
+          "id": "T6",
+          "level": 1,
+          "thought": "Krabice B je prázdná.",
+          "parents": [],
+          "source": [
+            "věta 5"
+          ],
+          "operation": "atom",
+          "support": "entailed",
+          "utility": 0.7
+        },
+        {
+          "id": "T7",
+          "level": 1,
+          "thought": "Karel nechal krabici B na polici C.",
+          "parents": [],
+          "source": [
+            "věta 5"
+          ],
+          "operation": "atom",
+          "support": "entailed",
+          "utility": 0.7
+        },
+        {
+          "id": "T8",
+          "level": 1,
+          "thought": "Modrá složka zůstala v krabici B po celou dobu.",
+          "parents": [],
+          "source": [
+            "věta 6"
+          ],
+          "operation": "atom",
+          "support": "entailed",
+          "utility": 0.7
+        },
+        {
+          "id": "H2_1",
+          "level": 2,
+          "thought": "Kombinací T1, T2 a T3 vyplývá, že červená složka je v obálce A, která je v krabici B, která je na polici C. Tedy červená složka je na polici C.",
+          "parents": [
+            "T1",
+            "T2",
+            "T3"
+          ],
+          "source": [],
+          "operation": "spatial_inference",
+          "support": "entailed",
+          "utility": 0.9
+        },
+        {
+          "id": "H2_2",
+          "level": 2,
+          "thought": "Karel vyjmul obálku A z krabice B (T4), takže červená složka (která byla v obálce A dle T1) již není v krabici B.",
+          "parents": [
+            "T1",
+            "T4"
+          ],
+          "source": [],
+          "operation": "state_change",
+          "support": "entailed",
+          "utility": 0.95
+        },
+        {
+          "id": "H2_3",
+          "level": 2,
+          "thought": "Karel přesunul obálku A do zásuvky D (T5), tudíž červená složka se nyní nachází v zásuvce D.",
+          "parents": [
+            "T1",
+            "T5"
+          ],
+          "source": [],
+          "operation": "state_change",
+          "support": "entailed",
+          "utility": 0.95
+        },
+        {
+          "id": "H2_4",
+          "level": 2,
+          "thought": "Krabice B je prázdná (T6), což potvrzuje, že obálka A (s červenou složkou) byla úspěšně vyjmuta, ale modrá složka (T8) v ní zůstala, což znamená, že krabice B není prázdná v absolutním smyslu, pokud modrá složka stále existuje.",
+          "parents": [
+            "T6",
+            "T8"
+          ],
+          "source": [],
+          "operation": "conflict_resolution",
+          "support": "entailed",
+          "utility": 0.85
+        },
+        {
+          "id": "H2_5",
+          "level": 2,
+          "thought": "Karel nechal krabici B na polici C (T7), přičemž v ní zůstala modrá složka (T8). Krabice B je tedy stále na polici C a obsahuje modrou složku.",
+          "parents": [
+            "T7",
+            "T8"
+          ],
+          "source": [],
+          "operation": "spatial_inference",
+          "support": "entailed",
+          "utility": 0.8
+        },
+        {
+          "id": "H3_1",
+          "level": 3,
+          "thought": "Kombinací H2_2 a H2_3 vyplývá, že červená složka opustila krabici B a nachází se v zásuvce D, čímž se vylučuje její přítomnost v krabici B po Karlově manipulaci.",
+          "parents": [
+            "H2_2",
+            "H2_3"
+          ],
+          "source": [],
+          "operation": "exclusion",
+          "support": "entailed",
+          "utility": 0.9
+        },
+        {
+          "id": "H3_3",
+          "level": 3,
+          "thought": "Aktuální stav na polici C: Krabice B (obsahující modrou složku) zůstává na polici C, zatímco obálka A (s červenou složkou) byla přemístěna do zásuvky D.",
+          "parents": [
+            "H2_3",
+            "H2_5"
+          ],
+          "source": [],
+          "operation": "state_summary",
+          "support": "entailed",
+          "utility": 0.95
+        },
+        {
+          "id": "H4_1",
+          "level": 4,
+          "thought": "Krabice B obsahuje 1 modrou složku (T8) a 0 červených složek (H3_1), tudíž tvrzení o prázdnosti krabice B (T6) je relativní vůči obsahu obálky A, nikoliv absolutní.",
+          "parents": [
+            "T6",
+            "T8",
+            "H3_1"
+          ],
+          "source": [],
+          "operation": "conflict_resolution",
+          "support": "entailed",
+          "utility": 0.9
+        },
+        {
+          "id": "H4_2",
+          "level": 4,
+          "thought": "Červená složka je v zásuvce D (H2_3), zatímco modrá složka je v krabici B na polici C (H2_5). Obě složky jsou nyní na odlišných místech.",
+          "parents": [
+            "H2_3",
+            "H2_5"
+          ],
+          "source": [],
+          "operation": "spatial_inference",
+          "support": "entailed",
+          "utility": 0.85
+        },
+        {
+          "id": "H4_3",
+          "level": 4,
+          "thought": "Počet složek v krabici B se změnil z 2 (červená v obálce A + modrá) na 1 (pouze modrá), protože Karel vyjmul obálku A (T4).",
+          "parents": [
+            "T1",
+            "T4",
+            "T8"
+          ],
+          "source": [],
+          "operation": "count_sum",
+          "support": "entailed",
+          "utility": 0.8
+        }
+      ],
+      "graph_trace": {
+        "atomizer": {
+          "nodes": [
+            {
+              "id": "T1",
+              "level": 1,
+              "thought": "Červená složka je v obálce A.",
+              "parents": [],
+              "source": [
+                "věta 1"
+              ],
+              "operation": "atom",
+              "support": "entailed",
+              "utility": 0.7
+            },
+            {
+              "id": "T2",
+              "level": 1,
+              "thought": "Obálka A je v krabici B.",
+              "parents": [],
+              "source": [
+                "věta 2"
+              ],
+              "operation": "atom",
+              "support": "entailed",
+              "utility": 0.7
+            },
+            {
+              "id": "T3",
+              "level": 1,
+              "thought": "Krabice B je na polici C.",
+              "parents": [],
+              "source": [
+                "věta 3"
+              ],
+              "operation": "atom",
+              "support": "entailed",
+              "utility": 0.7
+            },
+            {
+              "id": "T4",
+              "level": 1,
+              "thought": "Karel vyndal obálku A z krabice B.",
+              "parents": [],
+              "source": [
+                "věta 4"
+              ],
+              "operation": "atom",
+              "support": "entailed",
+              "utility": 0.7
+            },
+            {
+              "id": "T5",
+              "level": 1,
+              "thought": "Karel položil obálku A do zásuvky D.",
+              "parents": [],
+              "source": [
+                "věta 4"
+              ],
+              "operation": "atom",
+              "support": "entailed",
+              "utility": 0.7
+            },
+            {
+              "id": "T6",
+              "level": 1,
+              "thought": "Krabice B je prázdná.",
+              "parents": [],
+              "source": [
+                "věta 5"
+              ],
+              "operation": "atom",
+              "support": "entailed",
+              "utility": 0.7
+            },
+            {
+              "id": "T7",
+              "level": 1,
+              "thought": "Karel nechal krabici B na polici C.",
+              "parents": [],
+              "source": [
+                "věta 5"
+              ],
+              "operation": "atom",
+              "support": "entailed",
+              "utility": 0.7
+            },
+            {
+              "id": "T8",
+              "level": 1,
+              "thought": "Modrá složka zůstala v krabici B po celou dobu.",
+              "parents": [],
+              "source": [
+                "věta 6"
+              ],
+              "operation": "atom",
+              "support": "entailed",
+              "utility": 0.7
+            }
+          ]
+        },
+        "composer": [
+          {
+            "level": 2,
+            "raw": {
+              "nodes": [
+                {
+                  "id": "H2_1",
+                  "level": 2,
+                  "thought": "Kombinací T1, T2 a T3 vyplývá, že červená složka je v obálce A, která je v krabici B, která je na polici C. Tedy červená složka je na polici C.",
+                  "parents": [
+                    "T1",
+                    "T2",
+                    "T3"
+                  ],
+                  "source": [],
+                  "operation": "spatial_inference",
+                  "support": "entailed",
+                  "utility": 0.9
+                },
+                {
+                  "id": "H2_2",
+                  "level": 2,
+                  "thought": "Karel vyjmul obálku A z krabice B (T4), takže červená složka (která byla v obálce A dle T1) již není v krabici B.",
+                  "parents": [
+                    "T1",
+                    "T4"
+                  ],
+                  "source": [],
+                  "operation": "state_change",
+                  "support": "entailed",
+                  "utility": 0.95
+                },
+                {
+                  "id": "H2_3",
+                  "level": 2,
+                  "thought": "Karel přesunul obálku A do zásuvky D (T5), tudíž červená složka se nyní nachází v zásuvce D.",
+                  "parents": [
+                    "T1",
+                    "T5"
+                  ],
+                  "source": [],
+                  "operation": "state_change",
+                  "support": "entailed",
+                  "utility": 0.95
+                },
+                {
+                  "id": "H2_4",
+                  "level": 2,
+                  "thought": "Krabice B je prázdná (T6), což potvrzuje, že obálka A (s červenou složkou) byla úspěšně vyjmuta, ale modrá složka (T8) v ní zůstala, což znamená, že krabice B není prázdná v absolutním smyslu, pokud modrá složka stále existuje.",
+                  "parents": [
+                    "T6",
+                    "T8"
+                  ],
+                  "source": [],
+                  "operation": "conflict_resolution",
+                  "support": "entailed",
+                  "utility": 0.85
+                },
+                {
+                  "id": "H2_5",
+                  "level": 2,
+                  "thought": "Karel nechal krabici B na polici C (T7), přičemž v ní zůstala modrá složka (T8). Krabice B je tedy stále na polici C a obsahuje modrou složku.",
+                  "parents": [
+                    "T7",
+                    "T8"
+                  ],
+                  "source": [],
+                  "operation": "spatial_inference",
+                  "support": "entailed",
+                  "utility": 0.8
+                }
+              ]
+            },
+            "candidates": [
+              {
+                "id": "H2_1",
+                "level": 2,
+                "thought": "Kombinací T1, T2 a T3 vyplývá, že červená složka je v obálce A, která je v krabici B, která je na polici C. Tedy červená složka je na polici C.",
+                "parents": [
+                  "T1",
+                  "T2",
+                  "T3"
+                ],
+                "source": [],
+                "operation": "spatial_inference",
+                "support": "entailed",
+                "utility": 0.9
+              },
+              {
+                "id": "H2_2",
+                "level": 2,
+                "thought": "Karel vyjmul obálku A z krabice B (T4), takže červená složka (která byla v obálce A dle T1) již není v krabici B.",
+                "parents": [
+                  "T1",
+                  "T4"
+                ],
+                "source": [],
+                "operation": "state_change",
+                "support": "entailed",
+                "utility": 0.95
+              },
+              {
+                "id": "H2_3",
+                "level": 2,
+                "thought": "Karel přesunul obálku A do zásuvky D (T5), tudíž červená složka se nyní nachází v zásuvce D.",
+                "parents": [
+                  "T1",
+                  "T5"
+                ],
+                "source": [],
+                "operation": "state_change",
+                "support": "entailed",
+                "utility": 0.95
+              },
+              {
+                "id": "H2_4",
+                "level": 2,
+                "thought": "Krabice B je prázdná (T6), což potvrzuje, že obálka A (s červenou složkou) byla úspěšně vyjmuta, ale modrá složka (T8) v ní zůstala, což znamená, že krabice B není prázdná v absolutním smyslu, pokud modrá složka stále existuje.",
+                "parents": [
+                  "T6",
+                  "T8"
+                ],
+                "source": [],
+                "operation": "conflict_resolution",
+                "support": "entailed",
+                "utility": 0.85
+              },
+              {
+                "id": "H2_5",
+                "level": 2,
+                "thought": "Karel nechal krabici B na polici C (T7), přičemž v ní zůstala modrá složka (T8). Krabice B je tedy stále na polici C a obsahuje modrou složku.",
+                "parents": [
+                  "T7",
+                  "T8"
+                ],
+                "source": [],
+                "operation": "spatial_inference",
+                "support": "entailed",
+                "utility": 0.8
+              }
+            ]
+          },
+          {
+            "level": 3,
+            "raw": {
+              "nodes": [
+                {
+                  "id": "H3_1",
+                  "level": 3,
+                  "thought": "Kombinací H2_2 a H2_3 vyplývá, že červená složka opustila krabici B a nachází se v zásuvce D, čímž se vylučuje její přítomnost v krabici B po Karlově manipulaci.",
+                  "parents": [
+                    "H2_2",
+                    "H2_3"
+                  ],
+                  "source": [],
+                  "operation": "exclusion",
+                  "support": "entailed",
+                  "utility": 0.9
+                },
+                {
+                  "id": "H3_2",
+                  "level": 3,
+                  "thought": "Analýza obsahu krabice B: T6 říká, že je prázdná, ale T8 říká, že modrá složka v ní zůstala. Konflikt je vyřešen tak, že krabice B je prázdná pouze vzhledem k obálce A, ale obsahuje modrou složku.",
+                  "parents": [
+                    "T6",
+                    "T8"
+                  ],
+                  "source": [],
+                  "operation": "conflict_resolution",
+                  "support": "entailed",
+                  "utility": 0.85
+                },
+                {
+                  "id": "H3_3",
+                  "level": 3,
+                  "thought": "Aktuální stav na polici C: Krabice B (obsahující modrou složku) zůstává na polici C, zatímco obálka A (s červenou složkou) byla přemístěna do zásuvky D.",
+                  "parents": [
+                    "H2_3",
+                    "H2_5"
+                  ],
+                  "source": [],
+                  "operation": "state_summary",
+                  "support": "entailed",
+                  "utility": 0.95
+                }
+              ]
+            },
+            "candidates": [
+              {
+                "id": "H3_1",
+                "level": 3,
+                "thought": "Kombinací H2_2 a H2_3 vyplývá, že červená složka opustila krabici B a nachází se v zásuvce D, čímž se vylučuje její přítomnost v krabici B po Karlově manipulaci.",
+                "parents": [
+                  "H2_2",
+                  "H2_3"
+                ],
+                "source": [],
+                "operation": "exclusion",
+                "support": "entailed",
+                "utility": 0.9
+              },
+              {
+                "id": "H3_2",
+                "level": 3,
+                "thought": "Analýza obsahu krabice B: T6 říká, že je prázdná, ale T8 říká, že modrá složka v ní zůstala. Konflikt je vyřešen tak, že krabice B je prázdná pouze vzhledem k obálce A, ale obsahuje modrou složku.",
+                "parents": [
+                  "T6",
+                  "T8"
+                ],
+                "source": [],
+                "operation": "conflict_resolution",
+                "support": "entailed",
+                "utility": 0.85
+              },
+              {
+                "id": "H3_3",
+                "level": 3,
+                "thought": "Aktuální stav na polici C: Krabice B (obsahující modrou složku) zůstává na polici C, zatímco obálka A (s červenou složkou) byla přemístěna do zásuvky D.",
+                "parents": [
+                  "H2_3",
+                  "H2_5"
+                ],
+                "source": [],
+                "operation": "state_summary",
+                "support": "entailed",
+                "utility": 0.95
+              }
+            ]
+          },
+          {
+            "level": 4,
+            "raw": {
+              "nodes": [
+                {
+                  "id": "H4_1",
+                  "level": 4,
+                  "thought": "Krabice B obsahuje 1 modrou složku (T8) a 0 červených složek (H3_1), tudíž tvrzení o prázdnosti krabice B (T6) je relativní vůči obsahu obálky A, nikoliv absolutní.",
+                  "parents": [
+                    "T6",
+                    "T8",
+                    "H3_1"
+                  ],
+                  "source": [],
+                  "operation": "conflict_resolution",
+                  "support": "entailed",
+                  "utility": 0.9
+                },
+                {
+                  "id": "H4_2",
+                  "level": 4,
+                  "thought": "Červená složka je v zásuvce D (H2_3), zatímco modrá složka je v krabici B na polici C (H2_5). Obě složky jsou nyní na odlišných místech.",
+                  "parents": [
+                    "H2_3",
+                    "H2_5"
+                  ],
+                  "source": [],
+                  "operation": "spatial_inference",
+                  "support": "entailed",
+                  "utility": 0.85
+                },
+                {
+                  "id": "H4_3",
+                  "level": 4,
+                  "thought": "Počet složek v krabici B se změnil z 2 (červená v obálce A + modrá) na 1 (pouze modrá), protože Karel vyjmul obálku A (T4).",
+                  "parents": [
+                    "T1",
+                    "T4",
+                    "T8"
+                  ],
+                  "source": [],
+                  "operation": "count_sum",
+                  "support": "entailed",
+                  "utility": 0.8
+                }
+              ]
+            },
+            "candidates": [
+              {
+                "id": "H4_1",
+                "level": 4,
+                "thought": "Krabice B obsahuje 1 modrou složku (T8) a 0 červených složek (H3_1), tudíž tvrzení o prázdnosti krabice B (T6) je relativní vůči obsahu obálky A, nikoliv absolutní.",
+                "parents": [
+                  "T6",
+                  "T8",
+                  "H3_1"
+                ],
+                "source": [],
+                "operation": "conflict_resolution",
+                "support": "entailed",
+                "utility": 0.9
+              },
+              {
+                "id": "H4_2",
+                "level": 4,
+                "thought": "Červená složka je v zásuvce D (H2_3), zatímco modrá složka je v krabici B na polici C (H2_5). Obě složky jsou nyní na odlišných místech.",
+                "parents": [
+                  "H2_3",
+                  "H2_5"
+                ],
+                "source": [],
+                "operation": "spatial_inference",
+                "support": "entailed",
+                "utility": 0.85
+              },
+              {
+                "id": "H4_3",
+                "level": 4,
+                "thought": "Počet složek v krabici B se změnil z 2 (červená v obálce A + modrá) na 1 (pouze modrá), protože Karel vyjmul obálku A (T4).",
+                "parents": [
+                  "T1",
+                  "T4",
+                  "T8"
+                ],
+                "source": [],
+                "operation": "count_sum",
+                "support": "entailed",
+                "utility": 0.8
+              }
+            ]
+          }
+        ],
+        "verifier": [
+          {
+            "level": 2,
+            "result": {
+              "accepted_ids": [
+                "H2_1",
+                "H2_2",
+                "H2_3",
+                "H2_4",
+                "H2_5"
+              ],
+              "rejected": []
+            }
+          },
+          {
+            "level": 3,
+            "result": {
+              "accepted_ids": [
+                "H3_1",
+                "H3_3"
+              ],
+              "rejected": [
+                {
+                  "id": "H3_2",
+                  "reason": "duplikát myšlenky již obsažené v uzlu H2_4"
+                }
+              ]
+            }
+          },
+          {
+            "level": 4,
+            "result": {
+              "accepted_ids": [
+                "H4_1",
+                "H4_2",
+                "H4_3"
+              ],
+              "rejected": []
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "api_calls": [
+    {
+      "role": "atomizer",
+      "attempt": 1,
+      "latency_s": 3.0522759002633393,
+      "prompt_chars": 1041,
+      "response_chars": 2644
+    },
+    {
+      "role": "composer_l2",
+      "attempt": 1,
+      "latency_s": 2.0537060000933707,
+      "prompt_chars": 3534,
+      "response_chars": 1504
+    },
+    {
+      "role": "verifier",
+      "attempt": 1,
+      "latency_s": 0.7961487998254597,
+      "prompt_chars": 4547,
+      "response_chars": 104
+    },
+    {
+      "role": "composer_l3",
+      "attempt": 1,
+      "latency_s": 1.9264899003319442,
+      "prompt_chars": 5027,
+      "response_chars": 1387
+    },
+    {
+      "role": "verifier",
+      "attempt": 1,
+      "latency_s": 0.5317064002156258,
+      "prompt_chars": 5570,
+      "response_chars": 64
+    },
+    {
+      "role": "composer_l4",
+      "attempt": 1,
+      "latency_s": 1.539937799796462,
+      "prompt_chars": 6050,
+      "response_chars": 1071
+    },
+    {
+      "role": "verifier",
+      "attempt": 1,
+      "latency_s": 0.6792124998755753,
+      "prompt_chars": 6616,
+      "response_chars": 145
+    },
+    {
+      "role": "summary",
+      "attempt": 1,
+      "latency_s": 0.9307820000685751,
+      "prompt_chars": 572,
+      "response_chars": 322
+    },
+    {
+      "role": "answer_direct",
+      "attempt": 1,
+      "latency_s": 0.733581599779427,
+      "prompt_chars": 612,
+      "response_chars": 118
+    },
+    {
+      "role": "answer_reasoning",
+      "attempt": 1,
+      "latency_s": 0.6883371002040803,
+      "prompt_chars": 622,
+      "response_chars": 130
+    },
+    {
+      "role": "answer_summary",
+      "attempt": 1,
+      "latency_s": 0.7367410999722779,
+      "prompt_chars": 544,
+      "response_chars": 144
+    },
+    {
+      "role": "answer_flat_budget",
+      "attempt": 1,
+      "latency_s": 0.6712813996709883,
+      "prompt_chars": 2967,
+      "response_chars": 214
+    },
+    {
+      "role": "answer_hierarchical_budget",
+      "attempt": 1,
+      "latency_s": 0.8442915002815425,
+      "prompt_chars": 3587,
+      "response_chars": 285
+    },
+    {
+      "role": "answer_random_hierarchy_budget",
+      "attempt": 1,
+      "latency_s": 0.7405667998827994,
+      "prompt_chars": 3554,
+      "response_chars": 212
+    },
+    {
+      "role": "answer_loop_first",
+      "attempt": 1,
+      "latency_s": 0.865301700308919,
+      "prompt_chars": 3678,
+      "response_chars": 327
+    },
+    {
+      "role": "answer_direct",
+      "attempt": 1,
+      "latency_s": 0.6658395999111235,
+      "prompt_chars": 622,
+      "response_chars": 169
+    },
+    {
+      "role": "answer_reasoning",
+      "attempt": 1,
+      "latency_s": 0.6654886999167502,
+      "prompt_chars": 632,
+      "response_chars": 155
+    },
+    {
+      "role": "answer_summary",
+      "attempt": 1,
+      "latency_s": 0.6046414999291301,
+      "prompt_chars": 554,
+      "response_chars": 216
+    },
+    {
+      "role": "answer_flat_budget",
+      "attempt": 1,
+      "latency_s": 1.2075255997478962,
+      "prompt_chars": 2977,
+      "response_chars": 631
+    },
+    {
+      "role": "answer_hierarchical_budget",
+      "attempt": 1,
+      "latency_s": 0.9401948996819556,
+      "prompt_chars": 3624,
+      "response_chars": 440
+    },
+    {
+      "role": "answer_random_hierarchy_budget",
+      "attempt": 1,
+      "latency_s": 0.9388339999131858,
+      "prompt_chars": 3564,
+      "response_chars": 391
+    },
+    {
+      "role": "answer_loop_first",
+      "attempt": 1,
+      "latency_s": 0.9260615999810398,
+      "prompt_chars": 3715,
+      "response_chars": 475
+    },
+    {
+      "role": "answer_direct",
+      "attempt": 1,
+      "latency_s": 0.6015429999679327,
+      "prompt_chars": 627,
+      "response_chars": 151
+    },
+    {
+      "role": "answer_reasoning",
+      "attempt": 1,
+      "latency_s": 0.6024011997506022,
+      "prompt_chars": 637,
+      "response_chars": 136
+    },
+    {
+      "role": "answer_summary",
+      "attempt": 1,
+      "latency_s": 0.6656260001473129,
+      "prompt_chars": 559,
+      "response_chars": 194
+    },
+    {
+      "role": "answer_flat_budget",
+      "attempt": 1,
+      "latency_s": 0.6686490001156926,
+      "prompt_chars": 2982,
+      "response_chars": 240
+    },
+    {
+      "role": "answer_hierarchical_budget",
+      "attempt": 1,
+      "latency_s": 0.6583723002113402,
+      "prompt_chars": 3628,
+      "response_chars": 250
+    },
+    {
+      "role": "answer_random_hierarchy_budget",
+      "attempt": 1,
+      "latency_s": 0.6668218998238444,
+      "prompt_chars": 3569,
+      "response_chars": 252
+    },
+    {
+      "role": "answer_loop_first",
+      "attempt": 1,
+      "latency_s": 0.668968299869448,
+      "prompt_chars": 3719,
+      "response_chars": 243
+    },
+    {
+      "role": "atomizer",
+      "attempt": 1,
+      "latency_s": 2.001896900124848,
+      "prompt_chars": 883,
+      "response_chars": 1838
+    },
+    {
+      "role": "composer_l2",
+      "attempt": 1,
+      "latency_s": 2.1415364001877606,
+      "prompt_chars": 2752,
+      "response_chars": 1802
+    },
+    {
+      "role": "verifier",
+      "attempt": 1,
+      "latency_s": 0.6530251000076532,
+      "prompt_chars": 4051,
+      "response_chars": 104
+    },
+    {
+      "role": "composer_l3",
+      "attempt": 1,
+      "latency_s": 1.74254020024091,
+      "prompt_chars": 4531,
+      "response_chars": 1167
+    },
+    {
+      "role": "verifier",
+      "attempt": 1,
+      "latency_s": 0.7313596997410059,
+      "prompt_chars": 5193,
+      "response_chars": 152
+    },
+    {
+      "role": "composer_l4",
+      "attempt": 1,
+      "latency_s": 1.6619215002283454,
+      "prompt_chars": 5263,
+      "response_chars": 1094
+    },
+    {
+      "role": "verifier",
+      "attempt": 1,
+      "latency_s": 0.5925557003356516,
+      "prompt_chars": 5864,
+      "response_chars": 64
+    },
+    {
+      "role": "summary",
+      "attempt": 1,
+      "latency_s": 0.6670245002023876,
+      "prompt_chars": 414,
+      "response_chars": 189
+    },
+    {
+      "role": "answer_direct",
+      "attempt": 1,
+      "latency_s": 0.5997738996520638,
+      "prompt_chars": 438,
+      "response_chars": 149
+    },
+    {
+      "role": "answer_reasoning",
+      "attempt": 1,
+      "latency_s": 0.6668779999017715,
+      "prompt_chars": 448,
+      "response_chars": 178
+    },
+    {
+      "role": "answer_summary",
+      "attempt": 1,
+      "latency_s": 0.6644120998680592,
+      "prompt_chars": 391,
+      "response_chars": 197
+    },
+    {
+      "role": "answer_flat_budget",
+      "attempt": 1,
+      "latency_s": 0.7374038998968899,
+      "prompt_chars": 2169,
+      "response_chars": 306
+    },
+    {
+      "role": "answer_hierarchical_budget",
+      "attempt": 1,
+      "latency_s": 0.8559916997328401,
+      "prompt_chars": 3660,
+      "response_chars": 335
+    },
+    {
+      "role": "answer_random_hierarchy_budget",
+      "attempt": 1,
+      "latency_s": 0.7288246001116931,
+      "prompt_chars": 3364,
+      "response_chars": 244
+    },
+    {
+      "role": "answer_loop_first",
+      "attempt": 1,
+      "latency_s": 1.0705864001065493,
+      "prompt_chars": 3751,
+      "response_chars": 429
+    },
+    {
+      "role": "answer_direct",
+      "attempt": 1,
+      "latency_s": 0.5293437000364065,
+      "prompt_chars": 444,
+      "response_chars": 115
+    },
+    {
+      "role": "answer_reasoning",
+      "attempt": 1,
+      "latency_s": 0.5343670002184808,
+      "prompt_chars": 454,
+      "response_chars": 122
+    },
+    {
+      "role": "answer_summary",
+      "attempt": 1,
+      "latency_s": 0.5999684003181756,
+      "prompt_chars": 397,
+      "response_chars": 164
+    },
+    {
+      "role": "answer_flat_budget",
+      "attempt": 1,
+      "latency_s": 0.7419466003775597,
+      "prompt_chars": 2175,
+      "response_chars": 243
+    },
+    {
+      "role": "answer_hierarchical_budget",
+      "attempt": 1,
+      "latency_s": 0.7908605998381972,
+      "prompt_chars": 3695,
+      "response_chars": 310
+    },
+    {
+      "role": "answer_random_hierarchy_budget",
+      "attempt": 1,
+      "latency_s": 0.9977937997318804,
+      "prompt_chars": 3370,
+      "response_chars": 321
+    },
+    {
+      "role": "answer_loop_first",
+      "attempt": 1,
+      "latency_s": 0.9191326997242868,
+      "prompt_chars": 3786,
+      "response_chars": 433
+    },
+    {
+      "role": "answer_direct",
+      "attempt": 1,
+      "latency_s": 0.5954634002409875,
+      "prompt_chars": 433,
+      "response_chars": 155
+    },
+    {
+      "role": "answer_reasoning",
+      "attempt": 1,
+      "latency_s": 0.542652599979192,
+      "prompt_chars": 443,
+      "response_chars": 174
+    },
+    {
+      "role": "answer_summary",
+      "attempt": 1,
+      "latency_s": 0.6018946999683976,
+      "prompt_chars": 386,
+      "response_chars": 210
+    },
+    {
+      "role": "answer_flat_budget",
+      "attempt": 1,
+      "latency_s": 0.673097399994731,
+      "prompt_chars": 2164,
+      "response_chars": 189
+    },
+    {
+      "role": "answer_hierarchical_budget",
+      "attempt": 1,
+      "latency_s": 0.7297736001200974,
+      "prompt_chars": 3759,
+      "response_chars": 288
+    },
+    {
+      "role": "answer_random_hierarchy_budget",
+      "attempt": 1,
+      "latency_s": 0.6649341001175344,
+      "prompt_chars": 3359,
+      "response_chars": 189
+    },
+    {
+      "role": "answer_loop_first",
+      "attempt": 1,
+      "latency_s": 0.8033289997838438,
+      "prompt_chars": 3850,
+      "response_chars": 360
+    }
+  ]
+}
