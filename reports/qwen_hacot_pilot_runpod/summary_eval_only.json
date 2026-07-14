@@ -1,0 +1,38 @@
+{
+  "args": {
+    "model_name": "Qwen/Qwen3-1.7B",
+    "out_dir": "/workspace/hacot_runs/qwen_hacot_pilot",
+    "train_n": 0,
+    "dev_n": 120,
+    "steps": 0,
+    "batch_size": 2,
+    "grad_accum": 8,
+    "max_length": 512,
+    "max_new_tokens": 64,
+    "eval_n": 60,
+    "lr": 0.0002,
+    "seed": 42,
+    "log_every": 25,
+    "variants": "flat,hacot",
+    "lora": true,
+    "qlora_4bit": true,
+    "lora_rank": 16,
+    "lora_alpha": 32,
+    "gradient_checkpointing": false,
+    "save_adapters": true,
+    "dry_run": false
+  },
+  "variants": {
+    "flat": {
+      "accuracy": 0.0,
+      "eval_seconds": 58.8398232460022
+    },
+    "hacot": {
+      "accuracy": 0.0,
+      "eval_seconds": 273.56135845184326
+    }
+  },
+  "eval_only": true,
+  "started_at": "2026-07-14 18:28:43",
+  "completed_at": "2026-07-14 18:34:48"
+}

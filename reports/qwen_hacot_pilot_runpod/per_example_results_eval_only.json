@@ -1,0 +1,1202 @@
+[
+  {
+    "variant": "flat",
+    "task_family": "list",
+    "difficulty": 8,
+    "prompt": "Start with list [3, 5, 6, 4, 3, 8]. Apply: reverse, inc, inc, reverse, rotate, rotate, inc, rotate. Return the final list as JSON.",
+    "gold": "[7, 6, 1, 6, 8, 9]",
+    "pred": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神",
+    "correct": false,
+    "raw_generation": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神"
+  },
+  {
+    "variant": "flat",
+    "task_family": "list",
+    "difficulty": 9,
+    "prompt": "Start with list [2, 7, 6, 4, 6, 3]. Apply: drop_first, inc, rotate, drop_first, inc, drop_first, reverse, drop_first, rotate. Return the final list as JSON.",
+    "gold": "[8, 5]",
+    "pred": "<|im_end|>",
+    "correct": false,
+    "raw_generation": "<|im_end|>"
+  },
+  {
+    "variant": "flat",
+    "task_family": "list",
+    "difficulty": 11,
+    "prompt": "Start with list [9, 4, 0, 8]. Apply: inc, rotate, rotate, drop_first, inc, reverse, inc, inc, rotate, reverse, rotate. Return the final list as JSON.",
+    "gold": "[2, 3, 8]",
+    "pred": "<|im_end|>",
+    "correct": false,
+    "raw_generation": "<|im_end|>"
+  },
+  {
+    "variant": "flat",
+    "task_family": "boolean",
+    "difficulty": 12,
+    "prompt": "Given p=1, q=1, r=1, s=1, evaluate ((((((((((((p XOR s) AND q) XOR q) OR s) OR s) AND r) OR p) XOR q) XOR r) XOR p) OR q) XOR q). Return 0 or 1.",
+    "gold": "0",
+    "pred": "<|im_end|>",
+    "correct": false,
+    "raw_generation": "<|im_end|>"
+  },
+  {
+    "variant": "flat",
+    "task_family": "list",
+    "difficulty": 7,
+    "prompt": "Start with list [6, 5, 2, 6, 0]. Apply: inc, inc, drop_first, rotate, inc, drop_first, drop_first. Return the final list as JSON.",
+    "gold": "[3, 8]",
+    "pred": "<|im_end|>",
+    "correct": false,
+    "raw_generation": "<|im_end|>"
+  },
+  {
+    "variant": "flat",
+    "task_family": "arithmetic",
+    "difficulty": 7,
+    "prompt": "Compute the integer value of (((((((9 + 7) - 7) - 6) + 8) * 7) * 6) + 4). Return only the integer.",
+    "gold": "466",
+    "pred": "<|im_end|>",
+    "correct": false,
+    "raw_generation": "<|im_end|>"
+  },
+  {
+    "variant": "flat",
+    "task_family": "list",
+    "difficulty": 8,
+    "prompt": "Start with list [4, 5, 0, 8, 5, 4]. Apply: drop_first, reverse, drop_first, reverse, drop_first, inc, rotate, rotate. Return the final list as JSON.",
+    "gold": "[6, 1, 9]",
+    "pred": "𫫇 新人玩家 新人玩家 新人玩家 新人玩家 新人玩家 新人玩家 新人玩家 新人玩家 新人玩家 新人玩家 新人玩家 新人玩家 新人玩家 新人玩家 新人玩家 新人玩家 新人玩家 新人玩家 新人玩家 新人玩家 新人玩家 新人玩家 新人玩家 新人玩家 新人玩家 新人玩家 新人玩家 新人玩家 新人玩家 新人玩家 新人玩家",
+    "correct": false,
+    "raw_generation": "𫫇 新人玩家 新人玩家 新人玩家 新人玩家 新人玩家 新人玩家 新人玩家 新人玩家 新人玩家 新人玩家 新人玩家 新人玩家 新人玩家 新人玩家 新人玩家 新人玩家 新人玩家 新人玩家 新人玩家 新人玩家 新人玩家 新人玩家 新人玩家 新人玩家 新人玩家 新人玩家 新人玩家 新人玩家 新人玩家 新人玩家 新人玩家 "
+  },
+  {
+    "variant": "flat",
+    "task_family": "boolean",
+    "difficulty": 9,
+    "prompt": "Given p=1, q=0, r=1, s=1, evaluate (((((((((q OR q) XOR s) OR s) XOR r) OR s) XOR p) AND r) XOR p) XOR p). Return 0 or 1.",
+    "gold": "0",
+    "pred": "<|im_end|>",
+    "correct": false,
+    "raw_generation": "<|im_end|>"
+  },
+  {
+    "variant": "flat",
+    "task_family": "arithmetic",
+    "difficulty": 10,
+    "prompt": "Compute the integer value of ((((((((((4 + 1) * 6) + 4) * 7) - 7) - 2) * 8) * 2) - 6) * 5). Return only the integer.",
+    "gold": "18290",
+    "pred": "<|im_end|>",
+    "correct": false,
+    "raw_generation": "<|im_end|>"
+  },
+  {
+    "variant": "flat",
+    "task_family": "boolean",
+    "difficulty": 9,
+    "prompt": "Given p=0, q=0, r=1, s=0, evaluate (((((((((s XOR s) OR q) OR s) AND r) XOR p) AND r) AND r) XOR s) OR p). Return 0 or 1.",
+    "gold": "0",
+    "pred": "<|im_end|>",
+    "correct": false,
+    "raw_generation": "<|im_end|>"
+  },
+  {
+    "variant": "flat",
+    "task_family": "boolean",
+    "difficulty": 6,
+    "prompt": "Given p=1, q=0, r=1, s=1, evaluate ((((((r OR p) AND p) AND p) AND s) AND s) AND q). Return 0 or 1.",
+    "gold": "0",
+    "pred": "<|im_end|>",
+    "correct": false,
+    "raw_generation": "<|im_end|>"
+  },
+  {
+    "variant": "flat",
+    "task_family": "boolean",
+    "difficulty": 11,
+    "prompt": "Given p=1, q=0, r=1, s=1, evaluate (((((((((((p OR r) OR q) AND q) OR q) OR p) AND p) XOR r) OR r) OR q) AND q) XOR s). Return 0 or 1.",
+    "gold": "1",
+    "pred": "<|im_end|>",
+    "correct": false,
+    "raw_generation": "<|im_end|>"
+  },
+  {
+    "variant": "flat",
+    "task_family": "arithmetic",
+    "difficulty": 9,
+    "prompt": "Compute the integer value of (((((((((1 + 7) + 1) * 3) - 6) * 7) - 4) * 7) * 8) + 9). Return only the integer.",
+    "gold": "8017",
+    "pred": "<|im_end|>",
+    "correct": false,
+    "raw_generation": "<|im_end|>"
+  },
+  {
+    "variant": "flat",
+    "task_family": "boolean",
+    "difficulty": 9,
+    "prompt": "Given p=0, q=0, r=1, s=1, evaluate (((((((((s XOR s) AND p) AND q) XOR q) OR q) AND r) OR r) AND s) XOR r). Return 0 or 1.",
+    "gold": "0",
+    "pred": "<|im_end|>",
+    "correct": false,
+    "raw_generation": "<|im_end|>"
+  },
+  {
+    "variant": "flat",
+    "task_family": "list",
+    "difficulty": 6,
+    "prompt": "Start with list [7, 8, 1]. Apply: drop_first, inc, rotate, drop_first, inc, inc. Return the final list as JSON.",
+    "gold": "[1]",
+    "pred": "<|im_end|>",
+    "correct": false,
+    "raw_generation": "<|im_end|>"
+  },
+  {
+    "variant": "flat",
+    "task_family": "list",
+    "difficulty": 6,
+    "prompt": "Start with list [9, 8, 6, 6, 9]. Apply: inc, reverse, reverse, inc, drop_first, rotate. Return the final list as JSON.",
+    "gold": "[8, 8, 1, 0]",
+    "pred": "<|im_end|>",
+    "correct": false,
+    "raw_generation": "<|im_end|>"
+  },
+  {
+    "variant": "flat",
+    "task_family": "boolean",
+    "difficulty": 8,
+    "prompt": "Given p=0, q=1, r=1, s=0, evaluate ((((((((r OR s) XOR r) AND q) XOR q) AND p) AND p) AND r) XOR r). Return 0 or 1.",
+    "gold": "1",
+    "pred": "<|im_end|>",
+    "correct": false,
+    "raw_generation": "<|im_end|>"
+  },
+  {
+    "variant": "flat",
+    "task_family": "arithmetic",
+    "difficulty": 9,
+    "prompt": "Compute the integer value of (((((((((3 + 9) - 2) - 6) - 7) - 6) * 3) * 6) - 3) * 4). Return only the integer.",
+    "gold": "-660",
+    "pred": "<|im_end|>",
+    "correct": false,
+    "raw_generation": "<|im_end|>"
+  },
+  {
+    "variant": "flat",
+    "task_family": "list",
+    "difficulty": 6,
+    "prompt": "Start with list [0, 2, 9, 0, 4]. Apply: reverse, reverse, rotate, drop_first, reverse, rotate. Return the final list as JSON.",
+    "gold": "[4, 0, 9, 0]",
+    "pred": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神",
+    "correct": false,
+    "raw_generation": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神"
+  },
+  {
+    "variant": "flat",
+    "task_family": "boolean",
+    "difficulty": 10,
+    "prompt": "Given p=1, q=1, r=0, s=0, evaluate ((((((((((q OR s) OR r) OR p) AND r) AND p) AND r) OR q) AND s) XOR p) AND p). Return 0 or 1.",
+    "gold": "1",
+    "pred": "<|im_end|>",
+    "correct": false,
+    "raw_generation": "<|im_end|>"
+  },
+  {
+    "variant": "flat",
+    "task_family": "list",
+    "difficulty": 9,
+    "prompt": "Start with list [8, 3, 0]. Apply: reverse, rotate, inc, inc, rotate, inc, drop_first, inc, drop_first. Return the final list as JSON.",
+    "gold": "[7]",
+    "pred": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神",
+    "correct": false,
+    "raw_generation": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神"
+  },
+  {
+    "variant": "flat",
+    "task_family": "list",
+    "difficulty": 7,
+    "prompt": "Start with list [4, 0, 2, 3]. Apply: reverse, inc, reverse, inc, rotate, rotate, reverse. Return the final list as JSON.",
+    "gold": "[2, 6, 5, 4]",
+    "pred": "<|im_end|>",
+    "correct": false,
+    "raw_generation": "<|im_end|>"
+  },
+  {
+    "variant": "flat",
+    "task_family": "list",
+    "difficulty": 11,
+    "prompt": "Start with list [0, 8, 8, 1, 6]. Apply: drop_first, drop_first, rotate, rotate, rotate, reverse, inc, inc, inc, drop_first, inc. Return the final list as JSON.",
+    "gold": "[5, 2]",
+    "pred": "<|im_end|>",
+    "correct": false,
+    "raw_generation": "<|im_end|>"
+  },
+  {
+    "variant": "flat",
+    "task_family": "boolean",
+    "difficulty": 9,
+    "prompt": "Given p=0, q=0, r=0, s=0, evaluate (((((((((q OR q) XOR r) XOR q) XOR q) AND p) OR r) OR p) XOR r) AND r). Return 0 or 1.",
+    "gold": "0",
+    "pred": "<|im_end|>",
+    "correct": false,
+    "raw_generation": "<|im_end|>"
+  },
+  {
+    "variant": "flat",
+    "task_family": "boolean",
+    "difficulty": 10,
+    "prompt": "Given p=1, q=0, r=1, s=1, evaluate ((((((((((q OR q) OR p) OR p) XOR r) XOR p) AND s) AND r) OR q) AND q) AND q). Return 0 or 1.",
+    "gold": "0",
+    "pred": "<|im_end|>",
+    "correct": false,
+    "raw_generation": "<|im_end|>"
+  },
+  {
+    "variant": "flat",
+    "task_family": "boolean",
+    "difficulty": 9,
+    "prompt": "Given p=0, q=0, r=0, s=0, evaluate (((((((((r AND s) AND r) AND p) XOR q) OR s) AND q) OR r) XOR p) AND r). Return 0 or 1.",
+    "gold": "0",
+    "pred": "<|im_end|>",
+    "correct": false,
+    "raw_generation": "<|im_end|>"
+  },
+  {
+    "variant": "flat",
+    "task_family": "arithmetic",
+    "difficulty": 8,
+    "prompt": "Compute the integer value of ((((((((1 * 2) + 7) + 4) * 3) + 5) * 1) + 4) + 2). Return only the integer.",
+    "gold": "50",
+    "pred": "<|im_end|>",
+    "correct": false,
+    "raw_generation": "<|im_end|>"
+  },
+  {
+    "variant": "flat",
+    "task_family": "boolean",
+    "difficulty": 7,
+    "prompt": "Given p=1, q=1, r=1, s=0, evaluate (((((((r OR s) OR p) XOR p) AND q) OR r) AND p) OR r). Return 0 or 1.",
+    "gold": "1",
+    "pred": "<|im_end|>",
+    "correct": false,
+    "raw_generation": "<|im_end|>"
+  },
+  {
+    "variant": "flat",
+    "task_family": "boolean",
+    "difficulty": 12,
+    "prompt": "Given p=0, q=1, r=1, s=1, evaluate ((((((((((((s OR q) XOR s) OR q) AND r) XOR q) AND r) OR r) XOR q) AND s) AND r) XOR r) AND p). Return 0 or 1.",
+    "gold": "0",
+    "pred": "<|im_end|>",
+    "correct": false,
+    "raw_generation": "<|im_end|>"
+  },
+  {
+    "variant": "flat",
+    "task_family": "list",
+    "difficulty": 11,
+    "prompt": "Start with list [3, 1, 0, 0]. Apply: inc, drop_first, drop_first, rotate, inc, reverse, rotate, drop_first, reverse, reverse, drop_first. Return the final list as JSON.",
+    "gold": "[]",
+    "pred": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神",
+    "correct": false,
+    "raw_generation": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神"
+  },
+  {
+    "variant": "flat",
+    "task_family": "list",
+    "difficulty": 9,
+    "prompt": "Start with list [2, 6, 3, 0, 2]. Apply: drop_first, drop_first, drop_first, drop_first, drop_first, reverse, rotate, rotate, inc. Return the final list as JSON.",
+    "gold": "[]",
+    "pred": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神",
+    "correct": false,
+    "raw_generation": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神"
+  },
+  {
+    "variant": "flat",
+    "task_family": "boolean",
+    "difficulty": 12,
+    "prompt": "Given p=1, q=0, r=0, s=1, evaluate ((((((((((((r XOR p) XOR s) OR p) XOR q) OR r) XOR r) XOR q) XOR q) OR p) AND r) OR s) AND s). Return 0 or 1.",
+    "gold": "1",
+    "pred": "<|im_end|>",
+    "correct": false,
+    "raw_generation": "<|im_end|>"
+  },
+  {
+    "variant": "flat",
+    "task_family": "boolean",
+    "difficulty": 10,
+    "prompt": "Given p=0, q=1, r=0, s=0, evaluate ((((((((((q XOR q) AND s) AND s) AND s) OR q) AND r) AND r) OR r) XOR p) AND q). Return 0 or 1.",
+    "gold": "0",
+    "pred": "<|im_end|>",
+    "correct": false,
+    "raw_generation": "<|im_end|>"
+  },
+  {
+    "variant": "flat",
+    "task_family": "boolean",
+    "difficulty": 6,
+    "prompt": "Given p=1, q=1, r=0, s=0, evaluate ((((((p OR s) OR p) AND p) AND p) XOR p) AND s). Return 0 or 1.",
+    "gold": "0",
+    "pred": "<|im_end|>",
+    "correct": false,
+    "raw_generation": "<|im_end|>"
+  },
+  {
+    "variant": "flat",
+    "task_family": "list",
+    "difficulty": 6,
+    "prompt": "Start with list [0, 3, 4, 5, 4, 2]. Apply: rotate, inc, drop_first, reverse, inc, rotate. Return the final list as JSON.",
+    "gold": "[4, 6, 7, 6, 2]",
+    "pred": "<|im_end|>",
+    "correct": false,
+    "raw_generation": "<|im_end|>"
+  },
+  {
+    "variant": "flat",
+    "task_family": "list",
+    "difficulty": 10,
+    "prompt": "Start with list [6, 8, 6, 2, 3, 0]. Apply: reverse, rotate, inc, inc, reverse, reverse, reverse, drop_first, reverse, drop_first. Return the final list as JSON.",
+    "gold": "[4, 8, 0, 8]",
+    "pred": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神",
+    "correct": false,
+    "raw_generation": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神"
+  },
+  {
+    "variant": "flat",
+    "task_family": "arithmetic",
+    "difficulty": 11,
+    "prompt": "Compute the integer value of (((((((((((8 * 8) - 1) - 4) + 7) - 9) * 5) * 5) * 4) + 4) + 2) + 3). Return only the integer.",
+    "gold": "5709",
+    "pred": "<|im_end|>",
+    "correct": false,
+    "raw_generation": "<|im_end|>"
+  },
+  {
+    "variant": "flat",
+    "task_family": "boolean",
+    "difficulty": 11,
+    "prompt": "Given p=0, q=0, r=1, s=0, evaluate (((((((((((q AND q) XOR p) XOR p) XOR p) AND p) AND p) XOR r) AND q) OR p) OR p) OR s). Return 0 or 1.",
+    "gold": "0",
+    "pred": "<|im_end|>",
+    "correct": false,
+    "raw_generation": "<|im_end|>"
+  },
+  {
+    "variant": "flat",
+    "task_family": "list",
+    "difficulty": 11,
+    "prompt": "Start with list [6, 3, 9, 4]. Apply: drop_first, drop_first, inc, drop_first, inc, inc, inc, drop_first, rotate, rotate, inc. Return the final list as JSON.",
+    "gold": "[]",
+    "pred": "<|im_end|>",
+    "correct": false,
+    "raw_generation": "<|im_end|>"
+  },
+  {
+    "variant": "flat",
+    "task_family": "boolean",
+    "difficulty": 8,
+    "prompt": "Given p=1, q=1, r=0, s=1, evaluate ((((((((p AND s) XOR p) AND r) XOR p) OR s) XOR s) OR s) OR s). Return 0 or 1.",
+    "gold": "1",
+    "pred": "<|im_end|>",
+    "correct": false,
+    "raw_generation": "<|im_end|>"
+  },
+  {
+    "variant": "flat",
+    "task_family": "list",
+    "difficulty": 10,
+    "prompt": "Start with list [4, 8, 0, 8, 6, 2]. Apply: reverse, rotate, inc, reverse, drop_first, drop_first, drop_first, rotate, inc, drop_first. Return the final list as JSON.",
+    "gold": "[8, 2]",
+    "pred": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神",
+    "correct": false,
+    "raw_generation": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神"
+  },
+  {
+    "variant": "flat",
+    "task_family": "arithmetic",
+    "difficulty": 7,
+    "prompt": "Compute the integer value of (((((((4 * 5) - 4) + 9) * 7) + 8) * 4) - 1). Return only the integer.",
+    "gold": "731",
+    "pred": "<|im_end|>",
+    "correct": false,
+    "raw_generation": "<|im_end|>"
+  },
+  {
+    "variant": "flat",
+    "task_family": "list",
+    "difficulty": 12,
+    "prompt": "Start with list [3, 6, 2, 2]. Apply: rotate, inc, drop_first, rotate, rotate, inc, reverse, reverse, drop_first, reverse, rotate, inc. Return the final list as JSON.",
+    "gold": "[5, 5]",
+    "pred": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神",
+    "correct": false,
+    "raw_generation": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神"
+  },
+  {
+    "variant": "flat",
+    "task_family": "arithmetic",
+    "difficulty": 7,
+    "prompt": "Compute the integer value of (((((((8 * 6) - 4) - 7) * 5) * 8) * 6) - 2). Return only the integer.",
+    "gold": "8878",
+    "pred": "<|im_end|>",
+    "correct": false,
+    "raw_generation": "<|im_end|>"
+  },
+  {
+    "variant": "flat",
+    "task_family": "arithmetic",
+    "difficulty": 10,
+    "prompt": "Compute the integer value of ((((((((((3 - 3) + 5) - 6) + 1) - 4) * 7) + 7) + 7) + 2) * 2). Return only the integer.",
+    "gold": "-24",
+    "pred": "<|im_end|>",
+    "correct": false,
+    "raw_generation": "<|im_end|>"
+  },
+  {
+    "variant": "flat",
+    "task_family": "list",
+    "difficulty": 9,
+    "prompt": "Start with list [4, 3, 9, 6]. Apply: drop_first, inc, reverse, inc, reverse, drop_first, inc, drop_first, inc. Return the final list as JSON.",
+    "gold": "[0]",
+    "pred": "<|im_end|>",
+    "correct": false,
+    "raw_generation": "<|im_end|>"
+  },
+  {
+    "variant": "flat",
+    "task_family": "list",
+    "difficulty": 7,
+    "prompt": "Start with list [8, 7, 9, 6]. Apply: inc, rotate, rotate, reverse, drop_first, inc, inc. Return the final list as JSON.",
+    "gold": "[1, 9, 2]",
+    "pred": "<|im_end|>",
+    "correct": false,
+    "raw_generation": "<|im_end|>"
+  },
+  {
+    "variant": "flat",
+    "task_family": "boolean",
+    "difficulty": 12,
+    "prompt": "Given p=1, q=0, r=1, s=1, evaluate ((((((((((((p OR q) XOR q) XOR q) AND q) AND s) AND s) AND s) OR p) XOR p) AND p) XOR q) AND s). Return 0 or 1.",
+    "gold": "0",
+    "pred": "<|im_end|>",
+    "correct": false,
+    "raw_generation": "<|im_end|>"
+  },
+  {
+    "variant": "flat",
+    "task_family": "list",
+    "difficulty": 11,
+    "prompt": "Start with list [0, 2, 5]. Apply: reverse, rotate, rotate, rotate, rotate, inc, reverse, reverse, drop_first, inc, reverse. Return the final list as JSON.",
+    "gold": "[7, 2]",
+    "pred": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神",
+    "correct": false,
+    "raw_generation": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神"
+  },
+  {
+    "variant": "flat",
+    "task_family": "boolean",
+    "difficulty": 6,
+    "prompt": "Given p=1, q=0, r=0, s=1, evaluate ((((((p AND q) AND q) OR q) AND q) AND p) XOR q). Return 0 or 1.",
+    "gold": "0",
+    "pred": "<|im_end|>",
+    "correct": false,
+    "raw_generation": "<|im_end|>"
+  },
+  {
+    "variant": "flat",
+    "task_family": "arithmetic",
+    "difficulty": 7,
+    "prompt": "Compute the integer value of (((((((5 * 8) * 9) - 8) - 4) - 8) + 5) * 2). Return only the integer.",
+    "gold": "690",
+    "pred": "<|im_end|>",
+    "correct": false,
+    "raw_generation": "<|im_end|>"
+  },
+  {
+    "variant": "flat",
+    "task_family": "list",
+    "difficulty": 9,
+    "prompt": "Start with list [2, 6, 2]. Apply: drop_first, reverse, rotate, inc, reverse, rotate, reverse, inc, rotate. Return the final list as JSON.",
+    "gold": "[8, 4]",
+    "pred": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神",
+    "correct": false,
+    "raw_generation": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神"
+  },
+  {
+    "variant": "flat",
+    "task_family": "list",
+    "difficulty": 9,
+    "prompt": "Start with list [6, 1, 0, 9, 7, 2]. Apply: drop_first, rotate, rotate, reverse, inc, reverse, drop_first, reverse, reverse. Return the final list as JSON.",
+    "gold": "[8, 3, 2, 1]",
+    "pred": "<|im_end|>",
+    "correct": false,
+    "raw_generation": "<|im_end|>"
+  },
+  {
+    "variant": "flat",
+    "task_family": "arithmetic",
+    "difficulty": 6,
+    "prompt": "Compute the integer value of ((((((2 - 9) * 8) + 4) + 3) - 3) * 2). Return only the integer.",
+    "gold": "-104",
+    "pred": "<|im_end|>",
+    "correct": false,
+    "raw_generation": "<|im_end|>"
+  },
+  {
+    "variant": "flat",
+    "task_family": "arithmetic",
+    "difficulty": 10,
+    "prompt": "Compute the integer value of ((((((((((6 * 2) - 9) * 7) * 3) * 5) - 1) * 6) - 8) - 7) - 5). Return only the integer.",
+    "gold": "1864",
+    "pred": "<|im_end|>",
+    "correct": false,
+    "raw_generation": "<|im_end|>"
+  },
+  {
+    "variant": "flat",
+    "task_family": "boolean",
+    "difficulty": 6,
+    "prompt": "Given p=0, q=1, r=1, s=1, evaluate ((((((q XOR q) OR p) AND p) OR q) AND q) AND r). Return 0 or 1.",
+    "gold": "1",
+    "pred": "<|im_end|>",
+    "correct": false,
+    "raw_generation": "<|im_end|>"
+  },
+  {
+    "variant": "flat",
+    "task_family": "list",
+    "difficulty": 11,
+    "prompt": "Start with list [9, 2, 4, 6, 1]. Apply: drop_first, rotate, rotate, drop_first, reverse, inc, drop_first, drop_first, rotate, inc, drop_first. Return the final list as JSON.",
+    "gold": "[]",
+    "pred": "<|im_end|>",
+    "correct": false,
+    "raw_generation": "<|im_end|>"
+  },
+  {
+    "variant": "flat",
+    "task_family": "list",
+    "difficulty": 12,
+    "prompt": "Start with list [9, 6, 4, 5]. Apply: rotate, rotate, reverse, inc, rotate, rotate, drop_first, reverse, inc, inc, inc, inc. Return the final list as JSON.",
+    "gold": "[4, 1, 9]",
+    "pred": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神",
+    "correct": false,
+    "raw_generation": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神"
+  },
+  {
+    "variant": "flat",
+    "task_family": "list",
+    "difficulty": 8,
+    "prompt": "Start with list [3, 3, 4, 8, 6, 1]. Apply: rotate, inc, rotate, drop_first, inc, rotate, reverse, reverse. Return the final list as JSON.",
+    "gold": "[8, 3, 5, 5, 0]",
+    "pred": "<|im_end|>",
+    "correct": false,
+    "raw_generation": "<|im_end|>"
+  },
+  {
+    "variant": "flat",
+    "task_family": "list",
+    "difficulty": 8,
+    "prompt": "Start with list [5, 7, 9]. Apply: inc, rotate, inc, drop_first, drop_first, reverse, rotate, drop_first. Return the final list as JSON.",
+    "gold": "[]",
+    "pred": "<|im_end|>",
+    "correct": false,
+    "raw_generation": "<|im_end|>"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "list",
+    "difficulty": 8,
+    "prompt": "Start with list [3, 5, 6, 4, 3, 8]. Apply: reverse, inc, inc, reverse, rotate, rotate, inc, rotate. Return the final list as JSON.",
+    "gold": "[7, 6, 1, 6, 8, 9]",
+    "pred": "保驾护",
+    "correct": false,
+    "raw_generation": "保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "list",
+    "difficulty": 9,
+    "prompt": "Start with list [2, 7, 6, 4, 6, 3]. Apply: drop_first, inc, rotate, drop_first, inc, drop_first, reverse, drop_first, rotate. Return the final list as JSON.",
+    "gold": "[8, 5]",
+    "pred": "保驾护",
+    "correct": false,
+    "raw_generation": "保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "list",
+    "difficulty": 11,
+    "prompt": "Start with list [9, 4, 0, 8]. Apply: inc, rotate, rotate, drop_first, inc, reverse, inc, inc, rotate, reverse, rotate. Return the final list as JSON.",
+    "gold": "[2, 3, 8]",
+    "pred": "保驾护",
+    "correct": false,
+    "raw_generation": "保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "boolean",
+    "difficulty": 12,
+    "prompt": "Given p=1, q=1, r=1, s=1, evaluate ((((((((((((p XOR s) AND q) XOR q) OR s) OR s) AND r) OR p) XOR q) XOR r) XOR p) OR q) XOR q). Return 0 or 1.",
+    "gold": "0",
+    "pred": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神",
+    "correct": false,
+    "raw_generation": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "list",
+    "difficulty": 7,
+    "prompt": "Start with list [6, 5, 2, 6, 0]. Apply: inc, inc, drop_first, rotate, inc, drop_first, drop_first. Return the final list as JSON.",
+    "gold": "[3, 8]",
+    "pred": "保驾护",
+    "correct": false,
+    "raw_generation": "保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "arithmetic",
+    "difficulty": 7,
+    "prompt": "Compute the integer value of (((((((9 + 7) - 7) - 6) + 8) * 7) * 6) + 4). Return only the integer.",
+    "gold": "466",
+    "pred": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神",
+    "correct": false,
+    "raw_generation": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "list",
+    "difficulty": 8,
+    "prompt": "Start with list [4, 5, 0, 8, 5, 4]. Apply: drop_first, reverse, drop_first, reverse, drop_first, inc, rotate, rotate. Return the final list as JSON.",
+    "gold": "[6, 1, 9]",
+    "pred": "保驾护",
+    "correct": false,
+    "raw_generation": "保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "boolean",
+    "difficulty": 9,
+    "prompt": "Given p=1, q=0, r=1, s=1, evaluate (((((((((q OR q) XOR s) OR s) XOR r) OR s) XOR p) AND r) XOR p) XOR p). Return 0 or 1.",
+    "gold": "0",
+    "pred": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神",
+    "correct": false,
+    "raw_generation": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "arithmetic",
+    "difficulty": 10,
+    "prompt": "Compute the integer value of ((((((((((4 + 1) * 6) + 4) * 7) - 7) - 2) * 8) * 2) - 6) * 5). Return only the integer.",
+    "gold": "18290",
+    "pred": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神",
+    "correct": false,
+    "raw_generation": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "boolean",
+    "difficulty": 9,
+    "prompt": "Given p=0, q=0, r=1, s=0, evaluate (((((((((s XOR s) OR q) OR s) AND r) XOR p) AND r) AND r) XOR s) OR p). Return 0 or 1.",
+    "gold": "0",
+    "pred": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神",
+    "correct": false,
+    "raw_generation": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "boolean",
+    "difficulty": 6,
+    "prompt": "Given p=1, q=0, r=1, s=1, evaluate ((((((r OR p) AND p) AND p) AND s) AND s) AND q). Return 0 or 1.",
+    "gold": "0",
+    "pred": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神",
+    "correct": false,
+    "raw_generation": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "boolean",
+    "difficulty": 11,
+    "prompt": "Given p=1, q=0, r=1, s=1, evaluate (((((((((((p OR r) OR q) AND q) OR q) OR p) AND p) XOR r) OR r) OR q) AND q) XOR s). Return 0 or 1.",
+    "gold": "1",
+    "pred": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神",
+    "correct": false,
+    "raw_generation": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "arithmetic",
+    "difficulty": 9,
+    "prompt": "Compute the integer value of (((((((((1 + 7) + 1) * 3) - 6) * 7) - 4) * 7) * 8) + 9). Return only the integer.",
+    "gold": "8017",
+    "pred": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神",
+    "correct": false,
+    "raw_generation": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "boolean",
+    "difficulty": 9,
+    "prompt": "Given p=0, q=0, r=1, s=1, evaluate (((((((((s XOR s) AND p) AND q) XOR q) OR q) AND r) OR r) AND s) XOR r). Return 0 or 1.",
+    "gold": "0",
+    "pred": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神",
+    "correct": false,
+    "raw_generation": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "list",
+    "difficulty": 6,
+    "prompt": "Start with list [7, 8, 1]. Apply: drop_first, inc, rotate, drop_first, inc, inc. Return the final list as JSON.",
+    "gold": "[1]",
+    "pred": "保驾护",
+    "correct": false,
+    "raw_generation": "保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "list",
+    "difficulty": 6,
+    "prompt": "Start with list [9, 8, 6, 6, 9]. Apply: inc, reverse, reverse, inc, drop_first, rotate. Return the final list as JSON.",
+    "gold": "[8, 8, 1, 0]",
+    "pred": "保驾护",
+    "correct": false,
+    "raw_generation": "保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "boolean",
+    "difficulty": 8,
+    "prompt": "Given p=0, q=1, r=1, s=0, evaluate ((((((((r OR s) XOR r) AND q) XOR q) AND p) AND p) AND r) XOR r). Return 0 or 1.",
+    "gold": "1",
+    "pred": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神",
+    "correct": false,
+    "raw_generation": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "arithmetic",
+    "difficulty": 9,
+    "prompt": "Compute the integer value of (((((((((3 + 9) - 2) - 6) - 7) - 6) * 3) * 6) - 3) * 4). Return only the integer.",
+    "gold": "-660",
+    "pred": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神",
+    "correct": false,
+    "raw_generation": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "list",
+    "difficulty": 6,
+    "prompt": "Start with list [0, 2, 9, 0, 4]. Apply: reverse, reverse, rotate, drop_first, reverse, rotate. Return the final list as JSON.",
+    "gold": "[4, 0, 9, 0]",
+    "pred": "保驾护",
+    "correct": false,
+    "raw_generation": "保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "boolean",
+    "difficulty": 10,
+    "prompt": "Given p=1, q=1, r=0, s=0, evaluate ((((((((((q OR s) OR r) OR p) AND r) AND p) AND r) OR q) AND s) XOR p) AND p). Return 0 or 1.",
+    "gold": "1",
+    "pred": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神",
+    "correct": false,
+    "raw_generation": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "list",
+    "difficulty": 9,
+    "prompt": "Start with list [8, 3, 0]. Apply: reverse, rotate, inc, inc, rotate, inc, drop_first, inc, drop_first. Return the final list as JSON.",
+    "gold": "[7]",
+    "pred": "保驾护",
+    "correct": false,
+    "raw_generation": "保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "list",
+    "difficulty": 7,
+    "prompt": "Start with list [4, 0, 2, 3]. Apply: reverse, inc, reverse, inc, rotate, rotate, reverse. Return the final list as JSON.",
+    "gold": "[2, 6, 5, 4]",
+    "pred": "保驾护",
+    "correct": false,
+    "raw_generation": "保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "list",
+    "difficulty": 11,
+    "prompt": "Start with list [0, 8, 8, 1, 6]. Apply: drop_first, drop_first, rotate, rotate, rotate, reverse, inc, inc, inc, drop_first, inc. Return the final list as JSON.",
+    "gold": "[5, 2]",
+    "pred": "保驾护",
+    "correct": false,
+    "raw_generation": "保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "boolean",
+    "difficulty": 9,
+    "prompt": "Given p=0, q=0, r=0, s=0, evaluate (((((((((q OR q) XOR r) XOR q) XOR q) AND p) OR r) OR p) XOR r) AND r). Return 0 or 1.",
+    "gold": "0",
+    "pred": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神",
+    "correct": false,
+    "raw_generation": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "boolean",
+    "difficulty": 10,
+    "prompt": "Given p=1, q=0, r=1, s=1, evaluate ((((((((((q OR q) OR p) OR p) XOR r) XOR p) AND s) AND r) OR q) AND q) AND q). Return 0 or 1.",
+    "gold": "0",
+    "pred": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神",
+    "correct": false,
+    "raw_generation": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "boolean",
+    "difficulty": 9,
+    "prompt": "Given p=0, q=0, r=0, s=0, evaluate (((((((((r AND s) AND r) AND p) XOR q) OR s) AND q) OR r) XOR p) AND r). Return 0 or 1.",
+    "gold": "0",
+    "pred": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神",
+    "correct": false,
+    "raw_generation": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "arithmetic",
+    "difficulty": 8,
+    "prompt": "Compute the integer value of ((((((((1 * 2) + 7) + 4) * 3) + 5) * 1) + 4) + 2). Return only the integer.",
+    "gold": "50",
+    "pred": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神",
+    "correct": false,
+    "raw_generation": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "boolean",
+    "difficulty": 7,
+    "prompt": "Given p=1, q=1, r=1, s=0, evaluate (((((((r OR s) OR p) XOR p) AND q) OR r) AND p) OR r). Return 0 or 1.",
+    "gold": "1",
+    "pred": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神",
+    "correct": false,
+    "raw_generation": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "boolean",
+    "difficulty": 12,
+    "prompt": "Given p=0, q=1, r=1, s=1, evaluate ((((((((((((s OR q) XOR s) OR q) AND r) XOR q) AND r) OR r) XOR q) AND s) AND r) XOR r) AND p). Return 0 or 1.",
+    "gold": "0",
+    "pred": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神",
+    "correct": false,
+    "raw_generation": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "list",
+    "difficulty": 11,
+    "prompt": "Start with list [3, 1, 0, 0]. Apply: inc, drop_first, drop_first, rotate, inc, reverse, rotate, drop_first, reverse, reverse, drop_first. Return the final list as JSON.",
+    "gold": "[]",
+    "pred": "保驾护",
+    "correct": false,
+    "raw_generation": "保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "list",
+    "difficulty": 9,
+    "prompt": "Start with list [2, 6, 3, 0, 2]. Apply: drop_first, drop_first, drop_first, drop_first, drop_first, reverse, rotate, rotate, inc. Return the final list as JSON.",
+    "gold": "[]",
+    "pred": "保驾护",
+    "correct": false,
+    "raw_generation": "保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "boolean",
+    "difficulty": 12,
+    "prompt": "Given p=1, q=0, r=0, s=1, evaluate ((((((((((((r XOR p) XOR s) OR p) XOR q) OR r) XOR r) XOR q) XOR q) OR p) AND r) OR s) AND s). Return 0 or 1.",
+    "gold": "1",
+    "pred": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神",
+    "correct": false,
+    "raw_generation": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "boolean",
+    "difficulty": 10,
+    "prompt": "Given p=0, q=1, r=0, s=0, evaluate ((((((((((q XOR q) AND s) AND s) AND s) OR q) AND r) AND r) OR r) XOR p) AND q). Return 0 or 1.",
+    "gold": "0",
+    "pred": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神",
+    "correct": false,
+    "raw_generation": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "boolean",
+    "difficulty": 6,
+    "prompt": "Given p=1, q=1, r=0, s=0, evaluate ((((((p OR s) OR p) AND p) AND p) XOR p) AND s). Return 0 or 1.",
+    "gold": "0",
+    "pred": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神",
+    "correct": false,
+    "raw_generation": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "list",
+    "difficulty": 6,
+    "prompt": "Start with list [0, 3, 4, 5, 4, 2]. Apply: rotate, inc, drop_first, reverse, inc, rotate. Return the final list as JSON.",
+    "gold": "[4, 6, 7, 6, 2]",
+    "pred": "保驾护",
+    "correct": false,
+    "raw_generation": "保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "list",
+    "difficulty": 10,
+    "prompt": "Start with list [6, 8, 6, 2, 3, 0]. Apply: reverse, rotate, inc, inc, reverse, reverse, reverse, drop_first, reverse, drop_first. Return the final list as JSON.",
+    "gold": "[4, 8, 0, 8]",
+    "pred": "保驾护",
+    "correct": false,
+    "raw_generation": "保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "arithmetic",
+    "difficulty": 11,
+    "prompt": "Compute the integer value of (((((((((((8 * 8) - 1) - 4) + 7) - 9) * 5) * 5) * 4) + 4) + 2) + 3). Return only the integer.",
+    "gold": "5709",
+    "pred": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神",
+    "correct": false,
+    "raw_generation": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "boolean",
+    "difficulty": 11,
+    "prompt": "Given p=0, q=0, r=1, s=0, evaluate (((((((((((q AND q) XOR p) XOR p) XOR p) AND p) AND p) XOR r) AND q) OR p) OR p) OR s). Return 0 or 1.",
+    "gold": "0",
+    "pred": "prevState: 0, 0, 1, 0",
+    "correct": false,
+    "raw_generation": " prevState: 0, 0, 1, 0\n prevState: 0, 0, 1, 0\n prevState: 0, 0, 1, 0\n prevState: 0, 0, 1, 0\n prevState: 0, 0,"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "list",
+    "difficulty": 11,
+    "prompt": "Start with list [6, 3, 9, 4]. Apply: drop_first, drop_first, inc, drop_first, inc, inc, inc, drop_first, rotate, rotate, inc. Return the final list as JSON.",
+    "gold": "[]",
+    "pred": "保驾护",
+    "correct": false,
+    "raw_generation": "保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "boolean",
+    "difficulty": 8,
+    "prompt": "Given p=1, q=1, r=0, s=1, evaluate ((((((((p AND s) XOR p) AND r) XOR p) OR s) XOR s) OR s) OR s). Return 0 or 1.",
+    "gold": "1",
+    "pred": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神",
+    "correct": false,
+    "raw_generation": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "list",
+    "difficulty": 10,
+    "prompt": "Start with list [4, 8, 0, 8, 6, 2]. Apply: reverse, rotate, inc, reverse, drop_first, drop_first, drop_first, rotate, inc, drop_first. Return the final list as JSON.",
+    "gold": "[8, 2]",
+    "pred": "保驾护",
+    "correct": false,
+    "raw_generation": "保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "arithmetic",
+    "difficulty": 7,
+    "prompt": "Compute the integer value of (((((((4 * 5) - 4) + 9) * 7) + 8) * 4) - 1). Return only the integer.",
+    "gold": "731",
+    "pred": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神",
+    "correct": false,
+    "raw_generation": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "list",
+    "difficulty": 12,
+    "prompt": "Start with list [3, 6, 2, 2]. Apply: rotate, inc, drop_first, rotate, rotate, inc, reverse, reverse, drop_first, reverse, rotate, inc. Return the final list as JSON.",
+    "gold": "[5, 5]",
+    "pred": "保驾护",
+    "correct": false,
+    "raw_generation": "保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "arithmetic",
+    "difficulty": 7,
+    "prompt": "Compute the integer value of (((((((8 * 6) - 4) - 7) * 5) * 8) * 6) - 2). Return only the integer.",
+    "gold": "8878",
+    "pred": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神",
+    "correct": false,
+    "raw_generation": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "arithmetic",
+    "difficulty": 10,
+    "prompt": "Compute the integer value of ((((((((((3 - 3) + 5) - 6) + 1) - 4) * 7) + 7) + 7) + 2) * 2). Return only the integer.",
+    "gold": "-24",
+    "pred": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神",
+    "correct": false,
+    "raw_generation": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "list",
+    "difficulty": 9,
+    "prompt": "Start with list [4, 3, 9, 6]. Apply: drop_first, inc, reverse, inc, reverse, drop_first, inc, drop_first, inc. Return the final list as JSON.",
+    "gold": "[0]",
+    "pred": "保驾护",
+    "correct": false,
+    "raw_generation": "保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "list",
+    "difficulty": 7,
+    "prompt": "Start with list [8, 7, 9, 6]. Apply: inc, rotate, rotate, reverse, drop_first, inc, inc. Return the final list as JSON.",
+    "gold": "[1, 9, 2]",
+    "pred": "保驾护",
+    "correct": false,
+    "raw_generation": "保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "boolean",
+    "difficulty": 12,
+    "prompt": "Given p=1, q=0, r=1, s=1, evaluate ((((((((((((p OR q) XOR q) XOR q) AND q) AND s) AND s) AND s) OR p) XOR p) AND p) XOR q) AND s). Return 0 or 1.",
+    "gold": "0",
+    "pred": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神",
+    "correct": false,
+    "raw_generation": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "list",
+    "difficulty": 11,
+    "prompt": "Start with list [0, 2, 5]. Apply: reverse, rotate, rotate, rotate, rotate, inc, reverse, reverse, drop_first, inc, reverse. Return the final list as JSON.",
+    "gold": "[7, 2]",
+    "pred": "保驾护",
+    "correct": false,
+    "raw_generation": "保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "boolean",
+    "difficulty": 6,
+    "prompt": "Given p=1, q=0, r=0, s=1, evaluate ((((((p AND q) AND q) OR q) AND q) AND p) XOR q). Return 0 or 1.",
+    "gold": "0",
+    "pred": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神",
+    "correct": false,
+    "raw_generation": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "arithmetic",
+    "difficulty": 7,
+    "prompt": "Compute the integer value of (((((((5 * 8) * 9) - 8) - 4) - 8) + 5) * 2). Return only the integer.",
+    "gold": "690",
+    "pred": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神",
+    "correct": false,
+    "raw_generation": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "list",
+    "difficulty": 9,
+    "prompt": "Start with list [2, 6, 2]. Apply: drop_first, reverse, rotate, inc, reverse, rotate, reverse, inc, rotate. Return the final list as JSON.",
+    "gold": "[8, 4]",
+    "pred": "保驾护",
+    "correct": false,
+    "raw_generation": "保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "list",
+    "difficulty": 9,
+    "prompt": "Start with list [6, 1, 0, 9, 7, 2]. Apply: drop_first, rotate, rotate, reverse, inc, reverse, drop_first, reverse, reverse. Return the final list as JSON.",
+    "gold": "[8, 3, 2, 1]",
+    "pred": "保驾护",
+    "correct": false,
+    "raw_generation": "保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "arithmetic",
+    "difficulty": 6,
+    "prompt": "Compute the integer value of ((((((2 - 9) * 8) + 4) + 3) - 3) * 2). Return only the integer.",
+    "gold": "-104",
+    "pred": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神",
+    "correct": false,
+    "raw_generation": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "arithmetic",
+    "difficulty": 10,
+    "prompt": "Compute the integer value of ((((((((((6 * 2) - 9) * 7) * 3) * 5) - 1) * 6) - 8) - 7) - 5). Return only the integer.",
+    "gold": "1864",
+    "pred": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神",
+    "correct": false,
+    "raw_generation": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "boolean",
+    "difficulty": 6,
+    "prompt": "Given p=0, q=1, r=1, s=1, evaluate ((((((q XOR q) OR p) AND p) OR q) AND q) AND r). Return 0 or 1.",
+    "gold": "1",
+    "pred": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神",
+    "correct": false,
+    "raw_generation": "得天独  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神  九大精神"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "list",
+    "difficulty": 11,
+    "prompt": "Start with list [9, 2, 4, 6, 1]. Apply: drop_first, rotate, rotate, drop_first, reverse, inc, drop_first, drop_first, rotate, inc, drop_first. Return the final list as JSON.",
+    "gold": "[]",
+    "pred": "保驾护",
+    "correct": false,
+    "raw_generation": "保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "list",
+    "difficulty": 12,
+    "prompt": "Start with list [9, 6, 4, 5]. Apply: rotate, rotate, reverse, inc, rotate, rotate, drop_first, reverse, inc, inc, inc, inc. Return the final list as JSON.",
+    "gold": "[4, 1, 9]",
+    "pred": "保驾护",
+    "correct": false,
+    "raw_generation": "保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "list",
+    "difficulty": 8,
+    "prompt": "Start with list [3, 3, 4, 8, 6, 1]. Apply: rotate, inc, rotate, drop_first, inc, rotate, reverse, reverse. Return the final list as JSON.",
+    "gold": "[8, 3, 5, 5, 0]",
+    "pred": "保驾护",
+    "correct": false,
+    "raw_generation": "保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n"
+  },
+  {
+    "variant": "hacot",
+    "task_family": "list",
+    "difficulty": 8,
+    "prompt": "Start with list [5, 7, 9]. Apply: inc, rotate, inc, drop_first, drop_first, reverse, rotate, drop_first. Return the final list as JSON.",
+    "gold": "[]",
+    "pred": "保驾护",
+    "correct": false,
+    "raw_generation": "保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n保驾护\n"
+  }
+]

@@ -1,0 +1,32 @@
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files:  50%|█████     | 1/2 [00:02<00:02,  2.82s/it]Fetching 2 files: 100%|██████████| 2/2 [00:02<00:00,  1.41s/it]
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:00<00:00,  1.01it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.88it/s]
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py:929: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+trainable params: 17,432,576 || all params: 1,737,626,624 || trainable%: 1.0032
+{"variant": "flat", "step": 25, "loss": 5.8174519538879395}
+{"variant": "flat", "step": 50, "loss": 2.7857918739318848}
+{"variant": "flat", "step": 75, "loss": 4.078732490539551}
+{"variant": "flat", "step": 100, "loss": 3.801492214202881}
+{"variant": "flat", "step": 125, "loss": 3.0743887424468994}
+{"variant": "flat", "step": 150, "loss": 2.9406771659851074}
+{"variant": "flat", "step": 175, "loss": 2.926701545715332}
+{"variant": "flat", "step": 200, "loss": 3.093747854232788}
+{"variant": "flat", "step": 225, "loss": 3.323735475540161}
+{"variant": "flat", "step": 250, "loss": 3.2137813568115234}
+/workspace/hacot_venv/lib/python3.12/site-packages/peft/utils/save_and_load.py:386: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:00<00:00,  1.19it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00,  2.21it/s]
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:00<00:00,  1.04it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.94it/s]
+trainable params: 17,432,576 || all params: 1,737,626,624 || trainable%: 1.0032
+{"variant": "hacot", "step": 25, "loss": 5.539143085479736}
+{"variant": "hacot", "step": 50, "loss": 4.297706127166748}
+{"variant": "hacot", "step": 75, "loss": 4.1314778327941895}
+{"variant": "hacot", "step": 100, "loss": 4.033874034881592}
+{"variant": "hacot", "step": 125, "loss": 3.76202130317688}
+{"variant": "hacot", "step": 150, "loss": 3.789095401763916}
+{"variant": "hacot", "step": 175, "loss": 3.129639148712158}
+{"variant": "hacot", "step": 200, "loss": 3.5665218830108643}
+{"variant": "hacot", "step": 225, "loss": 2.0750467777252197}
+{"variant": "hacot", "step": 250, "loss": 3.6663520336151123}
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.03s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.98it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.71it/s]
