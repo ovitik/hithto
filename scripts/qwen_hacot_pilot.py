@@ -229,8 +229,8 @@ def load_model_and_tokenizer(args, attach_lora: bool = True):
         device_map="auto",
         trust_remote_code=True,
     )
-    model.config.use_cache = False
-    if args.gradient_checkpointing and hasattr(model, "gradient_checkpointing_enable"):
+    model.config.use_cache = not attach_lora
+    if attach_lora and args.gradient_checkpointing and hasattr(model, "gradient_checkpointing_enable"):
         model.gradient_checkpointing_enable()
     if added:
         model.resize_token_embeddings(len(tokenizer))
@@ -305,6 +305,9 @@ def evaluate_variant(args, variant: Variant, examples: list[Example], out_dir: P
         from peft import PeftModel
 
         model = PeftModel.from_pretrained(model, adapter_dir)
+    model.config.use_cache = True
+    if hasattr(model, "gradient_checkpointing_disable"):
+        model.gradient_checkpointing_disable()
     model.eval()
     rows = []
     t0 = time.time()
