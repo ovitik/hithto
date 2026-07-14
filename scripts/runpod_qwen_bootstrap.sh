@@ -18,6 +18,8 @@ if [ ! -d llm-recursive-tokens ]; then
 fi
 
 cd /workspace/llm-recursive-tokens
+python3 -m venv /workspace/hacot_venv
+source /workspace/hacot_venv/bin/activate
 python -m pip install --upgrade pip
 python -m pip install -r requirements-runpod-qwen.txt
 python -m pip install -e .
