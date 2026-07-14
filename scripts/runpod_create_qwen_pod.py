@@ -96,6 +96,16 @@ def post_graphql(api_key: str, query: str) -> dict:
 
 
 def build_rest_payload(args: argparse.Namespace) -> dict:
+    start_cmd = []
+    if args.auto_run:
+        bootstrap = (
+            "set -euo pipefail; "
+            "cd /workspace; "
+            "if [ ! -d llm-recursive-tokens ]; then git clone \"$RUNPOD_REPO_URL\" llm-recursive-tokens; fi; "
+            "cd /workspace/llm-recursive-tokens; "
+            "bash scripts/runpod_qwen_bootstrap.sh 2>&1 | tee /workspace/qwen_hacot_bootstrap.log"
+        )
+        start_cmd = ["bash", "-lc", bootstrap]
     return {
         "allowedCudaVersions": ["12.8", "12.7", "12.6", "12.5", "12.4", "12.1"],
         "cloudType": "COMMUNITY",
@@ -106,7 +116,7 @@ def build_rest_payload(args: argparse.Namespace) -> dict:
         "dataCenterIds": [],
         "dataCenterPriority": "availability",
         "dockerEntrypoint": [],
-        "dockerStartCmd": [],
+        "dockerStartCmd": start_cmd,
         "env": {
             "JUPYTER_PASSWORD": args.jupyter_password,
             "RUNPOD_REPO_URL": args.repo_url or "",
@@ -175,6 +185,7 @@ def main() -> None:
     parser.add_argument("--eval-n", type=int, default=120)
     parser.add_argument("--batch-size", type=int, default=2)
     parser.add_argument("--grad-accum", type=int, default=8)
+    parser.add_argument("--auto-run", action="store_true", help="Start the Qwen HACoT bootstrap automatically when the pod starts.")
     args = parser.parse_args()
 
     load_dotenv(Path(args.env_file))
