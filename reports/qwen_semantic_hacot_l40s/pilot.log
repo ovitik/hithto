@@ -1,0 +1,232 @@
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files:  50%|█████     | 1/2 [00:03<00:03,  3.61s/it]Fetching 2 files: 100%|██████████| 2/2 [00:03<00:00,  1.80s/it]
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.11s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.69it/s]
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py:929: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+trainable params: 17,432,576 || all params: 1,737,626,624 || trainable%: 1.0032
+{"variant": "direct", "step": 25, "loss": 0.18625526130199432}
+{"variant": "direct", "step": 50, "loss": 0.10830254852771759}
+{"variant": "direct", "step": 75, "loss": 0.1349123865365982}
+{"variant": "direct", "step": 100, "loss": 0.12478478252887726}
+{"variant": "direct", "step": 125, "loss": 0.022307593375444412}
+{"variant": "direct", "step": 150, "loss": 0.01710909605026245}
+{"variant": "direct", "step": 175, "loss": 0.04039538651704788}
+{"variant": "direct", "step": 200, "loss": 0.0840945839881897}
+{"variant": "direct", "step": 225, "loss": 0.12103065103292465}
+{"variant": "direct", "step": 250, "loss": 0.011825122870504856}
+{"variant": "direct", "step": 275, "loss": 0.043558020144701004}
+{"variant": "direct", "step": 300, "loss": 0.006529457867145538}
+{"variant": "direct", "step": 325, "loss": 0.0017602264415472746}
+{"variant": "direct", "step": 350, "loss": 0.09578597545623779}
+{"variant": "direct", "step": 375, "loss": 0.16712215542793274}
+{"variant": "direct", "step": 400, "loss": 0.0596102774143219}
+{"variant": "direct", "step": 425, "loss": 0.15600991249084473}
+{"variant": "direct", "step": 450, "loss": 0.21823005378246307}
+{"variant": "direct", "step": 475, "loss": 0.09994108974933624}
+{"variant": "direct", "step": 500, "loss": 0.061481963843107224}
+{"variant": "direct", "step": 525, "loss": 0.1272197663784027}
+{"variant": "direct", "step": 550, "loss": 0.224605530500412}
+{"variant": "direct", "step": 575, "loss": 0.0015782822156324983}
+{"variant": "direct", "step": 600, "loss": 0.07339882105588913}
+{"variant": "direct", "step": 625, "loss": 0.06744356453418732}
+{"variant": "direct", "step": 650, "loss": 0.04171320050954819}
+{"variant": "direct", "step": 675, "loss": 0.09813760966062546}
+{"variant": "direct", "step": 700, "loss": 0.08399640023708344}
+{"variant": "direct", "step": 725, "loss": 0.005456563550978899}
+{"variant": "direct", "step": 750, "loss": 0.045707039535045624}
+{"variant": "direct", "step": 775, "loss": 0.06705790758132935}
+{"variant": "direct", "step": 800, "loss": 0.05645006150007248}
+{"variant": "direct", "step": 825, "loss": 0.13971805572509766}
+{"variant": "direct", "step": 850, "loss": 0.02916811965405941}
+{"variant": "direct", "step": 875, "loss": 0.13397441804409027}
+{"variant": "direct", "step": 900, "loss": 0.1764678806066513}
+{"variant": "direct", "step": 925, "loss": 0.1936567723751068}
+{"variant": "direct", "step": 950, "loss": 0.2402910739183426}
+/workspace/hacot_venv/lib/python3.12/site-packages/peft/utils/save_and_load.py:386: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:00<00:00,  1.13it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00,  2.08it/s]
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.16s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.61it/s]
+trainable params: 17,432,576 || all params: 1,737,626,624 || trainable%: 1.0032
+{"variant": "cot", "step": 25, "loss": 0.20717036724090576}
+{"variant": "cot", "step": 50, "loss": 0.09761901944875717}
+{"variant": "cot", "step": 75, "loss": 0.04196517542004585}
+{"variant": "cot", "step": 100, "loss": 0.008764206431806087}
+{"variant": "cot", "step": 125, "loss": 0.0009966114303097129}
+{"variant": "cot", "step": 150, "loss": 0.005962522234767675}
+{"variant": "cot", "step": 175, "loss": 0.0016807036008685827}
+{"variant": "cot", "step": 200, "loss": 0.0008194134570658207}
+{"variant": "cot", "step": 225, "loss": 0.0002473636413924396}
+{"variant": "cot", "step": 250, "loss": 0.00012354693899396807}
+{"variant": "cot", "step": 275, "loss": 0.00013598638179246336}
+{"variant": "cot", "step": 300, "loss": 4.563454422168434e-05}
+{"variant": "cot", "step": 325, "loss": 6.384873995557427e-05}
+{"variant": "cot", "step": 350, "loss": 3.1174695322988555e-05}
+{"variant": "cot", "step": 375, "loss": 5.030200190958567e-05}
+{"variant": "cot", "step": 400, "loss": 2.9431199436658062e-05}
+{"variant": "cot", "step": 425, "loss": 3.024002035090234e-05}
+{"variant": "cot", "step": 450, "loss": 2.7144089472130872e-05}
+{"variant": "cot", "step": 475, "loss": 3.680441659525968e-05}
+{"variant": "cot", "step": 500, "loss": 1.4829519386694301e-05}
+{"variant": "cot", "step": 525, "loss": 1.8514221665100195e-05}
+{"variant": "cot", "step": 550, "loss": 2.8729396944982e-05}
+{"variant": "cot", "step": 575, "loss": 1.381034053338226e-05}
+{"variant": "cot", "step": 600, "loss": 1.672397047514096e-05}
+{"variant": "cot", "step": 625, "loss": 1.2298448382352944e-05}
+{"variant": "cot", "step": 650, "loss": 1.8975502825924195e-05}
+{"variant": "cot", "step": 675, "loss": 1.2110987881897017e-05}
+{"variant": "cot", "step": 700, "loss": 8.94600452738814e-06}
+{"variant": "cot", "step": 725, "loss": 1.436018919775961e-05}
+{"variant": "cot", "step": 750, "loss": 9.923633115249686e-06}
+{"variant": "cot", "step": 775, "loss": 1.0183975973632187e-05}
+{"variant": "cot", "step": 800, "loss": 9.20578258956084e-06}
+{"variant": "cot", "step": 825, "loss": 9.44739076658152e-06}
+{"variant": "cot", "step": 850, "loss": 1.7202060917043127e-05}
+{"variant": "cot", "step": 875, "loss": 8.810484359855764e-06}
+{"variant": "cot", "step": 900, "loss": 9.3003573056194e-06}
+{"variant": "cot", "step": 925, "loss": 6.78456626701518e-06}
+{"variant": "cot", "step": 950, "loss": 7.7912945926073e-06}
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:00<00:00,  1.01it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.88it/s]
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.07s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.76it/s]
+trainable params: 17,432,576 || all params: 1,737,626,624 || trainable%: 1.0032
+{"variant": "flat", "step": 25, "loss": 3.090240240097046}
+{"variant": "flat", "step": 50, "loss": 2.6132311820983887}
+{"variant": "flat", "step": 75, "loss": 3.0290334224700928}
+{"variant": "flat", "step": 100, "loss": 2.771721601486206}
+{"variant": "flat", "step": 125, "loss": 2.799997329711914}
+{"variant": "flat", "step": 150, "loss": 2.890597343444824}
+{"variant": "flat", "step": 175, "loss": 2.8224289417266846}
+{"variant": "flat", "step": 200, "loss": 2.4772579669952393}
+{"variant": "flat", "step": 225, "loss": 2.7630615234375}
+{"variant": "flat", "step": 250, "loss": 2.885700225830078}
+{"variant": "flat", "step": 275, "loss": 2.88883113861084}
+{"variant": "flat", "step": 300, "loss": 2.6185591220855713}
+{"variant": "flat", "step": 325, "loss": 2.6091551780700684}
+{"variant": "flat", "step": 350, "loss": 2.9125099182128906}
+{"variant": "flat", "step": 375, "loss": 2.8553335666656494}
+{"variant": "flat", "step": 400, "loss": 2.4393930435180664}
+{"variant": "flat", "step": 425, "loss": 2.6077005863189697}
+{"variant": "flat", "step": 450, "loss": 2.518383741378784}
+{"variant": "flat", "step": 475, "loss": 2.5149073600769043}
+{"variant": "flat", "step": 500, "loss": 2.8541016578674316}
+{"variant": "flat", "step": 525, "loss": 2.30907940864563}
+{"variant": "flat", "step": 550, "loss": 2.556925058364868}
+{"variant": "flat", "step": 575, "loss": 2.8297927379608154}
+{"variant": "flat", "step": 600, "loss": 2.487032175064087}
+{"variant": "flat", "step": 625, "loss": 2.805403709411621}
+{"variant": "flat", "step": 650, "loss": 2.494253396987915}
+{"variant": "flat", "step": 675, "loss": 2.7247045040130615}
+{"variant": "flat", "step": 700, "loss": 2.5606272220611572}
+{"variant": "flat", "step": 725, "loss": 2.269937515258789}
+{"variant": "flat", "step": 750, "loss": 2.5657060146331787}
+{"variant": "flat", "step": 775, "loss": 2.260528326034546}
+{"variant": "flat", "step": 800, "loss": 2.7072856426239014}
+{"variant": "flat", "step": 825, "loss": 2.8784918785095215}
+{"variant": "flat", "step": 850, "loss": 2.7357654571533203}
+{"variant": "flat", "step": 875, "loss": 2.472634792327881}
+{"variant": "flat", "step": 900, "loss": 2.785900592803955}
+{"variant": "flat", "step": 925, "loss": 2.0873308181762695}
+{"variant": "flat", "step": 950, "loss": 2.088139533996582}
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.12s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.67it/s]
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.06s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.76it/s]
+trainable params: 17,432,576 || all params: 1,737,626,624 || trainable%: 1.0032
+{"variant": "hacot", "step": 25, "loss": 2.9684650897979736}
+{"variant": "hacot", "step": 50, "loss": 2.943763256072998}
+{"variant": "hacot", "step": 75, "loss": 2.8390331268310547}
+{"variant": "hacot", "step": 100, "loss": 2.8247015476226807}
+{"variant": "hacot", "step": 125, "loss": 2.639263868331909}
+{"variant": "hacot", "step": 150, "loss": 2.9654994010925293}
+{"variant": "hacot", "step": 175, "loss": 2.9329090118408203}
+{"variant": "hacot", "step": 200, "loss": 2.554600238800049}
+{"variant": "hacot", "step": 225, "loss": 2.5631496906280518}
+{"variant": "hacot", "step": 250, "loss": 3.576012134552002}
+{"variant": "hacot", "step": 275, "loss": 2.470228910446167}
+{"variant": "hacot", "step": 300, "loss": 2.860419988632202}
+{"variant": "hacot", "step": 325, "loss": 2.734884262084961}
+{"variant": "hacot", "step": 350, "loss": 2.8348569869995117}
+{"variant": "hacot", "step": 375, "loss": 2.622720956802368}
+{"variant": "hacot", "step": 400, "loss": 2.7175350189208984}
+{"variant": "hacot", "step": 425, "loss": 2.931426525115967}
+{"variant": "hacot", "step": 450, "loss": 2.758734703063965}
+{"variant": "hacot", "step": 475, "loss": 2.721238851547241}
+{"variant": "hacot", "step": 500, "loss": 2.83123517036438}
+{"variant": "hacot", "step": 525, "loss": 2.324535608291626}
+{"variant": "hacot", "step": 550, "loss": 2.8812973499298096}
+{"variant": "hacot", "step": 575, "loss": 2.8206071853637695}
+{"variant": "hacot", "step": 600, "loss": 2.7402303218841553}
+{"variant": "hacot", "step": 625, "loss": 2.7042694091796875}
+{"variant": "hacot", "step": 650, "loss": 2.5799858570098877}
+{"variant": "hacot", "step": 675, "loss": 2.5924081802368164}
+{"variant": "hacot", "step": 700, "loss": 2.807908535003662}
+{"variant": "hacot", "step": 725, "loss": 2.5304694175720215}
+{"variant": "hacot", "step": 750, "loss": 2.882852077484131}
+{"variant": "hacot", "step": 775, "loss": 2.699512481689453}
+{"variant": "hacot", "step": 800, "loss": 2.7283899784088135}
+{"variant": "hacot", "step": 825, "loss": 2.1139848232269287}
+{"variant": "hacot", "step": 850, "loss": 2.6495521068573}
+{"variant": "hacot", "step": 875, "loss": 2.748560905456543}
+{"variant": "hacot", "step": 900, "loss": 2.7894749641418457}
+{"variant": "hacot", "step": 925, "loss": 2.555272340774536}
+{"variant": "hacot", "step": 950, "loss": 2.603175401687622}
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:00<00:00,  1.01it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.89it/s]
+{
+  "args": {
+    "model_name": "Qwen/Qwen3-1.7B",
+    "out_dir": "/workspace/hacot_runs/qwen_semantic_hacot_pilot",
+    "train_n": 384,
+    "dev_n": 96,
+    "steps": 960,
+    "batch_size": 2,
+    "grad_accum": 4,
+    "max_length": 384,
+    "max_new_tokens": 64,
+    "eval_n": 96,
+    "eval_batch_size": 8,
+    "lr": 0.0004,
+    "seed": 42,
+    "log_every": 25,
+    "variants": "direct,cot,flat,hacot",
+    "lora": true,
+    "qlora_4bit": true,
+    "lora_rank": 16,
+    "lora_alpha": 32,
+    "gradient_checkpointing": true,
+    "save_adapters": true,
+    "dry_run": false
+  },
+  "variants": {
+    "direct": {
+      "train_loss_last": 0.14483967423439026,
+      "train_loss_mean_last_20": 0.12132675609027502,
+      "train_seconds": 294.10453057289124,
+      "steps": 960,
+      "accuracy": 0.4375,
+      "eval_seconds": 9.42292833328247
+    },
+    "cot": {
+      "train_loss_last": 1.0424119864183012e-05,
+      "train_loss_mean_last_20": 9.709472351460136e-06,
+      "train_seconds": 300.1142728328705,
+      "steps": 960,
+      "accuracy": 0.07291666666666667,
+      "eval_seconds": 67.41556358337402
+    },
+    "flat": {
+      "train_loss_last": 2.715395212173462,
+      "train_loss_mean_last_20": 2.5697914242744444,
+      "train_seconds": 296.99106216430664,
+      "steps": 960,
+      "accuracy": 0.3854166666666667,
+      "eval_seconds": 44.427353620529175
+    },
+    "hacot": {
+      "train_loss_last": 2.8056843280792236,
+      "train_loss_mean_last_20": 2.7260163187980653,
+      "train_seconds": 295.584557056427,
+      "steps": 960,
+      "accuracy": 0.4479166666666667,
+      "eval_seconds": 53.35362935066223
+    }
+  },
+  "started_at": "2026-07-15 08:16:14",
+  "completed_at": "2026-07-15 08:40:14"
+}

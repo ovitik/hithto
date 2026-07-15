@@ -271,6 +271,34 @@ def norm_answer(text: str) -> str:
     return re.sub(r"\s+", " ", text.strip().lower())
 
 
+def extract_abstract_trace(text: str) -> list[str] | None:
+    """Return the first complete HACoT forest emitted before the final answer."""
+    tokens = re.findall(r"<[^>]+>", text)
+    try:
+        start = tokens.index("<HA_START>")
+        end = tokens.index("<HA_END>", start)
+    except ValueError:
+        return None
+    return tokens[start : end + 1]
+
+
+def score_abstract_trace(text: str, ex: Example, variant: Variant) -> tuple[bool | None, bool | None]:
+    """Score syntax and exact program recovery separately from final-answer accuracy."""
+    if variant not in {"flat", "hacot"}:
+        return None, None
+    trace = extract_abstract_trace(text)
+    if trace is None:
+        return False, False
+    if variant == "flat":
+        expected = flat_tokens_for_semantic_tree(ex.gold_tree)
+        return trace == expected, trace == expected
+    try:
+        HACoTGrammar(max_depth=16).parse(trace)
+    except ValueError:
+        return False, False
+    return True, trace == ex.gold_tree
+
+
 def load_model_and_tokenizer(args, attach_lora: bool = True):
     from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 
@@ -392,7 +420,9 @@ def evaluate_variant(args, variant: Variant, examples: list[Example], out_dir: P
         for ex, tokens in zip(batch_examples, generated):
             text = tokenizer.decode(tokens, skip_special_tokens=False)
             pred = extract_answer(text)
-            ok = norm_answer(pred) == norm_answer(ex.answer)
+            answer_correct = norm_answer(pred) == norm_answer(ex.answer)
+            trace_valid, trace_exact = score_abstract_trace(text, ex, variant)
+            joint_correct = answer_correct and (trace_exact if trace_exact is not None else True)
             rows.append({
                 "variant": variant,
                 "task_family": ex.task_family,
@@ -400,14 +430,34 @@ def evaluate_variant(args, variant: Variant, examples: list[Example], out_dir: P
                 "prompt": ex.prompt,
                 "gold": ex.answer,
                 "pred": pred,
-                "correct": ok,
+                "correct": answer_correct,
+                "answer_correct": answer_correct,
+                "trace_valid": trace_valid,
+                "trace_exact": trace_exact,
+                "joint_correct": joint_correct,
                 "raw_generation": text,
             })
     elapsed = time.time() - t0
-    acc = sum(r["correct"] for r in rows) / max(1, len(rows))
+    answer_acc = sum(r["answer_correct"] for r in rows) / max(1, len(rows))
+    trace_rows = [r for r in rows if r["trace_valid"] is not None]
+    trace_validity = (
+        sum(r["trace_valid"] for r in trace_rows) / max(1, len(trace_rows)) if trace_rows else None
+    )
+    trace_exact_acc = (
+        sum(r["trace_exact"] for r in trace_rows) / max(1, len(trace_rows)) if trace_rows else None
+    )
+    joint_acc = sum(r["joint_correct"] for r in rows) / max(1, len(rows))
     del model
     torch.cuda.empty_cache()
-    return {"accuracy": acc, "eval_seconds": elapsed, "rows": rows}
+    return {
+        "accuracy": answer_acc,
+        "answer_accuracy": answer_acc,
+        "trace_validity": trace_validity,
+        "trace_exact_accuracy": trace_exact_acc,
+        "joint_accuracy": joint_acc,
+        "eval_seconds": elapsed,
+        "rows": rows,
+    }
 
 
 def write_json(path: Path, obj) -> None:
@@ -470,6 +520,10 @@ def main() -> None:
         summary["variants"][variant] = {
             **train_metrics,
             "accuracy": eval_metrics["accuracy"],
+            "answer_accuracy": eval_metrics["answer_accuracy"],
+            "trace_validity": eval_metrics["trace_validity"],
+            "trace_exact_accuracy": eval_metrics["trace_exact_accuracy"],
+            "joint_accuracy": eval_metrics["joint_accuracy"],
             "eval_seconds": eval_metrics["eval_seconds"],
         }
         all_rows.extend(eval_metrics["rows"])

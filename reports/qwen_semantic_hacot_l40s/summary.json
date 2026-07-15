@@ -1,0 +1,62 @@
+{
+  "args": {
+    "model_name": "Qwen/Qwen3-1.7B",
+    "out_dir": "/workspace/hacot_runs/qwen_semantic_hacot_pilot",
+    "train_n": 384,
+    "dev_n": 96,
+    "steps": 960,
+    "batch_size": 2,
+    "grad_accum": 4,
+    "max_length": 384,
+    "max_new_tokens": 64,
+    "eval_n": 96,
+    "eval_batch_size": 8,
+    "lr": 0.0004,
+    "seed": 42,
+    "log_every": 25,
+    "variants": "direct,cot,flat,hacot",
+    "lora": true,
+    "qlora_4bit": true,
+    "lora_rank": 16,
+    "lora_alpha": 32,
+    "gradient_checkpointing": true,
+    "save_adapters": true,
+    "dry_run": false
+  },
+  "variants": {
+    "direct": {
+      "train_loss_last": 0.14483967423439026,
+      "train_loss_mean_last_20": 0.12132675609027502,
+      "train_seconds": 294.10453057289124,
+      "steps": 960,
+      "accuracy": 0.4375,
+      "eval_seconds": 9.42292833328247
+    },
+    "cot": {
+      "train_loss_last": 1.0424119864183012e-05,
+      "train_loss_mean_last_20": 9.709472351460136e-06,
+      "train_seconds": 300.1142728328705,
+      "steps": 960,
+      "accuracy": 0.07291666666666667,
+      "eval_seconds": 67.41556358337402
+    },
+    "flat": {
+      "train_loss_last": 2.715395212173462,
+      "train_loss_mean_last_20": 2.5697914242744444,
+      "train_seconds": 296.99106216430664,
+      "steps": 960,
+      "accuracy": 0.3854166666666667,
+      "eval_seconds": 44.427353620529175
+    },
+    "hacot": {
+      "train_loss_last": 2.8056843280792236,
+      "train_loss_mean_last_20": 2.7260163187980653,
+      "train_seconds": 295.584557056427,
+      "steps": 960,
+      "accuracy": 0.4479166666666667,
+      "eval_seconds": 53.35362935066223
+    }
+  },
+  "started_at": "2026-07-15 08:16:14",
+  "completed_at": "2026-07-15 08:40:14"
+}

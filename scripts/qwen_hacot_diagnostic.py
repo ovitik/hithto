@@ -89,8 +89,14 @@ def main() -> None:
         summary["variants"][variant] = {
             **train_metrics,
             "train_accuracy": train_eval["accuracy"],
+            "train_trace_validity": train_eval["trace_validity"],
+            "train_trace_exact_accuracy": train_eval["trace_exact_accuracy"],
+            "train_joint_accuracy": train_eval["joint_accuracy"],
             "train_eval_seconds": train_eval["eval_seconds"],
             "id_accuracy": id_eval["accuracy"],
+            "id_trace_validity": id_eval["trace_validity"],
+            "id_trace_exact_accuracy": id_eval["trace_exact_accuracy"],
+            "id_joint_accuracy": id_eval["joint_accuracy"],
             "id_eval_seconds": id_eval["eval_seconds"],
         }
         for row in train_eval["rows"]:
