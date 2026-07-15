@@ -1,0 +1,84 @@
+{"event": "train_start", "variant": "direct"}
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.57s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.39it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.18it/s]
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py:929: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+trainable params: 17,432,576 || all params: 1,737,626,624 || trainable%: 1.0032
+{"variant": "direct", "step": 20, "loss": 1.0167572498321533}
+{"variant": "direct", "step": 40, "loss": 0.5137221813201904}
+{"variant": "direct", "step": 60, "loss": 0.3105389475822449}
+{"variant": "direct", "step": 80, "loss": 0.2098860740661621}
+{"variant": "direct", "step": 100, "loss": 0.17932812869548798}
+{"variant": "direct", "step": 120, "loss": 0.3736841082572937}
+{"variant": "direct", "step": 140, "loss": 0.12993870675563812}
+{"variant": "direct", "step": 160, "loss": 0.309053510427475}
+{"variant": "direct", "step": 180, "loss": 0.3158509433269501}
+{"variant": "direct", "step": 200, "loss": 0.17433089017868042}
+{"variant": "direct", "step": 220, "loss": 0.0012063955655321479}
+{"variant": "direct", "step": 240, "loss": 0.05615399032831192}
+{"variant": "direct", "step": 260, "loss": 0.05032637342810631}
+{"variant": "direct", "step": 280, "loss": 0.08886653929948807}
+{"variant": "direct", "step": 300, "loss": 0.17538638412952423}
+{"variant": "direct", "step": 320, "loss": 0.007476859726011753}
+{"variant": "direct", "step": 340, "loss": 0.0005591147928498685}
+{"variant": "direct", "step": 360, "loss": 0.008975117467343807}
+{"variant": "direct", "step": 380, "loss": 0.0008233001572079957}
+{"variant": "direct", "step": 400, "loss": 0.0010393948759883642}
+{"variant": "direct", "step": 420, "loss": 0.0015256062615662813}
+{"variant": "direct", "step": 440, "loss": 0.016549311578273773}
+{"variant": "direct", "step": 460, "loss": 0.0982632115483284}
+{"variant": "direct", "step": 480, "loss": 0.08376844972372055}
+{"variant": "direct", "step": 500, "loss": 0.2121516764163971}
+{"variant": "direct", "step": 520, "loss": 0.006661486346274614}
+{"variant": "direct", "step": 540, "loss": 0.17015832662582397}
+{"variant": "direct", "step": 560, "loss": 0.002596968086436391}
+{"variant": "direct", "step": 580, "loss": 7.177912630140781e-05}
+{"variant": "direct", "step": 600, "loss": 0.00046492068213410676}
+{"variant": "direct", "step": 620, "loss": 0.0007016683812253177}
+{"variant": "direct", "step": 640, "loss": 2.6206329494016245e-05}
+/workspace/hacot_venv/lib/python3.12/site-packages/peft/utils/save_and_load.py:386: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+{"event": "eval_train_start", "variant": "direct"}
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.32s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.65it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.40it/s]
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+{"event": "eval_id_start", "variant": "direct"}
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.20s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.79it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.53it/s]
+{
+  "args": {
+    "model_name": "Qwen/Qwen3-1.7B",
+    "out_dir": "/workspace/hacot_runs/qwen_hacot_diagnostic_direct640",
+    "train_n": 64,
+    "dev_n": 64,
+    "steps": 640,
+    "batch_size": 2,
+    "grad_accum": 4,
+    "max_length": 384,
+    "max_new_tokens": 48,
+    "eval_n": 64,
+    "lr": 0.0004,
+    "seed": 42,
+    "log_every": 20,
+    "variants": "direct",
+    "lora": true,
+    "qlora_4bit": true,
+    "lora_rank": 16,
+    "lora_alpha": 32,
+    "gradient_checkpointing": true,
+    "save_adapters": true,
+    "dry_run": false
+  },
+  "diagnostic": true,
+  "variants": {
+    "direct": {
+      "train_loss_last": 2.6206329494016245e-05,
+      "train_loss_mean_last_20": 0.00046443261753665866,
+      "train_seconds": 236.00293731689453,
+      "steps": 640,
+      "train_accuracy": 1.0,
+      "train_eval_seconds": 68.50418066978455,
+      "id_accuracy": 0.34375,
+      "id_eval_seconds": 70.6995177268982
+    }
+  },
+  "started_at": "2026-07-15 06:57:29",
+  "completed_at": "2026-07-15 07:04:21"
+}

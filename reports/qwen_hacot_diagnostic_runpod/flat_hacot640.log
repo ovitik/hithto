@@ -1,0 +1,133 @@
+{"event": "train_start", "variant": "flat"}
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.40s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.53it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.30it/s]
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py:929: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+trainable params: 17,432,576 || all params: 1,737,626,624 || trainable%: 1.0032
+{"variant": "flat", "step": 20, "loss": 3.9049856662750244}
+{"variant": "flat", "step": 40, "loss": 2.492831230163574}
+{"variant": "flat", "step": 60, "loss": 2.7805919647216797}
+{"variant": "flat", "step": 80, "loss": 2.18363094329834}
+{"variant": "flat", "step": 100, "loss": 2.026384115219116}
+{"variant": "flat", "step": 120, "loss": 2.7787816524505615}
+{"variant": "flat", "step": 140, "loss": 2.6171460151672363}
+{"variant": "flat", "step": 160, "loss": 1.9566841125488281}
+{"variant": "flat", "step": 180, "loss": 2.596165180206299}
+{"variant": "flat", "step": 200, "loss": 2.217325448989868}
+{"variant": "flat", "step": 220, "loss": 2.683718681335449}
+{"variant": "flat", "step": 240, "loss": 1.9367581605911255}
+{"variant": "flat", "step": 260, "loss": 2.769965648651123}
+{"variant": "flat", "step": 280, "loss": 2.6409497261047363}
+{"variant": "flat", "step": 300, "loss": 2.3155181407928467}
+{"variant": "flat", "step": 320, "loss": 2.575457811355591}
+{"variant": "flat", "step": 340, "loss": 2.8821983337402344}
+{"variant": "flat", "step": 360, "loss": 2.343625068664551}
+{"variant": "flat", "step": 380, "loss": 2.6602485179901123}
+{"variant": "flat", "step": 400, "loss": 1.9302542209625244}
+{"variant": "flat", "step": 420, "loss": 1.393178939819336}
+{"variant": "flat", "step": 440, "loss": 2.032996892929077}
+{"variant": "flat", "step": 460, "loss": 2.617112874984741}
+{"variant": "flat", "step": 480, "loss": 2.520987033843994}
+{"variant": "flat", "step": 500, "loss": 2.732839584350586}
+{"variant": "flat", "step": 520, "loss": 2.3559422492980957}
+{"variant": "flat", "step": 540, "loss": 2.2614805698394775}
+{"variant": "flat", "step": 560, "loss": 2.4287848472595215}
+{"variant": "flat", "step": 580, "loss": 2.2727878093719482}
+{"variant": "flat", "step": 600, "loss": 2.2579593658447266}
+{"variant": "flat", "step": 620, "loss": 2.0949225425720215}
+{"variant": "flat", "step": 640, "loss": 1.5749977827072144}
+/workspace/hacot_venv/lib/python3.12/site-packages/peft/utils/save_and_load.py:386: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+{"event": "eval_train_start", "variant": "flat"}
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.24s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.73it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.48it/s]
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+{"event": "eval_id_start", "variant": "flat"}
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.36s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.60it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.36it/s]
+{"event": "train_start", "variant": "hacot"}
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.24s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.74it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.48it/s]
+trainable params: 17,432,576 || all params: 1,737,626,624 || trainable%: 1.0032
+{"variant": "hacot", "step": 20, "loss": 4.435728549957275}
+{"variant": "hacot", "step": 40, "loss": 2.720046043395996}
+{"variant": "hacot", "step": 60, "loss": 2.842714309692383}
+{"variant": "hacot", "step": 80, "loss": 2.5008351802825928}
+{"variant": "hacot", "step": 100, "loss": 1.7174503803253174}
+{"variant": "hacot", "step": 120, "loss": 2.7385270595550537}
+{"variant": "hacot", "step": 140, "loss": 1.7941501140594482}
+{"variant": "hacot", "step": 160, "loss": 2.7934436798095703}
+{"variant": "hacot", "step": 180, "loss": 2.0012705326080322}
+{"variant": "hacot", "step": 200, "loss": 2.785033941268921}
+{"variant": "hacot", "step": 220, "loss": 2.2494447231292725}
+{"variant": "hacot", "step": 240, "loss": 2.49605655670166}
+{"variant": "hacot", "step": 260, "loss": 2.4059855937957764}
+{"variant": "hacot", "step": 280, "loss": 2.5786960124969482}
+{"variant": "hacot", "step": 300, "loss": 2.3716511726379395}
+{"variant": "hacot", "step": 320, "loss": 2.7134170532226562}
+{"variant": "hacot", "step": 340, "loss": 2.0009891986846924}
+{"variant": "hacot", "step": 360, "loss": 2.178306818008423}
+{"variant": "hacot", "step": 380, "loss": 2.3340861797332764}
+{"variant": "hacot", "step": 400, "loss": 2.392127752304077}
+{"variant": "hacot", "step": 420, "loss": 2.0543181896209717}
+{"variant": "hacot", "step": 440, "loss": 2.4054348468780518}
+{"variant": "hacot", "step": 460, "loss": 2.9425275325775146}
+{"variant": "hacot", "step": 480, "loss": 2.7250940799713135}
+{"variant": "hacot", "step": 500, "loss": 2.963097333908081}
+{"variant": "hacot", "step": 520, "loss": 2.3423523902893066}
+{"variant": "hacot", "step": 540, "loss": 3.057319402694702}
+{"variant": "hacot", "step": 560, "loss": 2.0437099933624268}
+{"variant": "hacot", "step": 580, "loss": 2.8702290058135986}
+{"variant": "hacot", "step": 600, "loss": 2.7658371925354004}
+{"variant": "hacot", "step": 620, "loss": 2.5842697620391846}
+{"variant": "hacot", "step": 640, "loss": 2.45024037361145}
+{"event": "eval_train_start", "variant": "hacot"}
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.25s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.73it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.48it/s]
+{"event": "eval_id_start", "variant": "hacot"}
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.24s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.75it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.49it/s]
+{
+  "args": {
+    "model_name": "Qwen/Qwen3-1.7B",
+    "out_dir": "/workspace/hacot_runs/qwen_hacot_diagnostic_flat_hacot640",
+    "train_n": 64,
+    "dev_n": 64,
+    "steps": 640,
+    "batch_size": 2,
+    "grad_accum": 4,
+    "max_length": 384,
+    "max_new_tokens": 192,
+    "eval_n": 64,
+    "lr": 0.0004,
+    "seed": 42,
+    "log_every": 20,
+    "variants": "flat,hacot",
+    "lora": true,
+    "qlora_4bit": true,
+    "lora_rank": 16,
+    "lora_alpha": 32,
+    "gradient_checkpointing": true,
+    "save_adapters": true,
+    "dry_run": false
+  },
+  "diagnostic": true,
+  "variants": {
+    "flat": {
+      "train_loss_last": 1.5749977827072144,
+      "train_loss_mean_last_20": 2.330581796169281,
+      "train_seconds": 242.77070093154907,
+      "steps": 640,
+      "train_accuracy": 0.609375,
+      "train_eval_seconds": 529.2747015953064,
+      "id_accuracy": 0.28125,
+      "id_eval_seconds": 481.54865646362305
+    },
+    "hacot": {
+      "train_loss_last": 2.45024037361145,
+      "train_loss_mean_last_20": 2.4564490258693694,
+      "train_seconds": 241.1555209159851,
+      "steps": 640,
+      "train_accuracy": 0.953125,
+      "train_eval_seconds": 281.1459517478943,
+      "id_accuracy": 0.328125,
+      "id_eval_seconds": 276.29070520401
+    }
+  },
+  "started_at": "2026-07-15 07:05:58",
+  "completed_at": "2026-07-15 07:41:17"
+}

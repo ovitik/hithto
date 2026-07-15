@@ -1,0 +1,59 @@
+{"event": "train_start", "variant": "direct"}
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files:  50%|█████     | 1/2 [00:09<00:09,  9.40s/it]Fetching 2 files: 100%|██████████| 2/2 [00:09<00:00,  4.70s/it]
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.36s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.58it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.35it/s]
+/usr/local/lib/python3.12/dist-packages/torch/_dynamo/eval_frame.py:929: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+trainable params: 17,432,576 || all params: 1,737,626,624 || trainable%: 1.0032
+{"variant": "direct", "step": 20, "loss": 1.0167572498321533}
+{"variant": "direct", "step": 40, "loss": 0.5137221813201904}
+{"variant": "direct", "step": 60, "loss": 0.3105389475822449}
+{"variant": "direct", "step": 80, "loss": 0.2098860740661621}
+{"variant": "direct", "step": 100, "loss": 0.17932812869548798}
+{"variant": "direct", "step": 120, "loss": 0.3736841082572937}
+/workspace/hacot_venv/lib/python3.12/site-packages/peft/utils/save_and_load.py:386: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+{"event": "eval_train_start", "variant": "direct"}
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.35s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.58it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.35it/s]
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+{"event": "eval_id_start", "variant": "direct"}
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.23s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.74it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.49it/s]
+{
+  "args": {
+    "model_name": "Qwen/Qwen3-1.7B",
+    "out_dir": "/workspace/hacot_runs/qwen_hacot_diagnostic",
+    "train_n": 64,
+    "dev_n": 64,
+    "steps": 120,
+    "batch_size": 2,
+    "grad_accum": 4,
+    "max_length": 384,
+    "max_new_tokens": 48,
+    "eval_n": 64,
+    "lr": 0.0004,
+    "seed": 42,
+    "log_every": 20,
+    "variants": "direct",
+    "lora": true,
+    "qlora_4bit": true,
+    "lora_rank": 16,
+    "lora_alpha": 32,
+    "gradient_checkpointing": true,
+    "save_adapters": true,
+    "dry_run": false
+  },
+  "diagnostic": true,
+  "variants": {
+    "direct": {
+      "train_loss_last": 0.3736841082572937,
+      "train_loss_mean_last_20": 0.2180213700979948,
+      "train_seconds": 45.399170875549316,
+      "steps": 120,
+      "train_accuracy": 0.0,
+      "train_eval_seconds": 70.51871466636658,
+      "id_accuracy": 0.0,
+      "id_eval_seconds": 73.77765917778015
+    }
+  },
+  "started_at": "2026-07-15 06:50:42",
+  "completed_at": "2026-07-15 06:54:42"
+}

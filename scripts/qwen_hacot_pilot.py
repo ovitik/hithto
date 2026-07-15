@@ -19,10 +19,56 @@ import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
-from thought_tokens.hacot_grammar import HACoTGrammar, HA_TOKENS, flat_tokens_for_tree
+from thought_tokens.hacot_grammar import HACoTGrammar, HA_TOKENS
 
 
-Variant = Literal["direct", "flat", "hacot"]
+Variant = Literal["direct", "cot", "flat", "hacot"]
+
+
+# The abstract vocabulary is deliberately small and fixed.  A tree describes the
+# program in postfix form: leaves are values and C2 tokens are binary operators.
+# This gives HACoT structural meaning without placing natural-language traces in
+# its target sequence.
+ARITHMETIC_OPERATOR_TOKENS = {"+": "<C2_00>", "-": "<C2_01>", "*": "<C2_02>"}
+BOOLEAN_OPERATOR_TOKENS = {"AND": "<C2_03>", "OR": "<C2_04>", "XOR": "<C2_05>"}
+FLAT_OPERATOR_TOKENS = {
+    "<C2_00>": "<A20>",
+    "<C2_01>": "<A21>",
+    "<C2_02>": "<A22>",
+    "<C2_03>": "<A23>",
+    "<C2_04>": "<A24>",
+    "<C2_05>": "<A25>",
+}
+
+
+def value_token(value: int) -> str:
+    """Encode a value that is visible in the question, never an intermediate result."""
+    return f"<A{value % 10:02d}>"
+
+
+def semantic_tree(operands: list[int], operators: list[str], op_tokens: dict[str, str]) -> list[str]:
+    """Build a left-associated computation tree for a sequence of binary steps."""
+    if len(operands) != len(operators) + 1:
+        raise ValueError("binary program needs one more operand than operators")
+    tokens = [HA_TOKENS[0], value_token(operands[0])]
+    for operand, operator in zip(operands[1:], operators):
+        tokens.extend([value_token(operand), op_tokens[operator]])
+    tokens.extend(["<HA_ROOT>", "<HA_END>"])
+    HACoTGrammar(max_depth=16).parse(tokens)
+    return tokens
+
+
+def flat_tokens_for_semantic_tree(tree_tokens: list[str]) -> list[str]:
+    """Keep identical program symbols but remove the tree's compositional edges."""
+    return [
+        "<HA_START>",
+        *[
+            FLAT_OPERATOR_TOKENS.get(token, token)
+            for token in tree_tokens
+            if token not in {"<HA_START>", "<HA_ROOT>", "<HA_END>"}
+        ],
+        "<HA_END>",
+    ]
 
 
 @dataclass
@@ -44,36 +90,30 @@ def set_seed(seed: int) -> None:
         torch.cuda.manual_seed_all(seed)
 
 
-def make_tree(depth: int, rng: random.Random) -> list[str]:
-    grammar = HACoTGrammar(max_roots=2, max_nodes=min(128, max(4, depth * 4)), max_depth=12)
-    for _ in range(100):
-        toks = grammar.sample_valid(rng)
-        stats_depth = grammar.parse(toks).max_depth
-        if stats_depth >= min(depth, 12):
-            return toks
-    return grammar.sample_valid(rng)
-
-
 def gen_arithmetic(rng: random.Random, difficulty: int, split: str) -> Example:
     value = rng.randint(1, 9)
     expr = str(value)
     trace = [f"start {value}"]
+    operands = [value]
+    operators = []
     for step in range(difficulty):
         op = rng.choice(["+", "-", "*"])
         x = rng.randint(1, 9)
+        operands.append(x)
+        operators.append(op)
         if op == "+":
-            value += x
+            value = (value + x) % 10
         elif op == "-":
-            value -= x
+            value = (value - x) % 10
         else:
-            value *= x
+            value = (value * x) % 10
         expr = f"({expr} {op} {x})"
         trace.append(f"{step + 1}: {op}{x} -> {value}")
     return Example(
-        prompt=f"Compute the integer value of {expr}. Return only the integer.",
+        prompt=f"Compute the value of {expr} modulo 10. Return only an integer from 0 to 9.",
         answer=str(value),
         verbal_cot="; ".join(trace),
-        gold_tree=make_tree(difficulty, rng),
+        gold_tree=semantic_tree(operands, operators, ARITHMETIC_OPERATOR_TOKENS),
         task_family="arithmetic",
         difficulty=difficulty,
         split=split,
@@ -85,10 +125,14 @@ def gen_boolean(rng: random.Random, difficulty: int, split: str) -> Example:
     expr = rng.choice(list(values))
     value = values[expr]
     trace = [f"{expr}={int(value)}"]
+    operands = [int(value)]
+    operators = []
     for _ in range(difficulty):
         var = rng.choice(list(values))
         op = rng.choice(["AND", "OR", "XOR"])
         rhs = values[var]
+        operands.append(int(rhs))
+        operators.append(op)
         if op == "AND":
             value = value and rhs
         elif op == "OR":
@@ -101,29 +145,18 @@ def gen_boolean(rng: random.Random, difficulty: int, split: str) -> Example:
         f"Given p={int(values['p'])}, q={int(values['q'])}, r={int(values['r'])}, "
         f"s={int(values['s'])}, evaluate {expr}. Return 0 or 1."
     )
-    return Example(prompt, str(int(value)), "; ".join(trace), make_tree(difficulty, rng), "boolean", difficulty, split)
+    return Example(
+        prompt,
+        str(int(value)),
+        "; ".join(trace),
+        semantic_tree(operands, operators, BOOLEAN_OPERATOR_TOKENS),
+        "boolean",
+        difficulty,
+        split,
+    )
 
 
-def gen_list(rng: random.Random, difficulty: int, split: str) -> Example:
-    xs = [rng.randint(0, 9) for _ in range(rng.randint(3, 6))]
-    cur = xs[:]
-    ops = []
-    for _ in range(difficulty):
-        op = rng.choice(["reverse", "inc", "drop_first", "rotate"])
-        ops.append(op)
-        if op == "reverse":
-            cur = list(reversed(cur))
-        elif op == "inc":
-            cur = [(x + 1) % 10 for x in cur]
-        elif op == "drop_first" and cur:
-            cur = cur[1:]
-        elif op == "rotate" and cur:
-            cur = cur[1:] + cur[:1]
-    prompt = f"Start with list {xs}. Apply: {', '.join(ops)}. Return the final list as JSON."
-    return Example(prompt, json.dumps(cur), " -> ".join(ops), make_tree(difficulty, rng), "list", difficulty, split)
-
-
-GENERATORS = [gen_arithmetic, gen_boolean, gen_list]
+GENERATORS = [gen_arithmetic, gen_boolean]
 
 
 def generate_examples(n: int, split: str, seed: int) -> list[Example]:
@@ -144,8 +177,10 @@ def generate_examples(n: int, split: str, seed: int) -> list[Example]:
 def render_target(ex: Example, variant: Variant) -> str:
     if variant == "direct":
         return f"Answer: {ex.answer}"
+    if variant == "cot":
+        return f"Reasoning: {ex.verbal_cot}\nAnswer: {ex.answer}"
     if variant == "flat":
-        return " ".join(flat_tokens_for_tree(ex.gold_tree)) + f"\nAnswer: {ex.answer}"
+        return " ".join(flat_tokens_for_semantic_tree(ex.gold_tree)) + f"\nAnswer: {ex.answer}"
     if variant == "hacot":
         return " ".join(ex.gold_tree) + f"\nAnswer: {ex.answer}"
     raise ValueError(variant)
@@ -340,10 +375,12 @@ def evaluate_variant(args, variant: Variant, examples: list[Example], out_dir: P
     model.eval()
     rows = []
     t0 = time.time()
-    for ex in examples[: args.eval_n]:
-        prompt = render_prompt(ex)
-        prompt_text = render_chat_text(tokenizer, prompt, None)
-        enc = tokenizer(prompt_text, return_tensors="pt").to(model.device)
+    tokenizer.padding_side = "left"
+    batch_size = getattr(args, "eval_batch_size", 8)
+    for start in range(0, min(args.eval_n, len(examples)), batch_size):
+        batch_examples = examples[start : start + batch_size]
+        prompt_texts = [render_chat_text(tokenizer, render_prompt(ex), None) for ex in batch_examples]
+        enc = tokenizer(prompt_texts, padding=True, return_tensors="pt").to(model.device)
         gen = model.generate(
             **enc,
             max_new_tokens=args.max_new_tokens,
@@ -351,19 +388,21 @@ def evaluate_variant(args, variant: Variant, examples: list[Example], out_dir: P
             pad_token_id=tokenizer.pad_token_id,
             eos_token_id=tokenizer.eos_token_id,
         )
-        text = tokenizer.decode(gen[0][enc["input_ids"].shape[1] :], skip_special_tokens=False)
-        pred = extract_answer(text)
-        ok = norm_answer(pred) == norm_answer(ex.answer)
-        rows.append({
-            "variant": variant,
-            "task_family": ex.task_family,
-            "difficulty": ex.difficulty,
-            "prompt": ex.prompt,
-            "gold": ex.answer,
-            "pred": pred,
-            "correct": ok,
-            "raw_generation": text,
-        })
+        generated = gen[:, enc["input_ids"].shape[1] :]
+        for ex, tokens in zip(batch_examples, generated):
+            text = tokenizer.decode(tokens, skip_special_tokens=False)
+            pred = extract_answer(text)
+            ok = norm_answer(pred) == norm_answer(ex.answer)
+            rows.append({
+                "variant": variant,
+                "task_family": ex.task_family,
+                "difficulty": ex.difficulty,
+                "prompt": ex.prompt,
+                "gold": ex.answer,
+                "pred": pred,
+                "correct": ok,
+                "raw_generation": text,
+            })
     elapsed = time.time() - t0
     acc = sum(r["correct"] for r in rows) / max(1, len(rows))
     del model
@@ -388,6 +427,7 @@ def main() -> None:
     parser.add_argument("--max-length", type=int, default=512)
     parser.add_argument("--max-new-tokens", type=int, default=160)
     parser.add_argument("--eval-n", type=int, default=120)
+    parser.add_argument("--eval-batch-size", type=int, default=8)
     parser.add_argument("--lr", type=float, default=2e-4)
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--log-every", type=int, default=25)
@@ -423,7 +463,7 @@ def main() -> None:
     summary = {"args": vars(args), "variants": {}, "started_at": time.strftime("%Y-%m-%d %H:%M:%S")}
     all_rows = []
     for variant in variants:
-        if variant not in {"direct", "flat", "hacot"}:
+        if variant not in {"direct", "cot", "flat", "hacot"}:
             raise ValueError(f"unknown variant: {variant}")
         train_metrics = train_variant(args, variant, train, out_dir)
         eval_metrics = evaluate_variant(args, variant, dev, out_dir)

@@ -1,0 +1,40 @@
+{
+  "args": {
+    "model_name": "Qwen/Qwen3-1.7B",
+    "out_dir": "/workspace/hacot_runs/qwen_hacot_diagnostic_direct640",
+    "train_n": 64,
+    "dev_n": 64,
+    "steps": 640,
+    "batch_size": 2,
+    "grad_accum": 4,
+    "max_length": 384,
+    "max_new_tokens": 48,
+    "eval_n": 64,
+    "lr": 0.0004,
+    "seed": 42,
+    "log_every": 20,
+    "variants": "direct",
+    "lora": true,
+    "qlora_4bit": true,
+    "lora_rank": 16,
+    "lora_alpha": 32,
+    "gradient_checkpointing": true,
+    "save_adapters": true,
+    "dry_run": false
+  },
+  "diagnostic": true,
+  "variants": {
+    "direct": {
+      "train_loss_last": 2.6206329494016245e-05,
+      "train_loss_mean_last_20": 0.00046443261753665866,
+      "train_seconds": 236.00293731689453,
+      "steps": 640,
+      "train_accuracy": 1.0,
+      "train_eval_seconds": 68.50418066978455,
+      "id_accuracy": 0.34375,
+      "id_eval_seconds": 70.6995177268982
+    }
+  },
+  "started_at": "2026-07-15 06:57:29",
+  "completed_at": "2026-07-15 07:04:21"
+}

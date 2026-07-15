@@ -14,12 +14,14 @@ def main() -> None:
     parser.add_argument("--out-dir", default="/workspace/hacot_runs/qwen_hacot_diagnostic")
     parser.add_argument("--train-n", type=int, default=64)
     parser.add_argument("--id-n", type=int, default=64)
+    parser.add_argument("--eval-split", choices=["train", "dev"], default="dev")
     parser.add_argument("--steps", type=int, default=120)
     parser.add_argument("--batch-size", type=int, default=2)
     parser.add_argument("--grad-accum", type=int, default=4)
     parser.add_argument("--max-length", type=int, default=384)
     parser.add_argument("--max-new-tokens", type=int, default=48)
     parser.add_argument("--eval-n", type=int, default=64)
+    parser.add_argument("--eval-batch-size", type=int, default=8)
     parser.add_argument("--lr", type=float, default=4e-4)
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--variants", default="direct")
@@ -39,6 +41,7 @@ def main() -> None:
         max_length=args.max_length,
         max_new_tokens=args.max_new_tokens,
         eval_n=args.eval_n,
+        eval_batch_size=args.eval_batch_size,
         lr=args.lr,
         seed=args.seed,
         log_every=20,
@@ -54,7 +57,7 @@ def main() -> None:
 
     pilot.set_seed(args.seed)
     train = pilot.generate_examples(args.train_n, "train", args.seed)
-    id_dev = pilot.generate_examples(args.id_n, "train", args.seed + 12345)
+    id_dev = pilot.generate_examples(args.id_n, args.eval_split, args.seed + 12345)
     out_dir = Path(args.out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
     pilot.write_json(
@@ -63,6 +66,7 @@ def main() -> None:
             "train_n": len(train),
             "id_n": len(id_dev),
             "train_depths": sorted({x.difficulty for x in train}),
+            "eval_split": args.eval_split,
             "id_depths": sorted({x.difficulty for x in id_dev}),
             "families": sorted({x.task_family for x in train + id_dev}),
         },
