@@ -14,6 +14,7 @@ GRAPHQL_URL = "https://api.runpod.io/graphql"
 REST_PODS_URL = "https://rest.runpod.io/v1/pods"
 DEFAULT_GPU = "NVIDIA RTX 6000 Ada Generation"
 DEFAULT_IMAGE = "runpod/pytorch:2.8.0-py3.11-cuda12.8.1-cudnn-devel-ubuntu22.04"
+DEFAULT_ALLOWED_CUDA_VERSIONS = ["12.8", "12.9", "13.0"]
 
 
 def load_dotenv(path: Path) -> None:
@@ -117,7 +118,7 @@ def build_rest_payload(args: argparse.Namespace) -> dict:
         )
         start_cmd = ["bash", "-lc", bootstrap]
     return {
-        "allowedCudaVersions": ["12.8", "12.7", "12.6", "12.5", "12.4", "12.1"],
+        "allowedCudaVersions": args.allowed_cuda_versions,
         "cloudType": "COMMUNITY",
         "computeType": "GPU",
         "containerDiskInGb": args.container_disk_gb,
@@ -184,6 +185,11 @@ def main() -> None:
     parser.add_argument("--name", default="qwen-hacot-rtx6000ada")
     parser.add_argument("--gpu-type", default=DEFAULT_GPU)
     parser.add_argument("--image", default=DEFAULT_IMAGE)
+    parser.add_argument(
+        "--allowed-cuda-versions",
+        default=",".join(DEFAULT_ALLOWED_CUDA_VERSIONS),
+        help="Comma-separated host CUDA versions compatible with the selected container image.",
+    )
     parser.add_argument("--repo-url", default=os.environ.get("RUNPOD_REPO_URL", ""))
     parser.add_argument("--jupyter-password", default=os.environ.get("RUNPOD_JUPYTER_PASSWORD", "hacot-change-me"))
     parser.add_argument("--volume-gb", type=int, default=120)
@@ -202,6 +208,7 @@ def main() -> None:
 
     load_dotenv(Path(args.env_file))
     args.public_key = load_public_key(Path(args.public_key_file))
+    args.allowed_cuda_versions = [item.strip() for item in args.allowed_cuda_versions.split(",") if item.strip()]
     query = build_mutation(args)
     rest_payload = build_rest_payload(args)
     dry_payload = {
