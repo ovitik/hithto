@@ -225,10 +225,14 @@ def extract_answer(text: str) -> str:
     match = re.search(r"Answer:\s*(.+)", text, flags=re.IGNORECASE | re.DOTALL)
     raw = match.group(1) if match else text
     raw = raw.strip().splitlines()[0].strip()
+    raw = re.sub(r"<\|[^>]+?\|>", "", raw)
+    raw = raw.replace("</s>", "").strip()
     return raw.strip().rstrip(".")
 
 
 def norm_answer(text: str) -> str:
+    text = re.sub(r"<\|[^>]+?\|>", "", text)
+    text = text.replace("</s>", "")
     return re.sub(r"\s+", " ", text.strip().lower())
 
 
