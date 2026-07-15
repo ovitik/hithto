@@ -155,6 +155,30 @@ def render_prompt(ex: Example) -> str:
     return f"Question: {ex.prompt}\nRespond with the final answer after any required abstract reasoning.\n"
 
 
+def render_chat_text(tokenizer, prompt: str, target: str | None = None) -> str:
+    messages = [
+        {
+            "role": "system",
+            "content": (
+                "You are a precise solver. Follow the requested output format exactly. "
+                "When an answer is requested, write a line starting with 'Answer:'."
+            ),
+        },
+        {"role": "user", "content": prompt + "\n/no_think"},
+    ]
+    if hasattr(tokenizer, "apply_chat_template") and tokenizer.chat_template:
+        if target is None:
+            return tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
+        return tokenizer.apply_chat_template(
+            messages + [{"role": "assistant", "content": target}],
+            tokenize=False,
+            add_generation_prompt=False,
+        )
+    if target is None:
+        return prompt
+    return prompt + target
+
+
 class PromptDataset(Dataset):
     def __init__(self, examples: list[Example], tokenizer, variant: Variant, max_length: int) -> None:
         self.examples = examples
@@ -169,10 +193,11 @@ class PromptDataset(Dataset):
         ex = self.examples[index]
         prompt = render_prompt(ex)
         target = render_target(ex, self.variant)
-        full = prompt + target
+        full = render_chat_text(self.tokenizer, prompt, target)
         enc = self.tokenizer(full, truncation=True, max_length=self.max_length, return_tensors="pt")
         labels = enc["input_ids"].clone()
-        prompt_ids = self.tokenizer(prompt, truncation=True, max_length=self.max_length, return_tensors="pt")["input_ids"]
+        prompt_text = render_chat_text(self.tokenizer, prompt, None)
+        prompt_ids = self.tokenizer(prompt_text, truncation=True, max_length=self.max_length, return_tensors="pt")["input_ids"]
         labels[:, : min(prompt_ids.shape[1], labels.shape[1])] = -100
         return {
             "input_ids": enc["input_ids"][0],
@@ -313,7 +338,8 @@ def evaluate_variant(args, variant: Variant, examples: list[Example], out_dir: P
     t0 = time.time()
     for ex in examples[: args.eval_n]:
         prompt = render_prompt(ex)
-        enc = tokenizer(prompt, return_tensors="pt").to(model.device)
+        prompt_text = render_chat_text(tokenizer, prompt, None)
+        enc = tokenizer(prompt_text, return_tensors="pt").to(model.device)
         gen = model.generate(
             **enc,
             max_new_tokens=args.max_new_tokens,
