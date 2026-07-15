@@ -1,0 +1,34 @@
+{
+  "args": {
+    "model_name": "Qwen/Qwen3-1.7B",
+    "out_dir": "/workspace/acot_runs/warmup16",
+    "train_n": 384,
+    "dev_n": 96,
+    "codebook_size": 16,
+    "max_codes": 16,
+    "rounds": 2,
+    "teacher_steps": 480,
+    "distill_steps": 480,
+    "batch_size": 2,
+    "grad_accum": 4,
+    "max_length": 384,
+    "lr": 0.0002,
+    "lora_rank": 16,
+    "lora_alpha": 32,
+    "seed": 42,
+    "dry_run": false
+  },
+  "rounds": [
+    {
+      "round": 1,
+      "teacher_loss_last": 1.035159707069397,
+      "distill_loss_last": 0.0466354563832283,
+      "accuracy": 0.5208333333333334,
+      "permuted_accuracy": 0.5104166666666666,
+      "unique_trace_count": 1,
+      "codebook_tokens_used": 2,
+      "codebook_entropy_bits": 0.3372900686226785
+    }
+  ],
+  "started_at": "2026-07-15 09:34:52"
+}
