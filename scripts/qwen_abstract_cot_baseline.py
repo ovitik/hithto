@@ -363,7 +363,9 @@ def main() -> None:
             bottleneck_data,
             batch_size=args.batch_size,
             shuffle=True,
-            collate_fn=lambda rows: build_bottleneck_mask(rows, tokenizer.pad_token_id, torch.bfloat16),
+            # Qwen's QLoRA attention path keeps query states in fp32, so SDPA
+            # requires the additive 4D mask in fp32 as well.
+            collate_fn=lambda rows: build_bottleneck_mask(rows, tokenizer.pad_token_id, torch.float32),
         )
         teacher_losses = train_steps(
             model, bottleneck_loader, args.teacher_steps, args.grad_accum, args.lr, bottleneck=True
