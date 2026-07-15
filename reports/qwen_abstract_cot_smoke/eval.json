@@ -1,0 +1,73 @@
+{
+  "accuracy": 0.5,
+  "rows": [
+    {
+      "prompt": "Given p=1, q=0, r=0, s=1, evaluate ((((((((s AND r) XOR p) XOR q) XOR q) OR p) AND s) XOR s) OR p). Return 0 or 1.",
+      "gold": "1",
+      "pred": "1",
+      "correct": true,
+      "trace": [
+        "<AC_03>",
+        "<AC_03>",
+        "<AC_03>",
+        "<AC_03>",
+        "<AC_03>",
+        "<AC_03>",
+        "<AC_03>",
+        "<AC_03>"
+      ],
+      "raw_generation": "Answer: 1\n</think> <|im_end|>"
+    },
+    {
+      "prompt": "Compute the value of ((((((((5 * 3) - 7) - 7) * 6) + 9) + 6) * 5) - 5) modulo 10. Return only an integer from 0 to 9.",
+      "gold": "0",
+      "pred": "Let's compute the value step by step",
+      "correct": false,
+      "trace": [
+        "<AC_03>",
+        "<AC_03>",
+        "<AC_03>",
+        "<AC_03>",
+        "<AC_03>",
+        "<AC_03>",
+        "<AC_03>",
+        "<AC_03>"
+      ],
+      "raw_generation": "Answer:\nLet's compute the value step by step.\n\nStart with the innermost parentheses:\n(5 * 3) = 15\nThen, ("
+    },
+    {
+      "prompt": "Given p=0, q=0, r=0, s=1, evaluate ((((((((((s OR r) AND q) XOR q) AND p) OR p) XOR p) XOR p) XOR r) OR r) AND r). Return 0 or 1.",
+      "gold": "0",
+      "pred": "1",
+      "correct": false,
+      "trace": [
+        "<AC_03>",
+        "<AC_03>",
+        "<AC_03>",
+        "<AC_03>",
+        "<AC_03>",
+        "<AC_03>",
+        "<AC_03>",
+        "<AC_03>"
+      ],
+      "raw_generation": "Answer: 1\n</think> <|im_end|>"
+    },
+    {
+      "prompt": "Given p=0, q=0, r=1, s=1, evaluate ((((((((((s AND s) XOR s) OR s) AND r) AND q) OR q) XOR r) AND p) XOR r) OR p). Return 0 or 1.",
+      "gold": "1",
+      "pred": "1",
+      "correct": true,
+      "trace": [
+        "<AC_03>",
+        "<AC_03>",
+        "<AC_03>",
+        "<AC_03>",
+        "<AC_03>",
+        "<AC_03>",
+        "<AC_03>",
+        "<AC_03>"
+      ],
+      "raw_generation": "Answer: 1\n</think> <|im_end|>"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "args": {
+    "model_name": "Qwen/Qwen3-1.7B",
+    "out_dir": "/workspace/acot_runs/smoke2",
+    "train_n": 8,
+    "dev_n": 4,
+    "codebook_size": 8,
+    "max_codes": 8,
+    "rounds": 1,
+    "teacher_steps": 1,
+    "distill_steps": 1,
+    "batch_size": 1,
+    "grad_accum": 1,
+    "max_length": 256,
+    "lr": 0.0002,
+    "lora_rank": 16,
+    "lora_alpha": 32,
+    "seed": 42,
+    "dry_run": false
+  },
+  "rounds": [
+    {
+      "round": 1,
+      "teacher_loss_last": 11.000449180603027,
+      "distill_loss_last": 7.501323699951172,
+      "accuracy": 0.5
+    }
+  ],
+  "started_at": "2026-07-15 09:31:28",
+  "completed_at": "2026-07-15 09:31:44"
+}

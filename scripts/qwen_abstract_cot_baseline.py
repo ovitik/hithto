@@ -9,6 +9,7 @@ causally testable flat Abstract-CoT checkpoint before introducing hierarchy.
 from __future__ import annotations
 
 import argparse
+import collections
 import json
 import random
 import sys
@@ -284,21 +285,32 @@ def generate_trace(model, tokenizer, codebook: Codebook, code_ids: list[int], pr
 
 
 @torch.inference_mode()
+def generate_answer(model, tokenizer, context: str) -> tuple[str, str]:
+    enc = tokenizer(context, add_special_tokens=False, return_tensors="pt").to(model.device)
+    output = model.generate(
+        **enc,
+        max_new_tokens=32,
+        do_sample=False,
+        pad_token_id=tokenizer.pad_token_id,
+        eos_token_id=tokenizer.eos_token_id,
+    )
+    text = tokenizer.decode(output[0, enc["input_ids"].shape[1] :], skip_special_tokens=False)
+    return tasks.extract_answer(text), text
+
+
+@torch.inference_mode()
 def evaluate(model, tokenizer, codebook: Codebook, code_ids: list[int], examples: Iterable[tasks.Example], max_codes: int) -> dict:
     rows = []
+    rng = random.Random(9_999)
     for ex in examples:
         trace = generate_trace(model, tokenizer, codebook, code_ids, render_prompt(ex), max_codes)
         context = render_prompt(ex) + render_abstract(codebook, trace)
-        enc = tokenizer(context, add_special_tokens=False, return_tensors="pt").to(model.device)
-        output = model.generate(
-            **enc,
-            max_new_tokens=32,
-            do_sample=False,
-            pad_token_id=tokenizer.pad_token_id,
-            eos_token_id=tokenizer.eos_token_id,
+        pred, text = generate_answer(model, tokenizer, context)
+        permuted_trace = trace[:]
+        rng.shuffle(permuted_trace)
+        permuted_pred, _ = generate_answer(
+            model, tokenizer, render_prompt(ex) + render_abstract(codebook, permuted_trace)
         )
-        text = tokenizer.decode(output[0, enc["input_ids"].shape[1] :], skip_special_tokens=False)
-        pred = tasks.extract_answer(text)
         rows.append(
             {
                 "prompt": ex.prompt,
@@ -306,10 +318,23 @@ def evaluate(model, tokenizer, codebook: Codebook, code_ids: list[int], examples
                 "pred": pred,
                 "correct": tasks.norm_answer(pred) == tasks.norm_answer(ex.answer),
                 "trace": trace,
+                "permuted_trace": permuted_trace,
+                "permuted_pred": permuted_pred,
+                "permuted_correct": tasks.norm_answer(permuted_pred) == tasks.norm_answer(ex.answer),
                 "raw_generation": text,
             }
         )
-    return {"accuracy": sum(row["correct"] for row in rows) / max(1, len(rows)), "rows": rows}
+    counts = collections.Counter(token for row in rows for token in row["trace"])
+    total = sum(counts.values())
+    entropy = -sum((count / total) * torch.log2(torch.tensor(count / total)).item() for count in counts.values()) if total else 0.0
+    return {
+        "accuracy": sum(row["correct"] for row in rows) / max(1, len(rows)),
+        "permuted_accuracy": sum(row["permuted_correct"] for row in rows) / max(1, len(rows)),
+        "unique_trace_count": len({tuple(row["trace"]) for row in rows}),
+        "codebook_tokens_used": len(counts),
+        "codebook_entropy_bits": entropy,
+        "rows": rows,
+    }
 
 
 def main() -> None:
@@ -386,6 +411,10 @@ def main() -> None:
                 "teacher_loss_last": teacher_losses[-1],
                 "distill_loss_last": distill_losses[-1],
                 "accuracy": evaluation["accuracy"],
+                "permuted_accuracy": evaluation["permuted_accuracy"],
+                "unique_trace_count": evaluation["unique_trace_count"],
+                "codebook_tokens_used": evaluation["codebook_tokens_used"],
+                "codebook_entropy_bits": evaluation["codebook_entropy_bits"],
             }
         )
         tasks.write_json(out_dir / f"eval_round_{round_index + 1}.json", evaluation)
