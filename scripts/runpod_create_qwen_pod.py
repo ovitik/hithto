@@ -29,9 +29,19 @@ def load_dotenv(path: Path) -> None:
         os.environ.setdefault(key, value)
 
 
+def load_public_key(path: Path) -> str:
+    if not path.exists():
+        return ""
+    key = path.read_text(encoding="utf-8").strip()
+    if key and not key.startswith("ssh-"):
+        raise ValueError(f"{path} does not contain an OpenSSH public key")
+    return key
+
+
 def build_mutation(args: argparse.Namespace) -> str:
     env = [
         {"key": "JUPYTER_PASSWORD", "value": args.jupyter_password},
+        {"key": "PUBLIC_KEY", "value": args.public_key},
         {"key": "RUNPOD_REPO_URL", "value": args.repo_url or ""},
         {"key": "QWEN_MODEL_NAME", "value": args.model_name},
         {"key": "QWEN_STEPS", "value": str(args.steps)},
@@ -119,6 +129,7 @@ def build_rest_payload(args: argparse.Namespace) -> dict:
         "dockerStartCmd": start_cmd,
         "env": {
             "JUPYTER_PASSWORD": args.jupyter_password,
+            "PUBLIC_KEY": args.public_key,
             "RUNPOD_REPO_URL": args.repo_url or "",
             "QWEN_MODEL_NAME": args.model_name,
             "QWEN_STEPS": str(args.steps),
@@ -167,6 +178,7 @@ def post_rest(api_key: str, payload: dict) -> dict:
 def main() -> None:
     parser = argparse.ArgumentParser(description="Create a Runpod Community pod for the Qwen HACoT pilot.")
     parser.add_argument("--env-file", default=".env")
+    parser.add_argument("--public-key-file", default=".runpod_ssh/id_ed25519.pub")
     parser.add_argument("--api", choices=["rest", "graphql"], default="rest")
     parser.add_argument("--create", action="store_true", help="Actually call the Runpod API. Without this, only prints a dry-run payload.")
     parser.add_argument("--name", default="qwen-hacot-rtx6000ada")
@@ -189,6 +201,7 @@ def main() -> None:
     args = parser.parse_args()
 
     load_dotenv(Path(args.env_file))
+    args.public_key = load_public_key(Path(args.public_key_file))
     query = build_mutation(args)
     rest_payload = build_rest_payload(args)
     dry_payload = {
